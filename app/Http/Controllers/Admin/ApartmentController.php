@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Apartment;
 use Illuminate\Support\Facades\Auth;
+
+use App\Apartment;
+use App\Image;
+
 
 class ApartmentController extends Controller
 {
@@ -18,7 +21,6 @@ class ApartmentController extends Controller
     {
         $apartments = Apartment::orderBy('created_at', 'desc')->paginate(25);
         $user = Auth::user();
-        // dd($user->apartments);
 
         return view('admin.apartments.index', compact('apartments', 'user'));
     }
@@ -41,7 +43,8 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        dd($data);
     }
 
     /**
@@ -52,7 +55,13 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('admin.apartments.show', compact('apartment'));
+        $user = Auth::user();
+        if ($apartment->user_id == $user->id) {
+          return view('admin.apartments.show', compact('apartment'));
+        } else {
+          abort(403, 'Non puoi accedere a questa pagina');
+        }
+
     }
 
     /**
@@ -88,4 +97,5 @@ class ApartmentController extends Controller
     {
         //
     }
+
 }
