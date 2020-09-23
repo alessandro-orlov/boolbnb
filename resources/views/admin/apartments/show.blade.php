@@ -5,12 +5,12 @@
     {{-- Intestazione --}}
     <h1>{{$apartment->title}}</h1>
     {{-- Indirizzo --}}
-    <div style="display:flex; justify-content:space-between;;">
-        <p>
+    <div style="display:flex; justify-content:space-between;">
+        <p style="line-height: 70px;">
             {{$apartment->address}}
         </p>
-        <p>
-            <b>{{$apartment->price}}€ /a notte</b>
+        <p style="line-height: 70px;">
+            <b style="font-size:1.5em;">{{$apartment->price}}€ /a notte</b>
         </p>
     </div>
     {{-- Immagine --}}
@@ -36,12 +36,23 @@
       <div class="row">
         <div class="left col-2">
           <h4>Specifiche</h4>
-          <ul style="list-style:none;">
-            <li>Stanze: {{$apartment->num_rooms}} </li>
-            <li>Letti: {{$apartment->num_beds}} </li>
-            <li>Bagni: {{$apartment->num_baths}} </li>
-            <li>Mq: {{$apartment->mq}} </li>
-            <li>numero stanze: {{$apartment->num_rooms}} </li>
+          <ul style="list-style:none; padding-left:0px;">
+
+              <li style="display:flex; justify-content:space-between;">
+                  <span>Stanze:</span> <span>{{$apartment->num_rooms}}</span>
+              </li>
+
+              <li style="display:flex; justify-content:space-between;">
+                <span>Letti:</span> <span>{{$apartment->num_beds}}</span>
+              </li>
+
+              <li style="display:flex; justify-content:space-between;">
+                  <span>Bagni:</span> <span>{{$apartment->num_baths}}</span>
+              </li>
+
+              <li style="display:flex; justify-content:space-between;">
+                  <span>Mq:</span> <span>{{$apartment->mq}}</span>
+              </li>
           </ul>
         </div>
         <div class="right col-8">
