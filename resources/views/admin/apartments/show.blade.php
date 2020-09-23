@@ -4,6 +4,15 @@
   <div class="container">
     {{-- Intestazione --}}
     <h1>{{$apartment->title}}</h1>
+    {{-- Indirizzo --}}
+    <div style="display:flex; justify-content:space-between;;">
+        <p>
+            {{$apartment->address}}
+        </p>
+        <p>
+            <b>{{$apartment->price}}€ /a notte</b>
+        </p>
+    </div>
     {{-- Immagine --}}
     <div style="width: 600px;">
         <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
