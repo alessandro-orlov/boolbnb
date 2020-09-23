@@ -25,9 +25,9 @@
               </p>
           </div>
           <div class="col-md-8 col-sm-12">
-            <form action="{{'admin.apartments.store'}}" method="post">
-                @csrf
-                @method('POST')
+            <form action="{{ route('admin.apartments.store') }}" method="post">
+            @csrf
+            @method('POST')
 
                 <div class="form-row">
                     <div class="form-group col-md-8">
