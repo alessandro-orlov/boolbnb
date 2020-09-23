@@ -33,7 +33,7 @@
         </main>
 
         {{-- Footer --}}
-        
+
     </div>
 </body>
 </html>
