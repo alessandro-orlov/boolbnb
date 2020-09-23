@@ -32,6 +32,12 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a href="{{route('admin.apartments.create')}}" class="dropdown-item">
+                                Add apartment
+                            </a>
+                            <a href="{{route('admin.apartments.index')}}" class="dropdown-item">
+                                Your appartments
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
