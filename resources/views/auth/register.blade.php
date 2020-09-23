@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="birth_date" class="col-md-4 col-form-label text-md-right">{{ __('Data di nascita') }}</label>
+                            <label for="birth_date" class="col-md-4 col-form-label text-md-right">{{ __('Data di Nascita') }}</label>
 
                             <div class="col-md-6">
                                 <input id="birth_date" type="date" class="form-control @error('birth_date') is-invalid @enderror" name="birth_date" value="{{ old('birth_date') }}" required autocomplete="birth_date" autofocus>
