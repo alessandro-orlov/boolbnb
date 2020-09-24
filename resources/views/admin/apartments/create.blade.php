@@ -41,6 +41,7 @@
                         <small id="emailHelp" class="form-text text-muted">Scrivi il titolo per il tuo alloggio</small>
                     </div>
                 </div>
+
                 {{-- MQ & Stanze --}}
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -52,6 +53,7 @@
                         <input type="number" name="num_rooms" class="form-control" required>
                     </div>
                 </div>
+
                 {{-- Letti & Bagni --}}
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -62,58 +64,98 @@
                         <label for="inputCity">Bagni</label>
                         <input type="number" name="num_baths" class="form-control" required>
                     </div>
-                  </div>
-                  {{-- Descrizione --}}
-                  <div class="form-row">
+                </div>
+
+                {{-- Checkboxes Servizi --}}
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Servizi</label>
+
+                          <div class="row">
+
+                            <?php $i = 0; ?>
+                            @foreach ($services as $service)
+                                <?php $count = $i+=1?>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="services[]" value="{{$service->id}}" class="custom-control-input"  id="<?php echo 'customCheck'. $count ?>">
+                                        <label class="custom-control-label"  for="<?php echo 'customCheck'. $count ?>">{{$service->name}} <span class="service-icon">{!! $service->icon !!}</span></label>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Descrizione --}}
+                <div class="form-row">
                     <div class="form-group col-md-12">
                         <label>Descrizione</label>
                         <textarea class="form-control" name="description" rows="7" required>{{ old('address') }}</textarea>
                     </div>
-                  </div>
-                  {{-- Indirizzo --}}
-                  <div class="form-row">
-                      <div class="form-group col-md-12">
-                          <label for="title">Indirizzo</label>
-                          <input class="form-control" name="address" type="search" id="address-input" placeholder="Inserisci l'indirizzo" required/>
-                          <small class="form-text text-muted">Digita il tuo indirizzo</small>
-                      </div>
-                  </div>
-                  {{-- API ADRESS --}}
-                  <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
-                  <script>
+                </div>
+
+                {{-- Indirizzo --}}
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="title">Indirizzo</label>
+                        <input class="form-control" name="address" type="search" id="address-input" placeholder="Inserisci l'indirizzo" required/>
+                        <input hidden id="latitude" type="text" name="latitude" value="">
+                        <input hidden id="longitude" type="text" name="longitude" value="">
+                        <small class="form-text text-muted">Digita il tuo indirizzo</small>
+                    </div>
+                </div>
+
+                {{-- API ADRESS --}}
+                <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+                <script>
                     var placesAutocomplete = places({
                       appId: 'plAQEOVDX808',
                       apiKey: '5e56964f06ab40f6c0d1912086c2be09',
                       container: document.querySelector('#address-input')
                     });
-                  </script>
-                  {{-- Prezzo a notte --}}
-                  <div class="form-row">
-                      <div class="form-group col-md-12">
-                          <label for="title">Prezzo a notte</label>
-                          <div class="input-group mb-3">
-                              <div class="input-group-prepend">
-                                  <span class="input-group-text">$</span>
-                              </div>
-                                  <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" >
-                              <div class="input-group-append">
-                                  <span class="input-group-text">.00</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  {{-- Image upload --}}
-                  <div class="form-group">
-                      <label>Inserisci Immagini</label>
-                      <input type="file" name="main_img" class="form-control-file">
-                  </div>
-                  {{-- Submit --}}
-                  <div class="form-row">
-                      <div class="form-check col-md-12 text-right">
-                          <input type="submit" class="btn btn-boolbnb" value="Salva">
-                      </div>
-                  </div>
-                  <script>
+                    var $address = document.querySelector('#address-value')
+                      placesAutocomplete.on('change', function(e) {
+                        document.querySelector("#latitude").value = e.suggestion.latlng.lat || "";
+                        document.querySelector("#longitude").value = e.suggestion.latlng.lng || "";
+                      });
+                      placesAutocomplete.on('clear', function() {
+                        $address.textContent = 'none';
+                      });
+                </script>
+
+                {{-- Prezzo a notte --}}
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="title">Prezzo a notte</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">$</span>
+                            </div>
+                                <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" >
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Image upload --}}
+                <div class="form-group">
+                    <label>Inserisci Immagini</label>
+                    <input type="file" name="main_img" class="form-control-file">
+                </div>
+
+                {{-- Submit --}}
+                <div class="form-row">
+                    <div class="form-check col-md-12 text-right">
+                        <input type="submit" class="btn btn-boolbnb" value="Salva">
+                    </div>
+                </div>
+
+                {{-- Validazione Client side --}}
+                <script>
                   // Form valdation
                   (function() {
                     'use strict';
@@ -132,7 +174,8 @@
                       });
                     }, false);
                   })();
-                  </script>
+                </script>
+
             </form>
           </div>
       </div>
