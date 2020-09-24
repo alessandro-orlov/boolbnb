@@ -9,7 +9,7 @@
           <div class="row">
               <div class="col-md-4 col-sm-12">
                   <h2>Perché affittare su Boolbnb? </h2>
-                  <p>
+                  <p class="">
                     Indipendentemente dal tipo di alloggio o stanza che vuoi condividere, <strong>Boolbnb</strong> rende semplice e sicuro ospitare dei viaggiatori. Spetta a te il controllo completo della disponibilità, dei prezzi, delle regole della casa e della modalità di interazione con gli ospiti.
                   </p>
               </div>
@@ -100,7 +100,7 @@
 
                   <div class="form-row">
                       <div class="form-check col-md-12 text-right">
-                          <input type="submit" class="btn btn-primary" value="Salva">
+                          <input type="submit" class="btn btn-boolbnb" value="Salva">
                       </div>
                   </div>
                   <script>
