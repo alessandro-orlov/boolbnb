@@ -7,7 +7,8 @@
 body {
   background-color: white;
   color: #333;
-  line-height: 24px;
+  line-height: 26px;
+  font-size: 16px;
 }
 
 li {
@@ -85,6 +86,36 @@ footer .bottom-footer li {
 
   footer .bottom-footer .social i {
     margin-right: 15px;
+  }
+}
+
+.ms_add-host {
+  width: 100%;
+  position: relative;
+}
+
+.ms_add-host img.ms_bg-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.ms_add-host .form-container {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px 20px 50px;
+  box-shadow: 0px 0px 15px 1px #0000002b;
+}
+
+@media all and (min-width: 768px) {
+  .ms_add-host {
+    margin-bottom: 325px;
+  }
+
+  .ms_add-host .form-container {
+    position: absolute;
+    top: 25%;
+    right: 5%;
   }
 }
 

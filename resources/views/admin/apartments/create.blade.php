@@ -3,8 +3,8 @@
 @section('content')
   <div class="container">
 
-      <div class="big-image" style="width: 100%; position:relative;">
-          <img style="width: 100%; border-radius: 10px; margin-bottom: 50px;" src="{{asset('img/admin-office/add-host.jpg')}}" alt="">
+      <div class="ms_add-host">
+          <img class="ms_bg-img" src="{{asset('img/admin-office/add-host.jpg')}}" alt="">
 
           <div class="row">
               <div class="col-md-4 col-sm-12">
@@ -14,8 +14,8 @@
                   </p>
               </div>
           </div>
-          {{-- TODO: classe con SASS --}}
-          <div class="col-md-7 col-sm-12" style="background-color: #fff; border-radius: 15px; padding: 20px 20px 50px; box-shadow: 0px 0px 15px 1px #0000002b; position: absolute; top: 25%; right: 5%; margin-bottom: 50px;">
+          {{-- Form container --}}
+          <div class="col-md-7 col-sm-12 form-container">
             <h1>Diventa un host</h1>
             {{-- Errors - Validation Server side --}}
             <div class="errors">
