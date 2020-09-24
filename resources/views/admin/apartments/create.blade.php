@@ -14,7 +14,7 @@
                   </p>
               </div>
           </div>
-
+          {{-- TODO: classe con SASS --}}
           <div class="col-md-7 col-sm-12" style="background-color: #fff; border-radius: 15px; padding: 20px 20px 50px; box-shadow: 0px 0px 15px 1px #0000002b; position: absolute; top: 25%; right: 5%; margin-bottom: 50px;">
             <h1>Diventa un host</h1>
             {{-- Errors - Validation Server side --}}
