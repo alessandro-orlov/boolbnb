@@ -1,0 +1,43 @@
+footer  {
+  width: 100%;
+
+.upper-footer {
+  border-bottom: 1.5px solid lightgrey;
+
+  li {
+    line-height: 40px;
+
+      &:first-child {
+        font-weight: bold;
+        font-size: .9em;
+      }
+    }
+  }
+
+  .bottom-footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+     [class*="col-"] {
+      float: left;
+    }
+
+    .languages {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-around;
+
+      i {
+        font-size: 1.4em;
+      }
+    }
+
+    ul, li {
+      display: inline-block;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@media all and (max-width: 768px) {
+  footer .bottom-footer .languages {
+    margin-bottom: 30px;
+    display: block;
+
+    span {
+      margin-right: 10px;
+    }
+  }
+
+  footer .bottom-footer .social {
+    margin-bottom: 30px;
+    display: block;
+
+    i {
+      margin-right: 15px;
+    }
+  }
+}
