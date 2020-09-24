@@ -7,7 +7,8 @@
 body {
   background-color: white;
   color: #333;
-  line-height: 24px;
+  line-height: 26px;
+  font-size: 16px;
 }
 
 li {
@@ -19,7 +20,27 @@ a {
 }
 
 main {
-  min-height: 500px;
+  width: 100%;
+}
+
+main .jumbotron {
+  background-image: url(/images/jumbo2.jpg?a231f26d999dc33938aafad6030b183e);
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .jumbotron h1 {
+  font-weight: bolder;
+}
+
+main .jumbotron h2 {
+  font-weight: bold;
+}
+
+main .jumbotron button {
+  font-weight: bold;
 }
 
 footer {

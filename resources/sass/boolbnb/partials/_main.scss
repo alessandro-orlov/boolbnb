@@ -1,3 +1,23 @@
 main {
-  min-height: 500px;
+  width: 100%;
+
+  .jumbotron {
+    background-image: url('img/jumbo2.jpg');
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    h1 {
+      font-weight: bolder;
+    }
+
+    h2 {
+      font-weight: bold;
+    }
+
+    button {
+      font-weight: bold;
+    }
+  }
 }
