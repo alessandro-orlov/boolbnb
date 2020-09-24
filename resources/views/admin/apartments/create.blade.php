@@ -46,11 +46,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">Metri quadri</label>
-                        <input type="number" name="mq" class="form-control" required>
+                        <input type="number" name="mq" value="{{ old('mq') }}" class="form-control" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputCity">Stanze</label>
-                        <input type="number" name="num_rooms" class="form-control" required>
+                        <input type="number" name="num_rooms" value="{{ old('num_rooms') }}" class="form-control" required>
                     </div>
                 </div>
 
@@ -58,11 +58,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">Letti</label>
-                        <input type="number" name="num_beds" class="form-control" required>
+                        <input type="number" name="num_beds" value="{{ old('num_beds') }}" class="form-control" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputCity">Bagni</label>
-                        <input type="number" name="num_baths" class="form-control" required>
+                        <input type="number" name="num_baths" value="{{ old('num_baths') }}" class="form-control" required>
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label>Descrizione</label>
-                        <textarea class="form-control" name="description" rows="7" required>{{ old('address') }}</textarea>
+                        <textarea class="form-control" name="description" rows="7" required>{{ old('description') }}</textarea>
                     </div>
                 </div>
 
@@ -133,7 +133,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">$</span>
                             </div>
-                                <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" >
+                                <input type="text" name="price" value="{{ old('price') }}" class="form-control" aria-label="Amount (to the nearest dollar)" >
                             <div class="input-group-append">
                                 <span class="input-group-text">.00</span>
                             </div>
@@ -144,7 +144,7 @@
                 {{-- Image upload --}}
                 <div class="form-group">
                     <label>Inserisci Immagini</label>
-                    <input type="file" name="main_img" class="form-control-file">
+                    <input type="file" name="main_img" class="form-control-file" multiple>
                 </div>
 
                 {{-- Submit --}}
