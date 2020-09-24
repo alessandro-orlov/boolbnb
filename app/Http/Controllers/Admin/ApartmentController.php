@@ -43,6 +43,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate($this->validationData());
         $data = $request->all();
         dd($data);
     }
@@ -96,6 +97,20 @@ class ApartmentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function validationData() {
+      return [
+
+        'title' => 'required|max:255',
+        'num_rooms' => 'required',
+        'num_beds' => 'required',
+        'num_baths' => 'required',
+        'mq' => 'required',
+        'address' => 'required',
+        'description' => 'required',
+        'price' => 'required',
+      ];
     }
 
 }
