@@ -22,17 +22,18 @@
 
       <h4 class="text-center">Filtri di ricerca</h4>
       <div class="row">
-        <div class="col-sm-10 offset-sm-1 ">
+        <div class="col-sm-12 ">
+
           <ul class="list-group list-group-horizontal">
             @foreach ($services as $service)
               <li class="bool_filters_li">
-
                 <input type="checkbox" name="services[]" value="{{$service->id}}" >
                 <span>{!!$service->icon!!}</span>
                 <span>{{$service->name}}</span>
               </li>
             @endforeach
           </ul>
+
         </div>
       </div>
 
@@ -43,21 +44,32 @@
 
 {{-- inizio sezione appartamenti --}}
 <section class="container-fluid bool_ap_results">
-{{-- inizio colonna sinistra con appartamenti --}}
 
+{{-- inizio colonna sinistra con appartamenti --}}
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-6">
 
       @if (!$apartments->isEmpty())
         <ul>
           @foreach ($apartments as $apartment)
             <li class="bool_ap">
 
-              <a href="{{route('apartments.show', $apartment)}}">
-                <img src="{{$apartment->main_img}}" alt="Immagine principale dell'appartamento">
-                <h4>{{$apartment->title}}</h4>
-                <p>{{$apartment->description}}</p>
-              </a>
+              <div class="bool_infos">
+
+                <div class="bool_img_apt">
+                  <a href="{{route('apartments.show', $apartment)}}">
+                    <img src="{{$apartment->main_img}}" alt="Immagine principale dell'appartamento">
+                  </a>
+                </div>
+
+                <div class="bool_info_apt">
+                  <a href="{{route('apartments.show', $apartment)}}">
+                    <h4>{{$apartment->title}}</h4>
+                    <p>{{$apartment->description}}</p>
+                  </a>
+                </div>
+
+              </div>
 
             </li>
           @endforeach
@@ -68,7 +80,7 @@
     {{-- fine colonna sinistra con appartamenti --}}
 
     {{-- inizio colonna destra con mappa --}}
-    <aside class="col-lg-7 bool_map_col">
+    <aside class="col-lg-6 bool_map_col">
 
       <div class="bool_map_container">
         <img src="{{asset('img/guest/mappa_ricerca.png')}}" alt="Mappa">
@@ -78,9 +90,5 @@
   </div>
 </section>
 {{-- fine sezione appartamenti --}}
-
-
-
-
 
 @endsection

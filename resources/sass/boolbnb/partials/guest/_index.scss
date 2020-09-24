@@ -1,3 +1,9 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .bool_row{
   padding: 20px 0;
 }
@@ -6,32 +12,41 @@
   h4{
     padding: 10px 0;
   }
-  .bool_filters_li{
+}
+
+.bool_filters_container{
+  width: 75%;
+  ul .bool_filters_li{
     padding-left: 21px;
-  }
-  .bool_filters_li:first-child{
-    padding-left: 0;
-  }
-  .bool_filters_li span{
-    padding-left: 3px;
-    font-size: 16px;
+    .bool_filters_li:first-child{
+      padding-left: 0;
+    }
+    .bool_filters_li span{
+      padding-left: 2px;
+      font-size: 16px;
+    }
   }
 }
+
+
 
 .bool_ap_results{
   padding-top: 30px;
   .bool_ap{
     padding: 20px ;
     border-top: 1px solid #ebebeb;
-    a{
-      text-decoration: none;
-      color: #000;
-      img{
-        height: 200px;
-        border-radius: 10px;
+    .bool_infos{
+      display: flex;
+      .bool_img_apt a img{
+          height: 200px;
+          border-radius: 10px;
       }
-      span{
-        padding-left: 20px;
+      .bool_info_apt{
+        padding: 0 20px;
+        a{
+          text-decoration: none;
+          color: #000;
+        }
       }
     }
   }
