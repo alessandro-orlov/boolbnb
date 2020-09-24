@@ -29,10 +29,11 @@
                   </div>
                 @endif
             </div>
+            {{-- FORM --}}
             <form class="needs-validation" novalidate action="{{ route('admin.apartments.store') }}" method="post">
             @csrf
             @method('POST')
-
+                {{-- Title --}}
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="title">Titolo</label>
@@ -40,7 +41,7 @@
                         <small id="emailHelp" class="form-text text-muted">Scrivi il titolo per il tuo alloggio</small>
                     </div>
                 </div>
-
+                {{-- MQ & Stanze --}}
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">Metri quadri</label>
@@ -51,7 +52,7 @@
                         <input type="number" name="num_rooms" class="form-control" required>
                     </div>
                 </div>
-
+                {{-- Letti & Bagni --}}
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">Letti</label>
@@ -62,22 +63,31 @@
                         <input type="number" name="num_baths" class="form-control" required>
                     </div>
                   </div>
-
+                  {{-- Descrizione --}}
                   <div class="form-row">
                     <div class="form-group col-md-12">
                         <label>Descrizione</label>
                         <textarea class="form-control" name="description" rows="7" required>{{ old('address') }}</textarea>
                     </div>
                   </div>
-
+                  {{-- Indirizzo --}}
                   <div class="form-row">
                       <div class="form-group col-md-12">
                           <label for="title">Indirizzo</label>
-                          <input type="title" class="form-control" name="address" value="{{ old('address') }}" placeholder="Inserisci l'indirizzo" required>
+                          <input class="form-control" name="address" type="search" id="address-input" placeholder="Inserisci l'indirizzo" required/>
                           <small class="form-text text-muted">Digita il tuo indirizzo</small>
                       </div>
                   </div>
-
+                  {{-- API ADRESS --}}
+                  <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+                  <script>
+                    var placesAutocomplete = places({
+                      appId: 'plAQEOVDX808',
+                      apiKey: '5e56964f06ab40f6c0d1912086c2be09',
+                      container: document.querySelector('#address-input')
+                    });
+                  </script>
+                  {{-- Prezzo a notte --}}
                   <div class="form-row">
                       <div class="form-group col-md-12">
                           <label for="title">Prezzo a notte</label>
@@ -85,19 +95,19 @@
                               <div class="input-group-prepend">
                                   <span class="input-group-text">$</span>
                               </div>
-                                  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" >
+                                  <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" >
                               <div class="input-group-append">
                                   <span class="input-group-text">.00</span>
                               </div>
                           </div>
                       </div>
                   </div>
-
+                  {{-- Image upload --}}
                   <div class="form-group">
                       <label>Inserisci Immagini</label>
                       <input type="file" name="main_img" class="form-control-file">
                   </div>
-
+                  {{-- Submit --}}
                   <div class="form-row">
                       <div class="form-check col-md-12 text-right">
                           <input type="submit" class="btn btn-boolbnb" value="Salva">
@@ -126,7 +136,6 @@
             </form>
           </div>
       </div>
-
   </div>
 
 @endsection
