@@ -32,6 +32,7 @@ footer .upper-footer {
 
 footer .upper-footer li {
   line-height: 40px;
+  margin: 10px 0;
 }
 
 footer .upper-footer li:first-child {

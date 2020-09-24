@@ -54,30 +54,34 @@
 
   {{-- begin bottom footer --}}
   <div class="bottom-footer">
-    <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
-      <span>&copy; Airbnb, Inc. All rights reserved &nbsp;&nbsp;</span>
-      <ul>
-        <li>Privacy</li>
-        <li>&nbsp;</li>
-        <li>Termini</li>
-        <li>&nbsp;</li>
-        <li>Mappa del sito</li>
-        <li>&nbsp;</li>
-        <li>Dettagli dell'azienda</li>
-      </ul>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 languages">
-      <span>
-        <i class="fas fa-globe"></i>
-        Italiano (IT)
-      </span>
-      <span>€ EUR</span>
-    </div>
-    <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12 social">
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-instagram"></i>
-    </div>
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+            <span>&copy; Airbnb, Inc. All rights reserved &nbsp;&nbsp;</span>
+            <ul>
+              <li>Privacy</li>
+              <li>Termini</li>
+              <li>Mappa del sito</li>
+              <li>Dettagli dell'azienda</li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="languages">
+              <span>
+                <i class="fas fa-globe"></i>
+                Italiano (IT)
+              </span>
+              <span>€ EUR</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+              <div class=" social">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+              </div>
+          </div>
+      </div>
   </div>
+
   {{-- end bottom footer --}}
 </div>
