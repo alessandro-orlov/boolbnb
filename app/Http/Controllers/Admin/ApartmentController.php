@@ -46,10 +46,11 @@ class ApartmentController extends Controller
     {
         $request->validate($this->validationData());
         $data = $request->all();
+        $current_user = Auth::id();
         // dd($data);
 
         $new_apartment = new Apartment();
-        $new_apartment->user_id = $id = Auth::id();;
+        $new_apartment->user_id = $current_user;
         $new_apartment->title = $data['title'];
         $new_apartment->num_rooms = $data['num_rooms'];
         $new_apartment->num_beds = $data['num_beds'];
@@ -63,7 +64,7 @@ class ApartmentController extends Controller
 
         // Image upload
         if (isset($data['main_img'])) {
-          $path = $request->file('main_img')->store('img/apartments', 'public');
+          $path = $request->file('main_img')->store('img', 'public');
           $new_apartment->main_img = $path;
         }
 
