@@ -24,6 +24,8 @@ class CreateApartmentsTable extends Migration
             $table->string('address');
             $table->decimal('latitude', 10, 7);
             $table->decimal('longitude', 10, 7);
+            $table->string('city');
+            $table->string('region');
             $table->longText('description');
             $table->text('main_img')->nullable();
             $table->decimal('price', 6, 2);

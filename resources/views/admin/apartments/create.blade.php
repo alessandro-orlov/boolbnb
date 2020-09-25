@@ -103,6 +103,8 @@
                         <input class="form-control" name="address" type="search" id="address-input" placeholder="Inserisci l'indirizzo" required/>
                         <input hidden id="latitude" type="text" name="latitude" value="">
                         <input hidden id="longitude" type="text" name="longitude" value="">
+                        <input hidden id="city" type="text" name="city" value="">
+                        <input hidden id="region" type="text" name="region" value="">
                         <small class="form-text text-muted">Digita il tuo indirizzo</small>
                     </div>
                 </div>
@@ -119,6 +121,8 @@
                       placesAutocomplete.on('change', function(e) {
                         document.querySelector("#latitude").value = e.suggestion.latlng.lat || "";
                         document.querySelector("#longitude").value = e.suggestion.latlng.lng || "";
+                        document.querySelector("#city").value = e.suggestion.city || "";
+                        document.querySelector("#region").value = e.suggestion.administrative || "";
                       });
                       placesAutocomplete.on('clear', function() {
                         $address.textContent = 'none';

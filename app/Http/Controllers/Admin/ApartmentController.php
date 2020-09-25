@@ -59,6 +59,8 @@ class ApartmentController extends Controller
         $new_apartment->address = $data['address'];
         $new_apartment->latitude = $data['latitude'];
         $new_apartment->longitude = $data['longitude'];
+        $new_apartment->city = $data['city'];
+        $new_apartment->region = $data['region'];
         $new_apartment->description = $data['description'];
         $new_apartment->price = $data['price'];
 
@@ -138,6 +140,8 @@ class ApartmentController extends Controller
         'address' => 'required',
         'latitude' => 'required',
         'longitude' => 'required',
+        'city' => 'required',
+        'region' => 'required',
         'description' => 'required',
         'price' => 'required',
       ];
