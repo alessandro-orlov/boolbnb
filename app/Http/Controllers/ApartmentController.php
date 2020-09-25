@@ -9,7 +9,7 @@ use App\Service;
 class ApartmentController extends Controller
 {
   public function index(){
-    $apartments = Apartment::all();
+    $apartments = Apartment::orderBy('created_at', 'desc')->paginate(5);
     $services = Service::all();
 
     return view('guest.apartments.index', [
