@@ -1,3 +1,49 @@
 main {
-  min-height: 500px;
+  width: 100%;
+  background: linear-gradient(0deg, #fff, #f5f5fa);
+
+  .jumbotron {
+    background-image: url('../../../../public/img/jumbo.jpg');
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+    h1 {
+      font-weight: bolder;
+    }
+
+    h2 {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    button {
+      font-weight: bold;
+    }
+  }
+
+  .card-section {
+    display: flex;
+    margin-top: -32px;
+    padding-bottom: 60px;
+
+    .box {
+      height: 350px;
+      flex-basis: 25%;
+      margin-top: 60px;
+      border-radius: $border-radius;
+
+      .image {
+        background-color: lightblue;
+        height: 70%;
+      }
+
+      .text {
+        background-color: pink;
+        height: 30%;
+        padding: 10px;
+      }
+    }
+  }
 }
