@@ -152,60 +152,71 @@ footer .bottom-footer li {
   }
 }
 
-.bool_row {
-  padding: 20px 0;
+.bool_ap_results .bool_form {
+  padding: 20px 20px 0;
 }
 
-.bool_filters h4 {
-  padding: 10px 0;
+.bool_ap_results .bool_filter {
+  text-decoration: underline;
+  color: #000;
+  cursor: pointer;
+  padding: 0 20px;
 }
 
-.bool_filters_container {
-  width: 75%;
+.bool_ap_results .bool_dropdown {
+  padding: 20px 0 0 20px;
+  -moz-column-count: 2;
+       column-count: 2;
 }
 
-.bool_filters_container ul .bool_filters_li {
-  padding-left: 21px;
+.bool_ap_results ul {
+  margin-top: 20px;
 }
 
-.bool_filters_container ul .bool_filters_li .bool_filters_li:first-child {
-  padding-left: 0;
-}
-
-.bool_filters_container ul .bool_filters_li .bool_filters_li span {
-  padding-left: 2px;
-  font-size: 16px;
-}
-
-.bool_ap_results {
-  padding-top: 30px;
-}
-
-.bool_ap_results .bool_ap {
+.bool_ap_results ul .bool_ap {
   padding: 20px;
   border-top: 1px solid #ebebeb;
 }
 
-.bool_ap_results .bool_ap .bool_infos {
+.bool_ap_results ul .bool_ap .bool_infos {
   display: flex;
 }
 
-.bool_ap_results .bool_ap .bool_infos .bool_img_apt a img {
+.bool_ap_results ul .bool_ap .bool_infos .bool_img_apt a img {
   height: 200px;
   border-radius: 10px;
 }
 
-.bool_ap_results .bool_ap .bool_infos .bool_info_apt {
+.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt {
   padding: 0 20px;
 }
 
-.bool_ap_results .bool_ap .bool_infos .bool_info_apt a {
+.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt a {
   text-decoration: none;
   color: #000;
 }
 
-.bool_ap_results .bool_ap:last-child {
+.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt a h4 {
+  padding-bottom: 10px;
+}
+
+.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt a p {
+  line-height: 10px;
+}
+
+.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt a .bool_price {
+  font-size: 18px;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+.bool_ap_results ul .bool_ap:last-child {
   border-bottom: 1px solid #ebebeb;
+}
+
+.bool_pagination {
+  display: flex;
+  justify-content: center;
 }
 
 .bool_map_col {
