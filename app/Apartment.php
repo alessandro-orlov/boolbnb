@@ -17,6 +17,8 @@ class Apartment extends Model
         'address',
         'latitude',
         'longitude',
+        'city',
+        'region',
         'description',
         'main_img',
         'price',
