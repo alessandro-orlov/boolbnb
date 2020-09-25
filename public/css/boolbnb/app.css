@@ -17,10 +17,23 @@ li {
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+.btn-boolbnb {
+  background: linear-gradient(90deg, #b60e54 0%, #f10031 50%, #b60e54 100%);
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.1s linear;
+}
+
+.btn-boolbnb:hover {
+  opacity: 0.8;
 }
 
 main {
   width: 100%;
+  background: linear-gradient(0deg, #fff, #f5f5fa);
 }
 
 main .jumbotron {
@@ -45,6 +58,9 @@ main .jumbotron button {
 
 footer {
   width: 100%;
+  background-color: #333;
+  color: white;
+  padding-top: 40px;
 }
 
 footer .upper-footer {
@@ -57,7 +73,7 @@ footer .upper-footer li {
 }
 
 footer .upper-footer li:first-child {
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 0.9em;
 }
 
@@ -70,29 +86,24 @@ footer .bottom-footer [class*=col-] {
   float: left;
 }
 
-footer .bottom-footer .languages {
+footer .bottom-footer [class*=col-] .social {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-footer .bottom-footer .social {
-  display: flex;
-  justify-content: space-around;
-}
-
-footer .bottom-footer .social i {
+footer .bottom-footer [class*=col-] .social i {
   font-size: 1.4em;
 }
 
-footer .bottom-footer ul,
-footer .bottom-footer li {
+footer .bottom-footer [class*=col-] ul,
+footer .bottom-footer [class*=col-] li {
   display: inline-block;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   footer .bottom-footer .languages {
-    margin-bottom: 30px;
-    display: block;
+    margin: 20px 0;
+    text-align: left;
   }
 
   footer .bottom-footer .languages span {
@@ -101,11 +112,10 @@ footer .bottom-footer li {
 
   footer .bottom-footer .social {
     margin-bottom: 30px;
-    display: block;
   }
 
-  footer .bottom-footer .social i {
-    margin-right: 15px;
+  footer ul {
+    border-top: 1px solid white;
   }
 }
 

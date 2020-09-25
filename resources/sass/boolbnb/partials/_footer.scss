@@ -1,5 +1,8 @@
 footer  {
   width: 100%;
+  background-color: $primary-dark;
+  color: white;
+  padding-top: 40px;
 
 .upper-footer {
   border-bottom: 1.5px solid lightgrey;
@@ -9,7 +12,7 @@ footer  {
     margin: 10px 0;
 
       &:first-child {
-        font-weight: bold;
+        font-weight: bolder;
         font-size: .9em;
       }
     }
@@ -21,16 +24,10 @@ footer  {
 
      [class*="col-"] {
       float: left;
-    }
-
-    .languages {
-      display: flex;
-      justify-content: space-around;
-    }
 
     .social {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
 
       i {
         font-size: 1.4em;
@@ -41,4 +38,5 @@ footer  {
       display: inline-block;
     }
   }
+}
 }
