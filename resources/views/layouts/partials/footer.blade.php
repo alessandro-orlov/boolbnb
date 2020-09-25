@@ -5,47 +5,99 @@
       <div class="col-sm-12 col-md-3">
         <ul>
           <li>INFORMAZIONI</li>
-          <li>Come funziona airbnb</li>
-          <li>Newsroom</li>
-          <li>Airbnb Plus</li>
-          <li>Airbnb Luxe</li>
-          <li>HotelTonight</li>
-          <li>Airbnb for work</li>
-          <li>Olimpiadi</li>
-          <li>Opportunità di lavoro</li>
+          <li>
+            <a href="#">Come funziona airbnb</a>
+          </li>
+          <li>
+            <a href="#">Newsroom</a>
+          </li>
+          <li>
+            <a href="#">Airbnb Plus</a>
+          </li>
+          <li>
+            <a href="#">Airbnb Luxe</a>
+          </li>
+          <li>
+            <a href="#">HotelTonight</a>
+          </li>
+          <li>
+            <a href="#">Airbnb for work</a>
+          </li>
+          <li>
+            <a href="#">Olimpiadi</a>
+          </li>
+          <li>
+            <a href="#">Opportunità di lavoro</a>
+          </li>
         </ul>
       </div>
       <div class="col-sm-12 col-md-3">
         <ul>
           <li>COMMUNITY</li>
-          <li>Diversità e appartenenza</li>
-          <li>Accessibilità</li>
-          <li>Airbnb Associates</li>
-          <li>Alloggi per l'emergenza</li>
-          <li>Invita degli amici</li>
+          <li>
+            <a href="#">Diversità e appartenenza</a>
+          </li>
+          <li>
+            <a href="#">Accessibilità</a>
+          </li>
+          <li>
+            <a href="#">Airbnb Associates</a>
+          </li>
+          <li>
+            <a href="#">Alloggi per l'emergenza</a>
+          </li>
+          <li>
+            <a href="#">Invita degli amici</a>
+          </li>
         </ul>
       </div>
       <div class="col-sm-12 col-md-3">
         <ul>
           <li>OSPITA</li>
-          <li>Diventa un host</li>
-          <li>Offri un'Esperienza online</li>
-          <li>Offri un'Esperienza</li>
-          <li>Messaggio dal CEO Brian Chesky</li>
-          <li>Ospitare responsabilmente</li>
-          <li>Open Homesk</li>
-          <li>Centro risorse</li>
-          <li>Community Center</li>
+          <li>
+            <a href="#">Diventa un host</a>
+          </li>
+          <li>
+            <a href="#">Offri un'Esperienza online</a>
+          </li>
+          <li>
+            <a href="#">Offri un'Esperienza</a>
+          </li>
+          <li>
+            <a href="#">Messaggio dal CEO Brian Chesky</a>
+          </li>
+          <li>
+            <a href="#">Ospitare responsabilmente</a>
+          </li>
+          <li>
+            <a href="#">Open Homesk</a>
+          </li>
+          <li>
+            <a href="#">Centro risorse</a>
+          </li>
+          <li>
+            <a href="#">Community Center</a>
+          </li>
         </ul>
       </div>
       <div class="col-sm-12 col-md-3">
         <ul>
           <li>ASSISTENZA</li>
-          <li>Aggiornamenti COVID-19</li>
-          <li>Centro Assistenta</li>
-          <li>Opzioni di cancellazione</li>
-          <li>Supporto al vicinato</li>
-          <li>Affidabilità e sicurezza</li>
+          <li>
+            <a href="#">Aggiornamenti COVID-19</a>
+          </li>
+          <li>
+            <a href="#">Centro Assistenta</a>
+          </li>
+          <li>
+            <a href="#">Opzioni di cancellazione</a>
+          </li>
+          <li>
+            <a href="#">Supporto al vicinato</a>
+          </li>
+          <li>
+            <a href="#">Affidabilità e sicurezza</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -55,29 +107,42 @@
   {{-- begin bottom footer --}}
   <div class="bottom-footer">
         <div class="row">
-          <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+          <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
             <span>&copy; Airbnb, Inc. All rights reserved &nbsp;&nbsp;</span>
-            <ul>
-              <li>Privacy</li>
-              <li>Termini</li>
-              <li>Mappa del sito</li>
-              <li>Dettagli dell'azienda</li>
-            </ul>
+            {{-- <ul>
+              <li>
+                <a href="#">Privacy</a>
+              </li>
+              <li>
+                <a href="#">Termini</a>
+              </li>
+              <li>
+                <a href="#">Mappa del sito</a>
+              </li>
+              <li>
+                <a href="#">Dettagli dell'azienda</a>
+              </li>
+            </ul> --}}
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <div class="col-lg-5 col-md-3 col-sm-12 col-xs-12">
             <div class="languages">
               <span>
                 <i class="fas fa-globe"></i>
                 Italiano (IT)
               </span>
-              <span>€ EUR</span>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
               <div class=" social">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
               </div>
           </div>
       </div>

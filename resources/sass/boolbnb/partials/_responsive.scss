@@ -1,7 +1,7 @@
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   footer .bottom-footer .languages {
-    margin-bottom: 30px;
-    display: block;
+    margin: 20px 0;
+    text-align: left;
 
     span {
       margin-right: 10px;
@@ -10,10 +10,9 @@
 
   footer .bottom-footer .social {
     margin-bottom: 30px;
-    display: block;
+  }
 
-    i {
-      margin-right: 15px;
-    }
+  footer ul {
+    border-top: 1px solid white;
   }
 }
