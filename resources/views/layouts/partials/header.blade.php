@@ -16,6 +16,10 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
+                <!-- links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('apartments.index') }}">tutti appartamenti</a>
+                    </li>
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
