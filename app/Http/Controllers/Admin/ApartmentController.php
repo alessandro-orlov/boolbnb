@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Apartment;
 use App\Image;
-
+use App\Service;
 
 class ApartmentController extends Controller
 {
@@ -32,7 +32,8 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view('admin.apartments.create');
+        $services = Service::all();
+        return view('admin.apartments.create', compact('services'));
     }
 
     /**
