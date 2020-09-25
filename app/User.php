@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     // Relation
-    protected function apartments() {
+    public function apartments() {
         return $this->hasMany('App\Apartment');
     }
 }

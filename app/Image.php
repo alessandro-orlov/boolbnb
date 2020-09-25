@@ -14,7 +14,7 @@ class Image extends Model
     ];
 
     // Relation
-    protected function apartment() {
+    public function apartment() {
         return $this->belongsTo('App\Apartment');
     }
 }

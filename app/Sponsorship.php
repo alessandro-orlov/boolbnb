@@ -15,7 +15,7 @@ class Sponsorship extends Model
     ];
 
     // Relations
-    protected function apartments() {
+    public function apartments() {
         return $this->belongsToMany('App\Apartment')->withPivot('start_date', 'end_date');
     }
 }

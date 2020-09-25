@@ -25,27 +25,27 @@ class Apartment extends Model
 
     // Relations
 
-    protected function user() {
+    public function user() {
         return $this->belongsTo('App\User');
     }
 
-    protected function messages() {
+    public function messages() {
         return $this->hasMany('App\Message');
     }
 
-    protected function visits() {
+    public function visits() {
         return $this->hasMany('App\Visit');
     }
 
-    protected function images() {
+    public function images() {
         return $this->hasMany('App\Image');
     }
 
-    protected function services() {
+    public function services() {
         return $this->belongsToMany('App\Service');
     }
 
-    protected function sponsorships() {
+    public function sponsorships() {
         return $this->belongsToMany('App\Sponsorship')->withPivot('start_date', 'end_date');
     }
 

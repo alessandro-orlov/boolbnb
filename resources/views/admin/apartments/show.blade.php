@@ -13,6 +13,7 @@
             <b style="font-size:1.5em;">{{$apartment->price}}€ /a notte</b>
         </p>
     </div>
+
     {{-- Immagine --}}
     @if (!empty($apartment->main_img))
         <div class="img-container">
@@ -30,11 +31,8 @@
       {{-- Controllo !array->isEmpty() --}}
       @if (!$apartment->services->isEmpty())
         @foreach ($apartment->services as $service)
-
           <span>{{$service->name}}</span>
           <span>{!!$service->icon!!}</span>
-          <i class="fas fa-wifi"></i>
-
         @endforeach
       @endif
     </div>
