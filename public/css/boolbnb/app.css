@@ -89,5 +89,138 @@ footer .bottom-footer li {
   }
 }
 
+.ms_add-host {
+  width: 100%;
+  position: relative;
+}
 
+.ms_add-host img.ms_bg-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.ms_add-host .form-container {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px 20px 50px;
+  box-shadow: 0px 0px 15px 1px #0000002b;
+}
+
+.ms_add-host .form-container .service-icon {
+  font-size: 1.1em;
+  color: #f10031;
+  padding: 0 5px;
+}
+
+.ms_add-host h2 {
+  color: #f10031;
+}
+
+.ms_add-host .btn-boolbnb {
+  background: linear-gradient(90deg, #b60e54 0%, #f10031 50%, #b60e54 100%);
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.1s linear;
+}
+
+.ms_add-host .btn-boolbnb:hover {
+  opacity: 0.8;
+}
+
+@media all and (min-width: 768px) {
+  .ms_add-host {
+    margin-bottom: 500px;
+  }
+
+  .ms_add-host .form-container {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .ms_add-host {
+    margin-bottom: 430px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .ms_add-host {
+    margin-bottom: 350px;
+  }
+}
+
+.bool_row {
+  padding: 20px 0;
+}
+
+.bool_filters h4 {
+  padding: 10px 0;
+}
+
+.bool_filters_container {
+  width: 75%;
+}
+
+.bool_filters_container ul .bool_filters_li {
+  padding-left: 21px;
+}
+
+.bool_filters_container ul .bool_filters_li .bool_filters_li:first-child {
+  padding-left: 0;
+}
+
+.bool_filters_container ul .bool_filters_li .bool_filters_li span {
+  padding-left: 2px;
+  font-size: 16px;
+}
+
+.bool_ap_results {
+  padding-top: 30px;
+}
+
+.bool_ap_results .bool_ap {
+  padding: 20px;
+  border-top: 1px solid #ebebeb;
+}
+
+.bool_ap_results .bool_ap .bool_infos {
+  display: flex;
+}
+
+.bool_ap_results .bool_ap .bool_infos .bool_img_apt a img {
+  height: 200px;
+  border-radius: 10px;
+}
+
+.bool_ap_results .bool_ap .bool_infos .bool_info_apt {
+  padding: 0 20px;
+}
+
+.bool_ap_results .bool_ap .bool_infos .bool_info_apt a {
+  text-decoration: none;
+  color: #000;
+}
+
+.bool_ap_results .bool_ap:last-child {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.bool_map_col {
+  position: relative;
+  padding: 0;
+}
+
+.bool_map_col .bool_map_container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.bool_map_col .bool_map_container img {
+  height: 100vh;
+  width: 100%;
+}
 
