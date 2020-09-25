@@ -19,11 +19,11 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="../public/img/american_house.jpg" alt="">
+              <img src="{{asset('img/american_house.jpg')}}" alt="">
             </div>
             <div class="text">
-              <h4></h4>
-              <p></p>
+              <h4>Spazi unici</h4>
+              <p>Molto più che semplici spazi dove trascorrere la notte</p>
             </div>
           </div>
         </div>
@@ -34,8 +34,8 @@
               <img src="../public/img/baita.jpg" alt="">
             </div>
             <div class="text">
-              <h4></h4>
-              <p></p>
+              <h4>Esperienze online</h4>
+              <p>Attività uniche che possiamo fare insieme, organizzate da host di tutto il mondo</p>
             </div>
           </div>
         </div>
@@ -44,6 +44,18 @@
           <div class="box">
             <div class="image">
               <img src="../public/img/american_house.jpg" alt="">
+            </div>
+            <div class="text">
+              <h4>Case intere</h4>
+              <p>Alloggi privati e confortevoli, con tanto spazio indoor e all'aperto per amici e parenti</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-4">
+          <div class="box">
+            <div class="image">
+              {{-- <img src="../public/img/american_house.jpg" alt=""> --}}
             </div>
             <div class="text">
               <h4></h4>
@@ -55,7 +67,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="../public/img/american_house.jpg" alt="">
+              {{-- <img src="../public/img/american_house.jpg" alt=""> --}}
             </div>
             <div class="text">
               <h4></h4>
@@ -67,19 +79,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="../public/img/american_house.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4></h4>
-              <p></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-md-6 col-lg-4">
-          <div class="box">
-            <div class="image">
-              <img src="../public/img/american_house.jpg" alt="">
+              {{-- <img src="../public/img/american_house.jpg" alt=""> --}}
             </div>
             <div class="text">
               <h4></h4>

@@ -108,7 +108,7 @@
   <div class="bottom-footer">
         <div class="row">
           <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
-            <span>&copy; Airbnb, Inc. All rights reserved &nbsp;&nbsp;</span>
+            <span>&copy; Airbnb, Inc. All rights reserved</span>
             {{-- <ul>
               <li>
                 <a href="#">Privacy</a>

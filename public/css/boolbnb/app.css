@@ -57,6 +57,30 @@ main .jumbotron button {
   font-weight: bold;
 }
 
+main .card-section {
+  display: flex;
+  margin-top: -32px;
+  padding-bottom: 60px;
+}
+
+main .card-section .box {
+  height: 350px;
+  flex-basis: 25%;
+  margin-top: 60px;
+  border-radius: 10px;
+}
+
+main .card-section .box .image {
+  background-color: lightblue;
+  height: 70%;
+}
+
+main .card-section .box .text {
+  background-color: pink;
+  height: 30%;
+  padding: 10px;
+}
+
 footer {
   width: 100%;
   background-color: #333;

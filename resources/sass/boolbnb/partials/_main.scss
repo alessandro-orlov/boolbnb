@@ -22,4 +22,28 @@ main {
       font-weight: bold;
     }
   }
+
+  .card-section {
+    display: flex;
+    margin-top: -32px;
+    padding-bottom: 60px;
+
+    .box {
+      height: 350px;
+      flex-basis: 25%;
+      margin-top: 60px;
+      border-radius: $border-radius;
+
+      .image {
+        background-color: lightblue;
+        height: 70%;
+      }
+
+      .text {
+        background-color: pink;
+        height: 30%;
+        padding: 10px;
+      }
+    }
+  }
 }
