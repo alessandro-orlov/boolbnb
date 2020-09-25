@@ -43,25 +43,17 @@
             <li class="bool_ap">
               <div class="bool_infos">
 
-                {{-- <div class="bool_img_apt">
-                  <a href="{{route('apartments.show', $apartment)}}">
-                    <img src="{{$apartment->main_img}}" alt="Immagine principale dell'appartamento">
-                  </a>
-                </div> --}}
-
                 {{-- Immagine --}}
                 @if (!empty($apartment->main_img))
-                    <div class="bool_img_apt">
-                        @if (strpos($apartment->img_path,'lorempixel'))
-                            <a href="{{route('apartments.show', $apartment)}}">
-                                <img src="{{$apartment->img_path}}" alt="{{$apartment->title}}">
-                            </a>
-                          @else
-                              <a href="{{route('apartments.show', $apartment)}}">
-                                  <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
-                              </a>
-                        @endif
-                    </div>
+                  <div class="bool_img_apt">
+                    <a href="{{route('apartments.show', $apartment)}}">
+                      @if (strpos($apartment->main_img,'mpixel'))
+                        <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
+                      @else
+                        <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
+                      @endif
+                    </a>
+                  </div>
                 @endif
 
                 <div class="bool_info_apt">
