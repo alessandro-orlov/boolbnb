@@ -1,3 +1,3 @@
 require('./bootstrap');
 
-var $ = require("jquery");
+// var $ = require("jquery");
