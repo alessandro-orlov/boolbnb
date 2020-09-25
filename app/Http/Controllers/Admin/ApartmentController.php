@@ -67,8 +67,12 @@ class ApartmentController extends Controller
           $path = $request->file('main_img')->store('img', 'public');
           $new_apartment->main_img = $path;
         }
-
         $new_apartment->save();
+
+
+        if (isset($data['services'])) {
+          $new_apartment->services()->sync($data['services']);
+        }
 
         return redirect()->route('admin.apartments.show', $new_apartment);
     }

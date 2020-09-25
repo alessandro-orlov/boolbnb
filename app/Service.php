@@ -13,7 +13,7 @@ class Service extends Model
     ];
 
     // Relation
-    protected function apartments() {
+    public function apartments() {
         return $this->belongsToMany('App\Apartment');
     }
 }

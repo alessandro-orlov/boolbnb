@@ -25,9 +25,9 @@ class CreateApartmentsTable extends Migration
             $table->decimal('latitude', 10, 7);
             $table->decimal('longitude', 10, 7);
             $table->longText('description');
-            $table->text('main_img');
+            $table->text('main_img')->nullable();
             $table->decimal('price', 6, 2);
-            
+
             // FK User
             //   --> Relazione 1-to-many User-Apartments
             $table->unsignedBigInteger('user_id');

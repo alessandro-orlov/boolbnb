@@ -14,8 +14,7 @@ class CreateApartmentServiceTable extends Migration
     public function up()
     {
         Schema::create('apartment_service', function (Blueprint $table) {
-            $table->id();
-
+          
             // Tabella Pivot - Relazione Many-to-many Apartments-Services
             $table->unsignedBigInteger('apartment_id');
             $table->foreign('apartment_id')
@@ -26,8 +25,6 @@ class CreateApartmentServiceTable extends Migration
             $table->foreign('service_id')
                 ->references('id')
                 ->on('services');
-
-            $table->timestamps();
         });
     }
 
