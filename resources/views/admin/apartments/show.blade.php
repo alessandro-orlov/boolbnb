@@ -14,9 +14,16 @@
         </p>
     </div>
     {{-- Immagine --}}
-    <div style="width: 600px;">
-        <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
-    </div>
+    @if (!empty($apartment->main_img))
+        <div class="img-container">
+            @if (strpos($apartment->img_path,'lorempixel'))
+                <img src="{{$apartment->img_path}}" alt="{{$apartment->title}}">
+              @else
+                  <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
+            @endif
+        </div>
+    @endif
+
     {{-- Servizi --}}
     <div>
       <h3>Servizi</h3>
@@ -31,6 +38,7 @@
         @endforeach
       @endif
     </div>
+
     {{-- Caratteristiche vari --}}
     <div class="apartment-specs" >
       <div class="row">

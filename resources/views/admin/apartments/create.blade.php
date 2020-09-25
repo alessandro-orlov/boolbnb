@@ -30,7 +30,7 @@
                 @endif
             </div>
             {{-- FORM --}}
-            <form class="needs-validation" novalidate action="{{ route('admin.apartments.store') }}" method="post">
+            <form class="needs-validation" novalidate action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('POST')
                 {{-- Title --}}
@@ -144,7 +144,8 @@
                 {{-- Image upload --}}
                 <div class="form-group">
                     <label>Inserisci Immagini</label>
-                    <input type="file" name="main_img" class="form-control-file" multiple>
+                    <input type="file" name="main_img" accept="image/*" class="form-control-file">
+                    {{-- <input type="file" name="img_path" accept="image/*"> --}}
                 </div>
 
                 {{-- Submit --}}

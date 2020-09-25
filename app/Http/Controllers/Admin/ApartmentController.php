@@ -46,7 +46,31 @@ class ApartmentController extends Controller
     {
         $request->validate($this->validationData());
         $data = $request->all();
-        dd($data);
+        $current_user = Auth::id();
+        // dd($data);
+
+        $new_apartment = new Apartment();
+        $new_apartment->user_id = $current_user;
+        $new_apartment->title = $data['title'];
+        $new_apartment->num_rooms = $data['num_rooms'];
+        $new_apartment->num_beds = $data['num_beds'];
+        $new_apartment->num_baths = $data['num_baths'];
+        $new_apartment->mq = $data['mq'];
+        $new_apartment->address = $data['address'];
+        $new_apartment->latitude = $data['latitude'];
+        $new_apartment->longitude = $data['longitude'];
+        $new_apartment->description = $data['description'];
+        $new_apartment->price = $data['price'];
+
+        // Image upload
+        if (isset($data['main_img'])) {
+          $path = $request->file('main_img')->store('img', 'public');
+          $new_apartment->main_img = $path;
+        }
+
+        $new_apartment->save();
+
+        return redirect()->route('admin.apartments.show', $new_apartment);
     }
 
     /**
@@ -102,13 +126,14 @@ class ApartmentController extends Controller
 
     public function validationData() {
       return [
-
         'title' => 'required|max:255',
         'num_rooms' => 'required',
         'num_beds' => 'required',
         'num_baths' => 'required',
         'mq' => 'required',
         'address' => 'required',
+        'latitude' => 'required',
+        'longitude' => 'required',
         'description' => 'required',
         'price' => 'required',
       ];
