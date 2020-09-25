@@ -43,19 +43,34 @@
             <li class="bool_ap">
               <div class="bool_infos">
 
-                <div class="bool_img_apt">
+                {{-- <div class="bool_img_apt">
                   <a href="{{route('apartments.show', $apartment)}}">
                     <img src="{{$apartment->main_img}}" alt="Immagine principale dell'appartamento">
                   </a>
-                </div>
+                </div> --}}
+
+                {{-- Immagine --}}
+                @if (!empty($apartment->main_img))
+                    <div class="bool_img_apt">
+                        @if (strpos($apartment->img_path,'lorempixel'))
+                            <a href="{{route('apartments.show', $apartment)}}">
+                                <img src="{{$apartment->img_path}}" alt="{{$apartment->title}}">
+                            </a>
+                          @else
+                              <a href="{{route('apartments.show', $apartment)}}">
+                                  <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
+                              </a>
+                        @endif
+                    </div>
+                @endif
 
                 <div class="bool_info_apt">
                   <a href="{{route('apartments.show', $apartment)}}">
                     <h4>{{$apartment->title}}</h4>
-                    <p><b>Città:</b> Boolean</p>
+                    <p><b>Città:</b> {{$apartment->city}}, {{$apartment->region}}</p>
                     <p><b>Stanze:</b> {{$apartment->num_rooms}}</p>
                     <p><b>Letti:</b> {{$apartment->num_beds}}</p>
-                    <p class="bool_price">Prezzo: {{$apartment->price}} €</p>
+                    <p class="bool_price">Prezzo: {{$apartment->price}} € <small>/a notte</small> </p>
                   </a>
                 </div>
 
