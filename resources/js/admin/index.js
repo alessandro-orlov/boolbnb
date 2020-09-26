@@ -14,10 +14,10 @@ $(document).ready(function() {
   if (time > 6 && time <= 12) {
     greetings.text('Buon giorno,');
   }
-  else if (time > 12 && time <= 18) {
+  else if (time > 12 && time <= 17) {
     greetings.text('Buon pomeriggio,');
   }
-  else if (time > 18 && time <= 23) {
+  else if (time > 17 && time <= 23) {
     greetings.text('Buona sera,');
   }
   else {

@@ -34,18 +34,18 @@
                             {{-- Apartment FOTO --}}
                             <td class="apartment-foto-block">
                               <div class="img-thumbnail">
-                                    <div class="apartment-foto">
-                                        <a href="{{route('admin.apartments.show', $apartment)}}">
-                                        @if (!empty($apartment->main_img))
-                                            @if (strpos($apartment->main_img,'mpixel'))
-                                                <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
-                                              @else
-                                                <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
-                                            @endif
-                                        @else
-                                            <img src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
-                                        @endif
-                                        </a>
+                                  <div class="apartment-foto">
+                                      <a href="{{route('admin.apartments.show', $apartment)}}">
+                                      @if (!empty($apartment->main_img))
+                                          @if (strpos($apartment->main_img,'mpixel'))
+                                              <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
+                                            @else
+                                              <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
+                                          @endif
+                                      @else
+                                          <img src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
+                                      @endif
+                                      </a>
                                   </div>
                               </div>
                             </td>
