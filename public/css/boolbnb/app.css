@@ -157,6 +157,98 @@ footer a {
   }
 }
 
+.user-apartments .ms_apartments-table {
+  padding: 3px;
+  border: 1px solid #dddde4;
+}
+
+.user-apartments table {
+  border-collapse: collapse;
+}
+
+.user-apartments table thead {
+  text-align: center;
+}
+
+.user-apartments table tbody {
+  text-align: center;
+}
+
+.user-apartments table tbody tr {
+  padding: 50px 0;
+  border-spacing: 10px;
+}
+
+.user-apartments table tbody tr:last-child {
+  border-bottom: 1px solid #dddde4;
+}
+
+.user-apartments table tbody th.ms_data {
+  font-size: 0.8em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.user-apartments table tbody td {
+  vertical-align: middle;
+  border-right: 1px solid #dddde4;
+}
+
+.user-apartments table tbody td a.controls-btn {
+  font-size: 0.8em;
+  display: block;
+  padding: 0 5px;
+  margin: 5px auto;
+  background-color: #fff;
+  border: 1px solid #dddde4;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.user-apartments table tbody td a.controls-btn.normal:hover {
+  border: 1px solid #70e296;
+  background-color: #70e296;
+  color: #fff;
+  text-decoration: none;
+}
+
+.user-apartments table tbody td a.controls-btn.delete:hover {
+  border: 1px solid #e3342f;
+  background-color: #e3342f;
+  color: #fff;
+  text-decoration: none;
+}
+
+.user-apartments table tbody td:last-child {
+  border-right: none;
+}
+
+.user-apartments table tbody .apartment-foto-block {
+  width: 15%;
+}
+
+.user-apartments table tbody .apartment-foto-block .apartment-foto {
+  overflow: hidden;
+  width: 100%;
+}
+
+.user-apartments table tbody .apartment-foto-block .apartment-foto img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.user-apartments table tbody .apartment-foto-block:hover img {
+  transform: scale(1.05);
+}
+
+.user-apartments table tbody .apartment-title {
+  text-align: left;
+}
+
+.user-apartments table tbody .apartment-icons {
+  color: #ccc;
+}
+
 .ms_add-host {
   width: 100%;
   position: relative;

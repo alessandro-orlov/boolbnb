@@ -1,5 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/boolbnb/app.css": "/css/boolbnb/app.css"
+    "/css/boolbnb/app.css": "/css/boolbnb/app.css",
+    "/js/boolbnb/admin/create.js": "/js/boolbnb/admin/create.js",
+    "/js/boolbnb/admin/edit.js": "/js/boolbnb/admin/edit.js",
+    "/js/boolbnb/admin/index.js": "/js/boolbnb/admin/index.js"
 }
