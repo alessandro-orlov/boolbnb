@@ -16,3 +16,23 @@
     border-top: 1px solid white;
   }
 }
+
+@media all and (min-width: 768px) {
+  footer {
+    background-color: #f5f5fa;
+    color: #333;
+    border-top: 1px solid #fff;
+    .upper-footer {
+      border-bottom: 1px solid #dddde4;
+    }
+
+    .bottom-footer {
+      border-top: 1px solid #fff;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+  } // end footer
+} // End @media 768px

@@ -133,10 +133,10 @@ class ApartmentController extends Controller
     public function validationData() {
       return [
         'title' => 'required|max:255',
-        'num_rooms' => 'required',
-        'num_beds' => 'required',
-        'num_baths' => 'required',
-        'mq' => 'required',
+        'num_rooms' => 'required|integer',
+        'num_beds' => 'required|integer',
+        'num_baths' => 'required|integer',
+        'mq' => 'required|integer',
         'address' => 'required',
         'latitude' => 'required',
         'longitude' => 'required',
