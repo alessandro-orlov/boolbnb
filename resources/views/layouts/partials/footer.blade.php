@@ -1,6 +1,7 @@
-<div class="container">
-  {{-- begin upper footer --}}
-  <div class="upper-footer">
+
+{{-- begin upper footer --}}
+<div class="upper-footer">
+  <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-3">
         <ul>
@@ -102,51 +103,52 @@
       </div>
     </div>
   </div>
-  {{-- end upper footer --}}
+</div>
+{{-- end upper footer --}}
 
-  {{-- begin bottom footer --}}
-  <div class="bottom-footer">
-        <div class="row">
-          <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
-            <span>&copy; Airbnb, Inc. All rights reserved</span>
-            {{-- <ul>
-              <li>
-                <a href="#">Privacy</a>
-              </li>
-              <li>
-                <a href="#">Termini</a>
-              </li>
-              <li>
-                <a href="#">Mappa del sito</a>
-              </li>
-              <li>
-                <a href="#">Dettagli dell'azienda</a>
-              </li>
-            </ul> --}}
-          </div>
-          <div class="col-lg-5 col-md-3 col-sm-12 col-xs-12">
-            <div class="languages">
-              <span>
-                <i class="fas fa-globe"></i>
-                Italiano (IT)
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
-              <div class=" social">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </div>
+{{-- begin bottom footer --}}
+<div class="bottom-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+        <span>&copy; Airbnb, Inc. All rights reserved</span>
+        {{-- <ul>
+          <li>
+            <a href="#">Privacy</a>
+          </li>
+          <li>
+            <a href="#">Termini</a>
+          </li>
+          <li>
+            <a href="#">Mappa del sito</a>
+          </li>
+          <li>
+            <a href="#">Dettagli dell'azienda</a>
+          </li>
+        </ul> --}}
+      </div>
+      <div class="col-lg-5 col-md-3 col-sm-12 col-xs-12">
+        <div class="languages">
+          <span>
+            <i class="fas fa-globe"></i>
+            Italiano (IT)
+          </span>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+          <div class=" social">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
           </div>
       </div>
+    </div>
   </div>
-
-  {{-- end bottom footer --}}
 </div>
+{{-- end bottom footer --}}

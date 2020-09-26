@@ -29,6 +29,7 @@ li {
 main {
   width: 100%;
   background: linear-gradient(0deg, #fff, #f5f5fa);
+  border-bottom: 1px solid #dddde4;
 }
 
 main .jumbotron {
@@ -132,6 +133,27 @@ footer a {
 
   footer ul {
     border-top: 1px solid white;
+  }
+}
+
+@media all and (min-width: 768px) {
+  footer {
+    background-color: #f5f5fa;
+    color: #333;
+    border-top: 1px solid #fff;
+  }
+
+  footer .upper-footer {
+    border-bottom: 1px solid #dddde4;
+  }
+
+  footer .bottom-footer {
+    border-top: 1px solid #fff;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #333;
   }
 }
 
