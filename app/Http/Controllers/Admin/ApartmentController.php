@@ -104,7 +104,7 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.apartments.edit');
     }
 
     /**
@@ -143,7 +143,7 @@ class ApartmentController extends Controller
         'city' => 'required',
         'region' => 'required',
         'description' => 'required',
-        'price' => 'required',
+        'price' => 'required|integer',
       ];
     }
 

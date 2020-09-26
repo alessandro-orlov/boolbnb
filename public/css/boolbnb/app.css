@@ -157,6 +157,36 @@ footer a {
   }
 }
 
+.user-apartments table thead {
+  text-align: center;
+}
+
+.user-apartments table tbody {
+  text-align: center;
+}
+
+.user-apartments table tbody th.ms_data {
+  font-size: 0.8em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.user-apartments table tbody td {
+  vertical-align: middle;
+}
+
+.user-apartments table tbody .apartment-foto {
+  width: 15%;
+}
+
+.user-apartments table tbody .apartment-foto img {
+  width: 100%;
+}
+
+.user-apartments table tbody .apartment-title {
+  text-align: left;
+}
+
 .ms_add-host {
   width: 100%;
   position: relative;

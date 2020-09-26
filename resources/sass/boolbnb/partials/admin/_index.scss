@@ -1,0 +1,29 @@
+.user-apartments {
+
+  table {
+    thead {
+      text-align: center;
+    }
+    tbody {
+      text-align: center;
+      th.ms_data {
+        font-size: 0.8em;
+        text-align: center;
+        vertical-align: middle;
+      }
+      td {
+        vertical-align: middle;
+      }
+      .apartment-foto {
+        width: 15%;
+        img {
+          width: 100%;
+        }
+      }
+      .apartment-title {
+        text-align: left;
+      }
+    }
+  }
+
+}

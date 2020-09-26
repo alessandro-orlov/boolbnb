@@ -7,9 +7,10 @@
 @import 'partials/_responsive';
 
 // Partials admin
+@import 'partials/admin/_index';
 @import 'partials/admin/_create';
 @import 'partials/admin/_show';
-@import 'partials/admin/_update';
+@import 'partials/admin/_edit';
 @import 'partials/admin/_responsive';
 
 
