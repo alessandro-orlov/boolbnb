@@ -12,5 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/admin/index.js', 'public/js/boolbnb/admin')
+    .js('resources/js/admin/create.js', 'public/js/boolbnb/admin')
+    .js('resources/js/admin/edit.js', 'public/js/boolbnb/admin')
     .sass('resources/sass/app.scss', 'public/css')
-      .sass('resources/sass/boolbnb/app.scss', 'public/css/boolbnb');
+    .sass('resources/sass/boolbnb/app.scss', 'public/css/boolbnb');

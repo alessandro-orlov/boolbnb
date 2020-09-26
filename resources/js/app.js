@@ -1,4 +1,4 @@
 require('./bootstrap');
 
-// var year = document.querySelector('.current-year');
-// var year = new Date().getFullYear();
+var year = new Date().getFullYear();
+$('#current-year').append(year);

@@ -3,12 +3,12 @@
 @section('content')
   <div class="container py-5">
       <div class="">
-          <p class="office-heading"><span class="greetings">Buongiorno</span> {{$user->name}} {{$user->lastname}}</p>
+          <p class="office-heading"><span id="greetings"></span> {{$user->name}} {{$user->lastname}}</p>
           <h1>Benvenuto nella tua area riservata</h1>
       </div>
 
       <div class="user-apartments">
-          <div class="table-responsive-sm">
+          <div class="table-responsive-sm ms_apartments-table">
               <table class="table table-striped ">
                   <thead class="thead-dark">
                       <tr>
@@ -24,31 +24,61 @@
                   <tbody>
                       @foreach ($user->apartments as $apartment)
                           <tr>
-                            <th scope="row" class="ms_data">{{$apartment->created_at->format('d/m/y H:m')}}</th>
-
+                            {{-- Data --}}
+                            <th scope="row" class="ms_data">
+                              <div class="apartment-icons">
+                                <i class="far fa-calendar-alt"></i>
+                              </div>
+                              {{$apartment->created_at->format('d/m/y H:m')}}
+                            </th>
                             {{-- Apartment FOTO --}}
-                            <td class="apartment-foto">
-
-                              @if (!empty($apartment->main_img))
-                                <div class="bool_img_apt">
-                                  <a href="{{route('apartments.show', $apartment)}}">
-                                    @if (strpos($apartment->main_img,'mpixel'))
-                                      <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
-                                    @else
-                                      <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
-                                    @endif
-                                  </a>
-                                </div>
-                              @endif
+                            <td class="apartment-foto-block">
+                              <div class="img-thumbnail">
+                                    <div class="apartment-foto">
+                                        <a href="{{route('admin.apartments.show', $apartment)}}">
+                                        @if (!empty($apartment->main_img))
+                                            @if (strpos($apartment->main_img,'mpixel'))
+                                                <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
+                                              @else
+                                                <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
+                                            @endif
+                                        @else
+                                            <img src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
+                                        @endif
+                                        </a>
+                                  </div>
+                              </div>
                             </td>
-                            
-                            <td class="apartment-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit</td>
-                            <td>8</td>
-                            <td>4</td>
-                            <td>#</td>
+                            {{-- Title --}}
+                            <td class="apartment-title">
+                              <a href="{{route('admin.apartments.show', $apartment)}}">{{$apartment->title}}</a>
+                            </td>
+                            {{-- Visits --}}
                             <td>
-                              <a href="{{route('admin.apartments.show', $apartment)}}">show</a>
-                              <a href="{{route('admin.apartments.edit', $apartment)}}">modifica</a>
+                              <div class="apartment-icons">
+                                <i class="far fa-eye"></i>
+                              </div>
+                              81
+                            </td>
+                            {{-- Mesages --}}
+                            <td>
+                              <div class="apartment-icons">
+                                <i class="far fa-envelope"></i>
+                              </div>
+                              4
+                            </td>
+                            {{-- Sponsorship --}}
+                            <td>
+                              <div class="apartment-icons">
+                                <i class="far fa-money-bill-alt"></i>
+                              </div>
+                              €€€
+                            </td>
+                            {{-- Controls --}}
+                            <td>
+                              <a class="controls-btn normal" href="#">promuovi</a>
+                              <a class="controls-btn normal" href="{{route('admin.apartments.edit', $apartment)}}">modifica</a>
+                              <a class="controls-btn delete" href="{{route('admin.apartments.edit', $apartment)}}">elimina</a>
                             </td>
                           </tr>
                       @endforeach
@@ -57,4 +87,5 @@
           </div> <!-- end table-responsive -->
       </div> <!-- end user-apartment -->
   </div> <!-- end container-->
+  <script src="{{asset('js/boolbnb/admin/index.js')}}"></script>
 @endsection

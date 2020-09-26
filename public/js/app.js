@@ -37264,8 +37264,10 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // var year = document.querySelector('.current-year');
-// var year = new Date().getFullYear();
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var year = new Date().getFullYear();
+$('#current-year').append(year);
 
 /***/ }),
 
