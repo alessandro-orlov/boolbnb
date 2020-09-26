@@ -162,6 +162,10 @@ footer a {
   border: 1px solid #dddde4;
 }
 
+.user-apartments table {
+  border-collapse: collapse;
+}
+
 .user-apartments table thead {
   text-align: center;
 }
@@ -172,6 +176,11 @@ footer a {
 
 .user-apartments table tbody tr {
   padding: 50px 0;
+  border-spacing: 10px;
+}
+
+.user-apartments table tbody tr:last-child {
+  border-bottom: 1px solid #dddde4;
 }
 
 .user-apartments table tbody th.ms_data {
@@ -182,6 +191,7 @@ footer a {
 
 .user-apartments table tbody td {
   vertical-align: middle;
+  border-right: 1px solid #dddde4;
 }
 
 .user-apartments table tbody td a.controls-btn {
@@ -207,6 +217,10 @@ footer a {
   background-color: #e3342f;
   color: #fff;
   text-decoration: none;
+}
+
+.user-apartments table tbody td:last-child {
+  border-right: none;
 }
 
 .user-apartments table tbody .apartment-foto-block {
