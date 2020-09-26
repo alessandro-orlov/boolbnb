@@ -15,11 +15,6 @@ li {
   list-style-type: none;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
 .btn-boolbnb {
   background: linear-gradient(90deg, #b60e54 0%, #f10031 50%, #b60e54 100%);
   color: #fff;
@@ -116,6 +111,11 @@ footer .bottom-footer [class*=col-] i {
   margin-right: 10px;
 }
 
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
 @media all and (max-width: 767px) {
   footer .bottom-footer .languages {
     margin: 20px 0;
@@ -172,6 +172,14 @@ footer .bottom-footer [class*=col-] i {
 
 .ms_add-host .btn-boolbnb:hover {
   opacity: 0.8;
+}
+
+.img-container {
+  width: 100%;
+}
+
+.img-container img {
+  width: 100%;
 }
 
 @media all and (min-width: 768px) {

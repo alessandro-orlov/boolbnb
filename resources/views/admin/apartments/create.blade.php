@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
-
+  <div class="container py-5">
       <div class="ms_add-host">
           <img class="ms_bg-img" src="{{asset('img/admin-office/add-host.jpg')}}" alt="">
 

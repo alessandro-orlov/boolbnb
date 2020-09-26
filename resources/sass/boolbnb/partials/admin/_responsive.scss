@@ -1,4 +1,9 @@
 @media all and (min-width: 768px) {
+  // =============== //
+  // ADMIN SHOW PAGE //
+
+  // ================= //
+  // ADMIN CREATE PAGE //
   .ms_add-host {
     margin-bottom: 500px;
       .form-container  {
@@ -7,16 +12,24 @@
         right: 5%;
       }
   }
+
+  // ================= //
+  // ADMIN UPDATE PAGE //
 }
 
 @media all and (min-width: 992px) {
-    .ms_add-host {
-      margin-bottom: 430px;
-    }
+  // ================= //
+  // ADMIN CREATE PAGE //
+  .ms_add-host {
+    margin-bottom: 430px;
+  }
 }
 
 @media all and (min-width: 1200px) {
-    .ms_add-host {
-      margin-bottom: 350px;
-    }
+
+  // ================= //
+  // ADMIN CREATE PAGE //
+  .ms_add-host {
+    margin-bottom: 350px;
+  }
 }
