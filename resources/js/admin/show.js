@@ -5,7 +5,6 @@ $(document).ready(function() {
 var showLat = $('.show-latitude').text();
 var showLong = $('.show-longitude').text();
 
-console.log(pointOnMap());
 
 // ========================================================= //
 // ===================== MAPPA ============================= //
@@ -38,10 +37,6 @@ console.log(pointOnMap());
   placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
   placesAutocomplete.on('change', handleOnChange);
   placesAutocomplete.on('clear', handleOnClear);
-
-  function pointOnMap() {
-    map.setView(new L.LatLng(0, 0), 1);
-  }
 
 
   function handleOnSuggestions(e) {
