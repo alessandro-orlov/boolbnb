@@ -2,14 +2,14 @@
 
 @section('content')
   <div class="container py-5">
-    <h1>Aggiorna la tua proprietà</h1>
+    <h1 class="boolbnb-primary-color edit-apartment-heading">Aggiorna l'apparatamento</h1>
+    <h2 class="edit-apartment-title">{{$apartment->title}}</h2>
     <div class="apartment-edit-container">
       <div class="row">
-          <div class="col-md-5 col-sm-12">
-              <ul>
-                <li>
-                  <div class="apartment-foto">
-                      <a href="{{route('admin.apartments.show', $apartment)}}">
+          <div class="col-md-5">
+              <div class="edit-this-apartment">
+                  {{-- Foto --}}
+                  <div class="edit-apartment-foto">
                       @if (!empty($apartment->main_img))
                           @if (strpos($apartment->main_img,'mpixel'))
                               <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
@@ -19,11 +19,25 @@
                       @else
                           <img src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
                       @endif
-                      </a>
                   </div>
-                <li>{{$apartment->title}}</li>
-              </ul>
+                  {{-- Info --}}
+                  <div class="edit-apartment-info">
+                      <div class="edit-apartment-row">
+                          <div class="edit-column left">Città</div>
+                          <div class="edit-column right">{{$apartment->city}}</div>
+                      </div>
+                      <div class="edit-apartment-row">
+                          <div class="edit-column left">Provincia</div>
+                          <div class="edit-column right">{{$apartment->region}}</div>
+                      </div>
+                      <div class="edit-apartment-row">
+                          <div class="edit-column left">Prezo a notte</div>
+                          <div class="edit-column right"> <span class="boolbnb-primary-color">{{$apartment->price}} €</span> </div>
+                      </div>
+                  </div>
+              </div>
           </div>
+
           {{-- Form container --}}
           <div class="col-md-7 col-sm-12 form-container">
             {{-- Errors - Validation Server side --}}
@@ -39,27 +53,27 @@
                 @endif
             </div>
             {{-- FORM --}}
-            <form class="needs-validation" novalidate action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
+            <form class="needs-validation" novalidate action="{{ route('admin.apartments.update', $apartment) }}" method="post" enctype="multipart/form-data">
             @csrf
-            @method('POST')
+            @method('PUT')
                 {{-- Title --}}
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="title">Titolo</label>
-                        <input type="title" class="form-control" name="title" value="{{ old('title') }}" placeholder="Inserisci il titolo" required>
+                        <input type="title" class="form-control" name="title" value="{{ old('title') ? old('title') : $apartment->title }}" placeholder="Inserisci il titolo" required>
                         <small id="emailHelp" class="form-text text-muted">Scrivi il titolo per il tuo alloggio</small>
                     </div>
                 </div>
 
-                {{-- MQ & Stanze --}}
+                {{-- Superfice & Stanze --}}
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCity">Metri quadri</label>
-                        <input type="number" name="mq" value="{{ old('mq') }}" class="form-control" required>
+                        <label for="inputCity">Superfice m<sup>2</sup></label>
+                        <input type="number" name="mq" value="{{ old('mq') ? old('mq') : $apartment->mq }}" class="form-control" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputCity">Stanze</label>
-                        <input type="number" name="num_rooms" value="{{ old('num_rooms') }}" class="form-control" required>
+                        <input type="number" name="num_rooms" value="{{ old('num_rooms') ? old('num_rooms') : $apartment->num_rooms }}" class="form-control" required>
                     </div>
                 </div>
 
@@ -67,11 +81,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">Letti</label>
-                        <input type="number" name="num_beds" value="{{ old('num_beds') }}" class="form-control" required>
+                        <input type="number" name="num_beds" value="{{ old('num_beds') ? old('num_beds') : $apartment->num_beds }}" class="form-control" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputCity">Bagni</label>
-                        <input type="number" name="num_baths" value="{{ old('num_baths') }}" class="form-control" required>
+                        <input type="number" name="num_baths" value="{{ old('num_baths') ? old('num_baths') : $apartment->num_baths }}" class="form-control" required>
                     </div>
                 </div>
 
@@ -79,15 +93,16 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label>Servizi</label>
-
-                          <div class="row">
+                        <div class="row">
 
                             <?php $i = 0; ?>
                             @foreach ($services as $service)
                                 <?php $count = $i+=1?>
                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="services[]" value="{{$service->id}}" class="custom-control-input"  id="<?php echo 'customCheck'. $count ?>">
+
+                                        <input type="checkbox" name="services[]" {{ $apartment->services->contains($service) ? 'checked' : '' }} value="{{$service->id}}" class="custom-control-input"  id="<?php echo 'customCheck'. $count ?>">
+
                                         <label class="custom-control-label"  for="<?php echo 'customCheck'. $count ?>">{{$service->name}} <span class="service-icon">{!! $service->icon !!}</span></label>
                                     </div>
                                 </div>
@@ -101,7 +116,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label>Descrizione</label>
-                        <textarea class="form-control" name="description" rows="7" required>{{ old('description') }}</textarea>
+                        <textarea class="form-control" name="description" rows="7" required>{{ old('description') ? old('description') : $apartment->description }}</textarea>
                     </div>
                 </div>
 
@@ -109,7 +124,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="title">Indirizzo</label>
-                        <input class="form-control" name="address" type="search" id="address-input" placeholder="Inserisci l'indirizzo" required/>
+                        <input class="form-control" name="address" type="search" id="address-input" placeholder="Inserisci l'indirizzo dell'appartamento" required/>
                         <input hidden id="latitude" type="text" name="latitude" value="">
                         <input hidden id="longitude" type="text" name="longitude" value="">
                         <input hidden id="city" type="text" name="city" value="">
@@ -127,7 +142,7 @@
                       container: document.querySelector('#address-input')
                     });
                     var $address = document.querySelector('#address-value')
-                      placesAutocomplete.on('change', function(e) {
+                       placesAutocomplete.on('change', function(e) {
                         document.querySelector("#latitude").value = e.suggestion.latlng.lat || "";
                         document.querySelector("#longitude").value = e.suggestion.latlng.lng || "";
                         document.querySelector("#city").value = e.suggestion.city || "";
@@ -140,6 +155,20 @@
 
                 {{-- Prezzo a notte --}}
                 <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="title">Prezzo a notte</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">€</span>
+                            </div>
+                                <input type="text" name="price" value="{{ old('price') ? old('price') : $apartment->price }}" class="form-control" aria-label="Amount (to the nearest dollar)" >
+                        </div>
+                          <div class="edit-price-error">Puoi inserire solo numeri interi!</div>
+                    </div>
+                </div>
+
+                {{-- Prezzo a notte --}}
+                {{-- <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="title">Prezzo a notte</label>
                         <div class="input-group mb-3">
@@ -152,7 +181,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 {{-- Image upload --}}
                 <div class="form-group">
@@ -194,6 +223,6 @@
       </div> <!-- row-->
     </div> <!-- apartment-edit -->
   </div> <!-- main conatiner-->
-
+  <script src="{{asset('js/boolbnb/admin/edit.js')}}"></script>
 
 @endsection

@@ -31,6 +31,15 @@
     .btn-boolbnb:hover {
       opacity: 0.8;
     }
-
+    .edit-price-error {
+      display: none;
+      background-color: #f00032;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      &.visible {
+        display: block;
+      }
+    }
 
 }
