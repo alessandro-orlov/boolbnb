@@ -41,7 +41,6 @@ footer  {
 
   li {
     line-height: 40px;
-    margin: 10px 0;
 
       &:first-child {
         font-weight: bolder;
@@ -57,9 +56,13 @@ footer  {
      [class*="col-"] {
       float: left;
 
-      i {
-        font-size: 1.4em;
-        margin-right: 10px;
+      .social {
+        display: flex;
+        justify-content: space-around;
+
+        i {
+          font-size: 1.4em;
+        }
       }
     }
   }

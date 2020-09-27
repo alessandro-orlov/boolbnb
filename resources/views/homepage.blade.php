@@ -19,7 +19,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="{{asset('img/american_house.jpg')}}" alt="">
+              <img src="{{asset('img/malta_villa.jpg')}}" alt="">
             </div>
             <div class="text">
               <h4>Spazi unici</h4>
@@ -31,7 +31,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="../public/img/baita.jpg" alt="">
+              <img src="{{asset('img/casa_giardino.jpg')}}" alt="">
             </div>
             <div class="text">
               <h4>Esperienze online</h4>
@@ -43,7 +43,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="../public/img/american_house.jpg" alt="">
+              <img src="{{asset('img/tuscany_house.jpg')}}" alt="">
             </div>
             <div class="text">
               <h4>Case intere</h4>
@@ -55,11 +55,11 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              {{-- <img src="../public/img/american_house.jpg" alt=""> --}}
+              <img src="{{asset('img/wood_house.jpg')}}" alt="">
             </div>
             <div class="text">
-              <h4></h4>
-              <p></p>
+              <h4>Into the wild</h4>
+              <p>Dai libero sfogo alla tua voglia di esplorare e rilassati nel confort di una maison su misura per te</p>
             </div>
           </div>
         </div>
@@ -67,11 +67,11 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              {{-- <img src="../public/img/american_house.jpg" alt=""> --}}
+              <img src="{{asset('img/american_house.jpg')}}" alt="">
             </div>
             <div class="text">
-              <h4></h4>
-              <p></p>
+              <h4>Vacanze da sogno</h4>
+              <p>Prenota le tue vacanze e parti per una nuova avventura</p>
             </div>
           </div>
         </div>
@@ -79,11 +79,11 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              {{-- <img src="../public/img/american_house.jpg" alt=""> --}}
+              <img src="{{asset('img/baita.jpg')}}" alt="">
             </div>
             <div class="text">
-              <h4></h4>
-              <p></p>
+              <h4>Relax e armonia</h4>
+              <p>Regalati una piccola fuga di benessere per staccare dalla routine quotidiana</p>
             </div>
           </div>
         </div>

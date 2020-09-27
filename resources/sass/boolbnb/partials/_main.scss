@@ -25,7 +25,6 @@ main {
 
   .card-section {
     display: flex;
-    margin-top: -32px;
     padding-bottom: 60px;
 
     .box {
@@ -33,16 +32,21 @@ main {
       flex-basis: 25%;
       margin-top: 60px;
       border-radius: $border-radius;
+      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
 
       .image {
-        background-color: lightblue;
-        height: 70%;
+        height: 60%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
 
       .text {
-        background-color: pink;
-        height: 30%;
+        height: 40%;
         padding: 10px;
+        background-color: #F4F4F4;
       }
     }
   }
