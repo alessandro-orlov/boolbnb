@@ -212,7 +212,7 @@ footer .bottom-footer [class*=col-] .social i {
   border-right: 1px solid #dddde4;
 }
 
-.user-apartments table tbody td a.controls-btn {
+.user-apartments table tbody td .controls-btn {
   font-size: 0.8em;
   display: block;
   padding: 0 5px;
@@ -223,14 +223,18 @@ footer .bottom-footer [class*=col-] .social i {
   transition: all 0.3s ease-in-out;
 }
 
-.user-apartments table tbody td a.controls-btn.normal:hover {
+.user-apartments table tbody td .controls-btn.normal:hover {
   border: 1px solid #70e296;
   background-color: #70e296;
   color: #fff;
   text-decoration: none;
 }
 
-.user-apartments table tbody td a.controls-btn.delete:hover {
+.user-apartments table tbody td form.form-delete .delete {
+  width: 100%;
+}
+
+.user-apartments table tbody td form.form-delete .delete:hover {
   border: 1px solid #e3342f;
   background-color: #e3342f;
   color: #fff;

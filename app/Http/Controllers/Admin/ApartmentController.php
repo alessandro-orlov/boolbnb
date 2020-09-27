@@ -179,12 +179,14 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
+      // DETACH
       $apartment->services()->detach();
       // $apartment->sponsorships()->detach();
 
       // Elimino la foto dallo storage
       Storage::delete('public/'. $apartment->main_img);
 
+      // Delete Apartment
       $apartment->delete();
 
       $user = Auth::user();
