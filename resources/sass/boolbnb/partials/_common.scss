@@ -30,7 +30,10 @@ a {
       opacity: 1;
       transition: opacity 0.1s linear;
     }
-
 .btn-boolbnb:hover {
-      opacity: 0.8;
+      opacity: 0.9;
+      color: #fff;
     }
+.boolbnb-primary-color {
+  color: rgba(241,0,49,1);
+}

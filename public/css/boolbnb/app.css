@@ -15,6 +15,15 @@ li {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: grey;
+}
+
 .btn-boolbnb {
   background: linear-gradient(90deg, #b60e54 0%, #f10031 50%, #b60e54 100%);
   color: #fff;
@@ -23,13 +32,17 @@ li {
 }
 
 .btn-boolbnb:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  color: #fff;
+}
+
+.boolbnb-primary-color {
+  color: #f10031;
 }
 
 main {
   width: 100%;
   background: linear-gradient(0deg, #fff, #f5f5fa);
-  border-bottom: 1px solid #dddde4;
 }
 
 main .jumbotron {
@@ -55,7 +68,6 @@ main .jumbotron button {
 
 main .card-section {
   display: flex;
-  margin-top: -32px;
   padding-bottom: 60px;
 }
 
@@ -64,17 +76,22 @@ main .card-section .box {
   flex-basis: 25%;
   margin-top: 60px;
   border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 main .card-section .box .image {
-  background-color: lightblue;
-  height: 70%;
+  height: 60%;
+}
+
+main .card-section .box .image img {
+  width: 100%;
+  height: 100%;
 }
 
 main .card-section .box .text {
-  background-color: pink;
-  height: 30%;
+  height: 40%;
   padding: 10px;
+  background-color: #F4F4F4;
 }
 
 footer {
@@ -90,7 +107,6 @@ footer .upper-footer {
 
 footer .upper-footer li {
   line-height: 40px;
-  margin: 10px 0;
 }
 
 footer .upper-footer li:first-child {
@@ -107,31 +123,29 @@ footer .bottom-footer [class*=col-] {
   float: left;
 }
 
-footer .bottom-footer [class*=col-] i {
-  font-size: 1.4em;
-  margin-right: 10px;
+footer .bottom-footer [class*=col-] .social {
+  display: flex;
+  justify-content: space-around;
 }
 
-footer a {
-  text-decoration: none;
-  color: white;
+footer .bottom-footer [class*=col-] .social i {
+  font-size: 1.4em;
 }
 
 @media all and (max-width: 767px) {
   footer .bottom-footer .languages {
-    margin: 20px 0;
-    text-align: left;
+    margin: 30px 0;
   }
 
-  footer .bottom-footer .languages span {
-    margin-right: 10px;
+  footer .bottom-footer {
+    text-align: center;
   }
 
   footer .bottom-footer .social {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
-  footer ul {
+  footer .upper-footer ul {
     border-top: 1px solid white;
   }
 }
@@ -198,7 +212,7 @@ footer a {
   border-right: 1px solid #dddde4;
 }
 
-.user-apartments table tbody td a.controls-btn {
+.user-apartments table tbody td .controls-btn {
   font-size: 0.8em;
   display: block;
   padding: 0 5px;
@@ -209,14 +223,18 @@ footer a {
   transition: all 0.3s ease-in-out;
 }
 
-.user-apartments table tbody td a.controls-btn.normal:hover {
+.user-apartments table tbody td .controls-btn.normal:hover {
   border: 1px solid #70e296;
   background-color: #70e296;
   color: #fff;
   text-decoration: none;
 }
 
-.user-apartments table tbody td a.controls-btn.delete:hover {
+.user-apartments table tbody td form.form-delete .delete {
+  width: 100%;
+}
+
+.user-apartments table tbody td form.form-delete .delete:hover {
   border: 1px solid #e3342f;
   background-color: #e3342f;
   color: #fff;
@@ -292,12 +310,33 @@ footer a {
   opacity: 0.8;
 }
 
+.ms_add-host .edit-price-error {
+  display: none;
+  background-color: #f00032;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.ms_add-host .edit-price-error.visible {
+  display: block;
+}
+
 .img-container {
   width: 100%;
 }
 
 .img-container img {
   width: 100%;
+}
+
+.edit-apartment-heading {
+  font-size: 1.8em;
+}
+
+.edit-apartment-title {
+  padding: 20px 0 30px;
+  letter-spacing: 1px;
 }
 
 .apartment-edit-container {
@@ -307,12 +346,54 @@ footer a {
   border-radius: 15px;
 }
 
-.apartment-edit-container .apartment-foto {
+.apartment-edit-container .edit-this-apartment {
+  padding-right: 20px;
+  border-right: 1px solid #dddde4;
+  height: 100%;
+  display: none;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-foto {
   width: 100%;
 }
 
-.apartment-edit-container .apartment-foto img {
+.apartment-edit-container .edit-this-apartment .edit-apartment-foto img {
   width: 100%;
+  border-top-left-radius: 15px;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-info .edit-apartment-row {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #eeeef9;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-info .edit-apartment-row .edit-column {
+  padding: 10px 0;
+  flex-basis: 50%;
+  font-size: 0.9em;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-info .edit-apartment-row .left {
+  text-align: left;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-info .edit-apartment-row .right {
+  text-align: right;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.apartment-edit-container .edit-price-error {
+  display: none;
+  background-color: #f00032;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.apartment-edit-container .edit-price-error.visible {
+  display: block;
 }
 
 @media all and (min-width: 768px) {
@@ -324,6 +405,10 @@ footer a {
     position: absolute;
     top: 25%;
     right: 5%;
+  }
+
+  .apartment-edit-container .edit-this-apartment {
+    display: block;
   }
 }
 

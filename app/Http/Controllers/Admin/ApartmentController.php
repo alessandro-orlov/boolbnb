@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 use App\Apartment;
 use App\Image;
@@ -122,9 +124,51 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+      $request->validate($this->validationData());
+      $data = $request->all();
+
+      // dd($data);
+
+      $apartment->title = $data['title'];
+      $apartment->num_rooms = $data['num_rooms'];
+      $apartment->num_beds = $data['num_beds'];
+      $apartment->num_baths = $data['num_baths'];
+      $apartment->mq = $data['mq'];
+      $apartment->address = $data['address'];
+      $apartment->latitude = $data['latitude'];
+      $apartment->longitude = $data['longitude'];
+      $apartment->city = $data['city'];
+      $apartment->region = $data['region'];
+      $apartment->description = $data['description'];
+      $apartment->price = $data['price'];
+
+      // New image upload
+      if (isset($data['main_img'])) {
+        // Elimino l'immagine vecchia
+        Storage::delete('public/'. $apartment->main_img);
+
+        $path = $request->file('main_img')->store('img', 'public');
+        $apartment->main_img = $path;
+
+      } else {
+        $apartment->main_img = '';
+      }
+
+      // Chekboxes update
+        if (isset($data['services'])) {
+          $apartment->services()->sync($data['services']);
+        } else {
+          $apartment->services()->detach();
+        }
+
+      $apartment->update();
+
+      $apartment->save();
+
+      return redirect()->route('admin.apartments.show', $apartment);
+
     }
 
     /**
@@ -133,9 +177,21 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Apartment $apartment)
     {
-        //
+      // DETACH
+      $apartment->services()->detach();
+      // $apartment->sponsorships()->detach();
+
+      // Elimino la foto dallo storage
+      Storage::delete('public/'. $apartment->main_img);
+
+      // Delete Apartment
+      $apartment->delete();
+
+      $user = Auth::user();
+
+      return redirect()->route('admin.apartments.index', compact('user'));
     }
 
     public function validationData() {

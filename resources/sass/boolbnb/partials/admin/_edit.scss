@@ -1,12 +1,64 @@
+.edit-apartment-heading {
+  font-size: 1.8em;
+}
+.edit-apartment-title {
+  // font-size: 1.6em;
+  padding: 20px 0 30px;
+  letter-spacing: 1px;
+}
+
+
+// WHOLE CONTAINER
 .apartment-edit-container {
   background-color: #fff;
   box-shadow: 0px 0px 15px 1px #0000002b;
   padding: 20px 20px 50px;
   border-radius: 15px;
-  .apartment-foto {
-    width: 100%;
-    img {
+
+  // Left side
+  .edit-this-apartment {
+    padding-right: 20px;
+    border-right: 1px solid #dddde4;
+    height: 100%;
+    display: none;
+    .edit-apartment-foto {
       width: 100%;
+      img {
+        width: 100%;
+        border-top-left-radius: 15px;
+      }
+    }
+    .edit-apartment-info {
+      .edit-apartment-row {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #eeeef9;
+        .edit-column {
+          padding: 10px 0;
+          flex-basis: 50%;
+          font-size: .9em;
+        }
+        .left {
+          text-align: left;
+        }
+        .right {
+          text-align: right;
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
+      }
     }
   }
-}
+
+  // Right side
+  .edit-price-error {
+    display: none;
+    background-color: #f00032;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    &.visible {
+      display: block;
+    }
+  }
+} // End apartment-edit-container
