@@ -17,11 +17,13 @@ li {
 
 a {
   text-decoration: none;
-  color: white;
+  color: #f10031;
+  transition: 0.2s;
 }
 
 a:hover {
-  color: grey;
+  color: #b60e54;
+  text-decoration: none;
 }
 
 .btn-boolbnb {
@@ -151,6 +153,10 @@ footer .bottom-footer [class*=col-] .social i {
 }
 
 @media all and (min-width: 768px) {
+  main {
+    border-bottom: 1px solid #dddde4;
+  }
+
   footer {
     background-color: #f5f5fa;
     color: #333;
@@ -332,7 +338,11 @@ footer .bottom-footer [class*=col-] .social i {
 
 #map-example-container {
   width: 100%;
-  height: 400px;
+  height: 450px;
+}
+
+.marker-on-map {
+  display: none;
 }
 
 .edit-apartment-heading {

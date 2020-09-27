@@ -17,10 +17,12 @@ li {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgba(241,0,49,1);
+  transition: .2s;
 
   &:hover {
-    color: grey;
+    color: rgba(182,14,84,1);
+    text-decoration: none;
   }
 }
 
