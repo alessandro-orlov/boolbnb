@@ -330,6 +330,11 @@ footer .bottom-footer [class*=col-] .social i {
   width: 100%;
 }
 
+#map-example-container {
+  width: 100%;
+  height: 400px;
+}
+
 .edit-apartment-heading {
   font-size: 1.8em;
 }
