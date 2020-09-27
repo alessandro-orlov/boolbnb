@@ -10981,8 +10981,7 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 
 $(document).ready(function () {
   var showLat = $('.show-latitude').text();
-  var showLong = $('.show-longitude').text();
-  console.log(pointOnMap()); // ========================================================= //
+  var showLong = $('.show-longitude').text(); // ========================================================= //
   // ===================== MAPPA ============================= //
 
   (function () {
@@ -11007,10 +11006,6 @@ $(document).ready(function () {
     placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
     placesAutocomplete.on('change', handleOnChange);
     placesAutocomplete.on('clear', handleOnClear);
-
-    function pointOnMap() {
-      map.setView(new L.LatLng(0, 0), 1);
-    }
 
     function handleOnSuggestions(e) {
       markers.forEach(removeMarker);
