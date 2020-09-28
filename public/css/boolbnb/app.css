@@ -440,14 +440,37 @@ footer .bottom-footer [class*=col-] .social i {
 }
 
 .bool_ap_results .bool_form {
-  padding: 20px 20px 0;
+  padding-top: 20px;
+}
+
+.bool_ap_results .bool_form .bool_input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.bool_ap_results .bool_form .bool_input:focus,
+.bool_ap_results .bool_form .btn-boolbnb:focus {
+  border-color: #f10031;
+  box-shadow: none;
 }
 
 .bool_ap_results .bool_filter {
-  text-decoration: underline;
   color: #000;
+  border: 1px solid #B0B0B0;
   cursor: pointer;
-  padding: 0 20px;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
+
+.bool_ap_results .bool_filter:hover,
+.bool_ap_results .bool_filter:focus {
+  border: 1px solid #222222;
+}
+
+.bool_ap_results .bool_icon {
+  color: #f10031;
 }
 
 .bool_ap_results .bool_dropdown {
@@ -461,39 +484,78 @@ footer .bottom-footer [class*=col-] .social i {
 }
 
 .bool_ap_results ul .bool_ap {
-  padding: 20px;
+  padding: 20px 0 0 0px;
   border-top: 1px solid #ebebeb;
-}
-
-.bool_ap_results ul .bool_ap .bool_infos {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 
-.bool_ap_results ul .bool_ap .bool_infos .bool_img_apt a img {
-  height: 200px;
+.bool_ap_results ul .bool_ap .bool_img_apt {
+  width: 45%;
+  padding-bottom: 20px;
+}
+
+@media all and (max-width: 768px) {
+  .bool_ap_results ul .bool_ap .bool_img_apt {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  .bool_ap_results ul .bool_ap .bool_img_apt {
+    width: 45%;
+  }
+}
+
+.bool_ap_results ul .bool_ap .bool_img_apt a img {
+  width: 100%;
   border-radius: 10px;
 }
 
-.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt {
-  padding: 0 20px;
+.bool_ap_results ul .bool_ap .bool_info_apt {
+  width: 55%;
+  padding-left: 20px;
 }
 
-.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt a {
+@media all and (max-width: 768px) {
+  .bool_ap_results ul .bool_ap .bool_info_apt {
+    width: 100%;
+    padding: 0 20px 0 0;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  .bool_ap_results ul .bool_ap .bool_info_apt {
+    width: 55%;
+    padding-right: 20px;
+  }
+}
+
+.bool_ap_results ul .bool_ap .bool_info_apt a {
   text-decoration: none;
   color: #000;
 }
 
-.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt a h4 {
-  padding-bottom: 10px;
+.bool_ap_results ul .bool_ap .bool_info_apt a h4 {
+  margin: 10px 0;
 }
 
-.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt a p {
-  line-height: 10px;
+.bool_ap_results ul .bool_ap .bool_info_apt a hr {
+  width: 50px;
 }
 
-.bool_ap_results ul .bool_ap .bool_infos .bool_info_apt a .bool_price {
+.bool_ap_results ul .bool_ap .bool_info_apt a .bool_info_text {
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 15px;
+  color: #7e7571;
+}
+
+.bool_ap_results ul .bool_ap .bool_info_apt a .bool_price {
+  text-align: right;
   font-size: 18px;
-  padding-top: 10px;
+  margin-top: 20px;
   font-weight: 600;
 }
 
@@ -508,7 +570,13 @@ footer .bottom-footer [class*=col-] .social i {
 
 .bool_map_col {
   position: relative;
-  padding: 0;
+  padding-right: 0;
+}
+
+@media all and (max-width: 1200px) {
+  .bool_map_col {
+    display: none;
+  }
 }
 
 .bool_map_col .bool_map_container {

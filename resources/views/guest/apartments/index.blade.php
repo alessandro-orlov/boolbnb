@@ -6,14 +6,14 @@
 
 {{-- inizio colonna sinistra con appartamenti e ricerca --}}
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-xl-6">
 
       {{-- inizio ricerca --}}
       <form class="input-group mb-3 bool_form">
         <label class="sr-only" for="">Ricerca un appartamento</label>
-        <input type="text" class="form-control" placeholder="Dove vuoi andare?" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input type="text" class="form-control bool_input" placeholder="Dove vuoi andare?" aria-label="Recipient's username" aria-describedby="button-addon2">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Cerca</button>
+          <button class="btn btn-boolbnb" type="button" id="button-addon2">Cerca</button>
         </div>
       </form>
       {{-- fine ricerca --}}
@@ -30,7 +30,7 @@
         <?php $count = $i+=1?>
         <div class="custom-control custom-checkbox">
           <input type="checkbox" name="services[]" value="{{$service->id}}" class="custom-control-input"  id="<?php echo 'customCheck'. $count ?>">
-          <label class="custom-control-label"  for="<?php echo 'customCheck'. $count ?>">{{$service->name}} <span class="service-icon">{!! $service->icon !!}</span></label>
+          <label class="custom-control-label"  for="<?php echo 'customCheck'. $count ?>"><span class="bool_icon">{!! $service->icon !!}</span> {{$service->name}} </label>
         </div>
         @endforeach
       </div>
@@ -41,7 +41,6 @@
         <ul>
           @foreach ($apartments as $apartment)
             <li class="bool_ap">
-              <div class="bool_infos">
 
                 {{-- Immagine --}}
                 @if (!empty($apartment->main_img))
@@ -56,17 +55,24 @@
                   </div>
                 @endif
 
+                {{-- Informazioni --}}
                 <div class="bool_info_apt">
                   <a href="{{route('apartments.show', $apartment)}}">
+                    <p class="bool_info_text">Intero appartamento a {{$apartment->city}}, {{$apartment->region}}</p>
                     <h4>{{$apartment->title}}</h4>
-                    <p><b>Città:</b> {{$apartment->city}}, {{$apartment->region}}</p>
-                    <p><b>Stanze:</b> {{$apartment->num_rooms}}</p>
-                    <p><b>Letti:</b> {{$apartment->num_beds}}</p>
-                    <p class="bool_price">Prezzo: {{$apartment->price}} € <small>/a notte</small> </p>
+                    <hr>
+                    <p class="bool_info_text">{{$apartment->num_beds}} ospiti - {{$apartment->num_rooms}} camera da letto - {{$apartment->num_baths}} bagno</p>
+
+                    @if (!$apartment->services->isEmpty())
+                      @foreach ($apartment->services as $service)
+                        <span class="bool_info_text">&#8901; {{$service->name}}</span>
+                      @endforeach
+                    @endif
+
+                    <p class="bool_price">Prezzo: {{$apartment->price}} € <small>/ a notte</small> </p>
                   </a>
                 </div>
 
-              </div>
             </li>
 
           @endforeach
@@ -80,7 +86,7 @@
     {{-- fine colonna sinistra con appartamenti e ricerca --}}
 
     {{-- inizio colonna destra con mappa --}}
-    <aside class="col-lg-7 bool_map_col">
+    <aside class="col-xl-6 bool_map_col">
 
       <div class="bool_map_container">
         <img src="{{asset('img/guest/mappa_ricerca.png')}}" alt="Mappa">
