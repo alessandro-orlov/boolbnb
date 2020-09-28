@@ -37,6 +37,14 @@
 
     .bottom-footer {
       border-top: 1px solid #fff;
+      .social {
+        display: flex;
+        justify-content: space-around;
+
+        i {
+          font-size: 1.4em;
+        }
+      }
     }
     a {
       text-decoration: none;

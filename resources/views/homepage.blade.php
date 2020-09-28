@@ -7,6 +7,9 @@
       <div class="container">
         <h1>Riscopri l'Italia</h1>
         <h2>Cambia quadro. Scopri alloggi nelle vicinanze tutti da vivere, per lavoro o svago.</h2>
+        <div class="search-bar">
+
+        </div>
       </div>
     </div>
   </div>

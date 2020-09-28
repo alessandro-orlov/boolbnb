@@ -125,34 +125,38 @@ footer a {
   color: white;
 }
 
-footer a .upper-footer {
+footer a:hover {
+  color: #f10031;
+}
+
+footer .upper-footer {
   border-bottom: 1.5px solid lightgrey;
 }
 
-footer a .upper-footer li {
+footer .upper-footer li {
   line-height: 40px;
 }
 
-footer a .upper-footer li:first-child {
+footer .upper-footer li:first-child {
   font-weight: bolder;
   font-size: 0.9em;
 }
 
-footer a .bottom-footer {
+footer .bottom-footer {
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
-footer a .bottom-footer [class*=col-] {
+footer .bottom-footer [class*=col-] {
   float: left;
 }
 
-footer a .bottom-footer [class*=col-] .social {
+footer .bottom-footer [class*=col-] .social {
   display: flex;
   justify-content: space-around;
 }
 
-footer a .bottom-footer [class*=col-] .social i {
+footer .bottom-footer [class*=col-] .social i {
   font-size: 1.4em;
 }
 
@@ -196,6 +200,15 @@ footer a .bottom-footer [class*=col-] .social i {
 
   footer .bottom-footer {
     border-top: 1px solid #fff;
+  }
+
+  footer .bottom-footer .social {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  footer .bottom-footer .social i {
+    font-size: 1.4em;
   }
 
   footer a {
