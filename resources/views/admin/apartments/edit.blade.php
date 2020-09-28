@@ -124,12 +124,12 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="title">Indirizzo</label>
-                        <input class="form-control" name="address" type="search" id="address-input" placeholder="Inserisci l'indirizzo dell'appartamento" required/>
+                        <input class="form-control" name="address" type="search" id="address-input" placeholder="Inserisci il nuovo l'indirizzo" required/>
                         <input hidden id="latitude" type="text" name="latitude" value="">
                         <input hidden id="longitude" type="text" name="longitude" value="">
                         <input hidden id="city" type="text" name="city" value="">
                         <input hidden id="region" type="text" name="region" value="">
-                        <small class="form-text text-muted">Digita il tuo indirizzo</small>
+                        <small class="form-text text-muted">{{$apartment->address}}</small>
                     </div>
                 </div>
 

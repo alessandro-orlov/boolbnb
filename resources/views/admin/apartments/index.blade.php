@@ -22,7 +22,8 @@
                       </tr>
                   </thead>
                   <tbody>
-                      @foreach ($user->apartments as $apartment)
+                      @foreach ($apartments as $apartment)
+                        @if ($userId == $apartment->user_id)
                           <tr>
                             {{-- Data --}}
                             <th scope="row" class="ms_data">
@@ -87,6 +88,7 @@
 
                             </td>
                           </tr>
+                        @endif
                       @endforeach
                   </tbody>
               </table>

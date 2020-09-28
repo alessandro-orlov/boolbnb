@@ -36,7 +36,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="title">Titolo</label>
-                        <input type="title" class="form-control" name="title" value="{{ old('title') }}" placeholder="Inserisci il titolo" required>
+                        <input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Inserisci il titolo" required>
                         <small id="emailHelp" class="form-text text-muted">Scrivi il titolo per il tuo alloggio</small>
                     </div>
                 </div>

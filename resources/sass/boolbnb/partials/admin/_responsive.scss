@@ -1,7 +1,24 @@
 @media all and (min-width: 768px) {
   // =============== //
   // ADMIN SHOW PAGE //
-
+  .show-page-wrapper .show-body .apartment-info {
+    flex-basis: 50%;
+  }
+  .show-page-wrapper .show-body .contact-owner-container {
+    border-top: none;
+    flex-basis: 50%;
+  }
+  .show-page-wrapper .show-body .apartment-info .apartment-services .services-container .service {
+    flex-basis: 50%;
+  }
+  .show-page-wrapper .show-body .contact-owner-container .contact-owner-form {
+    padding: 20px;
+    margin: 20px 10px;
+    flex-basis: 75%;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px 1px #0000002b;
+    border-radius: 10px;
+  }
   // ================= //
   // ADMIN CREATE PAGE //
   .ms_add-host {
