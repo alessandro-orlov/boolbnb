@@ -329,20 +329,151 @@ footer .bottom-footer [class*=col-] .social i {
 }
 
 .img-container {
-  width: 100%;
+  width: 60%;
 }
 
 .img-container img {
   width: 100%;
 }
 
-#map-example-container {
-  width: 100%;
-  height: 450px;
+.show-page-wrapper h1,
+.show-page-wrapper h2,
+.show-page-wrapper h3,
+.show-page-wrapper h4,
+.show-page-wrapper h5 {
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 10px 0 15px;
 }
 
-.marker-on-map {
+.show-page-wrapper h1 {
+  font-size: 1.9em;
+}
+
+.show-page-wrapper h2 {
+  font-size: 1.8em;
+}
+
+.show-page-wrapper h3 {
+  font-size: 1.6em;
+}
+
+.show-page-wrapper h4 {
+  font-size: 1.2em;
+}
+
+.show-page-wrapper h5 {
+  font-size: 1.1em;
+}
+
+.show-page-wrapper .show-top-heading h1 {
+  font-size: 1.8em;
+  padding: 5px 0;
+}
+
+.show-page-wrapper .show-top-heading h5 {
+  font-weight: 400;
+}
+
+.show-page-wrapper .show-top-heading .icon {
+  color: #f10031;
+}
+
+.show-page-wrapper .show-image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.show-page-wrapper .show-image-container .main-image {
+  flex-basis: 50%;
+}
+
+.show-page-wrapper .show-image-container .main-image img {
+  width: 100%;
+  padding: 0 5px 10px 0;
+}
+
+.show-page-wrapper .show-image-container .images {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 49%;
+}
+
+.show-page-wrapper .show-image-container .images .small-img-preview {
+  flex-basis: 50%;
+}
+
+.show-page-wrapper .show-image-container .images .small-img-preview img {
+  width: 100%;
+  padding: 0 0 5px 5px;
+}
+
+.show-page-wrapper .show-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.show-page-wrapper .show-body .apartment-info {
+  flex-basis: 50%;
+}
+
+.show-page-wrapper .show-body .apartment-info .general-info {
+  padding: 15px 0;
+  border-bottom: 1px solid #dddde4;
+}
+
+.show-page-wrapper .show-body .apartment-info .general-info p {
+  letter-spacing: 2px;
+}
+
+.show-page-wrapper .show-body .apartment-info .general-info p .divider {
+  color: #f10031;
+  font-size: 0.8em;
+}
+
+.show-page-wrapper .show-body .apartment-info .description {
+  padding: 15px 0;
+  border-bottom: 1px solid #dddde4;
+}
+
+.show-page-wrapper .show-body .apartment-info .description p {
+  line-height: 28px;
+  text-align: justify;
+}
+
+.show-page-wrapper .show-body .apartment-info .apartment-services {
+  padding: 15px 0;
+}
+
+.show-page-wrapper .show-body .apartment-info .apartment-services .services-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.show-page-wrapper .show-body .apartment-info .apartment-services .services-container .service {
+  flex-basis: 50%;
+  padding: 10px 0;
+}
+
+.show-page-wrapper .show-body .apartment-info .apartment-services .services-container .service .icon {
+  color: #f10031;
+  font-size: 1.1em;
+  margin-right: 5px;
+}
+
+.show-page-wrapper .show-map-container {
+  padding: 20px 0;
+  border-top: 1px solid #dddde4;
+  border-bottom: 1px solid #dddde4;
+}
+
+.show-page-wrapper .show-map-container .marker-on-map {
   display: none;
+}
+
+.show-page-wrapper .show-map-container #map-example-container {
+  width: 100%;
+  height: 450px;
 }
 
 .edit-apartment-heading {
