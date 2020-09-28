@@ -78,7 +78,13 @@
                             <td>
                               <a class="controls-btn normal" href="#">promuovi</a>
                               <a class="controls-btn normal" href="{{route('admin.apartments.edit', $apartment)}}">modifica</a>
-                              <a class="controls-btn delete" href="{{route('admin.apartments.edit', $apartment)}}">elimina</a>
+                                <form class="form-delete" action="{{ route('admin.apartments.destroy', $apartment)}}" method="post">
+                                  @csrf
+                                  @method('DELETE')
+                                  <input class="controls-btn delete" type="submit" value="elimina">
+                                </form>
+
+
                             </td>
                           </tr>
                       @endforeach

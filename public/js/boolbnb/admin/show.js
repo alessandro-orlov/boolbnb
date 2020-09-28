@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -10970,37 +10970,59 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/admin/create.js":
-/*!**************************************!*\
-  !*** ./resources/js/admin/create.js ***!
-  \**************************************/
+/***/ "./resources/js/admin/show.js":
+/*!************************************!*\
+  !*** ./resources/js/admin/show.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $(document).ready(function () {
-  $('input[name="price"]').keyup(function () {
-    var priceInputValue = $('input[name="price"]').val();
+  // ========================================================= //
+  // ===================== MAPPA ============================= //
+  (function () {
+    var showLat = $('.show-latitude').val();
+    var showLong = $('.show-longitude').val();
+    var latlng = {
+      lat: showLat,
+      lng: showLong
+    };
+    var placesAutocomplete = places({
+      appId: 'plAQEOVDX808',
+      apiKey: '5e56964f06ab40f6c0d1912086c2be09',
+      container: document.querySelector('#input-map')
+    });
+    var map = L.map('map-example-container', {
+      scrollWheelZoom: true,
+      zoomControl: true
+    });
+    var osmLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      minZoom: 1,
+      maxZoom: 20,
+      attribution: 'Boolbnb - Team 1'
+    });
+    var markers = []; // Imposto la view della mappa in base alla lattitudine e longitudine
 
-    if (priceInputValue.includes('.')) {
-      $('.edit-price-error').addClass('visible');
-    } else {
-      $('.edit-price-error').removeClass('visible');
-    }
-  });
+    map.setView(new L.LatLng(latlng.lat, latlng.lng), 16);
+    map.addLayer(osmLayer);
+    var marker = L.marker(latlng);
+    marker.addTo(map);
+    markers.push(marker);
+  })();
 }); // End document ready
 
 /***/ }),
 
-/***/ 3:
-/*!********************************************!*\
-  !*** multi ./resources/js/admin/create.js ***!
-  \********************************************/
+/***/ 2:
+/*!******************************************!*\
+  !*** multi ./resources/js/admin/show.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\create.js */"./resources/js/admin/create.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\show.js */"./resources/js/admin/show.js");
 
 
 /***/ })

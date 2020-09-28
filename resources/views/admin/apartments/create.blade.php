@@ -44,7 +44,7 @@
                 {{-- MQ & Stanze --}}
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCity">Metri quadri</label>
+                        <label for="inputCity">Superfice m<sup>2</sup> </label>
                         <input type="number" name="mq" value="{{ old('mq') }}" class="form-control" required>
                     </div>
                     <div class="form-group col-md-6">
@@ -129,7 +129,7 @@
                 </script>
 
                 {{-- Prezzo a notte --}}
-                <div class="form-row">
+                {{-- <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="title">Prezzo a notte</label>
                         <div class="input-group mb-3">
@@ -141,6 +141,20 @@
                                 <span class="input-group-text">.00</span>
                             </div>
                         </div>
+                    </div>
+                </div> --}}
+
+                {{-- Prezzo a notte --}}
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="title">Prezzo a notte</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">€</span>
+                            </div>
+                                <input type="text" name="price" value="{{ old('price') }}" class="form-control" aria-label="Amount (to the nearest dollar)" >
+                        </div>
+                          <div class="edit-price-error">Puoi inserire solo numeri interi!</div>
                     </div>
                 </div>
 
@@ -184,5 +198,5 @@
           </div>
       </div>
   </div>
-
+<script src="{{asset('js/boolbnb/admin/create.js')}}"></script>
 @endsection

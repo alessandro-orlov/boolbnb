@@ -68,10 +68,27 @@
           </p>
         </div>
       </div>
+      <div class="map-container">
+          <h3>Posizione dell'appartamento</h3>
+          <div class="row">
+              <div class="col-12">
+                <div class="marker-on-map" >
+                    <input  type="search" id="input-map"/>
+                    <input  type="text"  class="show-latitude" value="{{$apartment->latitude}}" />
+                    <input  type="text"  class="show-longitude" value="{{$apartment->longitude}}" />
+                </div>
+                <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+
+                <div id="map-example-container"></div>
+              </div>
+          </div>
+      </div>
+
 
 
 
     </div>
   </div>
-
+  <script src="{{asset('js/boolbnb/admin/show.js')}}"></script>
 @endsection

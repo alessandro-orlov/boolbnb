@@ -14,7 +14,12 @@
   }
 
   // ================= //
-  // ADMIN UPDATE PAGE //
+  // ADMIN EDIT PAGE //
+  .apartment-edit-container {
+    .edit-this-apartment {
+      display: block;
+    }
+  }
 }
 
 @media all and (min-width: 992px) {

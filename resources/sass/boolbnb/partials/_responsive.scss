@@ -18,6 +18,11 @@
 
 
 @media all and (min-width: 768px) {
+  // MAIN
+  main {
+    border-bottom:  1px solid #dddde4;
+  }
+  // FOOTER
   footer {
     background-color: #f5f5fa;
     color: #333;
