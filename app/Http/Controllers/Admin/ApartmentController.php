@@ -23,8 +23,10 @@ class ApartmentController extends Controller
     {
         $apartments = Apartment::orderBy('created_at', 'desc')->paginate(25);
         $user = Auth::user();
+        $userId = Auth::id();
 
-        return view('admin.apartments.index', compact('apartments', 'user'));
+
+        return view('admin.apartments.index', compact('apartments', 'user', 'userId'));
     }
 
     /**
