@@ -68,11 +68,54 @@ main .jumbotron .filter .container {
   padding-top: 70px;
 }
 
-main .jumbotron .filter .container h1 {
+main .jumbotron .filter .container .jumbo-search-bar {
+  height: 70px;
+  width: 80%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 100px;
+}
+
+main .jumbotron .filter .container .jumbo-search-bar input {
+  width: 90%;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+main .jumbotron .filter .container .where-bar {
+  height: 100%;
+  flex-basis: 45%;
+}
+
+main .jumbotron .filter .container .date-bar {
+  height: 100%;
+  flex-basis: 45%;
+}
+
+main .jumbotron .filter .container .search-button {
+  flex-basis: 10%;
+}
+
+main .jumbotron .filter .container .search-button button {
+  border-radius: 100%;
+  padding: 12px;
+  margin-top: 11px;
+}
+
+main .jumbotron .filter .container .search-button button i {
+  font-size: 1.4em;
+  vertical-align: sub;
+}
+
+main .jumbotron .filter h1 {
   font-weight: bolder;
 }
 
-main .jumbotron .filter .container h2 {
+main .jumbotron .filter h2 {
   font-weight: bold;
   margin-bottom: 15px;
 }

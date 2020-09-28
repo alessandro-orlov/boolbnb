@@ -7,8 +7,20 @@
       <div class="container">
         <h1>Riscopri l'Italia</h1>
         <h2>Cambia quadro. Scopri alloggi nelle vicinanze tutti da vivere, per lavoro o svago.</h2>
-        <div class="search-bar">
-
+        <div class="jumbo-search-bar">
+          <div class="where-bar">
+            <span>Dove?</span>
+            <input type="text" placeholder="Dove vuoi andare?">
+          </div>
+          <div class="date-bar">
+             <span>Quando?</span>
+             <input type="date" placeholder="Quando vuoi andare?">
+          </div>
+          <div class="search-button">
+            <button type="button" class="btn btn-boolbnb">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>

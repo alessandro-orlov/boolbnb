@@ -20,6 +20,50 @@ main {
       color: white;
       padding-top: 70px;
 
+      .jumbo-search-bar {
+        height: 70px;
+        width: 80%;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 100px;
+
+        input {
+          width: 90%;
+          text-align: left;
+          background-color: rgba(0, 0, 0, 0.1);
+          color: white;
+        }
+        }
+
+        .where-bar {
+          height: 100%;
+          flex-basis: 45%;
+        }
+
+        .date-bar {
+          height: 100%;
+          flex-basis: 45%;
+          }
+
+          .search-button {
+            flex-basis: 10%;
+
+            button {
+              border-radius: 100%;
+              padding: 12px;
+              margin-top: 11px;
+
+              i {
+                font-size: 1.4em;
+                vertical-align: sub;
+              }
+            }
+          }
+      }
+
         h1 {
           font-weight: bolder;
         }
@@ -30,7 +74,6 @@ main {
         }
       }
     }
-  }
 
   .card-section {
     display: flex;
