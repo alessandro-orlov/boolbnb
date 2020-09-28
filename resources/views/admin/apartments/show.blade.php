@@ -75,10 +75,74 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-owner-form">
-
+                <div class="contact-owner-container">
+                    <div class="contact-owner-form">
+                        <h2>Prenota l'appartamento</h2>
+                        <div class="errors">
+                          @if ($errors->any())
+                              <div class="alert alert-danger">
+                                <ul>
+                                  @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                  @endforeach
+                                </ul>
+                              </div>
+                            @endif
+                        </div>
+                        {{-- FORM --}}
+                        <form class="needs-validation" novalidate action="#" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('POST')
+                            {{-- Sender name --}}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="title">Il tuo nome</label>
+                                    <input type="text" class="form-control" name="sender_name" value="{{old('sender_name')}}" placeholder="Inserisci il tuo nome" required>
+                                </div>
+                            </div>
+                            {{-- Sender email --}}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="title">la tua email</label>
+                                    <input type="email" class="form-control" name="sender_mail" value="{{old('sender_mail')}}" placeholder="Inserisci la tua email" required>
+                                </div>
+                            </div>
+                            {{-- message --}}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label>Descrizione</label>
+                                    <textarea class="form-control" name="message" rows="5" placeholder="Inserisci il tuo messaggio" required></textarea>
+                                </div>
+                            </div>
+                            {{-- Submit --}}
+                            <div class="form-row">
+                                <div class="form-check col-md-12 text-right">
+                                    <input type="submit" class="btn btn-boolbnb" value="Salva">
+                                </div>
+                            </div>
+                        </form>
+                        <script>
+                          // Form valdation
+                          (function() {
+                            'use strict';
+                            window.addEventListener('load', function() {
+                              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                              var forms = document.getElementsByClassName('needs-validation');
+                              // Loop over them and prevent submission
+                              var validation = Array.prototype.filter.call(forms, function(form) {
+                                form.addEventListener('submit', function(event) {
+                                  if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                  }
+                                  form.classList.add('was-validated');
+                                }, false);
+                              });
+                            }, false);
+                          })();
+                        </script>
+                    </div>
                 </div>
-
             </div>
             {{-- End show body --}}
 

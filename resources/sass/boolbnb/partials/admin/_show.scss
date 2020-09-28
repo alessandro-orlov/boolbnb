@@ -61,7 +61,7 @@
       display: flex;
       flex-wrap: wrap;
       .apartment-info {
-        flex-basis: 50%;
+        flex-basis: 100%;
         .general-info {
           padding: 15px 0;
           border-bottom: 1px solid #dddde4;
@@ -87,7 +87,7 @@
             display: flex;
             flex-wrap: wrap;
             .service {
-              flex-basis: 50%;
+              flex-basis: 100%;
               padding: 10px 0;
               .icon {
                 color: $primary-red;
@@ -99,6 +99,19 @@
               }
             }
           }
+        }
+      }
+      .contact-owner-container {
+        border-top: 1px solid #dddde4;
+        top: 0px;
+        position: sticky;
+        flex-basis: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .contact-owner-form {
+          flex-basis: 100%;
+          padding: 20px 0;
         }
       }
     } // End show-body
