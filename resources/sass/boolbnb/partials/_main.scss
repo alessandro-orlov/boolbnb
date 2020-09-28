@@ -9,6 +9,10 @@ main {
     background-size: cover;
     background-position: bottom;
 
+    .container {
+      text-align: center;
+    }
+
     h1 {
       font-weight: bolder;
     }
@@ -32,10 +36,13 @@ main {
       flex-basis: 25%;
       margin-top: 60px;
       border-radius: $border-radius;
-      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+      box-shadow: $shadow;
 
       .image {
         height: 60%;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+
 
         img {
           width: 100%;
