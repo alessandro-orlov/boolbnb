@@ -112,6 +112,10 @@
         .contact-owner-form {
           flex-basis: 100%;
           padding: 20px 0;
+          h2 {
+            color: $primary-red;
+            font-size: 1.6em;
+          }
         }
       }
     } // End show-body
@@ -123,6 +127,10 @@
       border-bottom: 1px solid #dddde4;
       .marker-on-map {
         display: none;
+      }
+      h5 {
+        font-weight: 400;
+        font-size: 1.1em;
       }
       #map-example-container {
         width: 100%;

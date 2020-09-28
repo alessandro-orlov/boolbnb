@@ -148,7 +148,7 @@
 
             {{-- MAP --}}
             <div class="show-map-container">
-                <h3>Posizione dell'appartamento</h3>
+                <h3>Posizione</h3>
                 <h5>{{$apartment->address}}</h5>
                 <div class="row">
                     <div class="col-12">

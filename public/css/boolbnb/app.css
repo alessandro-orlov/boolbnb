@@ -477,6 +477,11 @@ footer .bottom-footer [class*=col-] .social i {
   padding: 20px 0;
 }
 
+.show-page-wrapper .show-body .contact-owner-container .contact-owner-form h2 {
+  color: #f10031;
+  font-size: 1.6em;
+}
+
 .show-page-wrapper .show-map-container {
   padding: 20px 0;
   border-top: 1px solid #dddde4;
@@ -485,6 +490,11 @@ footer .bottom-footer [class*=col-] .social i {
 
 .show-page-wrapper .show-map-container .marker-on-map {
   display: none;
+}
+
+.show-page-wrapper .show-map-container h5 {
+  font-weight: 400;
+  font-size: 1.1em;
 }
 
 .show-page-wrapper .show-map-container #map-example-container {
