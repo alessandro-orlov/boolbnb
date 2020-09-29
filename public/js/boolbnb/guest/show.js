@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -10970,9 +10970,9 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/admin/show.js":
+/***/ "./resources/js/guest/show.js":
 /*!************************************!*\
-  !*** ./resources/js/admin/show.js ***!
+  !*** ./resources/js/guest/show.js ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11002,27 +11002,26 @@ $(document).ready(function () {
       minZoom: 1,
       maxZoom: 20,
       attribution: 'Boolbnb - Team 1'
-    });
-    var markers = []; // Imposto la view della mappa in base alla lattitudine e longitudine
+    }); // var markers = [];
+    // Imposto la view della mappa in base alla lattitudine e longitudine
 
     map.setView(new L.LatLng(latlng.lat, latlng.lng), 16);
     map.addLayer(osmLayer);
     var marker = L.marker(latlng);
-    marker.addTo(map);
-    markers.push(marker);
+    marker.addTo(map); // markers.push(marker);
   })();
 }); // End document ready
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /*!******************************************!*\
-  !*** multi ./resources/js/admin/show.js ***!
+  !*** multi ./resources/js/guest/show.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\show.js */"./resources/js/admin/show.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\guest\show.js */"./resources/js/guest/show.js");
 
 
 /***/ })

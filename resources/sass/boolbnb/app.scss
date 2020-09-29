@@ -9,12 +9,13 @@
 // Partials admin
 @import 'partials/admin/_index';
 @import 'partials/admin/_create';
-@import 'partials/admin/_show';
+// @import 'partials/admin/_show';
 @import 'partials/admin/_edit';
 @import 'partials/admin/_responsive';
 
 
 // Partials guest
 @import 'partials/guest/_index';
-// @import 'partials/guest/_show';
+@import 'partials/guest/_show';
+@import 'partials/guest/_responsive';
 // @import 'partials/guest/_search';
