@@ -34,14 +34,14 @@ $(document).ready(function() {
       }
     );
 
-    var markers = [];
+    // var markers = [];
     // Imposto la view della mappa in base alla lattitudine e longitudine
     map.setView(new L.LatLng(latlng.lat, latlng.lng), 16);
     map.addLayer(osmLayer);
 
     var marker = L.marker(latlng);
     marker.addTo(map);
-    markers.push(marker);
+    // markers.push(marker);
 
   })();
 
