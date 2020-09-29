@@ -48,7 +48,7 @@ main {
 }
 
 main .jumbotron {
-  background-image: url(/images/rome-jumbo2.jpg?7a45d9a3ae2887ec7d285647d666cc34);
+  background-image: url(/images/vatican.jpg?c031f3966ca8fac168c825b734584265);
   height: 700px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -238,6 +238,10 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
     background-color: #f5f5fa;
     color: #333;
     border-top: 1px solid #fff;
+  }
+
+  footer .upper-footer {
+    border-bottom: 1px solid #dddde4;
   }
 
   footer .bottom-footer {
