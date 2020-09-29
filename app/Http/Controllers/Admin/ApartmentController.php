@@ -97,9 +97,6 @@ class ApartmentController extends Controller
         // } else {
         //   abort(403, 'Non puoi accedere a questa pagina');
         // }
-
-        return view('admin.apartments.show', compact('apartment'));
-
     }
 
     /**

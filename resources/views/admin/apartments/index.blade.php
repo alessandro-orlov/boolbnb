@@ -63,7 +63,7 @@
                             </td>
                             {{-- Mesages --}}
                             <td>
-                              <a href="{{route('admin.apartments.show', $apartment)}}">
+                              <a href="{{route('admin.message.show', $apartment)}}">
                                   <div class="apartment-icons">
                                     <i class="far fa-envelope"></i>
                                   </div>
