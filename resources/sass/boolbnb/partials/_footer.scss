@@ -36,8 +36,20 @@ footer  {
   color: white;
   padding-top: 40px;
 
+  a {
+    color: white;
+  }
+  a:hover {
+    color: $primary-red;
+  }
+
 .upper-footer {
-  border-bottom: 1.5px solid lightgrey;
+  // border-bottom: 1.5px solid lightgrey;
+  display: flex;
+
+  ul {
+    justify-content: space-between;
+    flex-wrap: wrap;
 
   li {
     line-height: 40px;
@@ -50,8 +62,6 @@ footer  {
   }
 
   .bottom-footer {
-    padding-top: 30px;
-    padding-bottom: 30px;
 
      [class*="col-"] {
       float: left;
@@ -66,4 +76,5 @@ footer  {
       }
     }
   }
+}
 }

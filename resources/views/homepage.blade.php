@@ -3,11 +3,21 @@
 @section('content')
   {{-- begin jumbotron --}}
   <div class="jumbotron">
-    <div class="container">
-      <div class="row">
+    <div class="filter">
+      <div class="container">
         <h1>Riscopri l'Italia</h1>
         <h2>Cambia quadro. Scopri alloggi nelle vicinanze tutti da vivere, per lavoro o svago.</h2>
-        <button type="button" class="btn btn-boolbnb">Esplora i dintorni</button>
+        <div class="jumbo-search-bar">
+          <div class="where-bar">
+            <span>Dove?</span>
+            <input type="text" placeholder="Dove vuoi andare?">
+          </div>
+          <div class="search-button">
+            <button type="button" class="btn btn-boolbnb">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -19,7 +29,9 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="{{asset('img/malta_villa.jpg')}}" alt="">
+              <a href="#">
+                <img src="{{asset('img/malta_villa.jpg')}}" alt="">
+              </a>
             </div>
             <div class="text">
               <h4>Spazi unici</h4>
@@ -31,7 +43,9 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="{{asset('img/casa_giardino.jpg')}}" alt="">
+              <a href="#">
+                <img src="{{asset('img/casa_giardino.jpg')}}" alt="">
+              </a>
             </div>
             <div class="text">
               <h4>Esperienze online</h4>
@@ -43,7 +57,9 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="{{asset('img/tuscany_house.jpg')}}" alt="">
+              <a href="#">
+                <img src="{{asset('img/tuscany_house.jpg')}}" alt="">
+              </a>
             </div>
             <div class="text">
               <h4>Case intere</h4>
@@ -55,7 +71,9 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="{{asset('img/wood_house.jpg')}}" alt="">
+              <a href="#">
+                <img src="{{asset('img/wood_house.jpg')}}" alt="">
+              </a>
             </div>
             <div class="text">
               <h4>Into the wild</h4>
@@ -67,7 +85,9 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="{{asset('img/american_house.jpg')}}" alt="">
+              <a href="#">
+                <img src="{{asset('img/american_house.jpg')}}" alt="">
+              </a>
             </div>
             <div class="text">
               <h4>Vacanze da sogno</h4>
@@ -79,7 +99,9 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box">
             <div class="image">
-              <img src="{{asset('img/baita.jpg')}}" alt="">
+              <a href="#">
+                <img src="{{asset('img/baita.jpg')}}" alt="">
+              </a>
             </div>
             <div class="text">
               <h4>Relax e armonia</h4>

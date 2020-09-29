@@ -3,25 +3,77 @@ main {
   background: linear-gradient(0deg, #fff, #f5f5fa);
 
   .jumbotron {
-    background-image: url('../../../../public/img/jumbo.jpg');
-    height: 600px;
+    background-image: url('../../../../public/img/vatican.jpg');
+    height: 700px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
+    padding: 0;
 
-    h1 {
-      font-weight: bolder;
-    }
+    .filter {
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
 
-    h2 {
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+    .container {
+      text-align: center;
+      color: white;
+      padding-top: 70px;
 
-    button {
-      font-weight: bold;
+      .jumbo-search-bar {
+        height: 70px;
+        width: 80%;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 100px;
+
+        input {
+          width: 90%;
+          text-align: left;
+          background-color: rgba(0, 0, 0, 0.1);
+          color: white;
+          border: none;
+        }
+      }
+
+        .where-bar {
+          height: 100%;
+          width: 100%;
+
+          span {
+            display: flow-root;
+          }
+        }
+
+          .search-button {
+            flex-basis: 10%;
+
+            button {
+              border-radius: 100%;
+              padding: 12px;
+              margin-top: 11px;
+
+              i {
+                font-size: 1.4em;
+                vertical-align: sub;
+              }
+            }
+          }
+      }
+
+        h1 {
+          font-weight: bolder;
+        }
+
+        h2 {
+          font-weight: bold;
+          margin-bottom: 15px;
+        }
+      }
     }
-  }
 
   .card-section {
     display: flex;
@@ -31,8 +83,13 @@ main {
       height: 350px;
       flex-basis: 25%;
       margin-top: 60px;
+      box-shadow: $shadow;
       border-radius: $border-radius;
-      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+      transition: all .4s ease;
+
+      &:hover {
+      transform: scale(1.1);
+      }
 
       .image {
         height: 60%;
@@ -40,6 +97,8 @@ main {
         img {
           width: 100%;
           height: 100%;
+          border-top-left-radius: $border-radius;
+          border-top-right-radius: $border-radius;
         }
       }
 
@@ -47,6 +106,8 @@ main {
         height: 40%;
         padding: 10px;
         background-color: #F4F4F4;
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
       }
     }
   }

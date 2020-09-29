@@ -1,4 +1,3 @@
-
 {{-- begin upper footer --}}
 <div class="upper-footer">
   <div class="container">
@@ -131,12 +130,12 @@
         <div class="languages">
           <span>
             <i class="fas fa-globe"></i>
-            Italiano (IT)
+            <a href="#">Italiano (IT)</a>
           </span>
         </div>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
-          <div class=" social">
+          <div class="social">
             <a href="#">
               <i class="fab fa-facebook-f"></i>
             </a>
