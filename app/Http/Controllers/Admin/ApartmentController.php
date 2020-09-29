@@ -80,7 +80,7 @@ class ApartmentController extends Controller
           $new_apartment->services()->sync($data['services']);
         }
 
-        return redirect()->route('admin.apartments.show', $new_apartment);
+        return redirect()->route('guest.apartments.show', $new_apartment);
     }
 
     /**
@@ -91,12 +91,14 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        $user = Auth::user();
-        if ($apartment->user_id == $user->id) {
-          return view('admin.apartments.show', compact('apartment'));
-        } else {
-          abort(403, 'Non puoi accedere a questa pagina');
-        }
+        // $user = Auth::user();
+        // if ($apartment->user_id == $user->id) {
+        //   return view('guest.apartments.show', compact('apartment'));
+        // } else {
+        //   abort(403, 'Non puoi accedere a questa pagina');
+        // }
+
+        return view('admin.apartments.show', compact('apartment'));
 
     }
 
@@ -169,7 +171,7 @@ class ApartmentController extends Controller
 
       $apartment->save();
 
-      return redirect()->route('admin.apartments.show', $apartment);
+      return redirect()->route('guest.apartments.show', $apartment);
 
     }
 

@@ -63,10 +63,12 @@
                             </td>
                             {{-- Mesages --}}
                             <td>
-                              <div class="apartment-icons">
-                                <i class="far fa-envelope"></i>
-                              </div>
-                              4
+                              <a href="{{route('admin.apartments.show', $apartment)}}">
+                                  <div class="apartment-icons">
+                                    <i class="far fa-envelope"></i>
+                                  </div>
+                                  4
+                              </a>
                             </td>
                             {{-- Sponsorship --}}
                             <td>
