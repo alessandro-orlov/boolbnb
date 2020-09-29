@@ -19,7 +19,6 @@ class CreateMessagesTable extends Migration
             $table->string('sender_name');
             $table->string('sender_mail');
             $table->text('message');
-            // $table->boolean('read');
 
             // FK Apartment
             //   --> Relazione 1-to-many Apartment-Messages
