@@ -4,19 +4,22 @@
     margin: auto;
   }
   footer .bottom-footer .languages {
-    margin: 30px 0;
+    margin: 20px 0;
   }
 
   footer .bottom-footer  {
     text-align: center;
+    padding: 20px 0;
   }
 
   footer .bottom-footer .social {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
   }
 
-  footer .upper-footer ul {
-    border-top: 1px solid white;
+  footer .upper-footer [class*="col-"] {
+    border-bottom: 1px solid white;
   }
 }
 
@@ -24,7 +27,7 @@
 @media all and (min-width: 768px) {
   // MAIN
   main {
-    border-bottom:  1px solid #dddde4;
+    border-bottom: 1px solid #dddde4;
   }
   // FOOTER
   footer {
@@ -37,6 +40,9 @@
 
     .bottom-footer {
       border-top: 1px solid #fff;
+      padding-top: 30px;
+      padding-bottom: 30px;
+
       .social {
         display: flex;
         justify-content: space-around;

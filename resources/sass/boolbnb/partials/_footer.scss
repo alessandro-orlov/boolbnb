@@ -44,7 +44,7 @@ footer  {
   }
 
 .upper-footer {
-  border-bottom: 1.5px solid lightgrey;
+  // border-bottom: 1.5px solid lightgrey;
   display: flex;
 
   ul {
@@ -62,8 +62,6 @@ footer  {
   }
 
   .bottom-footer {
-    padding-top: 30px;
-    padding-bottom: 30px;
 
      [class*="col-"] {
       float: left;
@@ -74,9 +72,9 @@ footer  {
 
         i {
           font-size: 1.4em;
-
         }
       }
     }
   }
+}
 }

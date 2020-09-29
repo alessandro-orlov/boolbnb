@@ -3,7 +3,7 @@
 <div class="upper-footer">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-sm-12 col-md-3">
         <ul>
           <li>INFORMAZIONI</li>
           <li>
@@ -32,7 +32,7 @@
           </li>
         </ul>
       </div>
-      <div class="col">
+      <div class="col-sm-12 col-md-3">
         <ul>
           <li>COMMUNITY</li>
           <li>
@@ -52,7 +52,7 @@
           </li>
         </ul>
       </div>
-      <div class="col">
+      <div class="col-sm-12 col-md-3">
         <ul>
           <li>OSPITA</li>
           <li>
@@ -81,7 +81,7 @@
           </li>
         </ul>
       </div>
-      <div class="col">
+      <div class="col-sm-12 col-md-3">
         <ul>
           <li>ASSISTENZA</li>
           <li>

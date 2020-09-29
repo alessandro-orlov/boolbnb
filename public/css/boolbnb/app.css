@@ -173,34 +173,33 @@ footer a:hover {
 }
 
 footer .upper-footer {
-  border-bottom: 1.5px solid lightgrey;
   display: flex;
 }
 
-footer .upper-footer li {
+footer .upper-footer ul {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .upper-footer ul li {
   line-height: 40px;
 }
 
-footer .upper-footer li:first-child {
+footer .upper-footer ul li:first-child {
   font-weight: bolder;
   font-size: 0.9em;
 }
 
-footer .bottom-footer {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-footer .bottom-footer [class*=col-] {
+footer .upper-footer .bottom-footer [class*=col-] {
   float: left;
 }
 
-footer .bottom-footer [class*=col-] .social {
+footer .upper-footer .bottom-footer [class*=col-] .social {
   display: flex;
   justify-content: space-around;
 }
 
-footer .bottom-footer [class*=col-] .social i {
+footer .upper-footer .bottom-footer [class*=col-] .social i {
   font-size: 1.4em;
 }
 
@@ -211,19 +210,22 @@ footer .bottom-footer [class*=col-] .social i {
   }
 
   footer .bottom-footer .languages {
-    margin: 30px 0;
+    margin: 20px 0;
   }
 
   footer .bottom-footer {
     text-align: center;
+    padding: 20px 0;
   }
 
   footer .bottom-footer .social {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
   }
 
-  footer .upper-footer ul {
-    border-top: 1px solid white;
+  footer .upper-footer [class*=col-] {
+    border-bottom: 1px solid white;
   }
 }
 
@@ -238,12 +240,10 @@ footer .bottom-footer [class*=col-] .social i {
     border-top: 1px solid #fff;
   }
 
-  footer .upper-footer {
-    border-bottom: 1px solid #dddde4;
-  }
-
   footer .bottom-footer {
     border-top: 1px solid #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   footer .bottom-footer .social {
