@@ -189,6 +189,7 @@ class ApartmentController extends Controller
       Storage::delete('public/'. $apartment->main_img);
 
       // Delete Apartment
+      $apartment->messages()->delete();
       $apartment->delete();
 
       $user = Auth::user();

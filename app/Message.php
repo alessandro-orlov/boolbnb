@@ -12,7 +12,7 @@ class Message extends Model
         'sender_name',
         'sender_mail',
         'message',
-        'read',
+        // 'read',
     ];
 
     // Relation

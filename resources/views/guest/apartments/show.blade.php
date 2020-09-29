@@ -90,7 +90,7 @@
                             @endif
                         </div>
                         {{-- FORM --}}
-                        <form class="needs-validation" novalidate action="#" method="post" enctype="multipart/form-data">
+                        <form class="needs-validation" novalidate action="{{ route('guest.apartments.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('POST')
                             {{-- Sender name --}}
@@ -117,7 +117,8 @@
                             {{-- Submit --}}
                             <div class="form-row">
                                 <div class="form-check col-md-12 text-right">
-                                    <input type="submit" class="btn btn-boolbnb" value="Salva">
+                                    <input hidden type="text" name="apartment_id" value="{{$apartment->id}}">
+                                    <input type="submit" class="btn btn-boolbnb" value="Invia il messaggio">
                                 </div>
                             </div>
                         </form>
