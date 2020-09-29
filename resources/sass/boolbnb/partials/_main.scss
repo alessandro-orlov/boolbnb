@@ -35,18 +35,18 @@ main {
           text-align: left;
           background-color: rgba(0, 0, 0, 0.1);
           color: white;
+          border: none;
         }
-        }
+      }
 
         .where-bar {
           height: 100%;
-          flex-basis: 45%;
-        }
+          width: 100%;
 
-        .date-bar {
-          height: 100%;
-          flex-basis: 45%;
+          span {
+            display: flow-root;
           }
+        }
 
           .search-button {
             flex-basis: 10%;

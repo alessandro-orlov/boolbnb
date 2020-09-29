@@ -12,10 +12,6 @@
             <span>Dove?</span>
             <input type="text" placeholder="Dove vuoi andare?">
           </div>
-          <div class="date-bar">
-             <span>Quando?</span>
-             <input type="date" placeholder="Quando vuoi andare?">
-          </div>
           <div class="search-button">
             <button type="button" class="btn btn-boolbnb">
               <i class="fas fa-search"></i>

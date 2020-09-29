@@ -42,8 +42,14 @@ footer  {
   a:hover {
     color: $primary-red;
   }
+
 .upper-footer {
   border-bottom: 1.5px solid lightgrey;
+  display: flex;
+
+  ul {
+    justify-content: space-between;
+    flex-wrap: wrap;
 
   li {
     line-height: 40px;
