@@ -36,7 +36,7 @@
                             <td class="apartment-foto-block">
                               <div class="img-thumbnail">
                                   <div class="apartment-foto">
-                                      <a href="{{route('admin.apartments.show', $apartment)}}">
+                                      <a href="{{route('guest.apartments.show', $apartment)}}">
                                       @if (!empty($apartment->main_img))
                                           @if (strpos($apartment->main_img,'mpixel'))
                                               <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
@@ -52,7 +52,7 @@
                             </td>
                             {{-- Title --}}
                             <td class="apartment-title">
-                              <a href="{{route('admin.apartments.show', $apartment)}}">{{$apartment->title}}</a>
+                              <a href="{{route('guest.apartments.show', $apartment)}}">{{$apartment->title}}</a>
                             </td>
                             {{-- Visits --}}
                             <td>

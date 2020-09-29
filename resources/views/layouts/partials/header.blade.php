@@ -18,7 +18,7 @@
             <ul class="navbar-nav ml-auto">
                 <!-- links -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('apartments.index') }}">tutti appartamenti</a>
+                        <a class="nav-link" href="{{ route('guest.apartments.index') }}">tutti appartamenti</a>
                     </li>
                 <!-- Authentication Links -->
                 @guest

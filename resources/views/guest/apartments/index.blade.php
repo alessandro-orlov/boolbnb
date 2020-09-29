@@ -45,7 +45,7 @@
                 {{-- Immagine --}}
                 @if (!empty($apartment->main_img))
                   <div class="bool_img_apt">
-                    <a href="{{route('apartments.show', $apartment)}}">
+                    <a href="{{route('guest.apartments.show', $apartment)}}">
                       @if (strpos($apartment->main_img,'mpixel'))
                         <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
                       @else
@@ -57,7 +57,7 @@
 
                 {{-- Informazioni --}}
                 <div class="bool_info_apt">
-                  <a href="{{route('apartments.show', $apartment)}}">
+                  <a href="{{route('guest.apartments.show', $apartment)}}">
                     <p class="bool_info_text">Intero appartamento a {{$apartment->city}}, {{$apartment->region}}</p>
                     <h4>{{$apartment->title}}</h4>
                     <hr>
