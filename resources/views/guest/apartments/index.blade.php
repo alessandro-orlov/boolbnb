@@ -53,6 +53,12 @@
                       @endif
                     </a>
                   </div>
+                @else
+                  <div class="bool_img_apt">
+                    <a href="{{route('guest.apartments.show', $apartment)}}">
+                      <img src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
+                    </a>
+                  </div>
                 @endif
 
                 {{-- Informazioni --}}
