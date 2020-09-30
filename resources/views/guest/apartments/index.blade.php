@@ -61,7 +61,7 @@
                     <p class="bool_info_text">Intero appartamento a {{$apartment->city}}, {{$apartment->region}}</p>
                     <h4>{{$apartment->title}}</h4>
                     <hr>
-                    <p class="bool_info_text">{{$apartment->num_beds}} ospiti - {{$apartment->num_rooms}} camere da letto - {{$apartment->num_baths}} bagno</p>
+                    <p class="bool_info_text">{{$apartment->num_beds}} ospiti - {{$apartment->num_rooms}} camere da letto - {{$apartment->num_baths}} bagni</p>
 
                     @if (!$apartment->services->isEmpty())
                       @foreach ($apartment->services as $service)
