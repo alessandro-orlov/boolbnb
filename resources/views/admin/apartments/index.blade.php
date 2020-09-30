@@ -62,12 +62,19 @@
                               81
                             </td>
                             {{-- Mesages --}}
-                            <td>
+                            <td class="">
                               <a href="{{route('admin.message.show', $apartment)}}">
+                                  {{-- Calcolo il numero di messaggi ricevuti --}}
+                                  <?php $array_msg = []; ?>
+                                  @foreach ($apartment->messages as $messages)
+                                    <?php $array_msg[] = $messages->apartment_id; ?>
+                                  @endforeach
                                   <div class="apartment-icons">
-                                    <i class="far fa-envelope"></i>
+                                      <i class="far fa-envelope"></i>
                                   </div>
-                                  4
+                                  <div class="apartment-msg-number">
+                                      <span>{{count($array_msg)}}</span>
+                                  </div>
                               </a>
                             </td>
                             {{-- Sponsorship --}}
