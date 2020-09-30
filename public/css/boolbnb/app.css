@@ -59,7 +59,7 @@ main .jumbotron {
 main .jumbotron .filter {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 main .jumbotron .filter .container {
@@ -87,10 +87,6 @@ main .jumbotron .filter .container .jumbo-search-bar input {
   border: none;
 }
 
-main .jumbotron .filter .container .jumbo-search-bar input:focus {
-  border: none;
-}
-
 main .jumbotron .filter .container .where-bar {
   height: 100%;
   width: 100%;
@@ -102,6 +98,7 @@ main .jumbotron .filter .container .where-bar span {
 
 main .jumbotron .filter .container .search-button {
   flex-basis: 10%;
+  margin-right: 10px;
 }
 
 main .jumbotron .filter .container .search-button button {
@@ -116,12 +113,14 @@ main .jumbotron .filter .container .search-button button i {
 }
 
 main .jumbotron .filter h1 {
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: 3em;
 }
 
 main .jumbotron .filter h2 {
   font-weight: bold;
   margin-bottom: 15px;
+  font-size: 2.3em;
 }
 
 main .card-section {
@@ -266,12 +265,6 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   footer a {
     text-decoration: none;
     color: #333;
-  }
-}
-
-@media all and (max-width: 991px) {
-  main .jumbotron .filter .container .jumbo-search-bar .search-button button {
-    margin-right: 3%;
   }
 }
 

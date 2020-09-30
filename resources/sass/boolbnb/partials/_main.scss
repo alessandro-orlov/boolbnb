@@ -13,7 +13,7 @@ main {
     .filter {
       height: 100%;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.2);
 
     .container {
       text-align: center;
@@ -36,10 +36,6 @@ main {
           background-color: rgba(0, 0, 0, 0.03);
           color: white;
           border: none;
-
-          &:focus {
-            border: none;
-          }
         }
       }
 
@@ -54,6 +50,7 @@ main {
 
           .search-button {
             flex-basis: 10%;
+            margin-right: 10px;
 
             button {
               border-radius: 100%;
@@ -69,12 +66,14 @@ main {
       }
 
         h1 {
-          font-weight: bolder;
+          font-weight: bold;
+          font-size: 3em;
         }
 
         h2 {
           font-weight: bold;
           margin-bottom: 15px;
+          font-size: 2.3em;
         }
       }
     }
