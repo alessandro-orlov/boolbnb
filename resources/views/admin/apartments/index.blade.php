@@ -12,7 +12,7 @@
               <table class="table table-striped ">
                   <thead class="thead-dark">
                       <tr>
-                        <th scope="col">data</th>
+                        <th scope="col">Data</th>
                         <th scope="col">Foto</th>
                         <th scope="col">Titolo</th>
                         <th scope="col">Visite</th>
