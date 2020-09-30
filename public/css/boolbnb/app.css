@@ -48,7 +48,7 @@ main {
 }
 
 main .jumbotron {
-  background-image: url(/images/jumbo0.jpg?ecaecabcd645b8e297fcd80b76cb09d6);
+  background-image: url(/images/jumbotron.jpg?c031f3966ca8fac168c825b734584265);
   height: 700px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,15 +75,19 @@ main .jumbotron .filter .container .jumbo-search-bar {
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 100px;
 }
 
 main .jumbotron .filter .container .jumbo-search-bar input {
   width: 90%;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.03);
   color: white;
+  border: none;
+}
+
+main .jumbotron .filter .container .jumbo-search-bar input:focus {
   border: none;
 }
 
@@ -262,6 +266,12 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   footer a {
     text-decoration: none;
     color: #333;
+  }
+}
+
+@media all and (max-width: 991px) {
+  main .jumbotron .filter .container .jumbo-search-bar .search-button button {
+    margin-right: 3%;
   }
 }
 
