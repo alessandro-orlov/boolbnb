@@ -9,12 +9,25 @@
     <div class="col-xl-6">
 
       {{-- inizio ricerca --}}
-      <form class="input-group mb-3 bool_form">
+      <form class="input-group mb-3 bool_form" method="post" enctype="multipart/form-data">
+        {{-- @csrf
+        @method('POST') --}}
+
         <label class="sr-only" for="">Ricerca un appartamento</label>
-        <input type="text" class="form-control bool_input" placeholder="Dove vuoi andare?" aria-label="Recipient's username" aria-describedby="button-addon2">
+        {{-- <input name="search" type="search" id="input-map" class="form-control bool_input" placeholder="Dove vuoi andare?"> --}}
+        <input id="input-map" type="search" class="form-control" class="form-control bool_input" placeholder="Dove vuoi andare" />
+
+        {{-- SEARCH INFO --}}
+        <input  id="latitude" type="text" name="latitude" value="">
+        <input  id="longitude" type="text" name="longitude" value="">
+        <input  id="city" type="text" name="city" value="">
+        <input  id="region" type="text" name="region" value="">
+
+        {{-- SUBMIT --}}
         <div class="input-group-append">
-          <button class="btn btn-boolbnb" type="button" id="button-addon2">Cerca</button>
+          <button class="btn btn-boolbnb" type="submit">Cerca</button>
         </div>
+
       </form>
       {{-- fine ricerca --}}
 
@@ -93,10 +106,19 @@
 
     {{-- inizio colonna destra con mappa --}}
     <aside class="col-xl-6 bool_map_col">
-
-      <div class="bool_map_container">
-        <img src="{{asset('img/guest/mappa_ricerca.png')}}" alt="Mappa">
+      <div class="ricerca">
+          {{-- <input type="search" id="input-map" class="form-control" placeholder="Where are we going?" /> --}}
+          {{-- <input type="search" /> --}}
       </div>
+      <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
+      <div class="bool_map_container">
+        <div id="map-example-container"></div>
+        {{-- <img src="{{asset('img/guest/mappa_ricerca.png')}}" alt="Mappa"> --}}
+      </div>
+
+      <!-- ================================================================  -->
+      <!-- ===================== SCRIPT ===================================  -->
+      <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
 
     </aside>
     {{-- fine colonna destra con mappa --}}
@@ -104,6 +126,5 @@
   </div>
 </section>
 {{-- fine sezione appartamenti e mappa --}}
-
-
+<script src="{{asset('js/boolbnb/guest/index.js')}}"></script>
 @endsection

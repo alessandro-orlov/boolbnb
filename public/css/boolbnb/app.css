@@ -679,10 +679,16 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  height: 100vh;
 }
 
 .bool_map_col .bool_map_container img {
   height: 100vh;
+  width: 100%;
+}
+
+#map-example-container {
+  height: 100%;
   width: 100%;
 }
 

@@ -103,4 +103,5 @@ class ApartmentController extends Controller
     {
         //
     }
+
 }

@@ -15,6 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/admin/index.js', 'public/js/boolbnb/admin')
     .js('resources/js/admin/create.js', 'public/js/boolbnb/admin')
     .js('resources/js/admin/edit.js', 'public/js/boolbnb/admin')
+    .js('resources/js/guest/index.js', 'public/js/boolbnb/guest')
     .js('resources/js/guest/show.js', 'public/js/boolbnb/guest')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/boolbnb/app.scss', 'public/css/boolbnb');

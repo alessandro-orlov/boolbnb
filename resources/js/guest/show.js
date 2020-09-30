@@ -6,7 +6,8 @@ $(document).ready(function() {
   // ========================================================= //
   // ===================== MAPPA ============================= //
   (function() {
-
+    var apartmentTitle = $('.show-top-heading h1').text();
+    console.log(apartmentTitle);
     var showLat = $('.show-latitude').val();
     var showLong = $('.show-longitude').val();
 
@@ -34,14 +35,14 @@ $(document).ready(function() {
       }
     );
 
-    // var markers = [];
+    var markers = [];
     // Imposto la view della mappa in base alla lattitudine e longitudine
     map.setView(new L.LatLng(latlng.lat, latlng.lng), 16);
     map.addLayer(osmLayer);
 
     var marker = L.marker(latlng);
-    marker.addTo(map);
-    // markers.push(marker);
+    marker.addTo(map).bindPopup(apartmentTitle);
+    markers.push(marker);
 
   })();
 
