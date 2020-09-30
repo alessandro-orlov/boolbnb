@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container py-5">
-    <h1 class="boolbnb-primary-color edit-apartment-heading">Aggiorna l'apparatamento</h1>
+    <h1 class="boolbnb-primary-color edit-apartment-heading">Aggiorna l'appartamento</h1>
     <h2 class="edit-apartment-title">{{$apartment->title}}</h2>
     <div class="apartment-edit-container">
       <div class="row">
@@ -31,7 +31,7 @@
                           <div class="edit-column right">{{$apartment->region}}</div>
                       </div>
                       <div class="edit-apartment-row">
-                          <div class="edit-column left">Prezo a notte</div>
+                          <div class="edit-column left">Prezzo a notte</div>
                           <div class="edit-column right"> <span class="boolbnb-primary-color">{{$apartment->price}} €</span> </div>
                       </div>
                   </div>
