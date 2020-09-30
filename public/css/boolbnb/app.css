@@ -113,12 +113,14 @@ main .jumbotron .filter .container .search-button button i {
 }
 
 main .jumbotron .filter h1 {
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: 3em;
 }
 
 main .jumbotron .filter h2 {
   font-weight: bold;
   margin-bottom: 15px;
+  font-size: 2.3em;
 }
 
 main .card-section {
