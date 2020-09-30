@@ -2,9 +2,42 @@ var $ = require( "jquery" );
 
 $(document).ready(function() {
 
+  // ========================================================= //
+  // ==================== SLIDER ============================= //
 
-  // // ========================================================= //
-  // // ===================== MAPPA ============================= //
+  // Filtro Stanze
+  var roomsRange = document.getElementById("rooms-number");
+  var roomsOutput = document.getElementById("rooms-value");
+  roomsOutput.innerHTML = roomsRange.value; // Display the default slider value
+
+  // Update the current slider value (each time you drag the slider handle)
+  roomsRange.oninput = function() {
+      roomsOutput.innerHTML = this.value;
+  };
+
+  // Filtro Ospiti/letti
+  var guestsRange = document.getElementById("guests-number");
+  var guestOutput = document.getElementById("guests-value");
+  guestOutput.innerHTML = guestsRange.value; // Display the default slider value
+
+  // Update the current slider value (each time you drag the slider handle)
+  guestsRange.oninput = function() {
+      guestOutput.innerHTML = this.value;
+  };
+
+  // Filtro radius
+  var radiusRange = document.getElementById("radius");
+  var radiusOutput = document.getElementById("radius-value");
+  radiusOutput.innerHTML = radiusRange.value; // Display the default slider value
+
+  // Update the current slider value (each time you drag the slider handle)
+  radiusRange.oninput = function() {
+      radiusOutput.innerHTML = this.value;
+  };
+
+
+  // ========================================================= //
+  // ===================== MAPPA ============================= //
   (function() {
     var placesAutocomplete = places({
       appId: 'plAQEOVDX808',

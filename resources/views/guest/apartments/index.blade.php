@@ -37,15 +37,45 @@
         Filtri di ricerca
       </a>
 
+
       <div class="collapse bool_dropdown" id="navbarToggleExternalContent">
-        <?php $i = 0; ?>
-        @foreach ($services as $service)
-        <?php $count = $i+=1?>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" name="services[]" value="{{$service->id}}" class="custom-control-input"  id="<?php echo 'customCheck'. $count ?>">
-          <label class="custom-control-label"  for="<?php echo 'customCheck'. $count ?>"><span class="bool_icon">{!! $service->icon !!}</span> {{$service->name}} </label>
+
+        {{-- Sliders --}}
+        <div class="sliders-box">
+          {{-- Stanze --}}
+          <div class="range-slider">
+            <label for="rooms">Stanze:</label>
+            <input type="range" class="bool_slider" id="rooms-number" min="1" max="9" step="1" value="3">
+            <a id="rooms-value"></a>
+          </div>
+
+          {{-- Ospiti --}}
+          <div class="range-slider">
+            <label for="rooms">Ospiti:</label>
+            <input type="range" class="bool_slider" id="guests-number" min="1" max="10" step="1" value="2">
+            <a id="guests-value"></a>
+          </div>
+
+          {{-- Range --}}
+          <div class="range-slider">
+            <label for="rooms">Distanza:</label>
+            <input type="range" class="bool_slider" id="radius" min="20" max="40" step="10" value="20">
+            <a id="radius-value"></a>
+          </div>
         </div>
-        @endforeach
+
+        {{-- Services --}}
+        <div class="services-box">
+          <?php $i = 0; ?>
+          @foreach ($services as $service)
+          <?php $count = $i+=1?>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" name="services[]" value="{{$service->id}}" class="custom-control-input"  id="<?php echo 'customCheck'. $count ?>">
+            <label class="custom-control-label"  for="<?php echo 'customCheck'. $count ?>"><span class="bool_icon">{!! $service->icon !!}</span> {{$service->name}} </label>
+          </div>
+          @endforeach
+        </div>
+
       </div>
       {{-- fine filtri di ricerca --}}
 

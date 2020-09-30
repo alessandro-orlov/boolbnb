@@ -571,6 +571,54 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
 
 .bool_ap_results .bool_dropdown {
   padding: 20px 0 0 20px;
+}
+
+.bool_ap_results .sliders-box {
+  width: 100%;
+}
+
+.bool_ap_results .sliders-box .range-slider {
+  margin: 5px 0;
+}
+
+.bool_ap_results .sliders-box .range-slider label {
+  width: 100px;
+}
+
+.bool_ap_results .sliders-box .bool_slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 5px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.bool_ap_results .sliders-box .bool_slider:hover {
+  opacity: 1;
+}
+
+.bool_ap_results .sliders-box .bool_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #f10031;
+  cursor: pointer;
+}
+
+.bool_ap_results .sliders-box .bool_slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #f10031;
+  cursor: pointer;
+}
+
+.bool_ap_results .services-box {
   -moz-column-count: 2;
        column-count: 2;
 }
