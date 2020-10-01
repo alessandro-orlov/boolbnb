@@ -16139,8 +16139,9 @@ $(document).ready(function () {
   var seaView; // quando clicco il bottone Invia parte la chiamata Ajax
 
   $('.btn-boolbnb').click(function () {
-    // Azzeriamo innerHTML
+    $('.all-db-apartments').html(''); // Azzeriamo innerHTML
     // $('apartments-php-container').addClass('hidden');
+
     event.preventDefault(); // Impedisce di fare il submit del form
     // Sliders
 
@@ -16165,7 +16166,7 @@ $(document).ready(function () {
     seaView.is(":checked") ? seaView = 'checked' : seaView = 'unchecked';
     console.log(latitude);
     console.log(longitude);
-    console.log(rooms);
+    console.log('numero stanze ' + rooms);
     console.log(beds);
     console.log(radius);
     console.log(wifi);
@@ -16195,9 +16196,9 @@ $(document).ready(function () {
         seaView: seaView
       },
       success: function success(data) {
-        console.log(data); // Funzione handlebars per stampare la risposta
-
+        // Funzione handlebars per stampare la risposta
         printApartments(data);
+        console.log(data);
       },
       error: function error(request, state, _error) {
         alert("E' avvenuto un errore. " + _error);
@@ -16239,14 +16240,14 @@ $(document).ready(function () {
     });
     var osmLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       minZoom: 1,
-      maxZoom: 13,
-      attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+      maxZoom: 19,
+      attribution: 'Boolean Team 1'
     });
     var markers = [];
     map.setView(new L.LatLng(41.29246, 12.57361), 6);
     map.addLayer(osmLayer);
-    placesAutocomplete.on('suggestions', handleOnSuggestions);
-    placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
+    placesAutocomplete.on('suggestions', handleOnSuggestions); // placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
+
     placesAutocomplete.on('change', handleOnChange);
     placesAutocomplete.on('clear', handleOnClear);
 
@@ -16278,19 +16279,19 @@ $(document).ready(function () {
     function handleOnClear() {
       map.setView(new L.LatLng(0, 0), 1);
       markers.forEach(removeMarker);
-    }
+    } // function handleOnCursorchanged(e) {
+    //   markers
+    //     .forEach(function(marker, markerIndex) {
+    //       if (markerIndex === e.suggestionIndex) {
+    //         marker.setOpacity(1);
+    //         marker.setZIndexOffset(1000);
+    //       } else {
+    //         marker.setZIndexOffset(0);
+    //         marker.setOpacity(0.5);
+    //       }
+    //     });
+    // }
 
-    function handleOnCursorchanged(e) {
-      markers.forEach(function (marker, markerIndex) {
-        if (markerIndex === e.suggestionIndex) {
-          marker.setOpacity(1);
-          marker.setZIndexOffset(1000);
-        } else {
-          marker.setZIndexOffset(0);
-          marker.setOpacity(0.5);
-        }
-      });
-    }
 
     function addMarker(suggestion) {
       var marker = L.marker(suggestion.latlng, {

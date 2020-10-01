@@ -36,7 +36,7 @@
                 @endforeach
               @endif
 
-              <p class="bool_price">Prezzo: {{$apartment->price}} € <small>/ a notte</small> </p>
+              <p class="bool_price"><span>Prezzo: {{$apartment->price}} € <small>/ a notte</small></span> </p>
             </a>
           </div>
 

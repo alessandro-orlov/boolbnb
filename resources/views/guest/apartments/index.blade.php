@@ -107,8 +107,11 @@
         {{-- BEGIN APARTMENTS LIST--}}
         <div class="all-apartments-container">
 
-          {{-- <!-- PRINT APARTMENTS WITH PHP -->
-          @include('layouts.partials.apartmentsphp') --}}
+          <!-- PRINT APARTMENTS WITH PHP -->
+          <div class="all-db-apartments">
+              @include('layouts.partials.apartmentsphp')
+          </div>
+
 
           {{-- handlebars tamplate --}}
           <div class="apartments-handlebars">

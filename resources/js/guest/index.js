@@ -49,7 +49,7 @@ $(document).ready(function() {
 
   // quando clicco il bottone Invia parte la chiamata Ajax
   $('.btn-boolbnb').click(function() {
-
+    $('.all-db-apartments').html('');
     // Azzeriamo innerHTML
     // $('apartments-php-container').addClass('hidden');
 
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
     console.log(latitude);
     console.log(longitude);
-    console.log(rooms);
+    console.log('numero stanze ' + rooms);
     console.log(beds);
     console.log(radius);
 
@@ -113,9 +113,9 @@ $(document).ready(function() {
         seaView: seaView,
       },
       success: function(data) {
-        console.log(data)
         // Funzione handlebars per stampare la risposta
         printApartments(data);
+        console.log(data);
       },
       error: function(request, state, error) {
         alert("E' avvenuto un errore. " + error);
@@ -159,8 +159,8 @@ $(document).ready(function() {
     var osmLayer = new L.TileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         minZoom: 1,
-        maxZoom: 13,
-        attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+        maxZoom: 19,
+        attribution: 'Boolean Team 1'
       }
     );
 
@@ -170,7 +170,7 @@ $(document).ready(function() {
     map.addLayer(osmLayer);
 
     placesAutocomplete.on('suggestions', handleOnSuggestions);
-    placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
+    // placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
     placesAutocomplete.on('change', handleOnChange);
     placesAutocomplete.on('clear', handleOnClear);
 
@@ -205,18 +205,18 @@ $(document).ready(function() {
       markers.forEach(removeMarker);
     }
 
-    function handleOnCursorchanged(e) {
-      markers
-        .forEach(function(marker, markerIndex) {
-          if (markerIndex === e.suggestionIndex) {
-            marker.setOpacity(1);
-            marker.setZIndexOffset(1000);
-          } else {
-            marker.setZIndexOffset(0);
-            marker.setOpacity(0.5);
-          }
-        });
-    }
+    // function handleOnCursorchanged(e) {
+    //   markers
+    //     .forEach(function(marker, markerIndex) {
+    //       if (markerIndex === e.suggestionIndex) {
+    //         marker.setOpacity(1);
+    //         marker.setZIndexOffset(1000);
+    //       } else {
+    //         marker.setZIndexOffset(0);
+    //         marker.setOpacity(0.5);
+    //       }
+    //     });
+    // }
 
     function addMarker(suggestion) {
       var marker = L.marker(suggestion.latlng, {opacity: .4});

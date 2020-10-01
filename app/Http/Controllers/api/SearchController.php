@@ -73,8 +73,8 @@ class SearchController extends Controller
             });
         }
 
-        // $queryApartment->where('rooms', '>=' ,$rooms);
-        // $queryApartment->where('beds', '>=' ,$beds);
+        $queryApartment->where('num_rooms', '>=' ,$rooms);
+        $queryApartment->where('num_beds', '>=' ,$beds);
 
         $queryApartment->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
         $queryApartment->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);

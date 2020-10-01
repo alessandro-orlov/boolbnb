@@ -111,7 +111,7 @@
         }
 
       }
-      .bool_info_apt{
+      .bool_info_apt {
         width: 55%;
         padding-left: 20px;
         @media all and (max-width: 768px) {
@@ -122,26 +122,30 @@
           width: 55%;
           padding-right: 20px;
         }
-        a{
+        a {
           text-decoration: none;
           color: #000;
-          h4{
-            margin: 10px 0;
-          }
-          hr{
-            width: 50px;
-          }
-          .bool_info_text{
-            margin-bottom: 0;
-            font-size: 15px;
-            line-height: 15px;
-            color: #7e7571;
-          }
-          .bool_price{
-            text-align: right;
-            font-size: 18px;
-            margin-top: 20px;
-            font-weight: 600;
+        }
+        h4{
+          margin: 10px 0;
+        }
+        hr{
+          width: 50px;
+        }
+        .bool_info_text{
+          margin-bottom: 0;
+          font-size: 15px;
+          line-height: 15px;
+          color: #7e7571;
+        }
+        .bool_price{
+          text-align: right;
+          font-size: 18px;
+          margin-top: 20px;
+          font-weight: 600;
+          display: flex;
+          span {
+            flex-basis: auto;
           }
         }
       }

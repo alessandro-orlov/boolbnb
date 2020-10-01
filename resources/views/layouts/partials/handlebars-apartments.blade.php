@@ -1,6 +1,7 @@
 <ul>
 
     <li class="bool_ap">
+
         {{-- Immagine --}}
         @if (!empty('@{{main_img}}'))
           <div class="bool_img_apt">
@@ -33,7 +34,7 @@
               @endforeach
             @endif --}}
 
-            <p class="bool_price">Prezzo: @{{price}} € <small>/ a notte</small> </p>
+            <p class="bool_price"><span>Prezzo: @{{price}} € <small>/ a notte</small> <span></p>
         </div>
     </li>
 
@@ -43,5 +44,5 @@
 {{-- fine lista appartamenti --}}
 
 <div class="bool_pagination">
-  {{$apartments->links()}}
+  {{-- {{$apartments->links()}} --}}
 </div>

@@ -695,26 +695,31 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   color: #000;
 }
 
-.bool_ap_results ul .bool_ap .bool_info_apt a h4 {
+.bool_ap_results ul .bool_ap .bool_info_apt h4 {
   margin: 10px 0;
 }
 
-.bool_ap_results ul .bool_ap .bool_info_apt a hr {
+.bool_ap_results ul .bool_ap .bool_info_apt hr {
   width: 50px;
 }
 
-.bool_ap_results ul .bool_ap .bool_info_apt a .bool_info_text {
+.bool_ap_results ul .bool_ap .bool_info_apt .bool_info_text {
   margin-bottom: 0;
   font-size: 15px;
   line-height: 15px;
   color: #7e7571;
 }
 
-.bool_ap_results ul .bool_ap .bool_info_apt a .bool_price {
+.bool_ap_results ul .bool_ap .bool_info_apt .bool_price {
   text-align: right;
   font-size: 18px;
   margin-top: 20px;
   font-weight: 600;
+  display: flex;
+}
+
+.bool_ap_results ul .bool_ap .bool_info_apt .bool_price span {
+  flex-basis: auto;
 }
 
 .bool_ap_results ul .bool_ap:last-child {
