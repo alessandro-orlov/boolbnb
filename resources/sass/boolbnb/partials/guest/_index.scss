@@ -12,6 +12,19 @@
       box-shadow: none;
     }
   }
+  // START NEW STUFF
+  .api-search-form-container {
+    position: relative;
+  }
+  .all-search-filters {
+    margin: 20px 0;
+  }
+  .submit-search-btn {
+    position: absolute;
+    top: 16px;
+    right: 0;
+  }
+  // END NEW STUFF
   .bool_filter{
     color: #000;
     border: 1px solid #B0B0B0;
@@ -74,9 +87,10 @@
   .services-box {
     column-count: 2;
   }
-  ul{
+  // Apartments
+  ul {
     margin-top: 20px;
-    .bool_ap{
+    .bool_ap {
       padding: 20px 0 0 0px;
       border-top: 1px solid #ebebeb;
       width: 100%;
@@ -91,10 +105,11 @@
         @media all and (min-width: 769px) and (max-width: 1200px) {
           width: 45%;
         }
-        a img{
+        img{
           width: 100%;
           border-radius: 10px;
         }
+
       }
       .bool_info_apt{
         width: 55%;
@@ -135,31 +150,31 @@
       border-bottom: 1px solid #ebebeb;
     }
   }
-}
-.bool_pagination{
-  display: flex;
-  justify-content: center;
-}
-
-
-.bool_map_col{
-  position: relative;
-  padding-right: 0;
-  @media all and (max-width: 1200px) {
-    display: none;
+  .bool_pagination{
+    display: flex;
+    justify-content: center;
   }
-  .bool_map_container{
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    img{
+
+  // RIGHT SIDE
+  .bool_map_col{
+    position: relative;
+    padding-right: 0;
+    @media all and (max-width: 1200px) {
+      display: none;
+    }
+    .bool_map_container{
+      position: sticky;
+      top: 0;
       height: 100vh;
-      width: 100%;
+      img{
+        height: 100vh;
+        width: 100%;
+      }
     }
   }
-}
 
-  #map-example-container {
-    height: 100%;
-    width:100%;
-  };
+    #map-example-container {
+      height: 100%;
+      width:100%;
+    };
+}

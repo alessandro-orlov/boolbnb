@@ -1,160 +1,148 @@
 @extends('layouts.app')
+
 @section('content')
+  <section class="container-fluid bool_ap_results">
 
-{{-- inizio sezione appartamenti e mappa --}}
-<section class="container-fluid bool_ap_results">
+    {{-- LEFT SIDE --}}
+    <div class="row">
+      <div class="col-xl-6">
 
-{{-- inizio colonna sinistra con appartamenti e ricerca --}}
-  <div class="row">
-    <div class="col-xl-6">
+        {{-- BEGIN SEARCH FORM --}}
+        <div class="api-search-form-container">
+          <form class="py-3 mb-3 " method="post" enctype="multipart/form-data">
 
-      {{-- inizio ricerca --}}
-      <form class="input-group mb-3 bool_form" method="post" enctype="multipart/form-data">
-        {{-- @csrf
-        @method('POST') --}}
+            <div class="place-search-input">
+              <label class="sr-only">Ricerca un appartamento</label>
+              <input id="input-map" type="search" class="form-control" class="form-control bool_input" placeholder="Dove vuoi andare" />
+            </div>
 
-        <label class="sr-only" for="">Ricerca un appartamento</label>
-        {{-- <input name="search" type="search" id="input-map" class="form-control bool_input" placeholder="Dove vuoi andare?"> --}}
-        <input id="input-map" type="search" class="form-control" class="form-control bool_input" placeholder="Dove vuoi andare" />
+            <div>
+              {{-- SEARCH INFO --}}
+              <input hidden id="latitude" type="text" name="latitude" value="">
+              <input hidden id="longitude" type="text" name="longitude" value="">
+            </div>
 
-        {{-- SEARCH INFO --}}
-        <input  id="latitude" type="text" name="latitude" value="">
-        <input  id="longitude" type="text" name="longitude" value="">
-        <input  id="city" type="text" name="city" value="">
-        <input  id="region" type="text" name="region" value="">
-
-        {{-- SUBMIT --}}
-        <div class="input-group-append">
-          <button class="btn btn-boolbnb" type="submit">Cerca</button>
-        </div>
-
-      </form>
-      {{-- fine ricerca --}}
+            {{-- inizio filtri di ricerca --}}
+            <div class="all-search-filters">
+              <a class="bool_filter" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                Filtri di ricerca
+              </a>
+            </div>
 
 
-      {{-- inizio filtri di ricerca --}}
-      <a class="bool_filter" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        Filtri di ricerca
-      </a>
-
-
-      <div class="collapse bool_dropdown" id="navbarToggleExternalContent">
-
-        {{-- Sliders --}}
-        <div class="sliders-box">
-          {{-- Stanze --}}
-          <div class="range-slider">
-            <label for="rooms">Stanze:</label>
-            <input type="range" class="bool_slider" id="rooms-number" min="1" max="9" step="1" value="3">
-            <a id="rooms-value"></a>
-          </div>
-
-          {{-- Ospiti --}}
-          <div class="range-slider">
-            <label for="rooms">Ospiti:</label>
-            <input type="range" class="bool_slider" id="guests-number" min="1" max="10" step="1" value="2">
-            <a id="guests-value"></a>
-          </div>
-
-          {{-- Range --}}
-          <div class="range-slider">
-            <label for="rooms">Distanza:</label>
-            <input type="range" class="bool_slider" id="radius" min="20" max="40" step="10" value="20">
-            <a id="radius-value"></a>
-          </div>
-        </div>
-
-        {{-- Services --}}
-        <div class="services-box">
-          <?php $i = 0; ?>
-          @foreach ($services as $service)
-          <?php $count = $i+=1?>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" name="services[]" value="{{$service->id}}" class="custom-control-input"  id="<?php echo 'customCheck'. $count ?>">
-            <label class="custom-control-label"  for="<?php echo 'customCheck'. $count ?>"><span class="bool_icon">{!! $service->icon !!}</span> {{$service->name}} </label>
-          </div>
-          @endforeach
-        </div>
-
-      </div>
-      {{-- fine filtri di ricerca --}}
-
-      {{-- inizio lista appartamenti --}}
-      @if (!$apartments->isEmpty())
-        <ul>
-          @foreach ($apartments as $apartment)
-            <li class="bool_ap">
-
-                {{-- Immagine --}}
-                @if (!empty($apartment->main_img))
-                  <div class="bool_img_apt">
-                    <a href="{{route('guest.apartments.show', $apartment)}}">
-                      @if (strpos($apartment->main_img,'mpixel'))
-                        <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
-                      @else
-                        <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
-                      @endif
-                    </a>
+            <div>
+              <div class="collapse bool_dropdown" id="navbarToggleExternalContent">
+                {{-- Sliders --}}
+                <div class="sliders-box">
+                  {{-- Stanze --}}
+                  <div class="range-slider">
+                    <label for="rooms">Stanze:</label>
+                    <input type="range" class="bool_slider" id="rooms-number" min="1" max="9" step="1" value="3">
+                    <span id="rooms-value"></span>
                   </div>
-                @else
-                  <div class="bool_img_apt">
-                    <a href="{{route('guest.apartments.show', $apartment)}}">
-                      <img src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
-                    </a>
+
+                  {{-- Ospiti --}}
+                  <div class="range-slider">
+                    <label for="guests">Ospiti:</label>
+                    <input type="range" class="bool_slider" id="guests-number" min="1" max="10" step="1" value="2">
+                    <span id="guests-value"></span>
                   </div>
-                @endif
 
-                {{-- Informazioni --}}
-                <div class="bool_info_apt">
-                  <a href="{{route('guest.apartments.show', $apartment)}}">
-                    <p class="bool_info_text">Intero appartamento a {{$apartment->city}}, {{$apartment->region}}</p>
-                    <h4>{{$apartment->title}}</h4>
-                    <hr>
-                    <p class="bool_info_text">{{$apartment->num_beds}} ospiti - {{$apartment->num_rooms}} camere da letto - {{$apartment->num_baths}} bagni</p>
-
-                    @if (!$apartment->services->isEmpty())
-                      @foreach ($apartment->services as $service)
-                        <span class="bool_info_text">&#8901; {{$service->name}}</span>
-                      @endforeach
-                    @endif
-
-                    <p class="bool_price">Prezzo: {{$apartment->price}} € <small>/ a notte</small> </p>
-                  </a>
+                  {{-- Range --}}
+                  <div class="range-slider">
+                    <label for="radius">Distanza:</label>
+                    <input type="range" class="bool_slider" id="radius" min="20" max="40" step="10" value="20">
+                    <span id="radius-value"></span>
+                  </div>
                 </div>
 
-            </li>
+                {{-- Services --}}
+                <div class="services-box">
+                    {{-- WiFi --}}
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input wifi-service" id="customCheck1" value="">
+                      <label class="custom-control-label"  for="customCheck1"><span class="bool_icon"><i class="fas fa-wifi"></i></span> WiFi</label>
+                    </div>
+                    {{-- Parking --}}
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input parking-service" id="customCheck2" value="">
+                      <label class="custom-control-label"  for="customCheck2"><span class="bool_icon"><i class="fas fa-parking"></i></span>  Parcheggio</label>
+                    </div>
+                    {{-- Piscina --}}
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input swimmingPool-service" id="customCheck3" value="">
+                      <label class="custom-control-label"  for="customCheck3"><span class="bool_icon"><i class="fas fa-swimmer"></i></span> Piscina</label>
+                    </div>
+                    {{-- Portineria --}}
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input reception-service" id="customCheck4" value="">
+                      <label class="custom-control-label"  for="customCheck4"><span class="bool_icon"><i class="fas fa-concierge-bell"></i></span> Portineria</label>
+                    </div>
+                    {{-- Sauna --}}
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input sauna-service" id="customCheck5" value="">
+                      <label class="custom-control-label"  for="customCheck5"><span class="bool_icon"><i class="fas fa-hot-tub"></i></span> Sauna</label>
+                    </div>
+                    {{-- Vista Mare --}}
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input sea-view-service" id="customCheck6" value="">
+                      <label class="custom-control-label"  for="customCheck6"><span class="bool_icon"><i class="fas fa-water"></i></span> Vista Mare</label>
+                    </div>
+                </div>
 
-          @endforeach
-        </ul>
-      @endif
-      {{-- fine lista appartamenti --}}
-      <div class="bool_pagination">
-          {{$apartments->links()}}
-      </div>
+              </div>
+            </div>
+            {{-- fine filtri di ricerca --}}
+
+            {{-- SUBMIT --}}
+            <div class="submit-search-btn">
+              <div class="input-group-append">
+                <button class="btn btn-boolbnb" type="submit">Cerca</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        {{-- END SEARCH FORM --}}
+
+        {{-- BEGIN APARTMENTS LIST--}}
+        <div class="all-apartments-container">
+
+          {{-- <!-- PRINT APARTMENTS WITH PHP -->
+          @include('layouts.partials.apartmentsphp') --}}
+
+          {{-- handlebars tamplate --}}
+          <div class="apartments-handlebars">
+              {{-- append qui --}}
+          </div>
+
+        </div>
+        {{-- END APARTMENTS LIST --}}
+
+      </div> <!-- end col-xl-6 -->
+      {{-- END LEFT SIDE --}}
+
+      {{-- RIGHT SIDE - MAP --}}
+      <aside class="col-xl-6 bool_map_col">
+        <div class="ricerca">
+        </div>
+        <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
+        <div class="bool_map_container">
+          <div id="map-example-container"></div>
+        </div>
+      </aside>
+      {{-- END RIGHT SIDE --}}
+
     </div>
-    {{-- fine colonna sinistra con appartamenti e ricerca --}}
+  </section>
+  {{-- fine sezione appartamenti e mappa --}}
 
-    {{-- inizio colonna destra con mappa --}}
-    <aside class="col-xl-6 bool_map_col">
-      <div class="ricerca">
-          {{-- <input type="search" id="input-map" class="form-control" placeholder="Where are we going?" /> --}}
-          {{-- <input type="search" /> --}}
-      </div>
-      <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
-      <div class="bool_map_container">
-        <div id="map-example-container"></div>
-        {{-- <img src="{{asset('img/guest/mappa_ricerca.png')}}" alt="Mappa"> --}}
-      </div>
+  <!-- ================================================================  -->
+  <!-- ===================== SCRIPT ===================================  -->
+  <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+  {{-- <script src="{{asset('js/boolbnb/search.js')}}"></script> --}}
+  <script src="{{asset('js/boolbnb/guest/index.js')}}"></script>
 
-      <!-- ================================================================  -->
-      <!-- ===================== SCRIPT ===================================  -->
-      <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
-
-    </aside>
-    {{-- fine colonna destra con mappa --}}
-
-  </div>
-</section>
-{{-- fine sezione appartamenti e mappa --}}
-<script src="{{asset('js/boolbnb/guest/index.js')}}"></script>
+  <script id="entry-template" type="text/x-handlebars-template">
+      @include('layouts/partials/handlebars-apartments')
+  </script>
 @endsection
