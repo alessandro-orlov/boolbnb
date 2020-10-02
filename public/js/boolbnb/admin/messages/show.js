@@ -10979,7 +10979,12 @@ return jQuery;
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-$(document).ready(function () {// alert('its working!!!');
+$(document).ready(function () {
+  $('.apartment-message-box').click(function () {
+    $(this).find('.open').toggleClass('visible');
+    $(this).find('.close').toggleClass('visible');
+    $(this).find('.message-detail').toggleClass('visible');
+  });
 });
 
 /***/ }),
@@ -10991,7 +10996,7 @@ $(document).ready(function () {// alert('its working!!!');
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\messages\show.js */"./resources/js/admin/messages/show.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\boolbnb\resources\js\admin\messages\show.js */"./resources/js/admin/messages/show.js");
 
 
 /***/ })

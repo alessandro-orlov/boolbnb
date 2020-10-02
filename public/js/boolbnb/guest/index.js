@@ -16219,9 +16219,7 @@ $(document).ready(function () {
 
     for (var i = 0; i < data.length; i++) {
       var singleApartment = data[i];
-      var html = template(singleApartment); // Ressetto i risultati precedenti
-
-      $('.apartments-handlebars').html(''); // Inserisco i risultati della ricerca
+      var html = template(singleApartment); // Inserisco i risultati della ricerca
 
       $('.apartments-handlebars').append(html);
     }
@@ -16333,7 +16331,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\boolbnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
 
 
 /***/ })
