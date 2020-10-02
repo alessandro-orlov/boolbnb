@@ -16240,14 +16240,14 @@ $(document).ready(function () {
     });
     var osmLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       minZoom: 1,
-      maxZoom: 19,
+      maxZoom: 13,
       attribution: 'Boolean Team 1'
     });
     var markers = [];
     map.setView(new L.LatLng(41.29246, 12.57361), 6);
     map.addLayer(osmLayer);
-    placesAutocomplete.on('suggestions', handleOnSuggestions); // placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
-
+    placesAutocomplete.on('suggestions', handleOnSuggestions);
+    placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
     placesAutocomplete.on('change', handleOnChange);
     placesAutocomplete.on('clear', handleOnClear);
 
@@ -16279,19 +16279,19 @@ $(document).ready(function () {
     function handleOnClear() {
       map.setView(new L.LatLng(0, 0), 1);
       markers.forEach(removeMarker);
-    } // function handleOnCursorchanged(e) {
-    //   markers
-    //     .forEach(function(marker, markerIndex) {
-    //       if (markerIndex === e.suggestionIndex) {
-    //         marker.setOpacity(1);
-    //         marker.setZIndexOffset(1000);
-    //       } else {
-    //         marker.setZIndexOffset(0);
-    //         marker.setOpacity(0.5);
-    //       }
-    //     });
-    // }
+    }
 
+    function handleOnCursorchanged(e) {
+      markers.forEach(function (marker, markerIndex) {
+        if (markerIndex === e.suggestionIndex) {
+          marker.setOpacity(1);
+          marker.setZIndexOffset(1000);
+        } else {
+          marker.setZIndexOffset(0);
+          marker.setOpacity(0.5);
+        }
+      });
+    }
 
     function addMarker(suggestion) {
       var marker = L.marker(suggestion.latlng, {
