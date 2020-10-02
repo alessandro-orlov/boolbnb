@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -10983,6 +10983,8 @@ $(document).ready(function () {
   // ========================================================= //
   // ===================== MAPPA ============================= //
   (function () {
+    var apartmentTitle = $('.show-top-heading h1').text();
+    console.log(apartmentTitle);
     var showLat = $('.show-latitude').val();
     var showLong = $('.show-longitude').val();
     var latlng = {
@@ -11002,26 +11004,27 @@ $(document).ready(function () {
       minZoom: 1,
       maxZoom: 20,
       attribution: 'Boolbnb - Team 1'
-    }); // var markers = [];
-    // Imposto la view della mappa in base alla lattitudine e longitudine
+    });
+    var markers = []; // Imposto la view della mappa in base alla lattitudine e longitudine
 
     map.setView(new L.LatLng(latlng.lat, latlng.lng), 16);
     map.addLayer(osmLayer);
     var marker = L.marker(latlng);
-    marker.addTo(map); // markers.push(marker);
+    marker.addTo(map).bindPopup(apartmentTitle);
+    markers.push(marker);
   })();
 }); // End document ready
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!******************************************!*\
   !*** multi ./resources/js/guest/show.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\boolbnb\resources\js\guest\show.js */"./resources/js/guest/show.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\guest\show.js */"./resources/js/guest/show.js");
 
 
 /***/ })

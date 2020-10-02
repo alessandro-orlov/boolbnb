@@ -129,22 +129,6 @@
                 </script>
 
                 {{-- Prezzo a notte --}}
-                {{-- <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="title">Prezzo a notte</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">$</span>
-                            </div>
-                                <input type="text" name="price" value="{{ old('price') }}" class="form-control" aria-label="Amount (to the nearest dollar)" >
-                            <div class="input-group-append">
-                                <span class="input-group-text">.00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-
-                {{-- Prezzo a notte --}}
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="title">Prezzo a notte</label>

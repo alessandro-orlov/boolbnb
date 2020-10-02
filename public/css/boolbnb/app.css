@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -64,36 +65,55 @@ main .jumbotron .filter {
 
 main .jumbotron .filter .container {
   text-align: center;
-  color: white;
+  color: #333;
   padding-top: 70px;
 }
 
+main .jumbotron .filter .container h1,
+main .jumbotron .filter .container h2 {
+  color: #fff;
+  padding-bottom: 20px;
+}
+
 main .jumbotron .filter .container .jumbo-search-bar {
-  height: 70px;
-  width: 80%;
-  display: flex;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 100px;
+  position: relative;
 }
 
-main .jumbotron .filter .container .jumbo-search-bar input {
-  width: 90%;
-  text-align: left;
+main .jumbotron .filter .container .jumbo-search-bar form {
+  width: 100%;
+}
+
+main .jumbotron .filter .container .jumbo-search-bar form .where-bar {
+  padding: 12px;
+}
+
+main .jumbotron .filter .container .jumbo-search-bar form .where-bar input {
+  color: #d5d5d5;
+  padding: 5px 8px;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.03);
-  color: white;
   border: none;
+}
+
+main .jumbotron .filter .container .jumbo-search-bar form .where-bar span {
+  text-align: left;
+}
+
+main .jumbotron .filter .container .jumbo-search-bar form .search-button {
+  position: absolute;
+  top: 8px;
+  right: 0;
 }
 
 main .jumbotron .filter .container .where-bar {
   height: 100%;
   width: 100%;
-}
-
-main .jumbotron .filter .container .where-bar span {
-  display: flow-root;
 }
 
 main .jumbotron .filter .container .search-button {
@@ -104,7 +124,6 @@ main .jumbotron .filter .container .search-button {
 main .jumbotron .filter .container .search-button button {
   border-radius: 100%;
   padding: 12px;
-  margin-top: 11px;
 }
 
 main .jumbotron .filter .container .search-button button i {
@@ -113,14 +132,14 @@ main .jumbotron .filter .container .search-button button i {
 }
 
 main .jumbotron .filter h1 {
+  letter-spacing: 5px;
   font-weight: bold;
   font-size: 3em;
 }
 
 main .jumbotron .filter h2 {
-  font-weight: bold;
   margin-bottom: 15px;
-  font-size: 2.3em;
+  font-size: 1.8em;
 }
 
 main .card-section {
@@ -535,6 +554,23 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   }
 }
 
+.apartment-messages-page h1 {
+  color: #f10031;
+}
+
+.apartment-messages-page .message-detail {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.apartment-messages-page .message-detail .ms_user-info {
+  flex-basis: 30%;
+}
+
+.apartment-messages-page .message-detail .ms_user-message {
+  flex-basis: 70%;
+}
+
 .bool_ap_results .bool_form {
   padding-top: 20px;
 }
@@ -550,6 +586,20 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
 .bool_ap_results .bool_form .btn-boolbnb:focus {
   border-color: #f10031;
   box-shadow: none;
+}
+
+.bool_ap_results .api-search-form-container {
+  position: relative;
+}
+
+.bool_ap_results .all-search-filters {
+  margin: 20px 0;
+}
+
+.bool_ap_results .submit-search-btn {
+  position: absolute;
+  top: 16px;
+  right: 0;
 }
 
 .bool_ap_results .bool_filter {
@@ -571,6 +621,59 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
 
 .bool_ap_results .bool_dropdown {
   padding: 20px 0 0 20px;
+  display: none;
+}
+
+.bool_ap_results .bool_dropdown.visible {
+  display: block;
+}
+
+.bool_ap_results .sliders-box {
+  width: 100%;
+}
+
+.bool_ap_results .sliders-box .range-slider {
+  margin: 5px 0;
+}
+
+.bool_ap_results .sliders-box .range-slider label {
+  width: 100px;
+}
+
+.bool_ap_results .sliders-box .bool_slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 5px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.bool_ap_results .sliders-box .bool_slider:hover {
+  opacity: 1;
+}
+
+.bool_ap_results .sliders-box .bool_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #f10031;
+  cursor: pointer;
+}
+
+.bool_ap_results .sliders-box .bool_slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #f10031;
+  cursor: pointer;
+}
+
+.bool_ap_results .services-box {
   -moz-column-count: 2;
        column-count: 2;
 }
@@ -604,7 +707,7 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   }
 }
 
-.bool_ap_results ul .bool_ap .bool_img_apt a img {
+.bool_ap_results ul .bool_ap .bool_img_apt img {
   width: 100%;
   border-radius: 10px;
 }
@@ -633,56 +736,67 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   color: #000;
 }
 
-.bool_ap_results ul .bool_ap .bool_info_apt a h4 {
+.bool_ap_results ul .bool_ap .bool_info_apt h4 {
   margin: 10px 0;
 }
 
-.bool_ap_results ul .bool_ap .bool_info_apt a hr {
+.bool_ap_results ul .bool_ap .bool_info_apt hr {
   width: 50px;
 }
 
-.bool_ap_results ul .bool_ap .bool_info_apt a .bool_info_text {
+.bool_ap_results ul .bool_ap .bool_info_apt .bool_info_text {
   margin-bottom: 0;
   font-size: 15px;
   line-height: 15px;
   color: #7e7571;
 }
 
-.bool_ap_results ul .bool_ap .bool_info_apt a .bool_price {
+.bool_ap_results ul .bool_ap .bool_info_apt .bool_price {
   text-align: right;
   font-size: 18px;
   margin-top: 20px;
   font-weight: 600;
+  display: flex;
+}
+
+.bool_ap_results ul .bool_ap .bool_info_apt .bool_price span {
+  flex-basis: auto;
 }
 
 .bool_ap_results ul .bool_ap:last-child {
   border-bottom: 1px solid #ebebeb;
 }
 
-.bool_pagination {
+.bool_ap_results .bool_pagination {
   display: flex;
   justify-content: center;
 }
 
-.bool_map_col {
+.bool_ap_results .bool_map_col {
   position: relative;
   padding-right: 0;
 }
 
 @media all and (max-width: 1200px) {
-  .bool_map_col {
+  .bool_ap_results .bool_map_col {
     display: none;
   }
 }
 
-.bool_map_col .bool_map_container {
+.bool_ap_results .bool_map_col .bool_map_container {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  height: 100vh;
 }
 
-.bool_map_col .bool_map_container img {
+.bool_ap_results .bool_map_col .bool_map_container img {
   height: 100vh;
+  width: 100%;
+}
+
+.bool_ap_results #map-example-container {
+  height: 100%;
   width: 100%;
 }
 

@@ -77,7 +77,7 @@
                 </div>
                 <div class="contact-owner-container">
                     <div class="contact-owner-form">
-                        <h2>Prenota l'appartamento</h2>
+                        <h2>Contatta l'host</h2>
                         <div class="errors">
                           @if ($errors->any())
                               <div class="alert alert-danger">
@@ -93,24 +93,31 @@
                         <form class="needs-validation" novalidate action="{{ route('guest.apartments.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('POST')
+                            {{-- Message Title --}}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="titolo">Oggetto</label>
+                                    <input type="text" class="form-control" name="msg_title" value="{{old('msg_title')}}" placeholder="Inserisci l'oggetto del messaggio" required>
+                                </div>
+                            </div>
                             {{-- Sender name --}}
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="title">Il tuo nome</label>
+                                    <label for="nome">Il tuo nome</label>
                                     <input type="text" class="form-control" name="sender_name" value="{{old('sender_name')}}" placeholder="Inserisci il tuo nome" required>
                                 </div>
                             </div>
                             {{-- Sender email --}}
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="title">la tua email</label>
+                                    <label for="email">La tua email</label>
                                     <input type="email" class="form-control" name="sender_mail" value="{{old('sender_mail')}}" placeholder="Inserisci la tua email" required>
                                 </div>
                             </div>
                             {{-- message --}}
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label>Descrizione</label>
+                                    <label for="messaggio">Messaggio</label>
                                     <textarea class="form-control" name="message" rows="5" placeholder="Inserisci il tuo messaggio" required></textarea>
                                 </div>
                             </div>

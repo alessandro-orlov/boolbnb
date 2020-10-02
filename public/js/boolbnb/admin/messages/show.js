@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -10970,37 +10970,28 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/admin/create.js":
-/*!**************************************!*\
-  !*** ./resources/js/admin/create.js ***!
-  \**************************************/
+/***/ "./resources/js/admin/messages/show.js":
+/*!*********************************************!*\
+  !*** ./resources/js/admin/messages/show.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-$(document).ready(function () {
-  $('input[name="price"]').keyup(function () {
-    var priceInputValue = $('input[name="price"]').val();
-
-    if (priceInputValue.includes('.')) {
-      $('.edit-price-error').addClass('visible');
-    } else {
-      $('.edit-price-error').removeClass('visible');
-    }
-  });
-}); // End document ready
+$(document).ready(function () {// alert('its working!!!');
+});
 
 /***/ }),
 
-/***/ 2:
-/*!********************************************!*\
-  !*** multi ./resources/js/admin/create.js ***!
-  \********************************************/
+/***/ 4:
+/*!***************************************************!*\
+  !*** multi ./resources/js/admin/messages/show.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\create.js */"./resources/js/admin/create.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\messages\show.js */"./resources/js/admin/messages/show.js");
 
 
 /***/ })
