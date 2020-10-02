@@ -40,7 +40,10 @@
   }
   .bool_dropdown{
     padding: 20px 0 0 20px;
-
+    display: none;
+    &.visible {
+      display: block;
+    }
   }
   .sliders-box {
     width: 100%;

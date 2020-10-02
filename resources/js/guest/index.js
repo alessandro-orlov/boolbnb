@@ -2,6 +2,13 @@ var $ = require( "jquery" );
 const Handlebars = require("handlebars");
 
 $(document).ready(function() {
+  // ========================================================= //
+  // ================= TOGGLE-FILTERS ======================== //
+  $('.all-search-filters .bool_filter').click(function() {
+    $('.bool_dropdown').slideToggle();
+  });
+
+
 
   // ========================================================= //
   // ==================== SLIDERS ============================ //
@@ -49,9 +56,13 @@ $(document).ready(function() {
 
   // quando clicco il bottone Invia parte la chiamata Ajax
   $('.btn-boolbnb').click(function() {
-    $('.all-db-apartments').html('');
+
     // Azzeriamo innerHTML
-    // $('apartments-php-container').addClass('hidden');
+    $('.all-db-apartments').html('');
+    $('.apartments-handlebars').html('');
+    //
+    $('.bool_dropdown').slideUp();
+
 
 
     event.preventDefault(); // Impedisce di fare il submit del form
@@ -130,6 +141,11 @@ $(document).ready(function() {
     for (var i = 0; i < data.length; i++) {
       var singleApartment = data[i];
       var html = template(singleApartment);
+
+      // Ressetto i risultati precedenti
+      $('.apartments-handlebars').html('')
+
+      // Inserisco i risultati della ricerca
       $('.apartments-handlebars').append(html);
     }
   };
@@ -233,5 +249,6 @@ $(document).ready(function() {
       map.fitBounds(featureGroup.getBounds().pad(0.5), {animate: false});
     }
   })();
+
 
 }); // End Document ready

@@ -21,6 +21,7 @@ main {
       padding-top: 70px;
       h1, h2 {
         color: #fff;
+        padding-bottom: 20px;
       }
       .jumbo-search-bar {
         width: 70%;
@@ -75,14 +76,15 @@ main {
       }
 
         h1 {
+          letter-spacing: 5px;
           font-weight: bold;
           font-size: 3em;
         }
 
         h2 {
-          font-weight: bold;
+
           margin-bottom: 15px;
-          font-size: 2.3em;
+          font-size: 1.8em;
         }
       }
     }

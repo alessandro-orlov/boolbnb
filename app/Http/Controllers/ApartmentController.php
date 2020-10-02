@@ -51,6 +51,7 @@ class ApartmentController extends Controller
 
         $new_massage = new Message();
         $new_massage->apartment_id = $apartment_id;
+        $new_massage->msg_title = $data['msg_title'];
         $new_massage->sender_name = $data['sender_name'];
         $new_massage->sender_mail = $data['sender_mail'];
         $new_massage->message = $data['message'];

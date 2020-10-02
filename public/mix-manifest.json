@@ -5,6 +5,7 @@
     "/js/boolbnb/admin/create.js": "/js/boolbnb/admin/create.js",
     "/js/boolbnb/admin/edit.js": "/js/boolbnb/admin/edit.js",
     "/js/boolbnb/admin/index.js": "/js/boolbnb/admin/index.js",
+    "/js/boolbnb/admin/messages/show.js": "/js/boolbnb/admin/messages/show.js",
     "/js/boolbnb/guest/index.js": "/js/boolbnb/guest/index.js",
     "/js/boolbnb/guest/show.js": "/js/boolbnb/guest/show.js"
 }

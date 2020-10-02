@@ -1,0 +1,13 @@
+.apartment-messages-page {
+  h1 {color: $primary-red;}
+  .message-detail {
+    display: flex;
+    flex-wrap: wrap;
+    .ms_user-info {
+      flex-basis: 30%;
+    }
+    .ms_user-message {
+      flex-basis: 70%;
+    }
+  }
+}

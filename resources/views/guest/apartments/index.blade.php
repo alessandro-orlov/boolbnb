@@ -24,14 +24,14 @@
 
             {{-- inizio filtri di ricerca --}}
             <div class="all-search-filters">
-              <a class="bool_filter" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <a class="bool_filter">
                 Filtri di ricerca
               </a>
             </div>
 
 
             <div>
-              <div class="collapse bool_dropdown" id="navbarToggleExternalContent">
+              <div class="bool_dropdown" id="navbarToggleExternalContent">
                 {{-- Sliders --}}
                 <div class="sliders-box">
                   {{-- Stanze --}}

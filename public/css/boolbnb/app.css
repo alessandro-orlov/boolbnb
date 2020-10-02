@@ -72,6 +72,7 @@ main .jumbotron .filter .container {
 main .jumbotron .filter .container h1,
 main .jumbotron .filter .container h2 {
   color: #fff;
+  padding-bottom: 20px;
 }
 
 main .jumbotron .filter .container .jumbo-search-bar {
@@ -131,14 +132,14 @@ main .jumbotron .filter .container .search-button button i {
 }
 
 main .jumbotron .filter h1 {
+  letter-spacing: 5px;
   font-weight: bold;
   font-size: 3em;
 }
 
 main .jumbotron .filter h2 {
-  font-weight: bold;
   margin-bottom: 15px;
-  font-size: 2.3em;
+  font-size: 1.8em;
 }
 
 main .card-section {
@@ -553,6 +554,23 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   }
 }
 
+.apartment-messages-page h1 {
+  color: #f10031;
+}
+
+.apartment-messages-page .message-detail {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.apartment-messages-page .message-detail .ms_user-info {
+  flex-basis: 30%;
+}
+
+.apartment-messages-page .message-detail .ms_user-message {
+  flex-basis: 70%;
+}
+
 .bool_ap_results .bool_form {
   padding-top: 20px;
 }
@@ -603,6 +621,11 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
 
 .bool_ap_results .bool_dropdown {
   padding: 20px 0 0 20px;
+  display: none;
+}
+
+.bool_ap_results .bool_dropdown.visible {
+  display: block;
 }
 
 .bool_ap_results .sliders-box {
