@@ -142,9 +142,6 @@ $(document).ready(function() {
       var singleApartment = data[i];
       var html = template(singleApartment);
 
-      // Ressetto i risultati precedenti
-      $('.apartments-handlebars').html('')
-
       // Inserisco i risultati della ricerca
       $('.apartments-handlebars').append(html);
     }

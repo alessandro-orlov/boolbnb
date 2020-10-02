@@ -27,6 +27,14 @@ a:hover {
   text-decoration: none;
 }
 
+i {
+  cursor: pointer;
+}
+
+.visible {
+  display: block;
+}
+
 .btn-boolbnb {
   background: linear-gradient(90deg, #b60e54 0%, #f10031 50%, #b60e54 100%);
   color: #fff;
@@ -554,21 +562,68 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   }
 }
 
-.apartment-messages-page h1 {
+h1 {
+  color: #f10031;
+  margin-bottom: 30px;
+}
+
+.apartment-messages-page {
+  background-color: #fff;
+  box-shadow: 0px 0px 15px 1px #0000002b;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.apartment-messages-page h3 {
+  font-size: 1.35em;
+  font-weight: bold;
+  margin-left: 25px;
+}
+
+.apartment-messages-page .apartment-message-box span.close,
+.apartment-messages-page .apartment-message-box span.open {
+  display: none;
+  position: absolute;
+  margin-top: 2px;
+}
+
+.apartment-messages-page .apartment-message-box span.close.visible,
+.apartment-messages-page .apartment-message-box span.open.visible {
+  display: block;
+}
+
+.apartment-messages-page .apartment-message-box span.close.visible i,
+.apartment-messages-page .apartment-message-box span.open.visible i {
   color: #f10031;
 }
 
-.apartment-messages-page .message-detail {
+.apartment-messages-page .apartment-message-box .message-detail {
+  display: none;
+}
+
+.apartment-messages-page .apartment-message-box .message-detail.visible {
   display: flex;
   flex-wrap: wrap;
 }
 
-.apartment-messages-page .message-detail .ms_user-info {
-  flex-basis: 30%;
+.apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-info {
+  flex-basis: 100%;
 }
 
-.apartment-messages-page .message-detail .ms_user-message {
-  flex-basis: 70%;
+.apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-message {
+  flex-basis: 100%;
+}
+
+@media all and (min-width: 768px) {
+  .apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-info {
+    flex-basis: 30%;
+  }
+
+  .apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-message {
+    flex-basis: 70%;
+  }
 }
 
 .bool_ap_results .bool_form {
