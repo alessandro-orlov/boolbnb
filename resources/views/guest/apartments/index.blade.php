@@ -9,26 +9,32 @@
 
         {{-- BEGIN SEARCH FORM --}}
         <div class="api-search-form-container">
-          <form class="py-3 mb-3 " method="post" enctype="multipart/form-data">
+          <form class="py-3 mb-3" id="ms_search-form" method="post" enctype="multipart/form-data">
+            @if (!empty($placesInfo))
+                <div class="place-search-input">
+                  <label class="sr-only">Ricerca un appartamento</label>
+                  <input id="address" type="search" class="form-control" class="form-control bool_input" value="<?php echo $placesInfo['address']; ?>" placeholder="Dove vuoi andare" />
+                  <input hidden id="latitude" type="text" name="latitude" value="<?php echo $placesInfo['lat']; ?>">
+                  <input hidden id="longitude" type="text" name="longitude" value="<?php echo $placesInfo['lng']; ?>">
+                  <input hidden type="text" id="controllo" value="call-ajax">
+                </div>
+              @else
+                  <div class="place-search-input">
+                    <label class="sr-only">Ricerca un appartamento</label>
+                    <input id="address" type="search" class="form-control" class="form-control bool_input" placeholder="Dove vuoi andare" />
+                    <input hidden id="latitude" type="text" name="latitude" value="">
+                    <input hidden id="longitude" type="text" name="longitude" value="">
+                  </div>
+            @endif
 
-            <div class="place-search-input">
-              <label class="sr-only">Ricerca un appartamento</label>
-              <input id="input-map" type="search" class="form-control" class="form-control bool_input" placeholder="Dove vuoi andare" />
-            </div>
 
-            <div>
-              {{-- SEARCH INFO --}}
-              <input hidden id="latitude" type="text" name="latitude" value="">
-              <input hidden id="longitude" type="text" name="longitude" value="">
-            </div>
 
             {{-- inizio filtri di ricerca --}}
             <div class="all-search-filters">
-              <a class="bool_filter">
+              <a class="bool_filter" onclick="myAlert()">
                 Filtri di ricerca
               </a>
             </div>
-
 
             <div>
               <div class="bool_dropdown" id="navbarToggleExternalContent">
@@ -37,7 +43,7 @@
                   {{-- Stanze --}}
                   <div class="range-slider">
                     <label for="rooms">Stanze:</label>
-                    <input type="range" class="bool_slider" id="rooms-number" min="1" max="9" step="1" value="3">
+                    <input type="range" class="bool_slider" id="rooms-number" min="1" max="9" step="1" value="1">
                     <span id="rooms-value"></span>
                   </div>
 
@@ -60,32 +66,32 @@
                 <div class="services-box">
                     {{-- WiFi --}}
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input wifi-service" id="customCheck1" value="">
+                      <input type="checkbox" class="custom-control-input wifi-service checkbox-filters" id="customCheck1" value="">
                       <label class="custom-control-label"  for="customCheck1"><span class="bool_icon"><i class="fas fa-wifi"></i></span> WiFi</label>
                     </div>
                     {{-- Parking --}}
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input parking-service" id="customCheck2" value="">
+                      <input type="checkbox" class="custom-control-input parking-service checkbox-filters" id="customCheck2" value="">
                       <label class="custom-control-label"  for="customCheck2"><span class="bool_icon"><i class="fas fa-parking"></i></span>  Parcheggio</label>
                     </div>
                     {{-- Piscina --}}
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input swimmingPool-service" id="customCheck3" value="">
+                      <input type="checkbox" class="custom-control-input swimmingPool-service checkbox-filters" id="customCheck3" value="">
                       <label class="custom-control-label"  for="customCheck3"><span class="bool_icon"><i class="fas fa-swimmer"></i></span> Piscina</label>
                     </div>
                     {{-- Portineria --}}
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input reception-service" id="customCheck4" value="">
+                      <input type="checkbox" class="custom-control-input reception-service checkbox-filters" id="customCheck4" value="">
                       <label class="custom-control-label"  for="customCheck4"><span class="bool_icon"><i class="fas fa-concierge-bell"></i></span> Portineria</label>
                     </div>
                     {{-- Sauna --}}
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input sauna-service" id="customCheck5" value="">
+                      <input type="checkbox" class="custom-control-input sauna-service checkbox-filters" id="customCheck5" value="">
                       <label class="custom-control-label"  for="customCheck5"><span class="bool_icon"><i class="fas fa-hot-tub"></i></span> Sauna</label>
                     </div>
                     {{-- Vista Mare --}}
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input sea-view-service" id="customCheck6" value="">
+                      <input type="checkbox" class="custom-control-input sea-view-service checkbox-filters" id="customCheck6" value="">
                       <label class="custom-control-label"  for="customCheck6"><span class="bool_icon"><i class="fas fa-water"></i></span> Vista Mare</label>
                     </div>
                 </div>
@@ -129,9 +135,19 @@
         <div class="ricerca">
         </div>
         <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
-        <div class="bool_map_container">
-          <div id="map-example-container"></div>
+
+        <div class="">
+          {{-- Qui metto lat e lng della homapage --}}
+          <div class="hidden">
+              <input type="hidden" class='latitude-value' value="41.29246">
+              <input type="hidden" class='longitude-value' value="12.57361">
+              <input type="hidden" id="input-map" class="form-control">
+          </div>
         </div>
+        <div class="map bool_map_container">
+            <div id="map-example-container"></div>
+        </div>
+
       </aside>
       {{-- END RIGHT SIDE --}}
 
@@ -141,10 +157,26 @@
 
   <!-- ================================================================  -->
   <!-- ===================== SCRIPT ===================================  -->
-  <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
-  {{-- <script src="{{asset('js/boolbnb/search.js')}}"></script> --}}
   <script src="{{asset('js/boolbnb/guest/index.js')}}"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+  <script>
+      (function() {
+        var placesAutocomplete = places({
+          appId: 'plAQEOVDX808',
+          apiKey: '5e56964f06ab40f6c0d1912086c2be09',
+          container: document.querySelector('#address')
+        });
+        var $address = document.querySelector('#address')
+          placesAutocomplete.on('change', function(e) {
+            document.querySelector("#address").value = e.suggestion.value || "";
+            document.querySelector("#latitude").value = e.suggestion.latlng.lat || "";
+            document.querySelector("#longitude").value = e.suggestion.latlng.lng || "";
+          });
+          placesAutocomplete.on('clear', function() {
+            $address.textContent = 'none';
+          });
+      })();
+  </script>
   <script id="entry-template" type="text/x-handlebars-template">
       @include('layouts/partials/handlebars-apartments')
   </script>

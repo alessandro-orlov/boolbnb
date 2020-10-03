@@ -10,42 +10,27 @@
                 <h5><span class="icon"><i class="fas fa-map-marker-alt"></i></span> {{$apartment->city}}, {{$apartment->region}}</h5>
             </div>
 
-            {{-- Image container --}}
-            <div class="show-image-container">
-                <div class="main-image">
-                    {{-- Immagine --}}
-                    @if (!empty($apartment->main_img))
-                        @if (strpos($apartment->main_img,'mpixel'))
-                            <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
-                          @else
-                            <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
-                        @endif
-                    @else
-                        <img src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
-                    @endif
-                </div>
-                <div class="images">
-                    @for ($i=0; $i < 4; $i++)
-                      <div class="small-img-preview">
-                        @if (!empty($apartment->main_img))
-                            @if (strpos($apartment->main_img,'mpixel'))
-                                <img src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
-                              @else
-                                <img src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
-                            @endif
-                        @else
-                            <img src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
-                        @endif
-                      </div>
-                    @endfor
-                </div>
-            </div>
-            {{-- END Image container --}}
-
             {{-- Show body --}}
             <div class="show-body">
 
                 <div class="apartment-info">
+                    {{-- Image container --}}
+                    <div class="show-image-container">
+                        <div class="main-image">
+                            {{-- Immagine --}}
+                            @if (!empty($apartment->main_img))
+                                @if (strpos($apartment->main_img,'mpixel'))
+                                    <img class="img-thumbnail" src="{{$apartment->main_img}}" alt="{{$apartment->title}}">
+                                  @else
+                                    <img class="img-thumbnail" src="{{asset('storage').'/'.$apartment->main_img}}" alt="{{$apartment->title}}">
+                                @endif
+                            @else
+                                <img class="img-thumbnail" src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
+                            @endif
+                        </div>
+                    </div>
+                    {{-- END Image container --}}
+
                     <div class="general-info">
                         <h3>Informazioni generali</h3>
                         <p>

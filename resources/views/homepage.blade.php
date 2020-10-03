@@ -8,7 +8,7 @@
         <h1>Riscopri l'Italia</h1>
         <h2>Cambia quadro. Scopri alloggi nelle vicinanze tutti da vivere, per lavoro o svago.</h2>
         <div class="jumbo-search-bar">
-          <form action="{{url('api/search')}}" method="post">
+          <form action="{{ route('guest.apartments.index')}}" method="post">
                 @csrf
                 @method('GET')
                 <div class="form-group">
@@ -19,7 +19,7 @@
                       <input type="hidden" id="lng" name="lng" class="form-control">
                     </div>
                     <div class="search-button">
-                      <button type="button" class="btn btn-boolbnb">
+                      <button type="submit" class="btn btn-boolbnb">
                         <i class="fas fa-search"></i>
                       </button>
                     </div>
