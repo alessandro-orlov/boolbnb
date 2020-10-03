@@ -809,6 +809,10 @@ h1 {
   flex-basis: auto;
 }
 
+.bool_ap_results ul .bool_ap .bool_info_apt .latlng-hidden {
+  display: none;
+}
+
 .bool_ap_results ul .bool_ap:last-child {
   border-bottom: 1px solid #ebebeb;
 }

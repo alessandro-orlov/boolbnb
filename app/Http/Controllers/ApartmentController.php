@@ -15,15 +15,19 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+      $placeInfo = $request->all();
+
       $apartments = Apartment::orderBy('created_at', 'desc')->paginate(5);
       $services = Service::all();
 
       return view('guest.apartments.index', [
-        'apartments'=>$apartments,
-        'services'=>$services,
+        'apartments' => $apartments,
+        'services' => $services,
+        'placesInfo' => $placeInfo,
       ]);
+
     }
 
     /**

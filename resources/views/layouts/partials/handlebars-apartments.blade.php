@@ -35,7 +35,7 @@
             @endif --}}
 
             <p class="bool_price"><span>Prezzo: @{{price}} € <small>/ a notte</small> <span></p>
-            <p classe="latlng-hidden">
+            <p class="latlng-hidden">
               <span class="latitude">@{{latitude}}</span>
               <span class="longitude">@{{longitude}}</span>
             </p>

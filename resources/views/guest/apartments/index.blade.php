@@ -10,17 +10,28 @@
         {{-- BEGIN SEARCH FORM --}}
         <div class="api-search-form-container">
           <form class="py-3 mb-3" id="ms_search-form" method="post" enctype="multipart/form-data">
+            @if (!empty($placesInfo))
+                <div class="place-search-input">
+                  <label class="sr-only">Ricerca un appartamento</label>
+                  <input id="address" type="search" class="form-control" class="form-control bool_input" value="<?php echo $placesInfo['address']; ?>" placeholder="Dove vuoi andare" />
+                  <input hidden id="latitude" type="text" name="latitude" value="<?php echo $placesInfo['lat']; ?>">
+                  <input hidden id="longitude" type="text" name="longitude" value="<?php echo $placesInfo['lng']; ?>">
+                  <input hidden type="text" id="controllo" value="call-ajax">
+                </div>
+              @else
+                  <div class="place-search-input">
+                    <label class="sr-only">Ricerca un appartamento</label>
+                    <input id="address" type="search" class="form-control" class="form-control bool_input" placeholder="Dove vuoi andare" />
+                    <input hidden id="latitude" type="text" name="latitude" value="">
+                    <input hidden id="longitude" type="text" name="longitude" value="">
+                  </div>
+            @endif
 
-            <div class="place-search-input">
-              <label class="sr-only">Ricerca un appartamento</label>
-              <input id="address" type="search" class="form-control" class="form-control bool_input" placeholder="Dove vuoi andare" />
-              <input hidden id="latitude" type="text" name="latitude" value="">
-              <input hidden id="longitude" type="text" name="longitude" value="">
-            </div>
+
 
             {{-- inizio filtri di ricerca --}}
             <div class="all-search-filters">
-              <a class="bool_filter">
+              <a class="bool_filter" onclick="myAlert()">
                 Filtri di ricerca
               </a>
             </div>
@@ -146,6 +157,7 @@
 
   <!-- ================================================================  -->
   <!-- ===================== SCRIPT ===================================  -->
+  <script src="{{asset('js/boolbnb/guest/index.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
   <script>
       (function() {
@@ -165,9 +177,6 @@
           });
       })();
   </script>
-
-  <script src="{{asset('js/boolbnb/guest/index.js')}}"></script>
-
   <script id="entry-template" type="text/x-handlebars-template">
       @include('layouts/partials/handlebars-apartments')
   </script>

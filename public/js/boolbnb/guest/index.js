@@ -16092,6 +16092,12 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
 $(document).ready(function () {
+  var controllo = $('#controllo').val();
+
+  if (controllo == 'call-ajax') {
+    ajaxCallFilteredApartment();
+  }
+
   generateMap(); // ========================================================= //
   // ================= TOGGLE-FILTERS ======================== //
 
@@ -16128,30 +16134,34 @@ $(document).ready(function () {
 
   radiusRange.oninput = function () {
     radiusOutput.innerHTML = this.value;
-  }; // ========================================================= //
-  // ===================== SEARCH ============================ //
+  }; // quando clicco il bottone Invia parte la chiamata Ajax
 
-
-  var latitude;
-  var longitude;
-  var rooms;
-  var beds;
-  var radius;
-  var wifi;
-  var parking;
-  var swimmingPool;
-  var reception;
-  var sauna;
-  var seaView; // quando clicco il bottone Invia parte la chiamata Ajax
 
   $('.btn-boolbnb').click(function () {
-    // Resset del HTML
+    event.preventDefault(); // Impedisce di fare il submit del form
+
+    ajaxCallFilteredApartment();
+  });
+
+  function ajaxCallFilteredApartment() {
+    // ========================================================= //
+    // ===================== SEARCH ============================ //
+    var latitude;
+    var longitude;
+    var rooms;
+    var beds;
+    var radius;
+    var wifi;
+    var parking;
+    var swimmingPool;
+    var reception;
+    var sauna;
+    var seaView; // Resset del HTML
+
     $('.all-db-apartments').html('');
     $('.apartments-handlebars').html(''); // Chiudo la finestra dei filtri se sono aperti
 
-    $('.bool_dropdown').slideUp();
-    event.preventDefault(); // Impedisce di fare il submit del form
-    // Sliders
+    $('.bool_dropdown').slideUp(); // Sliders
 
     latitude = $('#latitude').val();
     longitude = $('#longitude').val();
@@ -16185,11 +16195,6 @@ $(document).ready(function () {
 
     $('.latitude-value').val(latitude);
     $('.longitude-value').val(longitude);
-    ajaxCallFilteredApartment(); // Resetto i filtri ai valori di default
-    // $('#ms_search-form')[0].reset();
-  });
-
-  function ajaxCallFilteredApartment() {
     $.ajax({
       url: 'http://127.0.0.1:8000/api/search',
       method: 'GET',

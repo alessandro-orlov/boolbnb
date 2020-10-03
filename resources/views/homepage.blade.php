@@ -8,7 +8,7 @@
         <h1>Riscopri l'Italia</h1>
         <h2>Cambia quadro. Scopri alloggi nelle vicinanze tutti da vivere, per lavoro o svago.</h2>
         <div class="jumbo-search-bar">
-          <form action="{{ route('search')}}" method="post">
+          <form action="{{ route('guest.apartments.index')}}" method="post">
                 @csrf
                 @method('GET')
                 <div class="form-group">
