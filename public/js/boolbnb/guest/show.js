@@ -10984,7 +10984,6 @@ $(document).ready(function () {
   // ===================== MAPPA ============================= //
   (function () {
     var apartmentTitle = $('.show-top-heading h1').text();
-    console.log(apartmentTitle);
     var showLat = $('.show-latitude').val();
     var showLong = $('.show-longitude').val();
     var latlng = {
@@ -10997,7 +10996,7 @@ $(document).ready(function () {
       container: document.querySelector('#input-map')
     });
     var map = L.map('map-example-container', {
-      scrollWheelZoom: true,
+      scrollWheelZoom: false,
       zoomControl: true
     });
     var osmLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -11024,7 +11023,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\boolbnb\resources\js\guest\show.js */"./resources/js/guest/show.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\guest\show.js */"./resources/js/guest/show.js");
 
 
 /***/ })

@@ -16092,8 +16092,9 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
 $(document).ready(function () {
-  // ========================================================= //
+  generateMap(); // ========================================================= //
   // ================= TOGGLE-FILTERS ======================== //
+
   $('.all-search-filters .bool_filter').click(function () {
     $('.bool_dropdown').slideToggle();
   }); // ========================================================= //
@@ -16144,9 +16145,9 @@ $(document).ready(function () {
   var seaView; // quando clicco il bottone Invia parte la chiamata Ajax
 
   $('.btn-boolbnb').click(function () {
-    // Azzeriamo innerHTML
+    // Resset del HTML
     $('.all-db-apartments').html('');
-    $('.apartments-handlebars').html(''); //
+    $('.apartments-handlebars').html(''); // Chiudo la finestra dei filtri se sono aperti
 
     $('.bool_dropdown').slideUp();
     event.preventDefault(); // Impedisce di fare il submit del form
@@ -16170,19 +16171,22 @@ $(document).ready(function () {
     swimmingPool.is(":checked") ? swimmingPool = 'checked' : swimmingPool = 'unchecked';
     reception.is(":checked") ? reception = 'checked' : reception = 'unchecked';
     sauna.is(":checked") ? sauna = 'checked' : sauna = 'unchecked';
-    seaView.is(":checked") ? seaView = 'checked' : seaView = 'unchecked';
-    console.log(latitude);
-    console.log(longitude);
-    console.log('numero stanze ' + rooms);
-    console.log(beds);
-    console.log(radius);
-    console.log(wifi);
-    console.log(parking);
-    console.log(swimmingPool);
-    console.log(reception);
-    console.log(sauna);
-    console.log(seaView);
-    ajaxCallFilteredApartment(); // DA FARE ANCORA
+    seaView.is(":checked") ? seaView = 'checked' : seaView = 'unchecked'; // console.log(latitude);
+    // console.log(longitude);
+    // console.log('numero stanze ' + rooms);
+    // console.log(beds);
+    // console.log(radius);
+    // console.log(wifi);
+    // console.log(parking);
+    // console.log(swimmingPool);
+    // console.log(reception);
+    // console.log(sauna);
+    // console.log(seaView);
+
+    $('.latitude-value').val(latitude);
+    $('.longitude-value').val(longitude);
+    ajaxCallFilteredApartment(); // Resetto i filtri ai valori di default
+    // $('#ms_search-form')[0].reset();
   });
 
   function ajaxCallFilteredApartment() {
@@ -16204,8 +16208,12 @@ $(document).ready(function () {
       },
       success: function success(data) {
         // Funzione handlebars per stampare la risposta
-        printApartments(data);
-        console.log(data);
+        printApartments(data); // Rimuovo la mappa
+
+        $('#map-example-container').remove(); // Inserisco la mappa con i marker
+
+        $('.bool_map_container').html('<div id="map-example-container"></div>');
+        generateMap(); // console.log(data);
       },
       error: function error(request, state, _error) {
         alert("E' avvenuto un errore. " + _error);
@@ -16228,98 +16236,58 @@ $(document).ready(function () {
   ; // ========================================================= //
   // ===================== MAPPA ============================= //
 
-  (function () {
-    var placesAutocomplete = places({
-      appId: 'plAQEOVDX808',
-      apiKey: '5e56964f06ab40f6c0d1912086c2be09',
-      container: document.querySelector('#input-map')
-    });
-    var $address = document.querySelector('#input-map');
-    placesAutocomplete.on('change', function (e) {
-      document.querySelector("#latitude").value = e.suggestion.latlng.lat || "";
-      document.querySelector("#longitude").value = e.suggestion.latlng.lng || "";
-    });
-    placesAutocomplete.on('clear', function () {
-      $address.textContent = 'none';
-    });
-    var map = L.map('map-example-container', {
-      scrollWheelZoom: true,
-      zoomControl: true
-    });
-    var osmLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      minZoom: 1,
-      maxZoom: 13,
-      attribution: 'Boolean Team 1'
-    });
-    var markers = [];
-    map.setView(new L.LatLng(41.29246, 12.57361), 6);
-    map.addLayer(osmLayer);
-    placesAutocomplete.on('suggestions', handleOnSuggestions);
-    placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
-    placesAutocomplete.on('change', handleOnChange);
-    placesAutocomplete.on('clear', handleOnClear);
+  function generateMap() {
+    (function () {
+      var latlng = {
+        lat: $('.latitude-value').val(),
+        lng: $('.longitude-value').val()
+      }; // console.log(latlng);
 
-    function handleOnSuggestions(e) {
-      markers.forEach(removeMarker);
-      markers = [];
+      var apartments = []; // Ciclo su ogni appartamento che sia visibile quindi con una sola classe
 
-      if (e.suggestions.length === 0) {
-        map.setView(new L.LatLng(0, 0), 1);
-        return;
+      $('.bool_ap').each(function () {
+        var apartment = {}; // Popolazione oggetto con lat e lng per ogni appartamento
+
+        apartment.title = $(this).find('.bool_info_apt h4').text();
+        apartment.lat = $(this).find('.latitude').text();
+        apartment.lng = $(this).find('.longitude').text();
+        apartments.push(apartment);
+      });
+      var map = L.map('map-example-container', {
+        scrollWheelZoom: true,
+        zoomControl: true
+      });
+      var osmLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        minZoom: 1,
+        maxZoom: 19,
+        attribution: 'Boolean Team 1'
+      });
+      map.addLayer(osmLayer);
+      var markers = [];
+
+      for (var i = 0; i < apartments.length; i++) {
+        var apartment = apartments[i];
+        addApartmentToMap(apartment);
+      } // Aggiungo i markers sulla Mappa
+
+
+      function addApartmentToMap(apartment) {
+        var marker = L.marker({
+          'lat': apartment.lat,
+          'lng': apartment.lng
+        });
+        marker.addTo(map).bindPopup(apartment.title).openPopup();
+        markers.push(marker);
       }
 
-      e.suggestions.forEach(addMarker);
-      findBestZoom();
-    }
+      if (latlng.lat == 41.29246) {
+        map.setView(new L.LatLng(latlng.lat, latlng.lng), 6);
+      } else {
+        map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
+      }
+    })();
+  } // End generateMap function
 
-    function handleOnChange(e) {
-      markers.forEach(function (marker, markerIndex) {
-        if (markerIndex === e.suggestionIndex) {
-          markers = [marker];
-          marker.setOpacity(1);
-          findBestZoom();
-        } else {
-          removeMarker(marker);
-        }
-      });
-    }
-
-    function handleOnClear() {
-      map.setView(new L.LatLng(0, 0), 1);
-      markers.forEach(removeMarker);
-    }
-
-    function handleOnCursorchanged(e) {
-      markers.forEach(function (marker, markerIndex) {
-        if (markerIndex === e.suggestionIndex) {
-          marker.setOpacity(1);
-          marker.setZIndexOffset(1000);
-        } else {
-          marker.setZIndexOffset(0);
-          marker.setOpacity(0.5);
-        }
-      });
-    }
-
-    function addMarker(suggestion) {
-      var marker = L.marker(suggestion.latlng, {
-        opacity: .4
-      });
-      marker.addTo(map);
-      markers.push(marker);
-    }
-
-    function removeMarker(marker) {
-      map.removeLayer(marker);
-    }
-
-    function findBestZoom() {
-      var featureGroup = L.featureGroup(markers);
-      map.fitBounds(featureGroup.getBounds().pad(0.5), {
-        animate: false
-      });
-    }
-  })();
 }); // End Document ready
 
 /***/ }),
@@ -16331,7 +16299,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\boolbnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
 
 
 /***/ })

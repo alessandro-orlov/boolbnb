@@ -2,12 +2,15 @@ var $ = require( "jquery" );
 const Handlebars = require("handlebars");
 
 $(document).ready(function() {
+
+
+  generateMap();
+
   // ========================================================= //
   // ================= TOGGLE-FILTERS ======================== //
   $('.all-search-filters .bool_filter').click(function() {
     $('.bool_dropdown').slideToggle();
   });
-
 
 
   // ========================================================= //
@@ -57,10 +60,10 @@ $(document).ready(function() {
   // quando clicco il bottone Invia parte la chiamata Ajax
   $('.btn-boolbnb').click(function() {
 
-    // Azzeriamo innerHTML
+    // Resset del HTML
     $('.all-db-apartments').html('');
     $('.apartments-handlebars').html('');
-    //
+    // Chiudo la finestra dei filtri se sono aperti
     $('.bool_dropdown').slideUp();
 
 
@@ -90,19 +93,27 @@ $(document).ready(function() {
     sauna.is(":checked") ? sauna = 'checked' : sauna = 'unchecked';
     seaView.is(":checked") ? seaView = 'checked' : seaView = 'unchecked';
 
-    console.log(latitude);
-    console.log(longitude);
-    console.log('numero stanze ' + rooms);
-    console.log(beds);
-    console.log(radius);
+    // console.log(latitude);
+    // console.log(longitude);
+    // console.log('numero stanze ' + rooms);
+    // console.log(beds);
+    // console.log(radius);
+    // console.log(wifi);
+    // console.log(parking);
+    // console.log(swimmingPool);
+    // console.log(reception);
+    // console.log(sauna);
+    // console.log(seaView);
 
-    console.log(wifi);
-    console.log(parking);
-    console.log(swimmingPool);
-    console.log(reception);
-    console.log(sauna);
-    console.log(seaView);
-    ajaxCallFilteredApartment(); // DA FARE ANCORA
+
+    $('.latitude-value').val(latitude);
+    $('.longitude-value').val(longitude);
+
+    ajaxCallFilteredApartment();
+
+    // Resetto i filtri ai valori di default
+    // $('#ms_search-form')[0].reset();
+
   });
 
   function ajaxCallFilteredApartment() {
@@ -126,7 +137,14 @@ $(document).ready(function() {
       success: function(data) {
         // Funzione handlebars per stampare la risposta
         printApartments(data);
-        console.log(data);
+
+        // Rimuovo la mappa
+        $('#map-example-container').remove();
+        // Inserisco la mappa con i marker
+        $('.bool_map_container').html('<div id="map-example-container"></div>');
+
+        generateMap();
+        // console.log(data);
       },
       error: function(request, state, error) {
         alert("E' avvenuto un errore. " + error);
@@ -149,103 +167,65 @@ $(document).ready(function() {
 
   // ========================================================= //
   // ===================== MAPPA ============================= //
-  (function() {
-    var placesAutocomplete = places({
-      appId: 'plAQEOVDX808',
-      apiKey: '5e56964f06ab40f6c0d1912086c2be09',
-      container: document.querySelector('#input-map')
-    });
-    var $address = document.querySelector('#input-map')
-      placesAutocomplete.on('change', function(e) {
-        document.querySelector("#latitude").value = e.suggestion.latlng.lat || "";
-        document.querySelector("#longitude").value = e.suggestion.latlng.lng || "";
-      });
-      placesAutocomplete.on('clear', function() {
-        $address.textContent = 'none';
-      });
+  function generateMap() {
+    (function() {
 
-    var map = L.map('map-example-container', {
-      scrollWheelZoom: true,
-      zoomControl: true
-    });
+        var latlng = {
+                lat: $('.latitude-value').val(),
+                lng: $('.longitude-value').val()
+            };
+        // console.log(latlng);
 
-    var osmLayer = new L.TileLayer(
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        minZoom: 1,
-        maxZoom: 13,
-        attribution: 'Boolean Team 1'
-      }
-    );
+        var apartments = [];
 
-    var markers = [];
+        // Ciclo su ogni appartamento che sia visibile quindi con una sola classe
+        $('.bool_ap').each(function(){
+            var apartment = {}; // Popolazione oggetto con lat e lng per ogni appartamento
+            apartment.title = $(this).find('.bool_info_apt h4').text();
+            apartment.lat = $(this).find('.latitude').text();
+            apartment.lng = $(this).find('.longitude').text();
 
-    map.setView(new L.LatLng(41.29246, 12.57361), 6);
-    map.addLayer(osmLayer);
-
-    placesAutocomplete.on('suggestions', handleOnSuggestions);
-    placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
-    placesAutocomplete.on('change', handleOnChange);
-    placesAutocomplete.on('clear', handleOnClear);
-
-    function handleOnSuggestions(e) {
-      markers.forEach(removeMarker);
-      markers = [];
-
-      if (e.suggestions.length === 0) {
-        map.setView(new L.LatLng(0, 0), 1);
-        return;
-      }
-
-      e.suggestions.forEach(addMarker);
-      findBestZoom();
-    }
-
-    function handleOnChange(e) {
-      markers
-        .forEach(function(marker, markerIndex) {
-          if (markerIndex === e.suggestionIndex) {
-            markers = [marker];
-            marker.setOpacity(1);
-            findBestZoom();
-          } else {
-            removeMarker(marker);
-          }
+            apartments.push(apartment);
         });
-    }
 
-    function handleOnClear() {
-      map.setView(new L.LatLng(0, 0), 1);
-      markers.forEach(removeMarker);
-    }
 
-    function handleOnCursorchanged(e) {
-      markers
-        .forEach(function(marker, markerIndex) {
-          if (markerIndex === e.suggestionIndex) {
-            marker.setOpacity(1);
-            marker.setZIndexOffset(1000);
-          } else {
-            marker.setZIndexOffset(0);
-            marker.setOpacity(0.5);
-          }
+        var map = L.map('map-example-container', {
+          scrollWheelZoom: true,
+          zoomControl: true
         });
-    }
 
-    function addMarker(suggestion) {
-      var marker = L.marker(suggestion.latlng, {opacity: .4});
-      marker.addTo(map);
-      markers.push(marker);
-    }
+        var osmLayer = new L.TileLayer(
+          'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            minZoom: 1,
+            maxZoom: 19,
+            attribution: 'Boolean Team 1'
+          }
+        );
+        map.addLayer(osmLayer);
 
-    function removeMarker(marker) {
-      map.removeLayer(marker);
-    }
+        var markers = [];
 
-    function findBestZoom() {
-      var featureGroup = L.featureGroup(markers);
-      map.fitBounds(featureGroup.getBounds().pad(0.5), {animate: false});
-    }
-  })();
+        for (var i = 0; i < apartments.length; i++) {
+                var apartment = apartments[i];
+                addApartmentToMap(apartment);
+        }
+
+        // Aggiungo i markers sulla Mappa
+        function addApartmentToMap(apartment) {
+                var marker = L.marker({'lat': apartment.lat, 'lng': apartment.lng})
+                marker.addTo(map).bindPopup(apartment.title).openPopup();
+                markers.push(marker);
+        }
+
+        if (latlng.lat == 41.29246) {
+          map.setView(new L.LatLng(latlng.lat, latlng.lng), 6);
+        } else {
+          map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
+        }
+
+    })();
+
+  } // End generateMap function
 
 
 }); // End Document ready

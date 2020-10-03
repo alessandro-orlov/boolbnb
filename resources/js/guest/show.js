@@ -7,7 +7,7 @@ $(document).ready(function() {
   // ===================== MAPPA ============================= //
   (function() {
     var apartmentTitle = $('.show-top-heading h1').text();
-    console.log(apartmentTitle);
+    
     var showLat = $('.show-latitude').val();
     var showLong = $('.show-longitude').val();
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
     });
 
     var map = L.map('map-example-container', {
-      scrollWheelZoom: true,
+      scrollWheelZoom: false,
       zoomControl: true
     });
 

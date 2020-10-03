@@ -526,15 +526,6 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
     flex-basis: 50%;
   }
 
-  .show-page-wrapper .show-body .contact-owner-container .contact-owner-form {
-    padding: 20px;
-    margin: 20px 10px;
-    flex-basis: 75%;
-    background-color: #fff;
-    box-shadow: 0px 0px 15px 1px #0000002b;
-    border-radius: 10px;
-  }
-
   .ms_add-host {
     margin-bottom: 500px;
   }
@@ -912,27 +903,11 @@ h1 {
 }
 
 .show-page-wrapper .show-image-container .main-image {
-  flex-basis: 50%;
+  flex-basis: 100%;
 }
 
 .show-page-wrapper .show-image-container .main-image img {
   width: 100%;
-  padding: 0 5px 10px 0;
-}
-
-.show-page-wrapper .show-image-container .images {
-  display: flex;
-  flex-wrap: wrap;
-  flex-basis: 49%;
-}
-
-.show-page-wrapper .show-image-container .images .small-img-preview {
-  flex-basis: 50%;
-}
-
-.show-page-wrapper .show-image-container .images .small-img-preview img {
-  width: 100%;
-  padding: 0 0 5px 5px;
 }
 
 .show-page-wrapper .show-body {
@@ -990,7 +965,7 @@ h1 {
 
 .show-page-wrapper .show-body .contact-owner-container {
   border-top: 1px solid #dddde4;
-  top: 0px;
+  top: 10px;
   position: -webkit-sticky;
   position: sticky;
   flex-basis: 100%;
@@ -1045,8 +1020,8 @@ h1 {
 
   .show-page-wrapper .show-body .contact-owner-container .contact-owner-form {
     padding: 20px;
-    margin: 20px 10px;
-    flex-basis: 75%;
+    margin-bottom: 10px;
+    flex-basis: 80%;
     background-color: #fff;
     box-shadow: 0px 0px 15px 1px #0000002b;
     border-radius: 10px;
