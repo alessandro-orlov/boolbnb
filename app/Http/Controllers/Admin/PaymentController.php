@@ -77,15 +77,16 @@ class PaymentController extends Controller
       $transaction = $result->transaction;
 
       if (isset($sponsorship)) {
-        $expiration_sponsorship = Carbon::now('Europe/Rome')->addHours($this_sponsorship->end_date);
+        $expiration_sponsorship = Carbon::now('Europe/Rome')->addHours($this_sponsorship->duration);
 
-        $apartment->sponsorship()->attach($sponsorship, [
+        $apartment->sponsorships()->attach($sponsorship, [
           'end_date' => $expiration_sponsorship,
           'start_date' => Carbon::now('Europe/Rome'),
         ]);
       }
 
-      return redirect()->route('admin.apartments', compact('apartment'));
+      return redirect()->route('admin.payment.transaction', compact('apartment'));
+      // return redirect()->route('admin.apartments', compact('apartment'));
     } else {
         $errorString = "";
 
