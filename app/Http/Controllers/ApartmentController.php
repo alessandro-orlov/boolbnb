@@ -31,26 +31,6 @@ class ApartmentController extends Controller
     }
 
     /**
-     * Search.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function search(Request $request)
-    {
-      $data = $request->all();
-      dd($data);
-      // $apartments = Apartment::orderBy('created_at', 'desc')->paginate(5);
-      // $services = Service::all();
-      //
-      // return view('guest.apartments.index', [
-      //   'apartments'=>$apartments,
-      //   'services'=>$services,
-      // ]);
-
-      return view('guest.apartments.search');
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -92,6 +72,10 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
+        // Installare prima: cyrildewit/eloquent-viewable PACKAGE
+        // Registro le visite alle pagine di ogni appartamento
+        views($apartment)->record();
+
         return view('guest.apartments.show', compact('apartment'));
     }
 

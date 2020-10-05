@@ -55,14 +55,16 @@
                               <a href="{{route('guest.apartments.show', $apartment)}}">{{$apartment->title}}</a>
                             </td>
                             {{-- Visits --}}
-                            <td>
-                              <div class="apartment-icons">
-                                <i class="far fa-eye"></i>
-                              </div>
-                              81
+                            <td class="icons">
+                              <a href="{{route('admin.visits.show', $apartment)}}">
+                                  <div class="apartment-icons">
+                                    <i class="far fa-eye"></i>
+                                  </div>
+                                  <span><?php echo views($apartment)->count(); ?></span>
+                              </a>
                             </td>
                             {{-- Mesages --}}
-                            <td class="">
+                            <td class="icons">
                               <a href="{{route('admin.message.show', $apartment)}}">
                                   {{-- Calcolo il numero di messaggi ricevuti --}}
                                   <?php $array_msg = []; ?>

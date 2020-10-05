@@ -14,16 +14,23 @@ h1 {
   h3 {
     font-size: 1.35em;
     font-weight: bold;
-    margin-left: 25px;
-
-    // &::before {
-    // content: "\2709";
-    // margin-right: 10px;
-    // }
+    span.apartment-message-title {
+      padding-left: 30px;
+    }
+  }
+  h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 0 5px;
   }
 
   .apartment-message-box {
-
+    cursor: pointer;
+    span.message-created-time {
+      padding: 5px 0;
+      font-size: .9em;
+      color: #ccc;
+    }
     span.close, span.open {
       display: none;
       position: absolute;

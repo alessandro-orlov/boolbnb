@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -10970,60 +10970,55 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/guest/show.js":
-/*!************************************!*\
-  !*** ./resources/js/guest/show.js ***!
-  \************************************/
+/***/ "./resources/js/admin/visits/show.js":
+/*!*******************************************!*\
+  !*** ./resources/js/admin/visits/show.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $(document).ready(function () {
-  // ========================================================= //
-  // ===================== MAPPA ============================= //
-  (function () {
-    var apartmentTitle = $('.show-top-heading h1').text();
-    var showLat = $('.show-latitude').val();
-    var showLong = $('.show-longitude').val();
-    var latlng = {
-      lat: showLat,
-      lng: showLong
-    };
-    var placesAutocomplete = places({
-      appId: 'plAQEOVDX808',
-      apiKey: '5e56964f06ab40f6c0d1912086c2be09',
-      container: document.querySelector('#input-map')
-    });
-    var map = L.map('map-example-container', {
-      scrollWheelZoom: false,
-      zoomControl: true
-    });
-    var osmLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      minZoom: 1,
-      maxZoom: 20,
-      attribution: 'Boolbnb - Team 1'
-    });
-    var markers = []; // Imposto la view della mappa in base alla lattitudine e longitudine
-
-    map.setView(new L.LatLng(latlng.lat, latlng.lng), 16);
-    map.addLayer(osmLayer);
-    var marker = L.marker(latlng);
-    marker.addTo(map).bindPopup(apartmentTitle);
-    markers.push(marker);
-  })();
+  // alert('ciao visits');
+  // Variables periods
+  var totalVisits = document.getElementById('total-visits').innerHTML;
+  console.log(totalVisits);
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# visite totali',
+        data: [totalVisits],
+        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
 }); // End document ready
 
 /***/ }),
 
-/***/ 7:
-/*!******************************************!*\
-  !*** multi ./resources/js/guest/show.js ***!
-  \******************************************/
+/***/ 5:
+/*!*************************************************!*\
+  !*** multi ./resources/js/admin/visits/show.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\guest\show.js */"./resources/js/guest/show.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\visits\show.js */"./resources/js/admin/visits/show.js");
 
 
 /***/ })

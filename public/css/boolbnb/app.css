@@ -336,6 +336,27 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   border-right: 1px solid #dddde4;
 }
 
+.user-apartments table tbody td.apartment-title {
+  text-align: left;
+}
+
+.user-apartments table tbody td.apartment-title a {
+  color: #f10031;
+}
+
+.user-apartments table tbody td .apartment-icons {
+  color: #ccc;
+  transition: color 0.5s ease-in-out;
+}
+
+.user-apartments table tbody td.icons:hover .apartment-icons {
+  color: #70e296;
+}
+
+.user-apartments table tbody td a {
+  color: #333;
+}
+
 .user-apartments table tbody td .controls-btn {
   font-size: 0.8em;
   display: block;
@@ -385,14 +406,6 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
 
 .user-apartments table tbody .apartment-foto-block:hover img {
   transform: scale(1.05);
-}
-
-.user-apartments table tbody .apartment-title {
-  text-align: left;
-}
-
-.user-apartments table tbody .apartment-icons {
-  color: #ccc;
 }
 
 .ms_add-host {
@@ -570,7 +583,26 @@ h1 {
 .apartment-messages-page h3 {
   font-size: 1.35em;
   font-weight: bold;
-  margin-left: 25px;
+}
+
+.apartment-messages-page h3 span.apartment-message-title {
+  padding-left: 30px;
+}
+
+.apartment-messages-page h4 {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 0 5px;
+}
+
+.apartment-messages-page .apartment-message-box {
+  cursor: pointer;
+}
+
+.apartment-messages-page .apartment-message-box span.message-created-time {
+  padding: 5px 0;
+  font-size: 0.9em;
+  color: #ccc;
 }
 
 .apartment-messages-page .apartment-message-box span.close,

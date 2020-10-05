@@ -21,6 +21,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
+
         $apartments = Apartment::orderBy('created_at', 'desc')->paginate(25);
         $user = Auth::user();
         $userId = Auth::id();
@@ -199,10 +200,10 @@ class ApartmentController extends Controller
     public function validationData() {
       return [
         'title' => 'required|max:255',
-        'num_rooms' => 'required|integer',
-        'num_beds' => 'required|integer',
-        'num_baths' => 'required|integer',
-        'mq' => 'required|integer',
+        'num_rooms' => 'required|integer|min:1|max:10',
+        'num_beds' => 'required||integer|min:1|max:10',
+        'num_baths' => 'required||integer|min:1|max:10',
+        'mq' => 'required|integer|min:1|max:999',
         'address' => 'required',
         'latitude' => 'required',
         'longitude' => 'required',
