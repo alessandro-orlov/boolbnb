@@ -59,7 +59,7 @@
                               <div class="apartment-icons">
                                 <i class="far fa-eye"></i>
                               </div>
-                              81
+                              <span><?php echo views($apartment)->count(); ?></span>
                             </td>
                             {{-- Mesages --}}
                             <td class="">

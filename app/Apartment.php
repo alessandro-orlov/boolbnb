@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use CyrildeWit\EloquentViewable\Contracts\Viewable;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
 
-class Apartment extends Model
+class Apartment extends Model implements Viewable
 {
+    use InteractsWithViews;
+
     protected $fillable = [
 
         'user_id',
@@ -50,5 +54,6 @@ class Apartment extends Model
     public function sponsorships() {
         return $this->belongsToMany('App\Sponsorship')->withPivot('start_date', 'end_date');
     }
+
 
 }

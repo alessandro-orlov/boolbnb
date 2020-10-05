@@ -92,6 +92,10 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
+        // Installare prima: cyrildewit/eloquent-viewable PACKAGE
+        // Registro le visite alle pagine di ogni appartamento
+        views($apartment)->record();
+
         return view('guest.apartments.show', compact('apartment'));
     }
 

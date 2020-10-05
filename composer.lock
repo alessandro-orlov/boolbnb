@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f90a9c0cc3d7cd7b1d24d0ee2befd49e",
+    "content-hash": "6a73b4f1a0faa9289fb8d3bffb11452b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -109,6 +109,79 @@
                 }
             ],
             "time": "2020-08-18T23:57:15+00:00"
+        },
+        {
+            "name": "cyrildewit/eloquent-viewable",
+            "version": "v5.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cyrildewit/eloquent-viewable.git",
+                "reference": "77520490ff2c2a6d26e18f7d367c68ddb427aadb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cyrildewit/eloquent-viewable/zipball/77520490ff2c2a6d26e18f7d367c68ddb427aadb",
+                "reference": "77520490ff2c2a6d26e18f7d367c68ddb427aadb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "^6.0|^7.0|^8.0",
+                "illuminate/contracts": "^6.0|^7.0|^8.0",
+                "illuminate/cookie": "^6.0|^7.0|^8.0",
+                "illuminate/database": "^6.0|^7.0|^8.0",
+                "illuminate/http": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "jaybizzle/crawler-detect": "^1.0",
+                "nesbot/carbon": "^2.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "illuminate/config": "^6.0|^7.0|^8.0",
+                "mockery/mockery": "^1.2.4",
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^8.4|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CyrildeWit\\EloquentViewable\\EloquentViewableServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CyrildeWit\\EloquentViewable\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cyril de Wit",
+                    "email": "info@cyrildewit.nl",
+                    "homepage": "http://cyrildewit.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel package that allows you to associate views with Eloquent models",
+            "homepage": "https://github.com/cyrildewit/eloquent-viewable",
+            "keywords": [
+                "counter",
+                "eloquent",
+                "hits",
+                "laravel",
+                "viewable",
+                "views",
+                "visitable",
+                "visits"
+            ],
+            "time": "2020-09-22T15:12:40+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -737,6 +810,55 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "jaybizzle/crawler-detect",
+            "version": "v1.2.99",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JayBizzle/Crawler-Detect.git",
+                "reference": "0ffea34489b258a2709bfe93a9553e1efa5d1904"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/0ffea34489b258a2709bfe93a9553e1efa5d1904",
+                "reference": "0ffea34489b258a2709bfe93a9553e1efa5d1904",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.5|^6.5",
+                "satooshi/php-coveralls": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jaybizzle\\CrawlerDetect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Beech",
+                    "email": "m@rkbee.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CrawlerDetect is a PHP class for detecting bots/crawlers/spiders via the user agent",
+            "homepage": "https://github.com/JayBizzle/Crawler-Detect/",
+            "keywords": [
+                "crawler",
+                "crawler detect",
+                "crawler detector",
+                "crawlerdetect",
+                "php crawler detect"
+            ],
+            "time": "2020-08-25T21:35:55+00:00"
         },
         {
             "name": "laravel/framework",

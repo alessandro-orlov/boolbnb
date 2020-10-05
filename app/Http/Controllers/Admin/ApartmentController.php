@@ -21,6 +21,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
+
         $apartments = Apartment::orderBy('created_at', 'desc')->paginate(25);
         $user = Auth::user();
         $userId = Auth::id();
