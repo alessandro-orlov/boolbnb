@@ -82,7 +82,9 @@
                             {{-- Sponsorship --}}
                             <td>
                               <div class="apartment-icons">
-                                <i class="far fa-money-bill-alt"></i>
+                                <a href="{{route('admin.payment.index', $apartment)}}">
+                                  <i class="far fa-money-bill-alt"></i>
+                                </a>
                               </div>
                               €€€
                             </td>
