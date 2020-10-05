@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -16297,14 +16297,14 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 6:
+/***/ 7:
 /*!*******************************************!*\
   !*** multi ./resources/js/guest/index.js ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
+module.exports = __webpack_require__(/*! C:\Users\pc\Desktop\progetto_boolean\boolbnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
 
 
 /***/ })

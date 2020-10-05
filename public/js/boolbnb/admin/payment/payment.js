@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -10970,33 +10970,32 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/admin/messages/show.js":
-/*!*********************************************!*\
-  !*** ./resources/js/admin/messages/show.js ***!
-  \*********************************************/
+/***/ "./resources/js/admin/payment/payment.js":
+/*!***********************************************!*\
+  !*** ./resources/js/admin/payment/payment.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $(document).ready(function () {
-  $('.apartment-message-box').click(function () {
-    $(this).find('.open').toggleClass('visible');
-    $(this).find('.close').toggleClass('visible');
-    $(this).find('.message-detail').toggleClass('visible');
+  $("#sponsorship_select").change(function () {
+    var price = $(this).find(':selected').data("price");
+    $('#amount').val(price);
   });
 });
 
 /***/ }),
 
-/***/ 4:
-/*!***************************************************!*\
-  !*** multi ./resources/js/admin/messages/show.js ***!
-  \***************************************************/
+/***/ 6:
+/*!*****************************************************!*\
+  !*** multi ./resources/js/admin/payment/payment.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\pc\Desktop\progetto_boolean\boolbnb\resources\js\admin\messages\show.js */"./resources/js/admin/messages/show.js");
+module.exports = __webpack_require__(/*! C:\Users\pc\Desktop\progetto_boolean\boolbnb\resources\js\admin\payment\payment.js */"./resources/js/admin/payment/payment.js");
 
 
 /***/ })

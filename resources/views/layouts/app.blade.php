@@ -26,6 +26,12 @@
     <!-- Algolia Map -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1/leaflet.css" />
 
+    <!-- Braintree Payment Gateway -->
+    <script href="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
+
+    <!-- JS payment price print -->
+    <script src="{{asset('js/boolbnb/admin/payment/payment.js')}}"></script>
+
 </head>
 
 <body>

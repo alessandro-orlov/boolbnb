@@ -31,6 +31,9 @@ Route::prefix('admin')
         Route::resource('apartments', 'ApartmentController');
         Route::get('/messages/{apartment}', 'MessageController@show')->name('message.show');
         Route::get('/visits/{apartment}', 'VisitController@show')->name('visits.show');
+        Route::get('/payment/{apartment}', 'PaymentController@index')->name('payment.index');
+        Route::post('/payment/{apartment}/checkout', 'PaymentController@checkout')->name('payment.checkout');
+        Route::get('/payment/{apartment}/transaction', 'PaymentController@transaction')->name('payment.transaction');
     });
 Route::prefix('guest')
     ->name('guest.')
