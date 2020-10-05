@@ -56,10 +56,12 @@
                             </td>
                             {{-- Visits --}}
                             <td>
-                              <div class="apartment-icons">
-                                <i class="far fa-eye"></i>
-                              </div>
-                              <span><?php echo views($apartment)->count(); ?></span>
+                              <a href="{{route('admin.visits.show', $apartment)}}">
+                                  <div class="apartment-icons">
+                                    <i class="far fa-eye"></i>
+                                  </div>
+                                  <span><?php echo views($apartment)->count(); ?></span>
+                              </a>
                             </td>
                             {{-- Mesages --}}
                             <td class="">

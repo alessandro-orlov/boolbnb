@@ -570,7 +570,26 @@ h1 {
 .apartment-messages-page h3 {
   font-size: 1.35em;
   font-weight: bold;
-  margin-left: 25px;
+}
+
+.apartment-messages-page h3 span.apartment-message-title {
+  padding-left: 30px;
+}
+
+.apartment-messages-page h4 {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 0 5px;
+}
+
+.apartment-messages-page .apartment-message-box {
+  cursor: pointer;
+}
+
+.apartment-messages-page .apartment-message-box span.message-created-time {
+  padding: 5px 0;
+  font-size: 0.9em;
+  color: #ccc;
 }
 
 .apartment-messages-page .apartment-message-box span.close,

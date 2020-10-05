@@ -43,7 +43,7 @@
                   {{-- Stanze --}}
                   <div class="range-slider">
                     <label for="rooms">Stanze:</label>
-                    <input type="range" class="bool_slider" id="rooms-number" min="1" max="9" step="1" value="1">
+                    <input type="range" class="bool_slider" id="rooms-number" min="1" max="10" step="1" value="2">
                     <span id="rooms-value"></span>
                   </div>
 
