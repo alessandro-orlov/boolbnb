@@ -10,7 +10,7 @@
         {{-- BEGIN SEARCH FORM --}}
         <div class="api-search-form-container">
           <form class="py-3 mb-3" id="ms_search-form" method="post" enctype="multipart/form-data">
-            @if (!empty($placesInfo))
+            @if (!empty($placesInfo['address']))
                 <div class="place-search-input">
                   <label class="sr-only">Ricerca un appartamento</label>
                   <input id="address" type="search" class="form-control" class="form-control bool_input" value="<?php echo $placesInfo['address']; ?>" placeholder="Dove vuoi andare" />
