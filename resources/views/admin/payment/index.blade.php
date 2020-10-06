@@ -50,8 +50,35 @@
             <p>Metti in evidenza il tuo appartamento per {{$sponsorship->duration}} ore</p>
           @endforeach
 
+          @else
+           @foreach ($apartment->sponsorships as $sponsorship)
+               <script src="{{asset('js/boolbnb/admin/payment/alert.js')}}"></script>
+               <a id='alert' href="#myModal" class="trigger-btn" data-toggle="modal" hidden>Click to Open Confirm Modal</a>
+               <!-- Modal HTML -->
+               <div id="myModal" class="modal fade">
+                   <div class="modal-dialog modal-confirm">
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <div class="icon-box">
+                                   <i class="material-icons">&#xE5CD;</i>
+                               </div>
+                               <h4 class="modal-title w-100">Attenzione!</h4>
+                           </div>
+                           <div class="modal-body">
+                               <p class="text-center">Hai già la sponsorizzazione "{{ $sponsorship->name }}" attiva. Scade il {{ $end_date }}</p>
+                           </div>
+                           <div class="modal-footer">
+                               <button onclick="history.back();" class="btn btn-danger btn-block" data-dismiss="modal">OK</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           @endforeach
+
       </div>
+    </section>
     @endif
+  <script src="{{asset('js/boolbnb/admin/payment/payment.js')}}"></script>
   <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
   <script>
     var form = document.querySelector('#payment-form');

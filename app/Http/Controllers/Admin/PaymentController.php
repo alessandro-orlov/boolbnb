@@ -86,7 +86,7 @@ class PaymentController extends Controller
       }
 
       return redirect()->route('admin.payment.transaction', compact('apartment'));
-      // return redirect()->route('admin.apartments', compact('apartment'));
+
     } else {
         $errorString = "";
 
