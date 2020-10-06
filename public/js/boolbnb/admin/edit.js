@@ -11000,7 +11000,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\pc\Desktop\progetto_boolean\boolbnb\resources\js\admin\edit.js */"./resources/js/admin/edit.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\edit.js */"./resources/js/admin/edit.js");
 
 
 /***/ })

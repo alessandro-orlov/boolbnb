@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Apartment;
 use App\Service;
 use App\Message;
+use Carbon\Carbon;
 
 class ApartmentController extends Controller
 {
@@ -22,10 +23,30 @@ class ApartmentController extends Controller
       $apartments = Apartment::orderBy('created_at', 'desc')->paginate(5);
       $services = Service::all();
 
+      $now = Carbon::now('Europe/Rome');
+
+      $sponsored_apartments = [];
+
+      foreach ($apartments as $apartment) {
+        if (count($apartment->sponsorships) != 0) {
+            foreach ($apartment->sponsorships as $sponsorship) {
+                $end_date = $sponsorship->pivot->end_date;
+                if ($end_date > $now) {
+                    $sponsored_apartments[] = $apartment;
+                } elseif ($end_date < $now) {
+                    $apartment->sponsorships()->detach($sponsorship);
+                }
+            }
+        }
+      }
+
+      shuffle($sponsored_apartments);
+
       return view('guest.apartments.index', [
         'apartments' => $apartments,
         'services' => $services,
         'placesInfo' => $placeInfo,
+        'sponsored_apartments' => $sponsored_apartments,
       ]);
 
     }

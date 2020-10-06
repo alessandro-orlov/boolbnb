@@ -11,6 +11,8 @@ class SearchController extends Controller
 {
     public function searchResults(Request $request) {
 
+
+
         $rooms = $request->get('rooms');
         $beds = $request->get('beds');
         $wifi = $request->get('wifi');
@@ -36,6 +38,7 @@ class SearchController extends Controller
 
         // Costruisco la query
         $queryApartment = Apartment::query();
+        $queryApartmentSponsored = Apartment::query();
 
         if ($wifi == 'checked') {
             $queryApartment->whereHas('services', function (Builder $query) {
@@ -79,7 +82,15 @@ class SearchController extends Controller
         $queryApartment->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
         $queryApartment->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);
 
-        return $queryApartment->get();
+        $queryApartmentSponsored->whereBetween('latitude', [$params['minLat'], $params['maxLat']]);
+        $queryApartmentSponsored->whereBetween('longitude', [$params['minLon'], $params['maxLon']]);
 
+        $normalApartment = $queryApartment->paginate(5);
+        $sponsoredApartment = $queryApartment->has('sponsorships')->with('sponsorships')->get();
+
+        return response()->json([
+            'sponsored' => $sponsoredApartment,
+            'normal' => $normalApartment,
+        ]);
     }
 }
