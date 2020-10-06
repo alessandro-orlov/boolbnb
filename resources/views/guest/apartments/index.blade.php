@@ -121,7 +121,15 @@
 
           {{-- handlebars tamplate --}}
           <div class="apartments-handlebars">
+
+            <div id="ms-sponsored-apartments">
               {{-- append qui --}}
+            </div>
+
+            <div id="ms-normal-apartments">
+              {{-- append qui --}}
+            </div>
+
           </div>
 
         </div>

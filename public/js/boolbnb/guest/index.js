@@ -16159,7 +16159,8 @@ $(document).ready(function () {
     var seaView; // Resset del HTML
 
     $('.all-db-apartments').html('');
-    $('.apartments-handlebars').html(''); // Chiudo la finestra dei filtri se sono aperti
+    $('#ms-sponsored-apartments').html('');
+    $('#ms-normal-apartments').html(''); // Chiudo la finestra dei filtri se sono aperti
 
     $('.bool_dropdown').slideUp(); // Sliders
 
@@ -16213,7 +16214,8 @@ $(document).ready(function () {
       },
       success: function success(data) {
         // Funzione handlebars per stampare la risposta
-        printApartments(data); // Rimuovo la mappa
+        printApartments(data['sponsored'], data.normal['data']); // printApartments(data['sponsored'], data.normal['data'] ); // OK
+        // Rimuovo la mappa
 
         $('#map-example-container').remove(); // Inserisco la mappa con i marker
 
@@ -16226,15 +16228,22 @@ $(document).ready(function () {
     });
   }
 
-  function printApartments(data) {
+  function printApartments(dataSponsored, dataNormal) {
     var source = $('#entry-template').html();
     var template = Handlebars.compile(source);
 
-    for (var i = 0; i < data.length; i++) {
-      var singleApartment = data[i];
+    for (var i = 0; i < dataSponsored.length; i++) {
+      var singleSponsoredApartment = dataSponsored[i];
+      var html = template(singleSponsoredApartment); // Inserisco i risultati della ricerca
+
+      $('#ms-sponsored-apartments').append(html);
+    }
+
+    for (var i = 0; i < dataNormal.length; i++) {
+      var singleApartment = dataNormal[i];
       var html = template(singleApartment); // Inserisco i risultati della ricerca
 
-      $('.apartments-handlebars').append(html);
+      $('#ms-normal-apartments').append(html);
     }
   }
 
@@ -16304,7 +16313,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\pc\Desktop\progetto_boolean\boolbnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
 
 
 /***/ })
