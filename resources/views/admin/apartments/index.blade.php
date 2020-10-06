@@ -82,15 +82,19 @@
                             {{-- Sponsorship --}}
                             <td>
                               <div class="apartment-icons">
-                                <a href="{{route('admin.payment.index', $apartment)}}">
                                   <i class="far fa-money-bill-alt"></i>
-                                </a>
                               </div>
-                              €€€
+                              @if (!$apartment->sponsorships->isEmpty())
+                                @foreach ($apartment->sponsorships as $sponsorship)
+                                    {{$sponsorship->name}}
+                                @endforeach
+                              @else
+                                -
+                              @endif
                             </td>
                             {{-- Controls --}}
                             <td>
-                              <a class="controls-btn normal" href="#">promuovi</a>
+                              <a class="controls-btn normal" href="{{route('admin.payment.index', $apartment)}}">promuovi</a>
                               <a class="controls-btn normal" href="{{route('admin.apartments.edit', $apartment)}}">modifica</a>
                                 <form class="form-delete" action="{{ route('admin.apartments.destroy', $apartment)}}" method="post">
                                   @csrf
