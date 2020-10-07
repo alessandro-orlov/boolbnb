@@ -16159,8 +16159,8 @@ $(document).ready(function () {
     var seaView; // Resset del HTML
 
     $('.all-db-apartments').html('');
-    $('#ms-sponsored-apartments').html('');
-    $('#ms-normal-apartments').html(''); // Chiudo la finestra dei filtri se sono aperti
+    $('#ms-sponsored-apartments ul').html('');
+    $('#ms-normal-apartments ul').html(''); // Chiudo la finestra dei filtri se sono aperti
 
     $('.bool_dropdown').slideUp(); // Sliders
 
@@ -16267,7 +16267,7 @@ $(document).ready(function () {
       var htmlSponsored = template(contextSponsored); // console.log(singleSponsoredApartment);
       // Inserisco i risultati della ricerca
 
-      $('#ms-sponsored-apartments').append(htmlSponsored);
+      $('#ms-sponsored-apartments ul').append(htmlSponsored);
     } // Appartamenti normali
 
 
@@ -16304,7 +16304,7 @@ $(document).ready(function () {
       var html = template(context);
       console.log(singleApartment); // Inserisco i risultati della ricerca
 
-      $('#ms-normal-apartments').append(html);
+      $('#ms-normal-apartments ul').append(html);
     }
   }
 
@@ -16329,7 +16329,7 @@ $(document).ready(function () {
         apartments.push(apartment);
       });
       var map = L.map('map-example-container', {
-        scrollWheelZoom: true,
+        scrollWheelZoom: false,
         zoomControl: true
       });
       var osmLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

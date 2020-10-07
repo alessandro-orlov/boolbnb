@@ -44,7 +44,7 @@
                   <p class="bool_price"><span>Prezzo: {{$sponsored_apartment->price}} € <small>/ a notte</small></span> </p>
                 </a>
               </div>
-
+              
           </li>
 
         @endforeach

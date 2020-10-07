@@ -123,11 +123,15 @@
           <div class="apartments-handlebars">
 
             <div id="ms-sponsored-apartments">
-              {{-- append qui --}}
+              <ul>
+                {{-- append qui sponsored apartments --}}
+              </ul>
             </div>
 
             <div id="ms-normal-apartments">
-              {{-- append qui --}}
+              <ul>
+                {{-- append qui normal apartments --}}
+              </ul>
             </div>
 
           </div>

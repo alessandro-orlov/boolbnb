@@ -45,7 +45,7 @@ $(document).ready(function() {
   radiusOutput.innerHTML = radiusRange.value; // Valore slider di default
   // Aggiorno il valore del range muovendo lo slider
   radiusRange.oninput = function() {
-      radiusOutput.innerHTML = this.value;
+  radiusOutput.innerHTML = this.value;
   };
 
 
@@ -76,8 +76,8 @@ $(document).ready(function() {
 
     // Resset del HTML
     $('.all-db-apartments').html('');
-    $('#ms-sponsored-apartments').html('');
-    $('#ms-normal-apartments').html('');
+    $('#ms-sponsored-apartments ul').html('');
+    $('#ms-normal-apartments ul').html('');
     // Chiudo la finestra dei filtri se sono aperti
     $('.bool_dropdown').slideUp();
 
@@ -199,7 +199,7 @@ $(document).ready(function() {
       // console.log(singleSponsoredApartment);
 
       // Inserisco i risultati della ricerca
-      $('#ms-sponsored-apartments').append(htmlSponsored);
+      $('#ms-sponsored-apartments ul').append(htmlSponsored);
     }
 
     // Appartamenti normali
@@ -238,7 +238,7 @@ $(document).ready(function() {
       console.log(singleApartment);
 
       // Inserisco i risultati della ricerca
-      $('#ms-normal-apartments').append(html);
+      $('#ms-normal-apartments ul').append(html);
     }
   };
 
@@ -267,7 +267,7 @@ $(document).ready(function() {
 
 
         var map = L.map('map-example-container', {
-          scrollWheelZoom: true,
+          scrollWheelZoom: false,
           zoomControl: true
         });
 
