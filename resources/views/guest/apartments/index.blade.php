@@ -135,7 +135,7 @@
         </div>
         {{-- END APARTMENTS LIST --}}
 
-      </div> <!-- end col-xl-6 -->
+      </div>
       {{-- END LEFT SIDE --}}
 
       {{-- RIGHT SIDE - MAP --}}

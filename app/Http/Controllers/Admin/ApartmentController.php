@@ -183,7 +183,7 @@ class ApartmentController extends Controller
     {
       // DETACH
       $apartment->services()->detach();
-      // $apartment->sponsorships()->detach();
+      $apartment->sponsorships()->detach();
 
       // Elimino la foto dallo storage
       Storage::delete('public/'. $apartment->main_img);

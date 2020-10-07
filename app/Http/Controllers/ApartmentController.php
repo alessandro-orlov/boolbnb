@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Apartment;
 use App\Service;
 use App\Message;
+use App\User;
 use Carbon\Carbon;
 
 class ApartmentController extends Controller
@@ -93,11 +95,16 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        // Installare prima: cyrildewit/eloquent-viewable PACKAGE
-        // Registro le visite alle pagine di ogni appartamento
-        views($apartment)->record();
 
-        return view('guest.apartments.show', compact('apartment'));
+        $user = Auth::user(); // Get the currently authenticated user
+        $userId = Auth::id(); // Get the currently authenticated user's ID
+
+        // Install: cyrildewit/eloquent-viewable PACKAGE first
+        if ($userId != $apartment->user_id) {
+          views($apartment)->record(); // Register the views
+        }
+
+        return view('guest.apartments.show', compact('apartment', 'user'));
     }
 
     /**

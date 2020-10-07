@@ -60,82 +60,112 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-owner-container">
-                    <div class="contact-owner-form">
-                        <h2>Contatta l'host</h2>
-                        <div class="errors">
-                          @if ($errors->any())
-                              <div class="alert alert-danger">
-                                <ul>
-                                  @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                  @endforeach
-                                </ul>
-                              </div>
-                            @endif
+                {{-- SE L'user è il proprietario dell'appartamento --}}
+                @if($user != null && $user->id == $apartment->user_id)
+                    <div class="contact-owner-container">
+                        <div class="contact-owner-form">
+
+                            {{-- Calcolo il numero di messaggi ricevuti --}}
+                            @php
+                              $array_msg = [];
+                              foreach ($apartment->messages as $messages) {
+                                $array_msg[] = $messages->apartment_id;
+                              }
+                              $this_apartment_messages = count($array_msg);
+                            @endphp
+
+                            <h2>I tuoi messaggi: <span class="msg-count"><?php echo $this_apartment_messages ?></span></h2>
+                            <div class="this-apartment-messages">
+                                <a href="{{route('admin.message.show', $apartment)}}">
+                                  <div class="this-apartment-icons">
+                                      <i class="far fa-envelope"></i>
+                                  </div>
+                                  <span>Visualizza</span>
+                                </a>
+                            </div>
+
                         </div>
-                        {{-- FORM --}}
-                        <form class="needs-validation" novalidate action="{{ route('guest.apartments.store') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        @method('POST')
-                            {{-- Message Title --}}
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="titolo">Oggetto</label>
-                                    <input type="text" class="form-control" name="msg_title" value="{{old('msg_title')}}" placeholder="Inserisci l'oggetto del messaggio" required>
-                                </div>
-                            </div>
-                            {{-- Sender name --}}
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="nome">Il tuo nome</label>
-                                    <input type="text" class="form-control" name="sender_name" value="{{old('sender_name')}}" placeholder="Inserisci il tuo nome" required>
-                                </div>
-                            </div>
-                            {{-- Sender email --}}
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="email">La tua email</label>
-                                    <input type="email" class="form-control" name="sender_mail" value="{{old('sender_mail')}}" placeholder="Inserisci la tua email" required>
-                                </div>
-                            </div>
-                            {{-- message --}}
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="messaggio">Messaggio</label>
-                                    <textarea class="form-control" name="message" rows="5" placeholder="Inserisci il tuo messaggio" required></textarea>
-                                </div>
-                            </div>
-                            {{-- Submit --}}
-                            <div class="form-row">
-                                <div class="form-check col-md-12 text-right">
-                                    <input hidden type="text" name="apartment_id" value="{{$apartment->id}}">
-                                    <input type="submit" class="btn btn-boolbnb" value="Invia il messaggio">
-                                </div>
-                            </div>
-                        </form>
-                        <script>
-                          // Form valdation
-                          (function() {
-                            'use strict';
-                            window.addEventListener('load', function() {
-                              // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                              var forms = document.getElementsByClassName('needs-validation');
-                              // Loop over them and prevent submission
-                              var validation = Array.prototype.filter.call(forms, function(form) {
-                                form.addEventListener('submit', function(event) {
-                                  if (form.checkValidity() === false) {
-                                    event.preventDefault();
-                                    event.stopPropagation();
-                                  }
-                                  form.classList.add('was-validated');
-                                }, false);
-                              });
-                            }, false);
-                          })();
-                        </script>
                     </div>
-                </div>
+                @else
+                    <div class="contact-owner-container">
+                        <div class="contact-owner-form">
+                            <h2>Contatta l'host</h2>
+                            <div class="errors">
+                              @if ($errors->any())
+                                  <div class="alert alert-danger">
+                                    <ul>
+                                      @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                      @endforeach
+                                    </ul>
+                                  </div>
+                                @endif
+                            </div>
+                            {{-- FORM --}}
+                            <form class="needs-validation" novalidate action="{{ route('guest.apartments.store') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('POST')
+                                {{-- Message Title --}}
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="titolo">Oggetto</label>
+                                        <input type="text" class="form-control" name="msg_title" value="{{old('msg_title')}}" placeholder="Inserisci l'oggetto del messaggio" required>
+                                    </div>
+                                </div>
+                                {{-- Sender name --}}
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="nome">Il tuo nome</label>
+                                        <input type="text" class="form-control" name="sender_name" value="{{old('sender_name')}}" placeholder="Inserisci il tuo nome" required>
+                                    </div>
+                                </div>
+                                {{-- Sender email --}}
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="email">La tua email</label>
+                                        <input type="email" class="form-control" name="sender_mail" value="{{old('sender_mail')}}" placeholder="Inserisci la tua email" required>
+                                    </div>
+                                </div>
+                                {{-- message --}}
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="messaggio">Messaggio</label>
+                                        <textarea class="form-control" name="message" rows="5" placeholder="Inserisci il tuo messaggio" required></textarea>
+                                    </div>
+                                </div>
+                                {{-- Submit --}}
+                                <div class="form-row">
+                                    <div class="form-check col-md-12 text-right">
+                                        <input hidden type="text" name="apartment_id" value="{{$apartment->id}}">
+                                        <input type="submit" class="btn btn-boolbnb" value="Invia il messaggio">
+                                    </div>
+                                </div>
+                            </form>
+                            <script>
+                              // Form valdation
+                              (function() {
+                                'use strict';
+                                window.addEventListener('load', function() {
+                                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                  var forms = document.getElementsByClassName('needs-validation');
+                                  // Loop over them and prevent submission
+                                  var validation = Array.prototype.filter.call(forms, function(form) {
+                                    form.addEventListener('submit', function(event) {
+                                      if (form.checkValidity() === false) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                      }
+                                      form.classList.add('was-validated');
+                                    }, false);
+                                  });
+                                }, false);
+                              })();
+                            </script>
+                        </div>
+                    </div>
+                    {{-- End FORM --}}
+                @endif
+
             </div>
             {{-- End show body --}}
 
