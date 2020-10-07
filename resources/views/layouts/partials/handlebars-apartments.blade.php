@@ -1,23 +1,11 @@
 <ul>
     <li class="bool_ap">
         {{-- Immagine --}}
-        @if (!empty('@{{main_img}}'))
-          <div class="bool_img_apt">
-            <a href="http://127.0.0.1:8000/guest/apartments/@{{id}}">
-              @if (strpos( '@{{main_img}}','mpixel'))
-                <img src="@{{main_img}}" alt="@{{title}}">
-              @else
-                <img src="{{asset('storage')}}/@{{main_img}}" alt="@{{title}}">
-              @endif
-            </a>
-          </div>
-        @else
-          <div class="bool_img_apt">
-            <a href="http://127.0.0.1:8000/guest/apartments/@{{id}}">
-              <img src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
-            </a>
-          </div>
-        @endif
+        <div class="bool_img_apt">
+          <a href="http://127.0.0.1:8000/guest/apartments/@{{id}}">
+            <img src="@{{main_img}}" alt="@{{title}}">
+          </a>
+        </div>
 
         {{-- Informazioni --}}
         <div class="bool_info_apt">

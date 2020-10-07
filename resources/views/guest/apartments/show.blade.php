@@ -74,14 +74,19 @@
                               $this_apartment_messages = count($array_msg);
                             @endphp
 
-                            <h2>I tuoi messaggi: <span class="msg-count"><?php echo $this_apartment_messages ?></span></h2>
-                            <div class="this-apartment-messages">
-                                <a href="{{route('admin.message.show', $apartment)}}">
-                                  <div class="this-apartment-icons">
-                                      <i class="far fa-envelope"></i>
-                                  </div>
-                                  <span>Visualizza</span>
-                                </a>
+                            <h2>Messaggi ricevuti: <span class="msg-count"><?php echo $this_apartment_messages ?></span></h2>
+                            <div class="this-apartment">
+                                <div class="text">
+                                    {{$user->name}} visualizza i messaggi ricevuti per: <span class="title">{{$apartment->title}}</span>
+                                </div>
+                                <div class="link">
+                                    <a href="{{route('admin.message.show', $apartment)}}">
+                                      <div class="this-apartment-icons">
+                                          <i class="far fa-envelope"></i>
+                                      </div>
+                                      <span>Visualizza</span>
+                                    </a>
+                                </div>
                             </div>
 
                         </div>

@@ -21,7 +21,9 @@
 
     // ======= Intestazione ======= //
     .show-top-heading {
-      h1 { font-size: 1.8em; padding: 5px 0}
+      border-bottom: 1px solid #dddde4;
+      margin-bottom: 30px;
+      h1 { font-size: 1.8em; }
       h5 { font-weight: 400; }
       .icon {
         color: $primary-red;
@@ -102,6 +104,24 @@
           h2 {
             color: $primary-red;
             font-size: 1.6em;
+            .msg-count {
+              color: #333;
+            }
+          }
+          .this-apartment {
+            .text {
+              .title {
+                display: block;
+                font-weight: bold;
+              }
+            }
+            .link {
+              text-align: center;
+              padding: 20px 0;
+              .this-apartment-icons {
+                font-size: 4.5em;
+              }
+            }
           }
         }
       }
