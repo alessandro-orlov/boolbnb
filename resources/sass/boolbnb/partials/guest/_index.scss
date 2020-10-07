@@ -90,7 +90,33 @@
   .services-box {
     column-count: 2;
   }
+#sponsored-content {
+  display: none;
+}
   // Apartments
+  #ms-sponsored-apartments {
+    ul {
+      li {
+        position: relative;
+        background-color: #fff;
+        border: none;
+        border-bottom: 1px solid $primary-red;
+        &:first-child {
+          border-top: 1px solid $primary-red;
+        }
+        #sponsored-content {
+          display: block;
+          position: absolute;
+          right: 20px;
+          bottom: 10px;
+          font-size: .7em;
+          color: $primary-red;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
   ul {
     margin-top: 20px;
     .bool_ap {

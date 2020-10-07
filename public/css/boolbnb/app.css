@@ -756,6 +756,32 @@ h1 {
        column-count: 2;
 }
 
+.bool_ap_results #sponsored-content {
+  display: none;
+}
+
+.bool_ap_results #ms-sponsored-apartments ul li {
+  position: relative;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #f10031;
+}
+
+.bool_ap_results #ms-sponsored-apartments ul li:first-child {
+  border-top: 1px solid #f10031;
+}
+
+.bool_ap_results #ms-sponsored-apartments ul li #sponsored-content {
+  display: block;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 0.7em;
+  color: #f10031;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .bool_ap_results ul {
   margin-top: 20px;
 }

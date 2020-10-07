@@ -18,6 +18,7 @@ class PaymentController extends Controller
 
 
       $now = Carbon::now();
+
       $expiration = false;
       $end_date = false;
       if (count((array)$apartment->sponsorships) != 0) {
@@ -28,7 +29,7 @@ class PaymentController extends Controller
             }
           }
         $carbon_end_date = new Carbon($end_date);
-        $expiration = $carbon_end_date->format('d-m-y');
+        $expiration = $carbon_end_date;
       }
 
 

@@ -13,7 +13,7 @@
             @if (!empty($placesInfo['address']))
                 <div class="place-search-input">
                   <label class="sr-only">Ricerca un appartamento</label>
-                  <input id="address" type="search" class="form-control" class="form-control bool_input" value="<?php echo $placesInfo['address']; ?>" placeholder="Dove vuoi andare" />
+                  <input id="address" type="search" class="form-control" class="form-control bool_input" value="<?php echo $placesInfo['address']; ?>" placeholder="Dove vuoi andare?" />
                   <input hidden id="latitude" type="text" name="latitude" value="<?php echo $placesInfo['lat']; ?>">
                   <input hidden id="longitude" type="text" name="longitude" value="<?php echo $placesInfo['lng']; ?>">
                   <input hidden type="text" id="controllo" value="call-ajax">
@@ -21,7 +21,7 @@
               @else
                   <div class="place-search-input">
                     <label class="sr-only">Ricerca un appartamento</label>
-                    <input id="address" type="search" class="form-control" class="form-control bool_input" placeholder="Dove vuoi andare" />
+                    <input id="address" type="search" class="form-control" class="form-control bool_input" placeholder="Dove vuoi andare?" />
                     <input hidden id="latitude" type="text" name="latitude" value="">
                     <input hidden id="longitude" type="text" name="longitude" value="">
                   </div>
@@ -31,7 +31,7 @@
 
             {{-- inizio filtri di ricerca --}}
             <div class="all-search-filters">
-              <a class="bool_filter" onclick="myAlert()">
+              <a class="bool_filter">
                 Filtri di ricerca
               </a>
             </div>

@@ -16214,7 +16214,8 @@ $(document).ready(function () {
       },
       success: function success(data) {
         // Funzione handlebars per stampare la risposta
-        printApartments(data['sponsored'], data.normal['data']); // printApartments(data['sponsored'], data.normal['data'] ); // OK
+        var normalApartments = data.normal['data'].reverse();
+        printApartments(data['sponsored'], normalApartments); // printApartments(data['sponsored'], data.normal['data'] ); // OK
         // Rimuovo la mappa
 
         $('#map-example-container').remove(); // Inserisco la mappa con i marker

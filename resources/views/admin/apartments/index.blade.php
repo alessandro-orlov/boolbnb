@@ -80,13 +80,26 @@
                               </a>
                             </td>
                             {{-- Sponsorship --}}
-                            <td>
+                            <td class="apartment-sponsorship">
                               <div class="apartment-icons">
                                   <i class="far fa-money-bill-alt"></i>
                               </div>
                               @if (!$apartment->sponsorships->isEmpty())
                                 @foreach ($apartment->sponsorships as $sponsorship)
-                                    {{$sponsorship->name}}
+                                    @php
+                                      $expired = date('H:m d/m/y', strtotime($sponsorship->pivot->end_date));
+                                    @endphp
+                                    <div class="name">
+                                        {{$sponsorship->name}}
+                                    </div>
+                                    <div class="expired">
+                                        @php
+                                          echo $expired;
+                                        @endphp
+                                    </div>
+
+
+
                                 @endforeach
                               @else
                                 -

@@ -18,5 +18,6 @@
           <span class="longitude">@{{longitude}}</span>
         </p>
     </div>
+    <span id="sponsored-content">sponsorizzato</span>
 </li>
 {{-- fine lista appartamenti --}}

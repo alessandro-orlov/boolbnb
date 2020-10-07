@@ -27,8 +27,8 @@ class CreateApartmentSponsorshipTable extends Migration
                 ->references('id')
                 ->on('sponsorships');
 
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
+            $table->dateTime('start_date')->nullable();
+            $table->dateTime('end_date')->nullable();
 
             $table->timestamps();
         });

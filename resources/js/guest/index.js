@@ -138,7 +138,9 @@ $(document).ready(function() {
       },
       success: function(data) {
         // Funzione handlebars per stampare la risposta
-        printApartments( data['sponsored'], data.normal['data'] );
+        var normalApartments = data.normal['data'].reverse();
+        
+        printApartments( data['sponsored'], normalApartments );
 
         // printApartments(data['sponsored'], data.normal['data'] ); // OK
 

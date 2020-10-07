@@ -2,8 +2,7 @@
 
   {{-- Appartamenti sponsorizzati --}}
   @if (!empty($sponsored_apartments))
-    <div class="sponsored_apartments">
-      <h3>Appartamenti sponsorizzati</h3>
+    <div id="ms-sponsored-apartments">
       <ul>
         @foreach ($sponsored_apartments as $sponsored_apartment)
           <li class="bool_ap">
@@ -44,7 +43,7 @@
                   <p class="bool_price"><span>Prezzo: {{$sponsored_apartment->price}} € <small>/ a notte</small></span> </p>
                 </a>
               </div>
-              
+              <span id="sponsored-content">sponsorizzato</span>
           </li>
 
         @endforeach
@@ -55,8 +54,7 @@
 
 
   {{-- Appartamenti non sponsorizzati --}}
-  <div class="normal-apartments">
-    <h3>Tutti Appartamenti</h3>
+  <div id="ms-normal-apartments">
     <ul>
       @foreach ($apartments as $apartment)
         <li class="bool_ap">
