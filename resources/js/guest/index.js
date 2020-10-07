@@ -45,7 +45,7 @@ $(document).ready(function() {
   radiusOutput.innerHTML = radiusRange.value; // Valore slider di default
   // Aggiorno il valore del range muovendo lo slider
   radiusRange.oninput = function() {
-      radiusOutput.innerHTML = this.value;
+  radiusOutput.innerHTML = this.value;
   };
 
 
@@ -76,8 +76,8 @@ $(document).ready(function() {
 
     // Resset del HTML
     $('.all-db-apartments').html('');
-    $('#ms-sponsored-apartments').html('');
-    $('#ms-normal-apartments').html('');
+    $('#ms-sponsored-apartments ul').html('');
+    $('#ms-normal-apartments ul').html('');
     // Chiudo la finestra dei filtri se sono aperti
     $('.bool_dropdown').slideUp();
 
@@ -159,21 +159,86 @@ $(document).ready(function() {
   function printApartments(dataSponsored, dataNormal) {
     var source = $('#entry-template').html();
     var template = Handlebars.compile(source);
+    var url = window.location.protocol + '//' + window.location.hostname + ':8000/';
 
+    console.log(url);
+
+    // Appartamenti sponsorizzati
     for (var i = 0; i < dataSponsored.length; i++) {
       var singleSponsoredApartment = dataSponsored[i];
-      var html = template(singleSponsoredApartment);
+      console.log(singleSponsoredApartment);
+
+      var imageSponsored;
+      if (singleSponsoredApartment.main_img === null) {
+        imageSponsored = url + 'img/no-image/no-image.png';
+      } else if (singleSponsoredApartment.main_img.includes('mpixel')) {
+        imageSponsored = singleSponsoredApartment.main_img;
+      } else {
+        imageSponsored = url + 'storage/' + singleSponsoredApartment.main_img;
+      }
+
+      var contextSponsored = {
+        'address': singleSponsoredApartment.address,
+        'city': singleSponsoredApartment.city,
+        'region': singleSponsoredApartment.region,
+        'description': singleSponsoredApartment.description,
+        'latitude': singleSponsoredApartment.latitude,
+        'longitude': singleSponsoredApartment.longitude,
+        'main_img': imageSponsored,
+        'mq': singleSponsoredApartment.mq,
+        'num_baths': singleSponsoredApartment.num_baths,
+        'num_beds': singleSponsoredApartment.num_beds,
+        'num_rooms': singleSponsoredApartment.num_rooms,
+        'title': singleSponsoredApartment.title,
+        'user_id': singleSponsoredApartment.user_id,
+        'id': singleSponsoredApartment.id,
+        'price': singleSponsoredApartment.price,
+      }
+
+      var htmlSponsored = template(contextSponsored);
+      // console.log(singleSponsoredApartment);
 
       // Inserisco i risultati della ricerca
-      $('#ms-sponsored-apartments').append(html);
+      $('#ms-sponsored-apartments ul').append(htmlSponsored);
     }
 
+    // Appartamenti normali
     for (var i = 0; i < dataNormal.length; i++) {
       var singleApartment = dataNormal[i];
-      var html = template(singleApartment);
+      console.log(singleApartment);
+
+      var image;
+      if (singleApartment.main_img === null) {
+        image = url + 'img/no-image/no-image.png';
+      } else if (singleApartment.main_img.includes('mpixel')) {
+        image = singleApartment.main_img;
+      } else {
+        image = url + 'storage/' + singleApartment.main_img;
+      }
+
+      var context = {
+        'address': singleApartment.address,
+        'city': singleApartment.city,
+        'region': singleApartment.region,
+        'description': singleApartment.description,
+        'latitude': singleApartment.latitude,
+        'longitude': singleApartment.longitude,
+        'main_img': image,
+        'mq': singleApartment.mq,
+        'num_baths': singleApartment.num_baths,
+        'num_beds': singleApartment.num_beds,
+        'num_rooms': singleApartment.num_rooms,
+        'title': singleApartment.title,
+        'user_id': singleApartment.user_id,
+        'id': singleApartment.id,
+        'price': singleApartment.price,
+      }
+
+      var html = template(context);
+      console.log(singleApartment);
 
       // Inserisco i risultati della ricerca
-      $('#ms-normal-apartments').append(html);
+      $('#ms-normal-apartments ul').append(html);
     }
   };
 
@@ -202,7 +267,7 @@ $(document).ready(function() {
 
 
         var map = L.map('map-example-container', {
-          scrollWheelZoom: true,
+          scrollWheelZoom: false,
           zoomControl: true
         });
 

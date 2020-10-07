@@ -33,7 +33,9 @@
           </div>
         @endforeach
       @else
-        <h2>Non hai ancora i messaggi</h2>
+        <div class="py-5">
+            <h2>Non hai ricevuto ancora i messaggi <i class="far fa-sad-tear"></i></h2>
+        </div>
       @endif
 
     </div>
