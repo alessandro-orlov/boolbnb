@@ -51,6 +51,10 @@ i {
   color: #f10031;
 }
 
+.boolbnb-red {
+  color: #f10031;
+}
+
 main {
   width: 100%;
   background: linear-gradient(0deg, #fff, #f5f5fa);
