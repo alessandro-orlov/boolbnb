@@ -30,6 +30,7 @@ Route::prefix('admin')
     ->group(function() {
         Route::resource('apartments', 'ApartmentController');
         Route::get('/messages/{apartment}', 'MessageController@show')->name('message.show');
+        Route::delete('/messages/{message}', 'MessageController@destroy')->name('message.destroy');
         Route::get('/visits/{apartment}', 'VisitController@show')->name('visits.show');
         Route::get('/payment/{apartment}', 'PaymentController@index')->name('payment.index');
         Route::post('/payment/{apartment}/checkout', 'PaymentController@checkout')->name('payment.checkout');

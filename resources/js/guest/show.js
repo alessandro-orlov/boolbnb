@@ -2,14 +2,6 @@ var $ = require( "jquery" );
 
 $(document).ready(function() {
 
-
-  // $('#send-message-to-host').on('submit', function() {
-  //   $('#message-send-success').addClass('visible');
-  //   setTimeout(function(){
-  //       $('#message-send-success').removeClass('visible');
-  //   }, 3000);
-  // });
-
   $('#icon').click(function() {
     location.reload();
   });

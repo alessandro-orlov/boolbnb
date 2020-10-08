@@ -604,7 +604,8 @@ h1 {
   margin-bottom: 30px;
 }
 
-.apartment-messages-page {
+.apartment-messages-container {
+  position: relative;
   background-color: #fff;
   box-shadow: 0px 0px 15px 1px #0000002b;
   padding: 20px;
@@ -613,71 +614,94 @@ h1 {
   position: relative;
 }
 
-.apartment-messages-page h3 {
-  font-size: 1.35em;
-  font-weight: bold;
+.apartment-messages-container .delete-this-msg {
+  display: inline-block;
+  padding: 20px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 150;
 }
 
-.apartment-messages-page h3 span.apartment-message-title {
+.apartment-messages-container .delete-this-msg button {
+  border: none;
+  background: none;
+  font-size: 1.5em;
+  color: #ccc;
+  transition: color 0.2s ease-in-out;
+}
+
+.apartment-messages-container .delete-this-msg:hover button {
+  color: #f10031;
+}
+
+.apartment-messages-container h3 {
+  font-size: 1.35em;
+  font-weight: bold;
+  padding-right: 40px;
+}
+
+.apartment-messages-container h3 span.apartment-message-title {
   padding-left: 30px;
 }
 
-.apartment-messages-page h4 {
+.apartment-messages-container h4 {
   font-size: 1.1em;
   font-weight: bold;
   padding: 10px 0 5px;
 }
 
-.apartment-messages-page .apartment-message-box {
+.apartment-messages-container .apartment-message-box {
+  width: 90%;
   cursor: pointer;
 }
 
-.apartment-messages-page .apartment-message-box span.message-created-time {
+.apartment-messages-container .apartment-message-box span.message-created-time {
   padding: 5px 0;
   font-size: 0.9em;
   color: #ccc;
 }
 
-.apartment-messages-page .apartment-message-box span.close,
-.apartment-messages-page .apartment-message-box span.open {
+.apartment-messages-container .apartment-message-box span.close,
+.apartment-messages-container .apartment-message-box span.open {
   display: none;
   position: absolute;
   margin-top: 2px;
 }
 
-.apartment-messages-page .apartment-message-box span.close.visible,
-.apartment-messages-page .apartment-message-box span.open.visible {
+.apartment-messages-container .apartment-message-box span.close.visible,
+.apartment-messages-container .apartment-message-box span.open.visible {
   display: block;
 }
 
-.apartment-messages-page .apartment-message-box span.close.visible i,
-.apartment-messages-page .apartment-message-box span.open.visible i {
+.apartment-messages-container .apartment-message-box span.close.visible i,
+.apartment-messages-container .apartment-message-box span.open.visible i {
   color: #f10031;
 }
 
-.apartment-messages-page .apartment-message-box .message-detail {
+.apartment-messages-container .apartment-message-box .message-detail {
   display: none;
 }
 
-.apartment-messages-page .apartment-message-box .message-detail.visible {
+.apartment-messages-container .apartment-message-box .message-detail.visible {
   display: flex;
   flex-wrap: wrap;
 }
 
-.apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-info {
+.apartment-messages-container .apartment-message-box .message-detail.visible .ms_user-info {
   flex-basis: 100%;
 }
 
-.apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-message {
+.apartment-messages-container .apartment-message-box .message-detail.visible .ms_user-message {
   flex-basis: 100%;
 }
 
 @media all and (min-width: 768px) {
-  .apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-info {
+  .apartment-messages-container .apartment-message-box .message-detail.visible .ms_user-info {
     flex-basis: 30%;
   }
 
-  .apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-message {
+  .apartment-messages-container .apartment-message-box .message-detail.visible .ms_user-message {
     flex-basis: 70%;
   }
 }

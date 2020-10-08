@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-  {{-- @if (Session::has('message'))
-   <div class="alert alert-info">{{ Session::get('message') }}</div>
-  @endif --}}
 
   @if(session('success'))
     <div id="message-send-success">
@@ -11,20 +8,6 @@
         <span id=icon><i class="fas fa-times"></i></span>
     </div>
   @endif
-
-  {{-- <div id="message-send-success">
-      <h3>Messaggio inviato</h3>
-      <span id=icon><i class="fas fa-times"></i></span>
-  </div> --}}
-
-  {{-- @if(session('success'))
-    <div id="">
-        <h3>{{session('success')}}</h3>
-    </div>
-  @endif --}}
-
-
-
 
     {{-- Layout --}}
     <div class="container py-4">

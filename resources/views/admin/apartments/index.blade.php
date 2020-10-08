@@ -113,11 +113,11 @@
                             <td>
                               <a class="controls-btn normal" href="{{route('admin.payment.index', $apartment)}}">promuovi</a>
                               <a class="controls-btn normal" href="{{route('admin.apartments.edit', $apartment)}}">modifica</a>
-                                <form class="form-delete" action="{{ route('admin.apartments.destroy', $apartment)}}" method="post">
-                                  @csrf
-                                  @method('DELETE')
-                                  <input class="controls-btn delete" type="submit" value="elimina">
-                                </form>
+                              <form class="form-delete" action="{{ route('admin.apartments.destroy', $apartment)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input class="controls-btn delete" type="submit" value="elimina">
+                              </form>
                             </td>
                           </tr>
                         @endif
