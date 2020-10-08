@@ -71,10 +71,10 @@ class ApartmentController extends Controller
      */
     public function store(Request $request, Apartment $apartment)
     {
-
+        $request->validate($this->validationData());
         $data = $request->all();
+
         $apartment_id = $data['apartment_id'];
-        // dd($data);
 
         $new_massage = new Message();
         $new_massage->apartment_id = $apartment_id;
@@ -82,9 +82,13 @@ class ApartmentController extends Controller
         $new_massage->sender_name = $data['sender_name'];
         $new_massage->sender_mail = $data['sender_mail'];
         $new_massage->message = $data['message'];
-        $new_massage->save();
 
-        return redirect()->route('guest.apartments.show', $apartment_id);
+        $saved = $new_massage->save();
+
+        if($saved) {
+          return redirect()->back()->withSuccess('Messaggio è stato inviato!');
+        }
+
     }
 
     /**
@@ -139,6 +143,15 @@ class ApartmentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function validationData() {
+      return [
+        'msg_title' => 'required|max:255',
+        'sender_name' => 'required|max:255',
+        'sender_mail' => 'required|max:255',
+        'message' => 'required',
+      ];
     }
 
 }

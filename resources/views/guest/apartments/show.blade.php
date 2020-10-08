@@ -1,6 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
+  {{-- @if (Session::has('message'))
+   <div class="alert alert-info">{{ Session::get('message') }}</div>
+  @endif --}}
+
+  @if(session('success'))
+    <div id="message-send-success">
+        <h3>{{session('success')}}</h3>
+        <span id=icon><i class="fas fa-times"></i></span>
+    </div>
+  @endif
+
+  {{-- <div id="message-send-success">
+      <h3>Messaggio inviato</h3>
+      <span id=icon><i class="fas fa-times"></i></span>
+  </div> --}}
+
+  {{-- @if(session('success'))
+    <div id="">
+        <h3>{{session('success')}}</h3>
+    </div>
+  @endif --}}
+
+
+
+
     {{-- Layout --}}
     <div class="container py-4">
         <div class="show-page-wrapper">
@@ -107,7 +132,7 @@
                                 @endif
                             </div>
                             {{-- FORM --}}
-                            <form class="needs-validation" novalidate action="{{ route('guest.apartments.store') }}" method="post" enctype="multipart/form-data">
+                            <form class="needs-validation" id="send-message-to-host" novalidate action="{{ route('guest.apartments.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('POST')
                                 {{-- Message Title --}}
@@ -142,7 +167,7 @@
                                 <div class="form-row">
                                     <div class="form-check col-md-12 text-right">
                                         <input hidden type="text" name="apartment_id" value="{{$apartment->id}}">
-                                        <input type="submit" class="btn btn-boolbnb" value="Invia il messaggio">
+                                        <input type="submit"  class="btn btn-boolbnb" value="Invia il messaggio">
                                     </div>
                                 </div>
                             </form>

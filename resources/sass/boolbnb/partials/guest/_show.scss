@@ -1,3 +1,29 @@
+#message-send-success {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 40px 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: $shadow;
+  z-index: 1150;
+  transition: left 1.5s ease-in-out;
+  h3 {
+    color: $primary-red;
+    margin: 0;
+  }
+  &.visible {
+    left: 50%;
+  }
+  #icon {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 1.2em;
+  }
+}
 .img-container {
   width: 60%;
   img {
