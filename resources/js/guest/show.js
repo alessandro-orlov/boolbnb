@@ -2,12 +2,15 @@ var $ = require( "jquery" );
 
 $(document).ready(function() {
 
+  $('#icon').click(function() {
+    location.reload();
+  });
 
   // ========================================================= //
   // ===================== MAPPA ============================= //
   (function() {
     var apartmentTitle = $('.show-top-heading h1').text();
-    
+
     var showLat = $('.show-latitude').val();
     var showLong = $('.show-longitude').val();
 

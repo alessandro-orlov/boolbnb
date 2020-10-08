@@ -10980,8 +10980,11 @@ return jQuery;
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $(document).ready(function () {
-  // ========================================================= //
+  $('#icon').click(function () {
+    location.reload();
+  }); // ========================================================= //
   // ===================== MAPPA ============================= //
+
   (function () {
     var apartmentTitle = $('.show-top-heading h1').text();
     var showLat = $('.show-latitude').val();

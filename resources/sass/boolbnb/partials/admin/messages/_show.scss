@@ -3,17 +3,36 @@ h1 {
   margin-bottom: 30px;
 }
 
-.apartment-messages-page {
+.apartment-messages-container {
+      position: relative;
   background-color: #fff;
   box-shadow: $shadow;
   padding: 20px;
   border-radius: 15px;
   margin-bottom: 30px;
   position: relative;
-
+  .delete-this-msg {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 150;
+    button {
+      border: none;
+      background: none;
+      padding: 20px;
+      font-size: 1.5em;
+      color: #ccc;
+      transition: color .2s ease-in-out;
+    }
+    &:hover button {
+      color: $primary-red;
+    }
+  }
   h3 {
     font-size: 1.35em;
     font-weight: bold;
+    padding-right: 40px;
     span.apartment-message-title {
       padding-left: 30px;
     }
@@ -25,6 +44,7 @@ h1 {
   }
 
   .apartment-message-box {
+    width: 90%;
     cursor: pointer;
     span.message-created-time {
       padding: 5px 0;
@@ -65,11 +85,11 @@ h1 {
   }
 }
 @media all and (min-width:768px) {
-  .apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-info {
+  .apartment-messages-container .apartment-message-box .message-detail.visible .ms_user-info {
     flex-basis: 30%;
   }
 
-  .apartment-messages-page .apartment-message-box .message-detail.visible .ms_user-message {
+  .apartment-messages-container .apartment-message-box .message-detail.visible .ms_user-message {
     flex-basis: 70%;
   }
 }

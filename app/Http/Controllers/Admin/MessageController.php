@@ -13,4 +13,11 @@ class MessageController extends Controller
   {
       return view('admin.message.show', compact('apartment'));
   }
+
+  public function destroy(Apartment $apartment, Message $message)
+  {
+    $message->delete();
+
+    return redirect()->back();
+  }
 }
