@@ -355,6 +355,7 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   font-size: 0.8em;
   text-align: center;
   vertical-align: middle;
+  font-weight: 400;
 }
 
 .user-apartments table tbody td {
@@ -371,12 +372,13 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
 }
 
 .user-apartments table tbody td.apartment-sponsorship .name {
+  font-size: 0.9em;
   text-transform: capitalize;
   letter-spacing: 1px;
 }
 
 .user-apartments table tbody td.apartment-sponsorship .expired {
-  color: #ababab;
+  color: #757575;
   font-size: 0.7em;
 }
 
@@ -391,8 +393,8 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
 .user-apartments table tbody td .controls-btn {
   font-size: 0.8em;
   display: block;
-  padding: 0 5px;
-  margin: 5px auto;
+  padding: 2px 7px;
+  margin: 7px auto;
   background-color: #fff;
   border: 1px solid #dddde4;
   color: #333;
