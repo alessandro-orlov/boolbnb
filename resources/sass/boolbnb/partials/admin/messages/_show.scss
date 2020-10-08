@@ -13,7 +13,6 @@ h1 {
   position: relative;
   .delete-this-msg {
     display: inline-block;
-    padding: 20px;
     position: absolute;
     top: 15px;
     right: 15px;
@@ -21,6 +20,7 @@ h1 {
     button {
       border: none;
       background: none;
+      padding: 20px;
       font-size: 1.5em;
       color: #ccc;
       transition: color .2s ease-in-out;
