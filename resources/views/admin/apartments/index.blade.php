@@ -2,10 +2,17 @@
 
 @section('content')
   <div class="container py-5">
-      <div class="">
-          <p class="office-heading"><span id="greetings"></span> {{$user->name}} {{$user->lastname}}</p>
-          <h1>Benvenuto nella tua area riservata</h1>
-      </div>
+      <section id="admin-index-header">
+          <div class="row">
+              <div class="col-md-8">
+                <p class="office-heading"><span id="greetings"></span> {{$user->name}} {{$user->lastname}}</p>
+                <h1>Benvenuto nella tua area riservata</h1>
+              </div>
+              <div class="col-md-4 big-btn-add-apt" style="vertical-align: middle;">
+                  <a href="{{route('admin.apartments.create')}}" class="btn btn-boolbnb big">aggiungi un appartamento&nbsp; <i class="fas fa-plus"></i></a>
+              </div>
+          </div>
+      </section>
 
       <div class="user-apartments">
           <div class="table-responsive-sm ms_apartments-table">
@@ -97,9 +104,6 @@
                                           echo $expired;
                                         @endphp
                                     </div>
-
-
-
                                 @endforeach
                               @else
                                 -
@@ -114,8 +118,6 @@
                                   @method('DELETE')
                                   <input class="controls-btn delete" type="submit" value="elimina">
                                 </form>
-
-
                             </td>
                           </tr>
                         @endif

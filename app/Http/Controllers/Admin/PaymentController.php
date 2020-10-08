@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Apartment;
 use App\Sponsorship;
@@ -99,7 +100,9 @@ class PaymentController extends Controller
   }
 
   public function transaction(Apartment $apartment){
-    return view('admin.payment.transaction', compact('apartment'));
+    $user = Auth::user();
+
+    return view('admin.payment.transaction', compact('apartment', 'user'));
   }
 
 }

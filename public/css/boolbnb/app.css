@@ -42,12 +42,21 @@ i {
   transition: opacity 0.1s linear;
 }
 
+.btn-boolbnb.big {
+  padding: 15px 25px;
+  text-transform: uppercase;
+}
+
 .btn-boolbnb:hover {
   opacity: 0.9;
   color: #fff;
 }
 
 .boolbnb-primary-color {
+  color: #f10031;
+}
+
+.boolbnb-red {
   color: #f10031;
 }
 
@@ -295,8 +304,20 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   }
 }
 
-.office-heading {
+#admin-index-header .office-heading {
   font-size: 1.5em;
+}
+
+#admin-index-header .big-btn-add-apt {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+@media all and (min-width: 768px) {
+  #admin-index-header .big-btn-add-apt {
+    text-align: right;
+    margin-bottom: 0;
+  }
 }
 
 .user-apartments .ms_apartments-table {
@@ -325,10 +346,16 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   border-bottom: 1px solid #dddde4;
 }
 
+.user-apartments table tbody .apartment-icons {
+  color: #ccc;
+  transition: color 0.5s ease-in-out;
+}
+
 .user-apartments table tbody th.ms_data {
   font-size: 0.8em;
   text-align: center;
   vertical-align: middle;
+  font-weight: 400;
 }
 
 .user-apartments table tbody td {
@@ -344,9 +371,15 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   color: #f10031;
 }
 
-.user-apartments table tbody td .apartment-icons {
-  color: #ccc;
-  transition: color 0.5s ease-in-out;
+.user-apartments table tbody td.apartment-sponsorship .name {
+  font-size: 0.9em;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.user-apartments table tbody td.apartment-sponsorship .expired {
+  color: #757575;
+  font-size: 0.7em;
 }
 
 .user-apartments table tbody td.icons:hover .apartment-icons {
@@ -360,8 +393,8 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
 .user-apartments table tbody td .controls-btn {
   font-size: 0.8em;
   display: block;
-  padding: 0 5px;
-  margin: 5px auto;
+  padding: 2px 7px;
+  margin: 7px auto;
   background-color: #fff;
   border: 1px solid #dddde4;
   color: #333;
