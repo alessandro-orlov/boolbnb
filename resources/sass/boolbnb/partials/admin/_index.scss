@@ -1,6 +1,17 @@
-.office-heading {
-  font-size: 1.5em;
+#admin-index-header {
+  .office-heading {
+    font-size: 1.5em;
+  }
+  .big-btn-add-apt {
+    text-align: left;
+    margin-bottom: 30px;
+    @media all and (min-width: 768px) {
+      text-align: right;
+      margin-bottom: 0;
+    }
+  }
 }
+
 .user-apartments {
   .ms_apartments-table {
     padding: 3px;

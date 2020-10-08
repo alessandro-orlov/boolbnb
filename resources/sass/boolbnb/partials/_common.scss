@@ -40,6 +40,10 @@ i {
       color: #fff;
       opacity: 1;
       transition: opacity 0.1s linear;
+      &.big {
+        padding: 15px 25px;
+        text-transform: uppercase;
+      }
     }
 .btn-boolbnb:hover {
       opacity: 0.9;

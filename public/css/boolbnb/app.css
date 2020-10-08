@@ -42,6 +42,11 @@ i {
   transition: opacity 0.1s linear;
 }
 
+.btn-boolbnb.big {
+  padding: 15px 25px;
+  text-transform: uppercase;
+}
+
 .btn-boolbnb:hover {
   opacity: 0.9;
   color: #fff;
@@ -299,8 +304,20 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   }
 }
 
-.office-heading {
+#admin-index-header .office-heading {
   font-size: 1.5em;
+}
+
+#admin-index-header .big-btn-add-apt {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+@media all and (min-width: 768px) {
+  #admin-index-header .big-btn-add-apt {
+    text-align: right;
+    margin-bottom: 0;
+  }
 }
 
 .user-apartments .ms_apartments-table {
