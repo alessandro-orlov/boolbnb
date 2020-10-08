@@ -346,6 +346,11 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   border-bottom: 1px solid #dddde4;
 }
 
+.user-apartments table tbody .apartment-icons {
+  color: #ccc;
+  transition: color 0.5s ease-in-out;
+}
+
 .user-apartments table tbody th.ms_data {
   font-size: 0.8em;
   text-align: center;
@@ -365,9 +370,14 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   color: #f10031;
 }
 
-.user-apartments table tbody td .apartment-icons {
-  color: #ccc;
-  transition: color 0.5s ease-in-out;
+.user-apartments table tbody td.apartment-sponsorship .name {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.user-apartments table tbody td.apartment-sponsorship .expired {
+  color: #ababab;
+  font-size: 0.7em;
 }
 
 .user-apartments table tbody td.icons:hover .apartment-icons {
