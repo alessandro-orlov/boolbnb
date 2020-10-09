@@ -3,6 +3,7 @@
 @section('content')
 
   <div class="container py-5">
+    <div class="chart-container">
       <h1>{{$apartment->title}}</h1>
       <div class="statistics">
         <div style="display: none;">
@@ -35,7 +36,7 @@
 
           {{-- Visite settimanali --}}
           {{-- <div id="weekly-visits">{{$thisWeek}}</div> --}
-          
+
 
           {{-- TEST!!! - Visite settimanali --}}
           <div id="this-day">{{$thisDay}}</div>
@@ -53,9 +54,9 @@
 
 
       {{-- Grafici Charts.js --}}
-      <h2>Statistiche</h2>
+      <h2><i class="fas fa-chart-line"></i>Statistiche</h2>
 
-      
+
       {{-- Visite Giornaliere --}}
       <div class="stats">
         <h3>Visite di oggi: {{$thisDay}}</h3>
@@ -70,14 +71,14 @@
 
       {{-- Visite Settimanali --}}
       <div class="stats">
-      <h3>Visite negli ultimi sette giorni: {{$thisWeek}}</h3>
-        <canvas id="myChartWeekly" width="500" height="100"></canvas>  
+        <h3 id="margin-title-chart">Visite negli ultimi sette giorni: {{$thisWeek}}</h3>
+        <canvas id="myChartWeekly" width="500" height="100"></canvas>
       </div>
 
       {{-- Visite Mensili --}}
       <div class="stats">
         <h3>Visite Mensili</h3>
-        <canvas id="myChartMonths" width="500" height="100"></canvas>  
+        <canvas id="myChartMonths" width="500" height="100"></canvas>
       </div>
 
       {{-- Visite Utlimi 3 Mesi --}}
@@ -93,6 +94,7 @@
       </div> --}}
 
   </div>
+    </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="{{asset('js/boolbnb/admin/visits/show.js')}}"></script>
 @endsection
