@@ -148,11 +148,11 @@
 
         <div>
           {{-- HOMEPAGE LAT & LNG --}}
-          {{-- <div class="hidden">
+          <div class="hidden">
               <input type="hidden" class='latitude-value' value="41.29246">
               <input type="hidden" class='longitude-value' value="12.57361">
               <input type="hidden" id="input-map" class="form-control">
-          </div> --}}
+          </div>
         </div>
         <div class="map bool_map_container">
             <div id="map-example-container"></div>

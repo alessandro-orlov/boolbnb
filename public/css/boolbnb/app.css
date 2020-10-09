@@ -198,13 +198,12 @@ main .card-section .box .text {
 
 footer {
   width: 100%;
-  background-color: #333;
-  color: white;
-  padding-top: 40px;
+  background-color: #111;
+  color: #fff;
 }
 
 footer a {
-  color: white;
+  color: #afafaf;
 }
 
 footer a:hover {
@@ -215,57 +214,45 @@ footer .upper-footer {
   display: flex;
 }
 
+footer .upper-footer [class*=col-] {
+  border-bottom: 1px solid #afafaf;
+}
+
 footer .upper-footer ul {
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 40px 0;
+  margin: 0;
 }
 
 footer .upper-footer ul li {
   line-height: 40px;
 }
 
-footer .upper-footer ul li:first-child {
-  font-weight: bolder;
-  font-size: 0.9em;
+footer .upper-footer ul li:first-child h3 {
+  font-weight: 500;
+  font-size: 1.1em;
+  letter-spacing: 1px;
 }
 
-footer .upper-footer .bottom-footer [class*=col-] {
-  float: left;
+footer .bottom-footer {
+  text-align: center;
+  padding: 40px 0;
 }
 
-footer .upper-footer .bottom-footer [class*=col-] .social {
-  display: flex;
-  justify-content: space-around;
+footer .bottom-footer .social {
+  padding: 10px 0;
 }
 
-footer .upper-footer .bottom-footer [class*=col-] .social i {
+footer .bottom-footer .social a i {
   font-size: 1.4em;
+  margin: 0 15px;
 }
 
-@media all and (max-width: 767px) {
-  main .col-xs-12 {
-    width: 70%;
-    margin: auto;
-  }
-
-  footer .bottom-footer .languages {
-    margin: 20px 0;
-  }
-
-  footer .bottom-footer {
-    text-align: center;
-    padding: 20px 0;
-  }
-
-  footer .bottom-footer .social {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  footer .upper-footer [class*=col-] {
-    border-bottom: 1px solid white;
-  }
+footer .bottom-footer .copyright {
+  color: #afafaf;
+  padding: 10px 0;
+  letter-spacing: 1px;
 }
 
 @media all and (min-width: 768px) {
@@ -279,27 +266,33 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
     border-top: 1px solid #fff;
   }
 
+  footer a {
+    text-decoration: none;
+    color: #333;
+  }
+
   footer .upper-footer {
     border-bottom: 1px solid #dddde4;
+    padding: 40px 0;
+  }
+
+  footer .upper-footer [class*=col-] {
+    border-bottom: none;
+  }
+
+  footer .upper-footer ul {
+    padding: 0;
+  }
+
+  footer .upper-footer ul li:first-child h3 {
+    font-weight: bold;
   }
 
   footer .bottom-footer {
     border-top: 1px solid #fff;
-    padding-top: 30px;
-    padding-bottom: 30px;
   }
 
-  footer .bottom-footer .social {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  footer .bottom-footer .social i {
-    font-size: 1.4em;
-  }
-
-  footer a {
-    text-decoration: none;
+  footer .bottom-footer .copyright {
     color: #333;
   }
 }
@@ -670,6 +663,7 @@ h1 {
   margin-top: 15px;
   padding: 50px;
   border-radius: 15px;
+  background-color: #fff;
   box-shadow: 0px 0px 15px 1px #0000002b;
 }
 

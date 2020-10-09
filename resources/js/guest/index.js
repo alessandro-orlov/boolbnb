@@ -249,10 +249,10 @@ $(document).ready(function() {
   function generateMap() {
     (function() {
 
-        // var latlng = {
-        //         lat: $('.latitude-value').val(),
-        //         lng: $('.longitude-value').val()
-        //     };
+        var latlng = {
+                lat: $('.latitude-value').val(),
+                lng: $('.longitude-value').val()
+            };
         // console.log(latlng);
 
         var apartments = [];
@@ -303,12 +303,16 @@ $(document).ready(function() {
         //   map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
         // }
 
-        findBestZoom();
+        map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
 
-        function findBestZoom() {
-           var featureGroup = L.featureGroup(markers);
-           map.fitBounds(featureGroup.getBounds().pad(0.5), {animate: false});
-         }
+        if (markers != '') {
+          findBestZoom();
+
+          function findBestZoom() {
+            var featureGroup = L.featureGroup(markers);
+            map.fitBounds(featureGroup.getBounds().pad(0.5), {animate: false});
+          }
+        }
 
     })();
 

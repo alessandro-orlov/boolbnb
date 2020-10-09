@@ -16314,11 +16314,11 @@ $(document).ready(function () {
 
   function generateMap() {
     (function () {
-      // var latlng = {
-      //         lat: $('.latitude-value').val(),
-      //         lng: $('.longitude-value').val()
-      //     };
-      // console.log(latlng);
+      var latlng = {
+        lat: $('.latitude-value').val(),
+        lng: $('.longitude-value').val()
+      }; // console.log(latlng);
+
       var apartments = []; // Ciclo su ogni appartamento che sia visibile quindi con una sola classe
 
       $('.bool_ap').each(function () {
@@ -16361,13 +16361,17 @@ $(document).ready(function () {
       // }
 
 
-      findBestZoom();
+      map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
 
-      function findBestZoom() {
-        var featureGroup = L.featureGroup(markers);
-        map.fitBounds(featureGroup.getBounds().pad(0.5), {
-          animate: false
-        });
+      if (markers != '') {
+        var findBestZoom = function findBestZoom() {
+          var featureGroup = L.featureGroup(markers);
+          map.fitBounds(featureGroup.getBounds().pad(0.5), {
+            animate: false
+          });
+        };
+
+        findBestZoom();
       }
     })();
   } // End generateMap function
@@ -16383,7 +16387,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\boolbnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\guest\index.js */"./resources/js/guest/index.js");
 
 
 /***/ })
