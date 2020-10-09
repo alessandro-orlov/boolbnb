@@ -16092,14 +16092,14 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
 $(document).ready(function () {
+  generateMap();
   var controllo = $('#controllo').val();
 
   if (controllo == 'call-ajax') {
     ajaxCallFilteredApartment();
-  }
-
-  generateMap(); // ========================================================= //
+  } // ========================================================= //
   // ================= TOGGLE-FILTERS ======================== //
+
 
   $('.all-search-filters .bool_filter').click(function () {
     $('.bool_dropdown').slideToggle();
@@ -16314,11 +16314,11 @@ $(document).ready(function () {
 
   function generateMap() {
     (function () {
-      var latlng = {
-        lat: $('.latitude-value').val(),
-        lng: $('.longitude-value').val()
-      }; // console.log(latlng);
-
+      // var latlng = {
+      //         lat: $('.latitude-value').val(),
+      //         lng: $('.longitude-value').val()
+      //     };
+      // console.log(latlng);
       var apartments = []; // Ciclo su ogni appartamento che sia visibile quindi con una sola classe
 
       $('.bool_ap').each(function () {
@@ -16354,13 +16354,12 @@ $(document).ready(function () {
         });
         marker.addTo(map).bindPopup(apartment.title).openPopup();
         markers.push(marker);
-      }
+      } // if (latlng.lat == 41.29246) {
+      //   map.setView(new L.LatLng(latlng.lat, latlng.lng), 6);
+      // } else {
+      //   map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
+      // }
 
-      if (latlng.lat == 41.29246) {
-        map.setView(new L.LatLng(latlng.lat, latlng.lng), 6);
-      } else {
-        map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
-      }
 
       findBestZoom();
 

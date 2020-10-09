@@ -3,13 +3,13 @@ const Handlebars = require("handlebars");
 
 $(document).ready(function() {
 
+  generateMap();
+
   var controllo = $('#controllo').val();
 
   if (controllo == 'call-ajax') {
     ajaxCallFilteredApartment();
   }
-
-  generateMap();
 
   // ========================================================= //
   // ================= TOGGLE-FILTERS ======================== //
@@ -249,10 +249,10 @@ $(document).ready(function() {
   function generateMap() {
     (function() {
 
-        var latlng = {
-                lat: $('.latitude-value').val(),
-                lng: $('.longitude-value').val()
-            };
+        // var latlng = {
+        //         lat: $('.latitude-value').val(),
+        //         lng: $('.longitude-value').val()
+        //     };
         // console.log(latlng);
 
         var apartments = [];
@@ -297,11 +297,12 @@ $(document).ready(function() {
                 markers.push(marker);
         }
 
-        if (latlng.lat == 41.29246) {
-          map.setView(new L.LatLng(latlng.lat, latlng.lng), 6);
-        } else {
-          map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
-        }
+        // if (latlng.lat == 41.29246) {
+        //   map.setView(new L.LatLng(latlng.lat, latlng.lng), 6);
+        // } else {
+        //   map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
+        // }
+
         findBestZoom();
 
         function findBestZoom() {
