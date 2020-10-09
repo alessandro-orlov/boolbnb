@@ -30,7 +30,7 @@
               <div class="bool_info_apt">
                   <p class="bool_info_text">Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</p>
                   <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
-                    <h4>{{$sponsored_apartment->title}}</h4>
+                    <h4>SPONSORED {{$sponsored_apartment->title}}</h4>
                   </a>
                   <hr>
                   <p class="bool_info_text">{{$sponsored_apartment->num_beds}} ospiti - {{$sponsored_apartment->num_rooms}} camere da letto - {{$sponsored_apartment->num_baths}} bagni</p>
@@ -40,9 +40,13 @@
                       <span class="bool_info_text">&#8901; {{$service->name}}</span>
                     @endforeach
                   @endif
-                  
+
                   <p class="bool_price"><span>Prezzo: {{$sponsored_apartment->price}} € <small>/ a notte</small></span> </p>
               </div>
+              <p class="d-none">
+                <span class="latitude">{{$sponsored_apartment->latitude}}</span>
+                <span class="longitude">{{$sponsored_apartment->longitude}}</span>
+              </p>
               <span id="sponsored-content">sponsorizzato</span>
           </li>
 

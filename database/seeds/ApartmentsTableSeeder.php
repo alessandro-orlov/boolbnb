@@ -29,8 +29,8 @@ class ApartmentsTableSeeder extends Seeder
             $new_apartment->num_baths = $faker->numberBetween(1, 4);
             $new_apartment->mq = $faker->numberBetween(50, 700);
             $new_apartment->address = $faker->address;
-            $new_apartment->latitude = $faker->latitude(41, 42); // Approssimativo LAT italia
-            $new_apartment->longitude = $faker->longitude(12, 13); // Approssimativo LNG italia
+            $new_apartment->latitude = $faker->latitude(39, 46); // Approssimativo LAT italia
+            $new_apartment->longitude = $faker->longitude(11, 15); // Approssimativo LNG italia
             $new_apartment->city = $faker->city;
             $new_apartment->region = $faker->state;
             $new_apartment->description = $faker->text(900);
