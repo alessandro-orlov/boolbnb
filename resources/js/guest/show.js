@@ -3,7 +3,8 @@ var $ = require( "jquery" );
 $(document).ready(function() {
 
   $('#icon').click(function() {
-    location.reload();
+    // location.reload();
+    $('#message-send-success').remove();
   });
 
   // ========================================================= //

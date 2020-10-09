@@ -27,9 +27,7 @@
                   </div>
             @endif
 
-
-
-            {{-- inizio filtri di ricerca --}}
+            {{-- Begin search filters --}}
             <div class="all-search-filters">
               <a class="bool_filter">
                 Filtri di ricerca
@@ -74,12 +72,12 @@
                       <input type="checkbox" class="custom-control-input parking-service checkbox-filters" id="customCheck2" value="">
                       <label class="custom-control-label"  for="customCheck2"><span class="bool_icon"><i class="fas fa-parking"></i></span>  Parcheggio</label>
                     </div>
-                    {{-- Piscina --}}
+                    {{-- Swimming pool --}}
                     <div class="custom-control custom-checkbox">
                       <input type="checkbox" class="custom-control-input swimmingPool-service checkbox-filters" id="customCheck3" value="">
                       <label class="custom-control-label"  for="customCheck3"><span class="bool_icon"><i class="fas fa-swimmer"></i></span> Piscina</label>
                     </div>
-                    {{-- Portineria --}}
+                    {{-- Reception --}}
                     <div class="custom-control custom-checkbox">
                       <input type="checkbox" class="custom-control-input reception-service checkbox-filters" id="customCheck4" value="">
                       <label class="custom-control-label"  for="customCheck4"><span class="bool_icon"><i class="fas fa-concierge-bell"></i></span> Portineria</label>
@@ -89,7 +87,7 @@
                       <input type="checkbox" class="custom-control-input sauna-service checkbox-filters" id="customCheck5" value="">
                       <label class="custom-control-label"  for="customCheck5"><span class="bool_icon"><i class="fas fa-hot-tub"></i></span> Sauna</label>
                     </div>
-                    {{-- Vista Mare --}}
+                    {{-- Sea view --}}
                     <div class="custom-control custom-checkbox">
                       <input type="checkbox" class="custom-control-input sea-view-service checkbox-filters" id="customCheck6" value="">
                       <label class="custom-control-label"  for="customCheck6"><span class="bool_icon"><i class="fas fa-water"></i></span> Vista Mare</label>
@@ -98,7 +96,7 @@
 
               </div>
             </div>
-            {{-- fine filtri di ricerca --}}
+            {{-- End search filters --}}
 
             {{-- SUBMIT --}}
             <div class="submit-search-btn">
@@ -113,13 +111,13 @@
         {{-- BEGIN APARTMENTS LIST--}}
         <div class="all-apartments-container">
 
-          <!-- PRINT APARTMENTS WITH PHP -->
+          {{-- PRINT APARTMENTS WITH PHP --}}
           <div class="all-db-apartments">
               @include('layouts.partials.apartmentsphp')
           </div>
 
 
-          {{-- handlebars tamplate --}}
+          {{-- PRINT APARTMENTS WITH HANDLEBARS --}}
           <div class="apartments-handlebars">
 
             <div id="ms-sponsored-apartments">
@@ -148,8 +146,8 @@
         </div>
         <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
 
-        <div class="">
-          {{-- Qui metto lat e lng della homapage --}}
+        <div>
+          {{-- HOMEPAGE LAT & LNG --}}
           <div class="hidden">
               <input type="hidden" class='latitude-value' value="41.29246">
               <input type="hidden" class='longitude-value' value="12.57361">
@@ -165,7 +163,7 @@
 
     </div>
   </section>
-  {{-- fine sezione appartamenti e mappa --}}
+  {{-- END APARTMENTS & MAP SECTION --}}
 
   <!-- ================================================================  -->
   <!-- ===================== SCRIPT ===================================  -->

@@ -28,9 +28,10 @@
 
               <!-- Informazioni -->
               <div class="bool_info_apt">
-                <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
                   <p class="bool_info_text">Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</p>
-                  <h4>{{$sponsored_apartment->title}}</h4>
+                  <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
+                    <h4>{{$sponsored_apartment->title}}</h4>
+                  </a>
                   <hr>
                   <p class="bool_info_text">{{$sponsored_apartment->num_beds}} ospiti - {{$sponsored_apartment->num_rooms}} camere da letto - {{$sponsored_apartment->num_baths}} bagni</p>
 
@@ -39,9 +40,8 @@
                       <span class="bool_info_text">&#8901; {{$service->name}}</span>
                     @endforeach
                   @endif
-
+                  
                   <p class="bool_price"><span>Prezzo: {{$sponsored_apartment->price}} € <small>/ a notte</small></span> </p>
-                </a>
               </div>
               <span id="sponsored-content">sponsorizzato</span>
           </li>
@@ -80,9 +80,11 @@
 
             {{-- Informazioni --}}
             <div class="bool_info_apt">
-              <a href="{{route('guest.apartments.show', $apartment)}}">
+
                 <p class="bool_info_text">Intero appartamento a {{$apartment->city}}, {{$apartment->region}}</p>
-                <h4>{{$apartment->title}}</h4>
+                <a href="{{route('guest.apartments.show', $apartment)}}">
+                    <h4>{{$apartment->title}}</h4>
+                </a>
                 <hr>
                 <p class="bool_info_text">{{$apartment->num_beds}} ospiti - {{$apartment->num_rooms}} camere da letto - {{$apartment->num_baths}} bagni</p>
 
@@ -93,7 +95,11 @@
                 @endif
 
                 <p class="bool_price"><span>Prezzo: {{$apartment->price}} € <small>/ a notte</small></span> </p>
-              </a>
+
+              <p class="latlng-hidden">
+                <span class="latitude">{{$apartment->latitude}}</span>
+                <span class="longitude">{{$apartment->longitude}}</span>
+              </p>
             </div>
 
         </li>

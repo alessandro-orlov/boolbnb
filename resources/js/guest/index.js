@@ -139,7 +139,7 @@ $(document).ready(function() {
       success: function(data) {
         // Funzione handlebars per stampare la risposta
         var normalApartments = data.normal['data'].reverse();
-        
+
         printApartments( data['sponsored'], normalApartments );
 
         // printApartments(data['sponsored'], data.normal['data'] ); // OK
@@ -280,6 +280,7 @@ $(document).ready(function() {
             attribution: 'Boolean Team 1'
           }
         );
+
         map.addLayer(osmLayer);
 
         var markers = [];
@@ -301,6 +302,12 @@ $(document).ready(function() {
         } else {
           map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
         }
+        findBestZoom();
+
+        function findBestZoom() {
+           var featureGroup = L.featureGroup(markers);
+           map.fitBounds(featureGroup.getBounds().pad(0.5), {animate: false});
+         }
 
     })();
 

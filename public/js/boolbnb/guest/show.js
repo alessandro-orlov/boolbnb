@@ -10981,7 +10981,8 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 
 $(document).ready(function () {
   $('#icon').click(function () {
-    location.reload();
+    // location.reload();
+    $('#message-send-success').remove();
   }); // ========================================================= //
   // ===================== MAPPA ============================= //
 
