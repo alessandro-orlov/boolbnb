@@ -16361,6 +16361,15 @@ $(document).ready(function () {
       } else {
         map.setView(new L.LatLng(latlng.lat, latlng.lng), 12);
       }
+
+      findBestZoom();
+
+      function findBestZoom() {
+        var featureGroup = L.featureGroup(markers);
+        map.fitBounds(featureGroup.getBounds().pad(0.5), {
+          animate: false
+        });
+      }
     })();
   } // End generateMap function
 
