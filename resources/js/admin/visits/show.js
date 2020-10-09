@@ -4,7 +4,7 @@ $(document).ready(function() {
   // alert('ciao visits');
 
 
-//   // Visite Giornaliere ======================================   
+//   // Visite Giornaliere ======================================
 //   // Variables periods
 //   var dayVisits = document.getElementById('daily-visits').innerHTML;
 
@@ -18,7 +18,7 @@ $(document).ready(function() {
 //               label: '# Visite Giornaliere',
 //               data: [dayVisits],
 //               backgroundColor: [
-//                   'rgba(255, 99, 132, 1)', 
+//                   'rgba(255, 99, 132, 1)',
 //                 //   'rgba(255, 99, 132, 0.2)',
 //                 //   'rgba(54, 162, 235, 0.2)',
 //                 //   'rgba(255, 206, 86, 0.2)',
@@ -50,7 +50,7 @@ $(document).ready(function() {
 //   });
 
 
-  // TEST!!! - Visite Settimanali ======================================   
+  // TEST!!! - Visite Settimanali ======================================
   // Variables periods
 //   var weekVisits = document.getElementById('weekly-visits').innerHTML;
 var thisDay = document.getElementById('this-day').innerHTML;
@@ -60,6 +60,13 @@ var threeDaysAgo = document.getElementById('three-days-ago').innerHTML;
 var fourDaysAgo = document.getElementById('four-days-ago').innerHTML;
 var fiveDaysAgo = document.getElementById('five-days-ago').innerHTML;
 var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
+
+console.log('thisDay: ' + thisDay);
+console.log('yesterday: ' + yesterday);
+console.log('threeDaysAgo: ' + threeDaysAgo);
+console.log('fourDaysAgo: ' + fourDaysAgo);
+console.log('fiveDaysAgo: ' + fiveDaysAgo);
+console.log('sixDaysAgo: ' + sixDaysAgo);
 
 
 
@@ -89,7 +96,7 @@ var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
                   thisDay,
               ],
               backgroundColor: [
-                'rgba(255, 48, 92, 0)', 
+                'rgba(255, 48, 92, 0)',
                 //   'rgba(255, 99, 132, 0.2)',
                 //   'rgba(54, 162, 235, 0.2)',
                 //   'rgba(255, 206, 86, 0.2)',
@@ -121,10 +128,10 @@ var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
   });
 
 
-//   // Visite Ultimo Trimestre ======================================   
+//   // Visite Ultimo Trimestre ======================================
 //   // Variables periods
 //   var trimesterVisits = document.getElementById('trimester-visits').innerHTML;
- 
+
 //   // console.log(trimesterVisits);
 //   var ctx = document.getElementById('myChartTrimester').getContext('2d');
 //   var myChart = new Chart(ctx, {
@@ -168,7 +175,7 @@ var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
 
 
 
-//   // Visite Ultimo Semestre ======================================   
+//   // Visite Ultimo Semestre ======================================
 //   // Variables periods
 //   var semesterVisits = document.getElementById('semester-visits').innerHTML;
 
@@ -204,7 +211,7 @@ var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
 //       options: {
 //           scales: {
 //               xAxes: [{
-//                   barPercentage: 0.2, 
+//                   barPercentage: 0.2,
 //                   ticks: {
 //                       beginAtZero: true
 //                   }
@@ -215,7 +222,7 @@ var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
 
 
 
-  // Visite Mensili ======================================   
+  // Visite Mensili ======================================
   // Variables periods
   // var monthVisits = document.getElementById('monthly-visits').innerHTML;
   var jan = document.getElementById('january').innerHTML;
@@ -280,7 +287,7 @@ var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
                 //   'rgba(255, 99, 132, 1)',
                 //   'rgba(255, 99, 132, 1)',
                 //   'rgba(255, 99, 132, 1)',
-                //   'rgba(255, 99, 132, 1)',               
+                //   'rgba(255, 99, 132, 1)',
               ],
               pointBackgroundColor:'rgba(241, 0, 49, 1)',
               borderWidth: 3
@@ -299,7 +306,7 @@ var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
 
 
 
-//   // Visite Totali ======================================   
+//   // Visite Totali ======================================
 //   // Variables periods
 //   // var totalVisits = document.getElementById('total-visits').innerHTML;
 //   var totalVisits = $('#total-visits').text();
@@ -333,7 +340,7 @@ var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
 //               borderWidth: 1
 //           }]
 //       },
-//       options: { 
+//       options: {
 //           scales: {
 //               xAxes: [{
 //                   barPercentage: 0.2,
