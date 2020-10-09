@@ -10996,7 +10996,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\messages\show.js */"./resources/js/admin/messages/show.js");
+module.exports = __webpack_require__(/*! C:\Users\lstor\Desktop\BooleanRepo\final-project\boolbnb\resources\js\admin\messages\show.js */"./resources/js/admin/messages/show.js");
 
 
 /***/ })
