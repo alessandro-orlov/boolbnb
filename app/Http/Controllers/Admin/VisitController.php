@@ -180,6 +180,42 @@ class VisitController extends Controller
              ->count();
             //  dd($thisWeek);
 
-      return view('admin.visits.show', compact('apartment', 'thisYear', 'pastTrimester', 'pastSemester', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december', 'thisDay', 'thisWeek'));
+
+      // ---- TEST!!! -  Statistiche Settimanali 
+      $thisDay = views($apartment)
+              ->period(Period::since($fullDay))
+              ->count();
+
+      $yesterday = views($apartment)
+             ->period(Period::pastDays(1))
+             ->remember()
+             ->count();
+
+      $twoDaysAgo = views($apartment)
+      ->period(Period::pastDays(2))
+      ->remember()
+      ->count();
+
+      $threeDaysAgo = views($apartment)
+      ->period(Period::pastDays(3))
+      ->remember()
+      ->count();
+
+      $fourDaysAgo = views($apartment)
+      ->period(Period::pastDays(4))
+      ->remember()
+      ->count();
+
+      $fiveDaysAgo = views($apartment)
+      ->period(Period::pastDays(5))
+      ->remember()
+      ->count();
+
+      $sixDaysAgo = views($apartment)
+      ->period(Period::pastDays(6))
+      ->remember()
+      ->count();
+
+      return view('admin.visits.show', compact('apartment', 'thisYear', 'pastTrimester', 'pastSemester', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december', 'thisWeek', 'thisDay', 'yesterday', 'twoDaysAgo', 'threeDaysAgo', 'fourDaysAgo', 'fiveDaysAgo', 'sixDaysAgo',));
   }
 }
