@@ -558,47 +558,6 @@ footer .upper-footer .bottom-footer [class*=col-] .social i {
   display: block;
 }
 
-@media all and (min-width: 768px) {
-  .show-page-wrapper .show-body .apartment-info {
-    flex-basis: 50%;
-  }
-
-  .show-page-wrapper .show-body .contact-owner-container {
-    border-top: none;
-    flex-basis: 50%;
-  }
-
-  .show-page-wrapper .show-body .apartment-info .apartment-services .services-container .service {
-    flex-basis: 50%;
-  }
-
-  .ms_add-host {
-    margin-bottom: 500px;
-  }
-
-  .ms_add-host .form-container {
-    position: absolute;
-    top: 25%;
-    right: 5%;
-  }
-
-  .apartment-edit-container .edit-this-apartment {
-    display: block;
-  }
-}
-
-@media all and (min-width: 992px) {
-  .ms_add-host {
-    margin-bottom: 430px;
-  }
-}
-
-@media all and (min-width: 1200px) {
-  .ms_add-host {
-    margin-bottom: 350px;
-  }
-}
-
 h1 {
   color: #f10031;
   margin-bottom: 30px;
@@ -1199,12 +1158,12 @@ h1 {
   }
 
   .ms_add-host {
-    margin-bottom: 500px;
+    margin-bottom: 370px;
   }
 
   .ms_add-host .form-container {
     position: absolute;
-    top: 25%;
+    top: 10%;
     right: 5%;
   }
 
@@ -1215,13 +1174,13 @@ h1 {
 
 @media all and (min-width: 992px) {
   .ms_add-host {
-    margin-bottom: 430px;
+    margin-bottom: 300px;
   }
 }
 
 @media all and (min-width: 1200px) {
   .ms_add-host {
-    margin-bottom: 350px;
+    margin-bottom: 200px;
   }
 }
 

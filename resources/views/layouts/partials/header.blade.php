@@ -18,7 +18,10 @@
             <ul class="navbar-nav ml-auto">
                 <!-- links -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('guest.apartments.index') }}">tutti appartamenti</a>
+                        <a class="nav-link" href="{{ route('guest.apartments.index') }}">Appartamenti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chi siamo</a>
                     </li>
                 <!-- Authentication Links -->
                 @guest
@@ -38,10 +41,10 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a href="{{route('admin.apartments.create')}}" class="dropdown-item">
-                                Add apartment
+                                Aggiungi appartamento
                             </a>
                             <a href="{{route('admin.apartments.index')}}" class="dropdown-item">
-                                Your appartments
+                                I tuoi appartamenti
                             </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
