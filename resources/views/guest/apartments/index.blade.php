@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+  Boolbnb - tutti gli appartamenti
+@endsection
+
 @section('content')
   <section class="container-fluid bool_ap_results">
 
