@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="container py-5">
-    <h1><span style="color: #333;">Appartamento</span>{{$apartment->title}}</h1>
+    <h1><span style="color: #333;">Appartamento:</span> {{$apartment->title}}</h1>
     <div class="chart-container">
       <div class="statistics">
         <div style="display: none;">
@@ -12,10 +12,10 @@
           <div id="total-visits"> <?php echo views($apartment)->count(); ?> </div>
 
           {{-- Visite ultimo trimestre --}}
-          <div id="trimester-visits">{{$pastTrimester}}</div>
+          {{-- <div id="trimester-visits">{{$pastTrimester}}</div> --}}
 
           {{-- Visite ultimo semestre --}}
-          <div id="semester-visits">{{$pastSemester}}</div>
+          {{-- <div id="semester-visits">{{$pastSemester}}</div> --}}
 
           {{-- Visite mensili --}}
           <span id="january">{{$january}}</span>
