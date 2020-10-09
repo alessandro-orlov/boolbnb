@@ -665,6 +665,40 @@ h1 {
   }
 }
 
+.container.py-5 .chart-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 1px #0000002b;
+}
+
+.container.py-5 .chart-container h1 {
+  font-weight: bold;
+}
+
+.container.py-5 .chart-container h2 {
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.container.py-5 .chart-container h2 i {
+  color: #f10031;
+  margin-right: 10px;
+}
+
+.container.py-5 .chart-container .stats {
+  margin-bottom: 20px;
+}
+
+.container.py-5 .chart-container .stats #margin-title-chart {
+  margin-top: 60px;
+}
+
+.container.py-5 .chart-container .stats #myChartWeekly {
+  margin-bottom: 60px;
+}
+
 .bool_ap_results .bool_form {
   padding-top: 20px;
 }
