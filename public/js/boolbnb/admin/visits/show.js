@@ -11273,7 +11273,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\boolbnb\resources\js\admin\visits\show.js */"./resources/js/admin/visits/show.js");
+module.exports = __webpack_require__(/*! C:\Users\Alfa\Desktop\Boolean Project\Final project\BoolBnb\resources\js\admin\visits\show.js */"./resources/js/admin/visits/show.js");
 
 
 /***/ })

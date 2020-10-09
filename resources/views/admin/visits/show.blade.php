@@ -3,8 +3,8 @@
 @section('content')
 
   <div class="container py-5">
+    <h1><span style="color: #333;">Appartamento</span>{{$apartment->title}}</h1>
     <div class="chart-container">
-      <h1>{{$apartment->title}}</h1>
       <div class="statistics">
         <div style="display: none;">
 

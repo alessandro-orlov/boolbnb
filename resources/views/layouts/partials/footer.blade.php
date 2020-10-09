@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-sm-12 col-md-3">
         <ul>
-          <li>INFORMAZIONI</li>
+          <li><h3>INFORMAZIONI</h3></li>
           <li>
             <a href="#">Come funziona airbnb</a>
           </li>
@@ -33,7 +33,7 @@
       </div>
       <div class="col-sm-12 col-md-3">
         <ul>
-          <li>COMMUNITY</li>
+          <li><h3>COMMUNITY</h3></li>
           <li>
             <a href="#">Diversità e appartenenza</a>
           </li>
@@ -53,7 +53,7 @@
       </div>
       <div class="col-sm-12 col-md-3">
         <ul>
-          <li>OSPITA</li>
+          <li><h3>OSPITA</h3></li>
           <li>
             <a href="#">Diventa un host</a>
           </li>
@@ -82,7 +82,7 @@
       </div>
       <div class="col-sm-12 col-md-3">
         <ul>
-          <li>ASSISTENZA</li>
+          <li><h3>ASSISTENZA</h3></li>
           <li>
             <a href="#">Aggiornamenti COVID-19</a>
           </li>
@@ -108,46 +108,21 @@
 {{-- begin bottom footer --}}
 <div class="bottom-footer">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
-        <span>&copy; <span id="current-year"></span> Boolbnb, Inc. All rights reserved</span>
-        {{-- <ul>
-          <li>
-            <a href="#">Privacy</a>
-          </li>
-          <li>
-            <a href="#">Termini</a>
-          </li>
-          <li>
-            <a href="#">Mappa del sito</a>
-          </li>
-          <li>
-            <a href="#">Dettagli dell'azienda</a>
-          </li>
-        </ul> --}}
-      </div>
-      <div class="col-lg-5 col-md-3 col-sm-12 col-xs-12">
-        <div class="languages">
-          <span>
-            <i class="fas fa-globe"></i>
-            <a href="#">Italiano (IT)</a>
-          </span>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
-          <div class="social">
-            <a href="#">
+      <div class="social">
+          <a href="#">
               <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#">
+          </a>
+          <a href="#">
               <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#">
+          </a>
+          <a href="#">
               <i class="fab fa-instagram"></i>
-            </a>
-          </div>
+          </a>
       </div>
-    </div>
+
+      <div class="copyright">
+        <span>&copy; <span id="current-year"></span> Boolbnb, Inc. All rights reserved</span>
+      </div>
   </div>
 </div>
 {{-- end bottom footer --}}
