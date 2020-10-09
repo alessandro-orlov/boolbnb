@@ -2,6 +2,10 @@
   // MAIN
   main {
     border-bottom: 1px solid #dddde4;
+
+    .container.py-5 .about-container .box-about {
+      margin-bottom: 50px;
+    }
   }
   // FOOTER
   footer {
@@ -37,3 +41,14 @@
     }
   } // end footer
 } // End @media 768px
+
+
+@media all and (max-width: 768px) {
+  main {
+    border-bottom: 1px solid #dddde4;
+
+    .container.py-5 .about-container .box-about {
+      margin-bottom: 50px;
+    }
+  }
+}
