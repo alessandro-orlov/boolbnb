@@ -1,0 +1,67 @@
+.container.py-5 {
+  i {
+    color: $primary-red;
+    margin-right: 14px;
+  }
+  .about-container {
+    padding: 40px;
+    box-shadow: $shadow;
+    border-radius: $border-radius;
+
+    .app-description {
+      margin-bottom: 55px;
+      p {
+        font-size: 1.3em;
+      }
+
+      h2 {
+        color: $primary-red;
+        margin-bottom: 2%;
+        margin-top: 4%;
+      }
+    }
+
+    .box-about {
+      width: 200px;
+      margin: auto;
+                transition: all .4s ease;
+
+      &:hover {
+      transform: scale(1.1);
+      }
+
+      .picture {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        margin: auto;
+
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+          margin: auto;
+        }
+      }
+
+      .names {
+        width: 100%;
+        text-align: center;
+        margin-top: 8%;
+
+        p:first-of-type {
+          margin-bottom: 0;
+        }
+
+        a {
+          color: $primary-red;
+
+          i {
+            font-size: 1.35em;
+            margin-top: 3%;
+          }
+        }
+      }
+    }
+  }
+}
