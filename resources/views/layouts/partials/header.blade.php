@@ -21,7 +21,7 @@
                         <a class="nav-link" href="{{ route('guest.apartments.index') }}">Appartamenti</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Chi siamo</a>
+                        <a class="nav-link" href="{{route('about')}}">Chi siamo</a>
                     </li>
                 <!-- Authentication Links -->
                 @guest

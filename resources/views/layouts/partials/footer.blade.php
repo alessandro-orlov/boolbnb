@@ -12,16 +12,16 @@
             <a href="#">Newsroom</a>
           </li>
           <li>
-            <a href="#">Airbnb Plus</a>
+            <a href="#">Boolbnb Plus</a>
           </li>
           <li>
-            <a href="#">Airbnb Luxe</a>
+            <a href="#">Boolbnb Luxe</a>
           </li>
           <li>
             <a href="#">HotelTonight</a>
           </li>
           <li>
-            <a href="#">Airbnb for work</a>
+            <a href="#">Boolbnb for work</a>
           </li>
           <li>
             <a href="#">Olimpiadi</a>
@@ -41,7 +41,7 @@
             <a href="#">Accessibilità</a>
           </li>
           <li>
-            <a href="#">Airbnb Associates</a>
+            <a href="#">Boolbnb Associates</a>
           </li>
           <li>
             <a href="#">Alloggi per l'emergenza</a>
