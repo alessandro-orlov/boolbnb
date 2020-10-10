@@ -1,6 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css"/>
+  <script>
+  jQuery(document).ready(function($){
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      autoplay:true,
+      autoplayTimeout:5000,
+      autoplayHoverPause:true,
+      responsive:{
+        0:{
+          items:1
+        },
+        685:{
+          items:2
+        },
+        1040:{
+          items:3
+        },
+        1440:{
+          items:4
+        }
+      }
+    })
+  })
+  </script>
   {{-- begin jumbotron --}}
   <div class="jumbotron">
     <div class="filter">
@@ -57,6 +87,48 @@
     </div>
   </div>
   {{-- end jumbotron --}}
+
+  {{-- carousel --}}
+  <div class="owl-carousel owl-theme mt-8">
+    @if (!$apartments->isEmpty())
+      @if (!empty($sponsored_apartments))
+        @foreach ($sponsored_apartments as $sponsored_apartment)
+          <div class="item">
+            <!-- Immagine -->
+            <div class="bool_card_img">
+              @if (!empty($sponsored_apartment->main_img))
+                  <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
+                    @if (strpos($sponsored_apartment->main_img,'mpixel'))
+                      <img class="card-img-top" src="{{$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
+                    @else
+                      <img class="card-img-top" src="{{asset('storage').'/'.$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
+                    @endif
+                  </a>
+              @else
+                  <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
+                    <img class="card-img-top" src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
+                  </a>
+              @endif
+            </div>
+
+            <!-- Informazioni -->
+            <div class="card-body text-center">
+              <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
+                <h4>{{$sponsored_apartment->title}}</h4>
+                <i class="fas fa-map-marker-alt"></i>  <span>Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</span>
+              </a>
+            </div>
+          </div>
+        @endforeach
+      @endif
+    @endif
+  </div>
+  {{-- fine carousel --}}
+
+  <div class="container">
+    <hr>
+  </div>
+
   {{-- begin homepage --}}
   <div class="card-section">
     <div class="container">

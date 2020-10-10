@@ -159,9 +159,74 @@ main .jumbotron .filter h2 {
   font-size: 1.8em;
 }
 
+main .owl-carousel {
+  height: 400px;
+  margin-bottom: 110px;
+}
+
+main .owl-carousel .owl-item {
+  height: 400px;
+  width: 350px;
+}
+
+main .owl-carousel .owl-item .item {
+  padding: 16px;
+  margin: 20px 50px 0;
+  box-shadow: 0px 0px 15px 1px #0000002b;
+  border-radius: 10px;
+  height: 350px;
+  width: 350px;
+  background-color: #f4f4f4;
+}
+
+main .owl-carousel .owl-item .item .bool_card_img a img {
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+main .owl-carousel .owl-stage-outer {
+  height: 400px;
+}
+
+main .owl-carousel .owl-stage-outer .owl-stage {
+  height: 300px;
+}
+
+main .owl-theme .owl-nav [class*=owl-]:hover {
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+  border: none;
+}
+
+main .owl-theme .owl-dots .owl-dot.active span,
+main .owl-theme .owl-dots .owl-dot:hover span {
+  background: #f10031;
+}
+
+main .owl-carousel .owl-nav button.owl-next:focus,
+main .owl-carousel .owl-nav button.owl-prev:focus {
+  border: none;
+}
+
+main .owl-carousel .owl-nav button.owl-next,
+main .owl-carousel .owl-nav button.owl-prev,
+main .owl-carousel button.owl-dot {
+  font-size: 40px;
+  border: none;
+}
+
+main .card-body a span {
+  color: #333;
+  font-size: 14px;
+}
+
 main .card-section {
   display: flex;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 main .card-section .box {
@@ -186,6 +251,8 @@ main .card-section .box .image img {
   height: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 main .card-section .box .text {
