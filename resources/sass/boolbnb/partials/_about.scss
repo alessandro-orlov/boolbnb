@@ -1,67 +1,93 @@
-.container.py-5 {
-  i {
-    color: $primary-red;
-    margin-right: 14px;
-  }
-  .about-container {
+.about-container {
     padding: 40px;
     box-shadow: $shadow;
     border-radius: $border-radius;
-
-    .app-description {
-      margin-bottom: 55px;
-      p {
-        font-size: 1.3em;
-      }
-
-      h2 {
-        color: $primary-red;
-        margin-bottom: 2%;
-        margin-top: 4%;
+    background-color: #fff;
+    i {
+      color: $primary-red;
+      margin-right: 14px;
+    }
+    h1 {
+      font-size: 2.2em;
+      font-weight: bold;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.8em;
+      color: $primary-red;
+      margin-bottom: 20px;
+      margin-top: 40px;
+      &.creators-heading {
+        text-align: center;
+        padding: 20px 0;
       }
     }
 
-    .box-about {
-      width: 200px;
-      margin: auto;
-                transition: all .4s ease;
+    h3 {
+      font-size: 1.3em;
+    }
 
-      &:hover {
-      transform: scale(1.1);
+    // DESCRIZIONE APP
+    .app-description {
+      margin-bottom: 55px;
+      p {
+        font-size: 1em;
       }
-
-      .picture {
-        height: 150px;
-        width: 150px;
-        border-radius: 50%;
+      .functionalities {
+        display: flex;
+        flex-wrap: wrap;
+        div {
+          padding: 20px 0;
+          flex-basis: 100%;
+        }
+      }
+    }
+    // CREATORI
+    .creators {
+      display: flex;
+      flex-wrap: wrap;
+      .box-about {
+        flex-basis: 100%;
         margin: auto;
+        transition: all .4s ease;
+        margin-bottom: 50px;
 
-        img {
-          height: 100%;
-          width: 100%;
+        &:hover {
+        transform: scale(1.1);
+        }
+
+        .picture {
+          height: 150px;
+          width: 150px;
           border-radius: 50%;
           margin: auto;
-        }
-      }
 
-      .names {
-        width: 100%;
-        text-align: center;
-        margin-top: 8%;
-
-        p:first-of-type {
-          margin-bottom: 0;
+          img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            margin: auto;
+          }
         }
 
-        a {
-          color: $primary-red;
+        .names {
+          width: 100%;
+          text-align: center;
+          margin-top: 8%;
 
-          i {
-            font-size: 1.35em;
-            margin-top: 3%;
+          p:first-of-type {
+            margin-bottom: 0;
+          }
+
+          a {
+            color: $primary-red;
+
+            i {
+              font-size: 1.35em;
+              margin-top: 3%;
+            }
           }
         }
       }
     }
   }
-}

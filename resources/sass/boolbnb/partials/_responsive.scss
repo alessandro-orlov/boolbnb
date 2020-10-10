@@ -3,8 +3,24 @@
   main {
     border-bottom: 1px solid #dddde4;
 
-    .container.py-5 .about-container .box-about {
-      margin-bottom: 50px;
+  }
+  // ABOUT PAGE
+  .about-container {
+    .app-description {
+      .functionalities {
+        div {
+          padding: 20px;
+          flex-basis: 50%;
+        }
+        div:nth-child(2n+1) {
+          padding-left: 0;
+        }
+      }
+    }
+    .creators {
+      .box-about {
+        flex-basis: 50%;
+      }
     }
   }
   // FOOTER
@@ -43,12 +59,13 @@
 } // End @media 768px
 
 
-@media all and (max-width: 768px) {
-  main {
-    border-bottom: 1px solid #dddde4;
-
-    .container.py-5 .about-container .box-about {
-      margin-bottom: 50px;
+@media all and (min-width: 992px) {
+  // ABOUT PAGE
+  .about-container {
+    .creators {
+      .box-about {
+        flex-basis: 25%;
+      }
     }
   }
 }
