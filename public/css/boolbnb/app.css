@@ -322,13 +322,123 @@ footer .bottom-footer .copyright {
   letter-spacing: 1px;
 }
 
+.about-container {
+  padding: 40px;
+  box-shadow: 0px 0px 15px 1px #0000002b;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.about-container i {
+  color: #f10031;
+  margin-right: 14px;
+}
+
+.about-container h1 {
+  font-size: 2.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.about-container h2 {
+  font-size: 1.8em;
+  color: #f10031;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.about-container h2.creators-heading {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.about-container h3 {
+  font-size: 1.3em;
+}
+
+.about-container .app-description {
+  margin-bottom: 55px;
+}
+
+.about-container .app-description p {
+  font-size: 1em;
+}
+
+.about-container .app-description .functionalities {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-container .app-description .functionalities div {
+  padding: 20px 0;
+  flex-basis: 100%;
+}
+
+.about-container .creators {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-container .creators .box-about {
+  flex-basis: 100%;
+  margin: auto;
+  transition: all 0.4s ease;
+  margin-bottom: 50px;
+}
+
+.about-container .creators .box-about:hover {
+  transform: scale(1.1);
+}
+
+.about-container .creators .box-about .picture {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.about-container .creators .box-about .picture img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.about-container .creators .box-about .names {
+  width: 100%;
+  text-align: center;
+  margin-top: 8%;
+}
+
+.about-container .creators .box-about .names p:first-of-type {
+  margin-bottom: 0;
+}
+
+.about-container .creators .box-about .names a {
+  color: #f10031;
+}
+
+.about-container .creators .box-about .names a i {
+  font-size: 1.35em;
+  margin-top: 3%;
+}
+
 @media all and (min-width: 768px) {
   main {
     border-bottom: 1px solid #dddde4;
   }
 
-  main .container.py-5 .about-container .box-about {
-    margin-bottom: 50px;
+  .about-container .app-description .functionalities div {
+    padding: 20px;
+    flex-basis: 50%;
+  }
+
+  .about-container .app-description .functionalities div:nth-child(2n+1) {
+    padding-left: 0;
+  }
+
+  .about-container .creators .box-about {
+    flex-basis: 50%;
   }
 
   footer {
@@ -368,82 +478,10 @@ footer .bottom-footer .copyright {
   }
 }
 
-@media all and (max-width: 768px) {
-  main {
-    border-bottom: 1px solid #dddde4;
+@media all and (min-width: 992px) {
+  .about-container .creators .box-about {
+    flex-basis: 25%;
   }
-
-  main .container.py-5 .about-container .box-about {
-    margin-bottom: 50px;
-  }
-}
-
-.container.py-5 i {
-  color: #f10031;
-  margin-right: 14px;
-}
-
-.container.py-5 .about-container {
-  padding: 40px;
-  box-shadow: 0px 0px 15px 1px #0000002b;
-  border-radius: 10px;
-}
-
-.container.py-5 .about-container .app-description {
-  margin-bottom: 55px;
-}
-
-.container.py-5 .about-container .app-description p {
-  font-size: 1.3em;
-}
-
-.container.py-5 .about-container .app-description h2 {
-  color: #f10031;
-  margin-bottom: 2%;
-  margin-top: 4%;
-}
-
-.container.py-5 .about-container .box-about {
-  width: 200px;
-  margin: auto;
-  transition: all 0.4s ease;
-}
-
-.container.py-5 .about-container .box-about:hover {
-  transform: scale(1.1);
-}
-
-.container.py-5 .about-container .box-about .picture {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  margin: auto;
-}
-
-.container.py-5 .about-container .box-about .picture img {
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  margin: auto;
-}
-
-.container.py-5 .about-container .box-about .names {
-  width: 100%;
-  text-align: center;
-  margin-top: 8%;
-}
-
-.container.py-5 .about-container .box-about .names p:first-of-type {
-  margin-bottom: 0;
-}
-
-.container.py-5 .about-container .box-about .names a {
-  color: #f10031;
-}
-
-.container.py-5 .about-container .box-about .names a i {
-  font-size: 1.35em;
-  margin-top: 3%;
 }
 
 #admin-index-header .office-heading {
