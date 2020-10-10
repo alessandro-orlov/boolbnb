@@ -89,9 +89,69 @@ main {
       }
     }
 
+
+  // carousel
+  .owl-carousel{
+    height: 400px;
+    margin-bottom: 110px;
+    .owl-item{
+      height: 400px;
+      width: 350px;
+      .item{
+        padding: 16px;
+        margin: 20px 50px 0;
+        box-shadow: $shadow;
+        border-radius: 10px;
+        height: 350px;
+        width: 350px;
+        background-color: #f4f4f4;
+        .bool_card_img a img{
+          height: 200px;
+          width: 300px;
+          margin: 0 auto;
+          margin-top: 10px;
+          border-radius: 10px;
+        }
+      }
+    }
+    .owl-stage-outer{
+      height: 400px;
+      .owl-stage{
+        height: 300px;
+      }
+    }
+  }
+  .owl-theme .owl-nav [class*=owl-]:hover {
+   background:#fff;
+   color:$primary-dark;
+   text-decoration:none;
+   border: none;
+  }
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+   background:$primary-red;
+  }
+
+  .owl-carousel .owl-nav button.owl-next:focus,
+  .owl-carousel .owl-nav button.owl-prev:focus,{
+    border:none;
+  }
+
+  .owl-carousel .owl-nav button.owl-next,
+  .owl-carousel .owl-nav button.owl-prev,
+  .owl-carousel button.owl-dot {
+    font-size: 40px;
+    border: none;
+  }
+  .card-body a span{
+    color: $primary-dark;
+    font-size: 14px;
+  }
+  // fine carousel
+
   .card-section {
     display: flex;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
 
     .box {
       height: 350px;
@@ -113,6 +173,7 @@ main {
           height: 100%;
           border-top-left-radius: $border-radius;
           border-top-right-radius: $border-radius;
+          object-fit: cover;
         }
       }
 
