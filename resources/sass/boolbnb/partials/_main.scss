@@ -98,21 +98,26 @@ main {
       height: 400px;
       width: 350px;
       .item{
-        padding: 16px;
         margin: 20px 50px 0;
         box-shadow: $shadow;
         border-radius: 10px;
         height: 350px;
         width: 350px;
-        background-color: #f4f4f4;
+        background-color: #fff;
         .bool_card_img a img{
           height: 200px;
-          width: 300px;
+          width: 100%;
           margin: 0 auto;
-          margin-top: 10px;
-          border-radius: 10px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       }
+    }
+    .car-img-top{
+      width: 100%;
+      margin-top: 0;
     }
     .owl-stage-outer{
       height: 400px;
