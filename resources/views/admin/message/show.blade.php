@@ -9,7 +9,7 @@
         @foreach ($apartment->messages->reverse() as $message)
           <div class="apartment-messages-container">
             <div class="apartment-message-box">
-              <span class="message-created-time">{{$message->created_at->format("d/m/Y H:m")}}</span>
+              <span class="message-created-time">{{$message->created_at->format("H:i d/m/Y")}}</span>
 
               <h3 class="message-title">
                 <span class="open visible">

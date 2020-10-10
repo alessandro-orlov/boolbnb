@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/boolbnb/app.css": "/css/boolbnb/app.css",
     "/js/boolbnb/admin/create.js": "/js/boolbnb/admin/create.js",
     "/js/boolbnb/admin/edit.js": "/js/boolbnb/admin/edit.js",
     "/js/boolbnb/admin/index.js": "/js/boolbnb/admin/index.js",
@@ -9,6 +10,5 @@
     "/js/boolbnb/admin/payment/payment.js": "/js/boolbnb/admin/payment/payment.js",
     "/js/boolbnb/admin/visits/show.js": "/js/boolbnb/admin/visits/show.js",
     "/js/boolbnb/guest/index.js": "/js/boolbnb/guest/index.js",
-    "/js/boolbnb/guest/show.js": "/js/boolbnb/guest/show.js",
-    "/css/boolbnb/app.css": "/css/boolbnb/app.css"
+    "/js/boolbnb/guest/show.js": "/js/boolbnb/guest/show.js"
 }
