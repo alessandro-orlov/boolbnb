@@ -92,38 +92,66 @@ main {
 
   // carousel
   .owl-carousel{
-    height: 400px;
-    margin-bottom: 110px;
-    .owl-item{
-      height: 400px;
-      width: 350px;
-      .item{
-        margin: 20px 50px 0;
-        box-shadow: $shadow;
-        border-radius: 10px;
-        height: 350px;
-        width: 350px;
-        background-color: #fff;
-        .bool_card_img a img{
-          height: 200px;
-          width: 100%;
-          margin: 0 auto;
-          border-top-left-radius: 10px;
-          border-top-right-radius: 10px;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
+    height: 500px;
+    border-top: 1px solid #dddde4;
+    border-bottom: 1px solid #dddde4;
+    padding: 50px 0;
+    .owl-stage-outer {
+      height: 460px;
+      .owl-stage {
+        height: 460px;
+        .owl-item {
+          height: 420px;
+          width: 350px;
+          .item{
+            margin: 20px 50px 0;
+            box-shadow: $shadow;
+            border-radius: 10px;
+            height: 370px;
+            width: 350px;
+            background-color: #fff;
+            .bool_card_img a img{
+              height: 200px;
+              width: 100%;
+              margin: 0 auto;
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px;
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+              object-fit: cover;
+            }
+            .card-body {
+              .sponsored-apartment-title {
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                text-overflow: ellipsis;
+               -webkit-line-clamp: 2; /* number of lines to show */
+               -webkit-box-orient: vertical;
+                h4 {
+                  line-height: 40px;
+                  font-size: 1.3em;
+                  letter-spacing: 1px;
+                }
+              }
+              .sponsored-apartment-position {
+                height: 70px;
+                margin-top: 10px;
+                i {
+                  color: $primary-red;
+                }
+              }
+            }
+          }
         }
       }
     }
+
     .car-img-top{
       width: 100%;
       margin-top: 0;
-    }
-    .owl-stage-outer{
-      height: 400px;
-      .owl-stage{
-        height: 300px;
-      }
     }
   }
   .owl-theme .owl-nav [class*=owl-]:hover {

@@ -113,10 +113,12 @@
 
             <!-- Informazioni -->
             <div class="card-body text-center">
-              <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
-                <h4>{{$sponsored_apartment->title}}</h4>
-                <i class="fas fa-map-marker-alt"></i>  <span>Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</span>
-              </a>
+                <div class="sponsored-apartment-title">
+                    <a href="{{route('guest.apartments.show', $sponsored_apartment)}}"><h4>{{$sponsored_apartment->title}}</h4></a>
+                </div>
+                <div class="sponsored-apartment-position">
+                    <i class="fas fa-map-marker-alt"></i>  <span>Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</span>
+                </div>
             </div>
           </div>
         @endforeach
@@ -124,10 +126,6 @@
     @endif
   </div>
   {{-- fine carousel --}}
-
-
-    <hr>
-
 
   {{-- begin homepage --}}
   <div class="card-section">
