@@ -125,9 +125,9 @@
   </div>
   {{-- fine carousel --}}
 
-  <div class="container">
+
     <hr>
-  </div>
+
 
   {{-- begin homepage --}}
   <div class="card-section">
