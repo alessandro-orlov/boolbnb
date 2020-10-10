@@ -37,7 +37,7 @@
                               <div class="apartment-icons">
                                 <i class="far fa-calendar-alt"></i>
                               </div>
-                              {{$apartment->created_at->format('d/m/y H:m')}}
+                              {{$apartment->created_at->format('d/m/y H:i')}}
                             </th>
                             {{-- Apartment FOTO --}}
                             <td class="apartment-foto-block">
@@ -94,7 +94,7 @@
                               @if (!$apartment->sponsorships->isEmpty())
                                 @foreach ($apartment->sponsorships as $sponsorship)
                                     @php
-                                      $expired = date('H:m d/m/y', strtotime($sponsorship->pivot->end_date));
+                                      $expired = date('H:i d/m/y', strtotime($sponsorship->pivot->end_date));
                                     @endphp
                                     <div class="name">
                                         {{$sponsorship->name}}
