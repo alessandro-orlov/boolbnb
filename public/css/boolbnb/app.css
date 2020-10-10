@@ -335,11 +335,6 @@ footer .bottom-footer .copyright {
   background-color: #fff;
 }
 
-.about-container i {
-  color: #f10031;
-  margin-right: 14px;
-}
-
 .about-container h1 {
   font-size: 2.2em;
   font-weight: bold;
@@ -380,6 +375,11 @@ footer .bottom-footer .copyright {
   flex-basis: 100%;
 }
 
+.about-container .app-description .functionalities div i {
+  margin-right: 14px;
+  color: #f10031;
+}
+
 .about-container .creators {
   display: flex;
   flex-wrap: wrap;
@@ -394,6 +394,11 @@ footer .bottom-footer .copyright {
 
 .about-container .creators .box-about:hover {
   transform: scale(1.1);
+  color: #f10031;
+}
+
+.about-container .creators .box-about:hover:hover i {
+  color: #f10031;
 }
 
 .about-container .creators .box-about .picture {
@@ -408,6 +413,7 @@ footer .bottom-footer .copyright {
   width: 100%;
   border-radius: 50%;
   margin: auto;
+  box-shadow: 0px 0px 15px 1px #0000002b;
 }
 
 .about-container .creators .box-about .names {
@@ -421,7 +427,7 @@ footer .bottom-footer .copyright {
 }
 
 .about-container .creators .box-about .names a {
-  color: #f10031;
+  color: grey;
 }
 
 .about-container .creators .box-about .names a i {

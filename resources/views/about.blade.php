@@ -10,8 +10,13 @@
       <div class="app-description">
         <h1>Boolbnb</h1>
         <p>
-          BoolBnB è una applicazione per trovare e gestire l’affitto di appartamenti.<br>
-          E' una riproduzione rivisitata di uno dei più famosi portali online che mette in contatto persone in cerca di un alloggio o di una camera per brevi periodi, con persone che dispongono di spazi extra da affittare, generalmente privati.</p>
+          Questa app è una riproduzione rivisitata di uno dei più famosi portali online che mette in contatto persone in cerca di un alloggio o di una camera per brevi periodi, con persone che dispongono di spazi extra da affittare, generalmente privati.<br>
+          Gli utenti che vogliono mettere in affitto uno o più appartamenti si possono registrare alla piattaforma.<br>
+          Gli utenti interessati ad un appartamento, utilizzando i filtri di ricerca, vedono una lista di possibili appartamenti e cliccando su ognuno possono vedere le informazioni nel dettaglio.<br>
+          Una volta trovato l’appartamento desiderato, l’utente interessato può contattare l’utente proprietario per ulteriori informazioni, oppure possono effettuare online la prenotazione con pagamento attraverso carta di credito.<br>
+          Inoltre, i proprietari di un appartamento possono decidere di pagare per sponsorizzare l’annuncio del proprio appartamento per fare in modo che sia maggiormente in evidenza.
+
+        </p>
         <h2>Functionalities</h2>
         <div class="functionalities">
           <div>
@@ -51,15 +56,15 @@
         {{-- <div class="creator"> --}}
           <div class="box-about">
             <div class="picture">
-              <a href="#">
-                <img src="{{asset('img/malta_villa.jpg')}}" alt="">
+              <a href="https://github.com/alessandro-orlov">
+                <img src="{{asset('img/alex.jpg')}}" alt="">
               </a>
             </div>
             <div class="names">
               <h3>Alexander Orlov</h3>
               <p>Full-Stack</p>
               <p>
-                <a href="#">
+                <a href="https://github.com/alessandro-orlov">
                   <i class="fab fa-linkedin"></i>
                 </a>
               </p>
@@ -69,15 +74,15 @@
         {{-- <div class="creator"> --}}
           <div class="box-about">
             <div class="picture">
-              <a href="#">
-                <img src="{{asset('img/malta_villa.jpg')}}" alt="">
+              <a href="https://github.com/LauraStorella">
+                <img src="{{asset('img/laura.jpg')}}" alt="">
               </a>
             </div>
             <div class="names">
               <h3>Laura Storella</h3>
               <p>Back-End</p>
               <p>
-                <a href="#">
+                <a href="https://github.com/LauraStorella">
                   <i class="fab fa-linkedin"></i>
                 </a>
               </p>
@@ -87,15 +92,15 @@
         {{-- <div class="creator"> --}}
           <div class="box-about">
             <div class="picture">
-              <a href="#">
-                <img src="{{asset('img/malta_villa.jpg')}}" alt="">
+              <a href="https://github.com/marcopro9">
+                <img src="{{asset('img/marco.jpg')}}" alt="">
               </a>
             </div>
             <div class="names">
               <h3>Marco Prosperi</h3>
               <p>Back-End</p>
               <p>
-                <a href="#">
+                <a href="https://github.com/marcopro9">
                   <i class="fab fa-linkedin"></i>
                 </a>
               </p>
@@ -105,15 +110,15 @@
         {{-- <div class="creator"> --}}
           <div class="box-about">
             <div class="picture">
-              <a href="#">
-                <img src="{{asset('img/malta_villa.jpg')}}" alt="">
+              <a href="https://github.com/SaraCremonesi">
+                <img src="{{asset('img/sara.jpg')}}" alt="">
               </a>
             </div>
             <div class="names">
               <h3>Sara Cremonesi</h3>
               <p>Front-End</p>
               <p>
-                <a href="#">
+                <a href="https://github.com/SaraCremonesi">
                   <i class="fab fa-linkedin"></i>
                 </a>
               </p>
