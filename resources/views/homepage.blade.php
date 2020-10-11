@@ -12,7 +12,7 @@
       margin:10,
       nav:true,
       autoplay:true,
-      autoplayTimeout:5000,
+      autoplayTimeout:400000,
       autoplayHoverPause:true,
       responsive:{
         0:{
@@ -34,7 +34,7 @@
   {{-- begin jumbotron --}}
   <div class="jumbotron">
     <div class="filter">
-      <div class="container">
+      <div class="container ms_hero">
         <h1>Riscopri l'Italia</h1>
         <h2>Cambia quadro. Scopri alloggi nelle vicinanze tutti da vivere, per lavoro o svago.</h2>
         <div class="jumbo-search-bar">
@@ -88,44 +88,49 @@
   </div>
   {{-- end jumbotron --}}
 
-  {{-- carousel --}}
-  <div class="owl-carousel owl-theme mt-8">
-    @if (!$apartments->isEmpty())
-      @if (!empty($sponsored_apartments))
-        @foreach ($sponsored_apartments as $sponsored_apartment)
-          <div class="item">
-            <!-- Immagine -->
-            <div class="bool_card_img">
-              @if (!empty($sponsored_apartment->main_img))
-                  <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
-                    @if (strpos($sponsored_apartment->main_img,'mpixel'))
-                      <img class="card-img-top" src="{{$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
-                    @else
-                      <img class="card-img-top" src="{{asset('storage').'/'.$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
-                    @endif
-                  </a>
-              @else
-                  <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
-                    <img class="card-img-top" src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
-                  </a>
-              @endif
-            </div>
+  {{-- begin carousel --}}
+  @if (!empty($sponsored_apartments))
+    <div class="ms_carousel-container">
+        <div class="owl-carousel owl-theme mt-8">
+            @foreach ($sponsored_apartments as $sponsored_apartment)
+              <div class="item">
 
-            <!-- Informazioni -->
-            <div class="card-body text-center">
-                <div class="sponsored-apartment-title">
-                    <a href="{{route('guest.apartments.show', $sponsored_apartment)}}"><h4>{{$sponsored_apartment->title}}</h4></a>
+                <!-- Immagine -->
+                <div class="bool_card_img">
+                  @if (!empty($sponsored_apartment->main_img))
+                      <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
+                        @if (strpos($sponsored_apartment->main_img,'mpixel'))
+                          <img class="card-img-top" src="{{$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
+                        @else
+                          <img class="card-img-top" src="{{asset('storage').'/'.$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
+                        @endif
+                      </a>
+                  @else
+                      <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
+                        <img class="card-img-top" src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
+                      </a>
+                  @endif
                 </div>
-                <div class="sponsored-apartment-position">
-                    <i class="fas fa-map-marker-alt"></i>  <span>Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</span>
+
+                <!-- Informazioni -->
+                <div class="card-body text-center">
+                    <div class="sponsored-apartment-title">
+                        <a href="{{route('guest.apartments.show', $sponsored_apartment)}}"><h4>{{$sponsored_apartment->title}}</h4></a>
+                    </div>
+                    <div class="sponsored-apartment-position">
+                        <i class="fas fa-map-marker-alt"></i>  <span>Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</span>
+                    </div>
                 </div>
-            </div>
-          </div>
-        @endforeach
-      @endif
-    @endif
-  </div>
-  {{-- fine carousel --}}
+
+              </div>
+            @endforeach
+        </div>
+        <div class="ms_owl-heading">
+            <h3>Appartamenti in primo piano</h3>
+        </div>
+    </div>
+  @endif
+  {{-- end carousel --}}
 
   {{-- begin homepage --}}
   <div class="card-section">

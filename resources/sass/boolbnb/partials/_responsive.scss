@@ -1,9 +1,38 @@
+@media all and (min-width: 690px) {
+  // HOMEPAGE
+  .ms_carousel-container {
+    .owl-carousel {
+      .owl-stage-outer {
+        .owl-stage {
+          .owl-item {
+            .item {
+              margin: 20px 50px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media all and (min-width: 768px) {
   // MAIN
   main {
     border-bottom: 1px solid #dddde4;
-
   }
+
+  // HOMEPAGE
+  main {
+    .jumbotron {
+      .filter {
+        .ms_hero {
+          top: 30%; 
+        }
+      }
+    }
+  }
+
+
   // ABOUT PAGE
   .about-container {
     .app-description {

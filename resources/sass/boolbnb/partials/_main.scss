@@ -9,22 +9,27 @@ main {
     background-size: cover;
     background-position: bottom;
     padding: 0;
-
+    border-radius: 0;
+    margin-bottom: 100px;
+    position: relative;
     .filter {
       height: 100%;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.3);
 
-    .container {
+    .ms_hero {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
       color: #333;
-      padding-top: 70px;
       h1, h2 {
         color: #fff;
         padding-bottom: 20px;
       }
       .jumbo-search-bar {
-        width: 70%;
+        width: 60%;
         margin-left: auto;
         margin-right: auto;
         margin-top: 30px;
@@ -39,7 +44,6 @@ main {
               color: #d5d5d5;
               padding: 5px 8px;
               width: 100%;
-              // text-align: left;
               background-color: rgba(0, 0, 0, 0.03);
               border: none;
             }
@@ -50,20 +54,7 @@ main {
           .search-button {
             position: absolute;
             top: 8px;
-            right: 0;
-          }
-        }
-      }
-
-        .where-bar {
-          height: 100%;
-          width: 100%;
-        }
-
-          .search-button {
-            flex-basis: 10%;
-            margin-right: 10px;
-
+            right: 8px;
             button {
               border-radius: 100%;
               padding: 12px;
@@ -73,56 +64,75 @@ main {
               }
             }
           }
-      }
-
-        h1 {
-          letter-spacing: 5px;
-          font-weight: bold;
-          font-size: 3em;
-        }
-
-        h2 {
-
-          margin-bottom: 15px;
-          font-size: 1.8em;
         }
       }
     }
 
+      h1 {
+        letter-spacing: 5px;
+        font-weight: bold;
+        font-size: 3em;
+      }
+
+      h2 {
+
+        margin-bottom: 15px;
+        font-size: 1.8em;
+      }
+    }
+  }
+
 
   // carousel
+  .ms_carousel-container {
+    position: relative;
+    .ms_owl-heading {
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      text-align: center;
+      background-color: #f8f8fb;
+      padding: 0 30px;
+      z-index: 999;
+    }
+  }
   .owl-carousel{
     height: 500px;
     border-top: 1px solid #dddde4;
     border-bottom: 1px solid #dddde4;
     padding: 50px 0;
+    position: relative;
     .owl-stage-outer {
       height: 460px;
       .owl-stage {
         height: 460px;
         .owl-item {
-          height: 420px;
+          height: 410px;
           width: 350px;
-          .item{
-            margin: 20px 50px 0;
+          .item {
+            margin: 20px auto;
             box-shadow: $shadow;
             border-radius: 10px;
-            height: 370px;
+            height: 380px;
             width: 350px;
             background-color: #fff;
-            .bool_card_img a img{
-              height: 200px;
-              width: 100%;
-              margin: 0 auto;
-              border-top-left-radius: 10px;
-              border-top-right-radius: 10px;
-              border-bottom-left-radius: 0;
-              border-bottom-right-radius: 0;
-              object-fit: cover;
+            .bool_card_img {
+              a img {
+                height: 200px;
+                width: 100%;
+                margin: 0 auto;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                object-fit: cover;
+              }
             }
             .card-body {
               .sponsored-apartment-title {
-                height: 70px;
+                height: 60px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -131,9 +141,10 @@ main {
                -webkit-line-clamp: 2; /* number of lines to show */
                -webkit-box-orient: vertical;
                 h4 {
-                  line-height: 40px;
-                  font-size: 1.3em;
+                  line-height: 30px;
+                  font-size: 1.2em;
                   letter-spacing: 1px;
+                  // margin: 0;
                 }
               }
               .sponsored-apartment-position {
@@ -185,6 +196,8 @@ main {
   .card-section {
     display: flex;
     padding-bottom: 40px;
+    padding-top: 110px;
+    border-top: 1px solid #fff;
 
     .box {
       height: 350px;
@@ -212,8 +225,8 @@ main {
 
       .text {
         height: 40%;
-        padding: 10px;
-        background-color: #F4F4F4;
+        padding: 20px;
+        background-color: #fff;
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
       }
