@@ -235,7 +235,7 @@ main {
       .entry {
         padding: 20px;
         flex-basis: 100%;
-        
+
         h3 {
           line-height: 30px;
           min-height: 70px;
@@ -260,7 +260,6 @@ main {
   .card-section {
     display: flex;
     padding-bottom: 40px;
-    padding-top: 110px;
     border-top: 1px solid #fff;
 
     .box {
@@ -272,7 +271,7 @@ main {
       transition: all .4s ease;
 
       &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       }
 
       .image {

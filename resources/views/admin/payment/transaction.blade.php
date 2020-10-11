@@ -10,7 +10,7 @@
           </h2>
           <h3 class="py-3 boolbnb-red">{{ $apartment->title }}</h3>
           @php
-            $expired = date('H:m d/m/Y', strtotime($sponsorship->pivot->end_date));
+            $expired = date('H:i d/m/Y', strtotime($sponsorship->pivot->end_date));
           @endphp
           <h3>scade alle: <?php echo $expired ?></h3>
       @endforeach

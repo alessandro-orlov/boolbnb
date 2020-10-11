@@ -1,54 +1,7 @@
 var $ = require( "jquery" );
 
 $(document).ready(function() {
-  // alert('ciao visits');
-
-
-//   // Visite Giornaliere ======================================
-//   // Variables periods
-//   var dayVisits = document.getElementById('daily-visits').innerHTML;
-
-//   // console.log(dayVisits);
-//   var ctx = document.getElementById('myChartDaily').getContext('2d');
-//   var myChart = new Chart(ctx, {
-//       type: 'doughnut',
-//       data: {
-//           labels: ['Visite Giornaliere'],
-//           datasets: [{
-//               label: '# Visite Giornaliere',
-//               data: [dayVisits],
-//               backgroundColor: [
-//                   'rgba(255, 99, 132, 1)',
-//                 //   'rgba(255, 99, 132, 0.2)',
-//                 //   'rgba(54, 162, 235, 0.2)',
-//                 //   'rgba(255, 206, 86, 0.2)',
-//                 //   'rgba(75, 192, 192, 0.2)',
-//                 //   'rgba(153, 102, 255, 0.2)',
-//                 //   'rgba(255, 159, 64, 0.2)'
-//               ],
-//               borderColor: [
-//                   'rgba(255, 99, 132, 1)',
-//                   'rgba(54, 162, 235, 1)',
-//                   'rgba(255, 206, 86, 1)',
-//                   'rgba(75, 192, 192, 1)',
-//                   'rgba(153, 102, 255, 1)',
-//                   'rgba(255, 159, 64, 1)'
-//               ],
-//               borderWidth: 1
-//           }]
-//       },
-//       options: {
-//           scales: {
-//               xAxes: [{
-//                   barPercentage: 0.2,
-//                   ticks: {
-//                       beginAtZero: true
-//                   }
-//               }]
-//           }
-//       }
-//   });
-
+  moment.locale('it');
 
   // TEST!!! - Visite Settimanali ======================================
   // Variables periods
@@ -61,31 +14,37 @@ var fourDaysAgo = document.getElementById('four-days-ago').innerHTML;
 var fiveDaysAgo = document.getElementById('five-days-ago').innerHTML;
 var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
 
-console.log('thisDay: ' + thisDay);
-console.log('yesterday: ' + yesterday);
-console.log('threeDaysAgo: ' + threeDaysAgo);
-console.log('fourDaysAgo: ' + fourDaysAgo);
-console.log('fiveDaysAgo: ' + fiveDaysAgo);
-console.log('sixDaysAgo: ' + sixDaysAgo);
+// console.log('thisDay: ' + thisDay);
+// console.log('yesterday: ' + yesterday);
+// console.log('threeDaysAgo: ' + threeDaysAgo);
+// console.log('fourDaysAgo: ' + fourDaysAgo);
+// console.log('fiveDaysAgo: ' + fiveDaysAgo);
+// console.log('sixDaysAgo: ' + sixDaysAgo);
+
+var dayToday = moment().format('dddd');
+var dayYesterday = moment().day(-1).format('dddd');
+var dayTwoDaysAgo = moment().day(-2).format('dddd');
+var dayThreeDaysAgo = moment().day(-3).format('dddd');
+var dayFoueDaysAgo = moment().day(-4).format('dddd');
+var dayFiveDaysAgo = moment().day(-5).format('dddd');
+var daySixDaysAgo = moment().day(-6).format('dddd');
 
 
-
-  // console.log(weekVisits);
   var ctx = document.getElementById('myChartWeekly').getContext('2d');
   var myChart = new Chart(ctx, {
       type: 'line',
       data: {
           labels: [
-              'sei giorni fa',
-              'cinque giorni fa',
-              'quattro giorni fa',
-              'tre giorni fa',
-              'due giorni fa',
-              'ieri',
-              'oggi',
+            daySixDaysAgo,
+            dayFiveDaysAgo,
+            dayFoueDaysAgo,
+            dayThreeDaysAgo,
+            dayTwoDaysAgo,
+            dayYesterday,
+            dayToday,
           ],
           datasets: [{
-              label: '# Visite Settimanali',
+              label: '# Ultimi 7 giorni',
               data: [
                   sixDaysAgo,
                   fiveDaysAgo,
@@ -128,100 +87,6 @@ console.log('sixDaysAgo: ' + sixDaysAgo);
   });
 
 
-//   // Visite Ultimo Trimestre ======================================
-//   // Variables periods
-//   var trimesterVisits = document.getElementById('trimester-visits').innerHTML;
-
-//   // console.log(trimesterVisits);
-//   var ctx = document.getElementById('myChartTrimester').getContext('2d');
-//   var myChart = new Chart(ctx, {
-//       type: 'doughnut',
-//       data: {
-//           labels: ['Visite Ultimo Trimestre'],
-//           datasets: [{
-//               label: '# Visite Trimestre',
-//               data: [trimesterVisits],
-//               backgroundColor: [
-//                   'rgba(255, 48, 92, 0.6)',
-//                 //   'rgba(255, 99, 132, 0.2)',
-//                 //   'rgba(54, 162, 235, 0.2)',
-//                 //   'rgba(255, 206, 86, 0.2)',
-//                 //   'rgba(75, 192, 192, 0.2)',
-//                 //   'rgba(153, 102, 255, 0.2)',
-//                 //   'rgba(255, 159, 64, 0.2)'
-//               ],
-//               borderColor: [
-//                   'rgba(255, 99, 132, 1)',
-//                   'rgba(54, 162, 235, 1)',
-//                   'rgba(255, 206, 86, 1)',
-//                   'rgba(75, 192, 192, 1)',
-//                   'rgba(153, 102, 255, 1)',
-//                   'rgba(255, 159, 64, 1)'
-//               ],
-//               borderWidth: 1
-//           }]
-//       },
-//       options: {
-//           scales: {
-//               xAxes: [{
-//                   barPercentage: 0.2,
-//                   ticks: {
-//                       beginAtZero: true
-//                   }
-//               }]
-//           }
-//       }
-//   });
-
-
-
-//   // Visite Ultimo Semestre ======================================
-//   // Variables periods
-//   var semesterVisits = document.getElementById('semester-visits').innerHTML;
-
-//   // console.log(semesterVisits);
-//   var ctx = document.getElementById('myChartSemester').getContext('2d');
-//   var myChart = new Chart(ctx, {
-//       type: 'doughnut',
-//       data: {
-//           labels: ['Visite Semestre'],
-//           datasets: [{
-//               label: '# Visite Ultimo Semestre',
-//               data: [semesterVisits],
-//               backgroundColor: [
-//                  'rgba(255, 48, 92, 0.6)',
-//                 //   'rgba(255, 99, 132, 0.2)',
-//                 //   'rgba(54, 162, 235, 0.2)',
-//                 //   'rgba(255, 206, 86, 0.2)',
-//                 //   'rgba(75, 192, 192, 0.2)',
-//                 //   'rgba(153, 102, 255, 0.2)',
-//                 //   'rgba(255, 159, 64, 0.2)'
-//               ],
-//               borderColor: [
-//                   'rgba(255, 99, 132, 1)',
-//                   'rgba(54, 162, 235, 1)',
-//                   'rgba(255, 206, 86, 1)',
-//                   'rgba(75, 192, 192, 1)',
-//                   'rgba(153, 102, 255, 1)',
-//                   'rgba(255, 159, 64, 1)'
-//               ],
-//               borderWidth: 1,
-//           }]
-//       },
-//       options: {
-//           scales: {
-//               xAxes: [{
-//                   barPercentage: 0.2,
-//                   ticks: {
-//                       beginAtZero: true
-//                   }
-//               }]
-//           }
-//       }
-//   });
-
-
-
   // Visite Mensili ======================================
   // Variables periods
   // var monthVisits = document.getElementById('monthly-visits').innerHTML;
@@ -245,7 +110,7 @@ console.log('sixDaysAgo: ' + sixDaysAgo);
       data: {
           labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
           datasets: [{
-              label: '# Visite Mensili',
+              label: '# Visite dell\'anno',
               data: [
                   jan,
                   feb,
@@ -303,55 +168,6 @@ console.log('sixDaysAgo: ' + sixDaysAgo);
           }
       }
   });
-
-
-
-//   // Visite Totali ======================================
-//   // Variables periods
-//   // var totalVisits = document.getElementById('total-visits').innerHTML;
-//   var totalVisits = $('#total-visits').text();
-
-//   console.log(totalVisits);
-//   var ctx = document.getElementById('myChartTotal').getContext('2d');
-//   var myChart = new Chart(ctx, {
-//       type: 'doughnut',
-//       data: {
-//           labels: ['Visite Totali'],
-//           datasets: [{
-//               label: '# Visite Totali',
-//               data: [totalVisits],
-//               backgroundColor: [
-//                   'rgba(255, 48, 92, 0.6)',
-//                 //   'rgba(255, 99, 132, 0.2)',
-//                 //   'rgba(54, 162, 235, 0.2)',
-//                 //   'rgba(255, 206, 86, 0.2)',
-//                 //   'rgba(75, 192, 192, 0.2)',
-//                 //   'rgba(153, 102, 255, 0.2)',
-//                 //   'rgba(255, 159, 64, 0.2)'
-//               ],
-//               borderColor: [
-//                   'rgba(255, 99, 132, 1)',
-//                   'rgba(54, 162, 235, 1)',
-//                   'rgba(255, 206, 86, 1)',
-//                   'rgba(75, 192, 192, 1)',
-//                   'rgba(153, 102, 255, 1)',
-//                   'rgba(255, 159, 64, 1)'
-//               ],
-//               borderWidth: 1
-//           }]
-//       },
-//       options: {
-//           scales: {
-//               xAxes: [{
-//                   barPercentage: 0.2,
-//                   ticks: {
-//                       beginAtZero: true
-//                   }
-//               }]
-//           }
-//       }
-//   });
-
 
 
 }); // End document ready

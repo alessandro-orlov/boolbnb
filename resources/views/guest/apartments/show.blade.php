@@ -43,9 +43,12 @@
                         <h3>Informazioni generali</h3>
                         <p>
                           {{$apartment->mq}} m&sup2; <span class="divider">&bull;</span>
-                          {{$apartment->num_beds}} letti  <span class="divider">&bull;</span>
-                          {{$apartment->num_rooms}} stanze  <span class="divider">&bull;</span>
-                          {{$apartment->num_baths}} bagni
+                          letti: {{$apartment->num_beds}} <span class="divider">&bull;</span>
+                          stanze: {{$apartment->num_rooms}} <span class="divider">&bull;</span>
+                          bagni: {{$apartment->num_baths}}
+                        </p>
+                        <p class="price-block">
+                          <span>Prezzo a notte:</span> <span class="price">{{$apartment->price}} €</span>
                         </p>
                     </div>
                     <div class="description">

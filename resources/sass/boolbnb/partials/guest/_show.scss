@@ -78,13 +78,24 @@
       .apartment-info {
         flex-basis: 100%;
         .general-info {
-          padding: 15px 0;
+          padding: 15px 0 0;
           border-bottom: 1px solid #dddde4;
           p {
             letter-spacing: 2px;
             .divider {
               color: $primary-red;
               font-size: .8em;
+            }
+          }
+          p.price-block {
+            display: flex;
+            span {
+              flex-basis: 100%;
+              &.price {
+                font-weight: bold;
+                color: $primary-red;
+                text-align: right;
+              }
             }
           }
         }

@@ -142,7 +142,7 @@
         Ti diamo il benvenuto nel sito di viaggi di Boolbnb. <br>Ovunque tu vada, Boolbnb ha l'alloggio per te.
       </p>
 
-      <h3 class="ms_boolbnb-special">Cosa rende speciale Airbnb</h3>
+      <h3 class="ms_boolbnb-special">Cosa rende speciale Boolbnb</h3>
       <div class="desc-card">
           <div class="entry">
             <div class="icon">
@@ -150,7 +150,7 @@
             </div>
             <h3>Una community di viaggi globale</h3>
             <p>
-              Airbnb è disponibile in oltre 191 Paesi, dove i nostri Standard
+              Boolbnb è disponibile in oltre 191 Paesi, dove i nostri Standard
               della community contribuiscono a promuovere la sicurezza e
               l'appartenenza di tutti.
             </p>
@@ -218,7 +218,7 @@
             </div>
             <div class="text">
               <h4>Case intere</h4>
-              <p>Alloggi privati e confortevoli, con tanto spazio indoor e all'aperto per amici e parenti</p>
+              <p>Alloggi privati e confortevoli, con tanto spazio indoor e all'aperto</p>
             </div>
           </div>
         </div>

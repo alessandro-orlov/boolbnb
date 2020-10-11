@@ -56,15 +56,15 @@
         {{-- <div class="creator"> --}}
           <div class="box-about">
             <div class="picture">
-              <a href="https://github.com/alessandro-orlov">
+              <a href="https://www.linkedin.com/in/alessandro-orlov/">
                 <img src="{{asset('img/alex.jpg')}}" alt="">
               </a>
             </div>
             <div class="names">
-              <h3>Alexander Orlov</h3>
+              <h3>Alessandro Orlov</h3>
               <p>Full-Stack</p>
               <p>
-                <a href="https://github.com/alessandro-orlov">
+                <a href="https://www.linkedin.com/in/alessandro-orlov/">
                   <i class="fab fa-linkedin"></i>
                 </a>
               </p>
@@ -74,7 +74,7 @@
         {{-- <div class="creator"> --}}
           <div class="box-about">
             <div class="picture">
-              <a href="https://github.com/LauraStorella">
+              <a href="https://www.linkedin.com/in/laurastorella/">
                 <img src="{{asset('img/laura.jpg')}}" alt="">
               </a>
             </div>
@@ -82,7 +82,7 @@
               <h3>Laura Storella</h3>
               <p>Back-End</p>
               <p>
-                <a href="https://github.com/LauraStorella">
+                <a href="https://www.linkedin.com/in/laurastorella/">
                   <i class="fab fa-linkedin"></i>
                 </a>
               </p>
@@ -92,7 +92,7 @@
         {{-- <div class="creator"> --}}
           <div class="box-about">
             <div class="picture">
-              <a href="https://github.com/marcopro9">
+              <a href="https://www.linkedin.com/in/marcoprosperi/">
                 <img src="{{asset('img/marco.jpg')}}" alt="">
               </a>
             </div>
@@ -100,7 +100,7 @@
               <h3>Marco Prosperi</h3>
               <p>Back-End</p>
               <p>
-                <a href="https://github.com/marcopro9">
+                <a href="https://www.linkedin.com/in/marcoprosperi/">
                   <i class="fab fa-linkedin"></i>
                 </a>
               </p>
@@ -110,7 +110,7 @@
         {{-- <div class="creator"> --}}
           <div class="box-about">
             <div class="picture">
-              <a href="https://github.com/SaraCremonesi">
+              <a href="https://www.linkedin.com/in/sara-cremonesi-jr-dev/">
                 <img src="{{asset('img/sara.jpg')}}" alt="">
               </a>
             </div>
@@ -118,7 +118,7 @@
               <h3>Sara Cremonesi</h3>
               <p>Front-End</p>
               <p>
-                <a href="https://github.com/SaraCremonesi">
+                <a href="https://www.linkedin.com/in/sara-cremonesi-jr-dev/">
                   <i class="fab fa-linkedin"></i>
                 </a>
               </p>

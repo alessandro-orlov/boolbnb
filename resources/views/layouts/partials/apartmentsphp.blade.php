@@ -33,7 +33,7 @@
                     <h4>SPONSORED {{$sponsored_apartment->title}}</h4>
                   </a>
                   <hr>
-                  <p class="bool_info_text">{{$sponsored_apartment->num_beds}} ospiti - {{$sponsored_apartment->num_rooms}} camere da letto - {{$sponsored_apartment->num_baths}} bagni</p>
+                  <p class="bool_info_text">letti: {{$sponsored_apartment->num_beds}} - camere da letto: {{$sponsored_apartment->num_rooms}} - bagni: {{$sponsored_apartment->num_baths}}</p>
 
                   @if (!$sponsored_apartment->services->isEmpty())
                     @foreach ($sponsored_apartment->services as $service)
@@ -90,7 +90,7 @@
                     <h4>{{$apartment->title}}</h4>
                 </a>
                 <hr>
-                <p class="bool_info_text">{{$apartment->num_beds}} ospiti - {{$apartment->num_rooms}} camere da letto - {{$apartment->num_baths}} bagni</p>
+                <p class="bool_info_text">letti: {{$apartment->num_beds}} - camere da letto: {{$apartment->num_rooms}} - bagni: {{$apartment->num_baths}}</p>
 
                 @if (!$apartment->services->isEmpty())
                   @foreach ($apartment->services as $service)

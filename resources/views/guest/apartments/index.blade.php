@@ -51,7 +51,7 @@
 
                   {{-- Ospiti --}}
                   <div class="range-slider">
-                    <label for="guests">Ospiti:</label>
+                    <label for="guests">Letti:</label>
                     <input type="range" class="bool_slider" id="guests-number" min="1" max="10" step="1" value="2">
                     <span id="guests-value"></span>
                   </div>
@@ -124,7 +124,7 @@
           {{-- PRINT APARTMENTS WITH HANDLEBARS --}}
           <div class="apartments-handlebars">
             @php
-              
+
             @endphp
             <div id="ms-sponsored-apartments">
               <ul>

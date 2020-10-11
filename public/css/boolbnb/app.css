@@ -351,7 +351,6 @@ main #boolbnb-desc .desc-card .entry p {
 main .card-section {
   display: flex;
   padding-bottom: 40px;
-  padding-top: 110px;
   border-top: 1px solid #fff;
 }
 
@@ -365,7 +364,7 @@ main .card-section .box {
 }
 
 main .card-section .box:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 main .card-section .box .image {
@@ -521,6 +520,10 @@ footer .bottom-footer .copyright {
   color: #f10031;
 }
 
+.about-container .creators .box-about:hover .picture img {
+  filter: none;
+}
+
 .about-container .creators .box-about .picture {
   height: 150px;
   width: 150px;
@@ -534,6 +537,8 @@ footer .bottom-footer .copyright {
   border-radius: 50%;
   margin: auto;
   box-shadow: 0px 0px 15px 1px #0000002b;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .about-container .creators .box-about .names {
@@ -553,6 +558,26 @@ footer .bottom-footer .copyright {
 .about-container .creators .box-about .names a i {
   font-size: 1.35em;
   margin-top: 3%;
+}
+
+.ms_access-page .card {
+  border: none;
+  box-shadow: 0px 0px 15px 1px #0000002b;
+  border-radius: 10px;
+}
+
+.ms_access-page .card .card-header {
+  border: none;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1.8em;
+  padding: 20px;
+  color: #f10031;
+}
+
+.ms_access-page .card .card-body {
+  padding-bottom: 50px;
 }
 
 @media all and (min-width: 690px) {
@@ -1402,7 +1427,7 @@ h1 {
 }
 
 .show-page-wrapper .show-body .apartment-info .general-info {
-  padding: 15px 0;
+  padding: 15px 0 0;
   border-bottom: 1px solid #dddde4;
 }
 
@@ -1413,6 +1438,20 @@ h1 {
 .show-page-wrapper .show-body .apartment-info .general-info p .divider {
   color: #f10031;
   font-size: 0.8em;
+}
+
+.show-page-wrapper .show-body .apartment-info .general-info p.price-block {
+  display: flex;
+}
+
+.show-page-wrapper .show-body .apartment-info .general-info p.price-block span {
+  flex-basis: 100%;
+}
+
+.show-page-wrapper .show-body .apartment-info .general-info p.price-block span.price {
+  font-weight: bold;
+  color: #f10031;
+  text-align: right;
 }
 
 .show-page-wrapper .show-body .apartment-info .description {
