@@ -101,8 +101,8 @@ main {
   .owl-carousel{
     height: 500px;
     border-top: 1px solid #dddde4;
-    border-bottom: 1px solid #dddde4;
-    padding: 50px 0;
+    // border-bottom: 1px solid #dddde4;
+    padding: 60px 0 50px;
     position: relative;
     .owl-stage-outer {
       height: 460px;
@@ -164,6 +164,13 @@ main {
       width: 100%;
       margin-top: 0;
     }
+
+    .owl-nav {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
   .owl-theme .owl-nav [class*=owl-]:hover {
    background:#fff;
@@ -176,9 +183,9 @@ main {
    background:$primary-red;
   }
 
-  .owl-carousel .owl-nav button.owl-next:focus,
-  .owl-carousel .owl-nav button.owl-prev:focus,{
-    border:none;
+  .owl-carousel .owl-nav button.owl-next:active,
+  .owl-carousel .owl-nav button.owl-prev:active,{
+    border: none;
   }
 
   .owl-carousel .owl-nav button.owl-next,
@@ -193,6 +200,63 @@ main {
   }
   // fine carousel
 
+  .owl-nav-space {
+    min-height: 90px;
+    border-bottom: 1px solid #dddde4;
+  }
+
+  // boolbnb section
+  #boolbnb-desc {
+    min-height: 300px;
+    padding: 40px 0;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #dddde4;
+    h2 {
+      padding: 20px 0;
+      color: $primary-red;
+      font-size: 2.2em;
+      font-weight: bold;
+    }
+    h3.ms_boolbnb-special {
+      font-weight: bold;
+      font-size: 1.8em;
+      padding: 20px 0;
+    }
+    p.ms_presentation {
+      font-size: 1.1em;
+      letter-spacing: 1px;
+      margin: auto;
+      padding-bottom: 20px;
+    }
+    .desc-card {
+      display: flex;
+      flex-wrap: wrap;
+      .entry {
+        padding: 20px;
+        flex-basis: 100%;
+        
+        h3 {
+          line-height: 30px;
+          min-height: 70px;
+        }
+        .icon {
+          width: 100px;
+          padding: 10px 0 20px;
+          font-size: 2em;
+          margin: auto;
+          img {
+            width: 100%;
+          }
+        }
+        p {
+          text-align: justify;
+        }
+      }
+    }
+  }
+
+  // begin card section
   .card-section {
     display: flex;
     padding-bottom: 40px;

@@ -123,7 +123,9 @@
 
           {{-- PRINT APARTMENTS WITH HANDLEBARS --}}
           <div class="apartments-handlebars">
-
+            @php
+              
+            @endphp
             <div id="ms-sponsored-apartments">
               <ul>
                 {{-- append qui sponsored apartments --}}

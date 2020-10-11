@@ -26,7 +26,21 @@
     .jumbotron {
       .filter {
         .ms_hero {
-          top: 30%; 
+          top: 30%;
+        }
+      }
+    }
+    #boolbnb-desc {
+      .desc-card {
+        .entry {
+          flex-basis: calc(100% / 3);
+          padding: 20px;
+          &:first-child {
+            padding-left: 0;
+          }
+          &:last-child {
+            padding-right: 0;
+          }
         }
       }
     }

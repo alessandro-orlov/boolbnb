@@ -12,7 +12,7 @@
       margin:10,
       nav:true,
       autoplay:true,
-      autoplayTimeout:400000,
+      autoplayTimeout:3000,
       autoplayHoverPause:true,
       responsive:{
         0:{
@@ -131,6 +131,51 @@
     </div>
   @endif
   {{-- end carousel --}}
+
+
+  <div class="owl-nav-space"></div>
+
+  <section id="boolbnb-desc">
+    <div class="container">
+      <h2>Scopri Boolbnb</h2>
+      <p class="ms_presentation">
+        Ti diamo il benvenuto nel sito di viaggi di Boolbnb. <br>Ovunque tu vada, Boolbnb ha l'alloggio per te.
+      </p>
+
+      <h3 class="ms_boolbnb-special">Cosa rende speciale Airbnb</h3>
+      <div class="desc-card">
+          <div class="entry">
+            <div class="icon">
+              <img src="{{asset('img/homepage/boolbnb-global.png')}}" alt="">
+            </div>
+            <h3>Una community di viaggi globale</h3>
+            <p>
+              Airbnb è disponibile in oltre 191 Paesi, dove i nostri Standard
+              della community contribuiscono a promuovere la sicurezza e
+              l'appartenenza di tutti.
+            </p>
+          </div>
+          <div class="entry">
+            <div class="icon">
+              <img src="{{asset('img/homepage/boolbnb-heart.png')}}" alt="">
+            </div>
+            <h3>Host premurosi</h3>
+            <p>
+              Che si tratti di alloggi o di hotel, qualunque sia la tua destinazione gli host fanno di tutto per metterti a tuo agio.
+            </p>
+          </div>
+          <div class="entry">
+            <div class="icon">
+              <img src="{{asset('img/homepage/boolbnb-monitor.png')}}" alt="">
+            </div>
+            <h3>Siamo qui per te, giorno e notte</h3>
+            <p>
+              Il nostro servizio di assistenza internazionale, attivo 24 ore su 24, è disponibile in 11 lingue ed è pronto ad aiutarti ovunque ti trovi.
+            </p>
+          </div>
+      </div>
+    </div>
+  </section>
 
   {{-- begin homepage --}}
   <div class="card-section">

@@ -5,6 +5,11 @@
   outline: none;
 }
 
+*:focus,
+*:hover {
+  outline: none;
+}
+
 body {
   background-color: white;
   color: #333;
@@ -174,8 +179,7 @@ main .ms_carousel-container .ms_owl-heading {
 main .owl-carousel {
   height: 500px;
   border-top: 1px solid #dddde4;
-  border-bottom: 1px solid #dddde4;
-  padding: 50px 0;
+  padding: 60px 0 50px;
   position: relative;
 }
 
@@ -245,6 +249,13 @@ main .owl-carousel .car-img-top {
   margin-top: 0;
 }
 
+main .owl-carousel .owl-nav {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 main .owl-theme .owl-nav [class*=owl-]:hover {
   background: #fff;
   color: #333;
@@ -257,8 +268,8 @@ main .owl-theme .owl-dots .owl-dot:hover span {
   background: #f10031;
 }
 
-main .owl-carousel .owl-nav button.owl-next:focus,
-main .owl-carousel .owl-nav button.owl-prev:focus {
+main .owl-carousel .owl-nav button.owl-next:active,
+main .owl-carousel .owl-nav button.owl-prev:active {
   border: none;
 }
 
@@ -272,6 +283,69 @@ main .owl-carousel button.owl-dot {
 main .card-body a span {
   color: #333;
   font-size: 14px;
+}
+
+main .owl-nav-space {
+  min-height: 90px;
+  border-bottom: 1px solid #dddde4;
+}
+
+main #boolbnb-desc {
+  min-height: 300px;
+  padding: 40px 0;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid #dddde4;
+}
+
+main #boolbnb-desc h2 {
+  padding: 20px 0;
+  color: #f10031;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+main #boolbnb-desc h3.ms_boolbnb-special {
+  font-weight: bold;
+  font-size: 1.8em;
+  padding: 20px 0;
+}
+
+main #boolbnb-desc p.ms_presentation {
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+main #boolbnb-desc .desc-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main #boolbnb-desc .desc-card .entry {
+  padding: 20px;
+  flex-basis: 100%;
+}
+
+main #boolbnb-desc .desc-card .entry h3 {
+  line-height: 30px;
+  min-height: 70px;
+}
+
+main #boolbnb-desc .desc-card .entry .icon {
+  width: 100px;
+  padding: 10px 0 20px;
+  font-size: 2em;
+  margin: auto;
+}
+
+main #boolbnb-desc .desc-card .entry .icon img {
+  width: 100%;
+}
+
+main #boolbnb-desc .desc-card .entry p {
+  text-align: justify;
 }
 
 main .card-section {
@@ -488,6 +562,19 @@ footer .bottom-footer .copyright {
 
   main .jumbotron .filter .ms_hero {
     top: 30%;
+  }
+
+  main #boolbnb-desc .desc-card .entry {
+    flex-basis: calc(100% / 3);
+    padding: 20px;
+  }
+
+  main #boolbnb-desc .desc-card .entry:first-child {
+    padding-left: 0;
+  }
+
+  main #boolbnb-desc .desc-card .entry:last-child {
+    padding-right: 0;
   }
 
   .about-container .app-description .functionalities div {
