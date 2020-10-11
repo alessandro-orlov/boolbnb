@@ -5,6 +5,11 @@
   outline: none;
 }
 
+*:focus,
+*:hover {
+  outline: none;
+}
+
 body {
   background-color: white;
   color: #333;
@@ -72,28 +77,34 @@ main .jumbotron {
   background-size: cover;
   background-position: bottom;
   padding: 0;
+  border-radius: 0;
+  margin-bottom: 100px;
+  position: relative;
 }
 
 main .jumbotron .filter {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-main .jumbotron .filter .container {
+main .jumbotron .filter .ms_hero {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #333;
-  padding-top: 70px;
 }
 
-main .jumbotron .filter .container h1,
-main .jumbotron .filter .container h2 {
+main .jumbotron .filter .ms_hero h1,
+main .jumbotron .filter .ms_hero h2 {
   color: #fff;
   padding-bottom: 20px;
 }
 
-main .jumbotron .filter .container .jumbo-search-bar {
-  width: 70%;
+main .jumbotron .filter .ms_hero .jumbo-search-bar {
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
@@ -102,15 +113,15 @@ main .jumbotron .filter .container .jumbo-search-bar {
   position: relative;
 }
 
-main .jumbotron .filter .container .jumbo-search-bar form {
+main .jumbotron .filter .ms_hero .jumbo-search-bar form {
   width: 100%;
 }
 
-main .jumbotron .filter .container .jumbo-search-bar form .where-bar {
+main .jumbotron .filter .ms_hero .jumbo-search-bar form .where-bar {
   padding: 12px;
 }
 
-main .jumbotron .filter .container .jumbo-search-bar form .where-bar input {
+main .jumbotron .filter .ms_hero .jumbo-search-bar form .where-bar input {
   color: #d5d5d5;
   padding: 5px 8px;
   width: 100%;
@@ -118,32 +129,22 @@ main .jumbotron .filter .container .jumbo-search-bar form .where-bar input {
   border: none;
 }
 
-main .jumbotron .filter .container .jumbo-search-bar form .where-bar span {
+main .jumbotron .filter .ms_hero .jumbo-search-bar form .where-bar span {
   text-align: left;
 }
 
-main .jumbotron .filter .container .jumbo-search-bar form .search-button {
+main .jumbotron .filter .ms_hero .jumbo-search-bar form .search-button {
   position: absolute;
   top: 8px;
-  right: 0;
+  right: 8px;
 }
 
-main .jumbotron .filter .container .where-bar {
-  height: 100%;
-  width: 100%;
-}
-
-main .jumbotron .filter .container .search-button {
-  flex-basis: 10%;
-  margin-right: 10px;
-}
-
-main .jumbotron .filter .container .search-button button {
+main .jumbotron .filter .ms_hero .jumbo-search-bar form .search-button button {
   border-radius: 100%;
   padding: 12px;
 }
 
-main .jumbotron .filter .container .search-button button i {
+main .jumbotron .filter .ms_hero .jumbo-search-bar form .search-button button i {
   font-size: 1.4em;
   vertical-align: sub;
 }
@@ -159,26 +160,52 @@ main .jumbotron .filter h2 {
   font-size: 1.8em;
 }
 
-main .owl-carousel {
-  height: 400px;
-  margin-bottom: 110px;
+main .ms_carousel-container {
+  position: relative;
 }
 
-main .owl-carousel .owl-item {
-  height: 400px;
+main .ms_carousel-container .ms_owl-heading {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  text-align: center;
+  background-color: #f8f8fb;
+  padding: 0 30px;
+  z-index: 999;
+}
+
+main .owl-carousel {
+  height: 500px;
+  border-top: 1px solid #dddde4;
+  padding: 60px 0 50px;
+  position: relative;
+}
+
+main .owl-carousel .owl-stage-outer {
+  height: 460px;
+}
+
+main .owl-carousel .owl-stage-outer .owl-stage {
+  height: 460px;
+}
+
+main .owl-carousel .owl-stage-outer .owl-stage .owl-item {
+  height: 410px;
   width: 350px;
 }
 
-main .owl-carousel .owl-item .item {
-  margin: 20px 50px 0;
+main .owl-carousel .owl-stage-outer .owl-stage .owl-item .item {
+  margin: 20px auto;
   box-shadow: 0px 0px 15px 1px #0000002b;
   border-radius: 10px;
-  height: 350px;
+  height: 380px;
   width: 350px;
   background-color: #fff;
 }
 
-main .owl-carousel .owl-item .item .bool_card_img a img {
+main .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .bool_card_img a img {
   height: 200px;
   width: 100%;
   margin: 0 auto;
@@ -186,6 +213,35 @@ main .owl-carousel .owl-item .item .bool_card_img a img {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .card-body .sponsored-apartment-title {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+main .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .card-body .sponsored-apartment-title h4 {
+  line-height: 30px;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+main .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .card-body .sponsored-apartment-position {
+  height: 70px;
+  margin-top: 10px;
+}
+
+main .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .card-body .sponsored-apartment-position i {
+  color: #f10031;
 }
 
 main .owl-carousel .car-img-top {
@@ -193,12 +249,11 @@ main .owl-carousel .car-img-top {
   margin-top: 0;
 }
 
-main .owl-carousel .owl-stage-outer {
-  height: 400px;
-}
-
-main .owl-carousel .owl-stage-outer .owl-stage {
-  height: 300px;
+main .owl-carousel .owl-nav {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 main .owl-theme .owl-nav [class*=owl-]:hover {
@@ -213,8 +268,8 @@ main .owl-theme .owl-dots .owl-dot:hover span {
   background: #f10031;
 }
 
-main .owl-carousel .owl-nav button.owl-next:focus,
-main .owl-carousel .owl-nav button.owl-prev:focus {
+main .owl-carousel .owl-nav button.owl-next:active,
+main .owl-carousel .owl-nav button.owl-prev:active {
   border: none;
 }
 
@@ -230,9 +285,74 @@ main .card-body a span {
   font-size: 14px;
 }
 
+main .owl-nav-space {
+  min-height: 90px;
+  border-bottom: 1px solid #dddde4;
+}
+
+main #boolbnb-desc {
+  min-height: 300px;
+  padding: 40px 0;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid #dddde4;
+}
+
+main #boolbnb-desc h2 {
+  padding: 20px 0;
+  color: #f10031;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+main #boolbnb-desc h3.ms_boolbnb-special {
+  font-weight: bold;
+  font-size: 1.8em;
+  padding: 20px 0;
+}
+
+main #boolbnb-desc p.ms_presentation {
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+main #boolbnb-desc .desc-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main #boolbnb-desc .desc-card .entry {
+  padding: 20px;
+  flex-basis: 100%;
+}
+
+main #boolbnb-desc .desc-card .entry h3 {
+  line-height: 30px;
+  min-height: 70px;
+}
+
+main #boolbnb-desc .desc-card .entry .icon {
+  width: 100px;
+  padding: 10px 0 20px;
+  font-size: 2em;
+  margin: auto;
+}
+
+main #boolbnb-desc .desc-card .entry .icon img {
+  width: 100%;
+}
+
+main #boolbnb-desc .desc-card .entry p {
+  text-align: justify;
+}
+
 main .card-section {
   display: flex;
   padding-bottom: 40px;
+  padding-top: 110px;
+  border-top: 1px solid #fff;
 }
 
 main .card-section .box {
@@ -263,8 +383,8 @@ main .card-section .box .image img {
 
 main .card-section .box .text {
   height: 40%;
-  padding: 10px;
-  background-color: #F4F4F4;
+  padding: 20px;
+  background-color: #fff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -435,9 +555,32 @@ footer .bottom-footer .copyright {
   margin-top: 3%;
 }
 
+@media all and (min-width: 690px) {
+  .ms_carousel-container .owl-carousel .owl-stage-outer .owl-stage .owl-item .item {
+    margin: 20px 50px 0;
+  }
+}
+
 @media all and (min-width: 768px) {
   main {
     border-bottom: 1px solid #dddde4;
+  }
+
+  main .jumbotron .filter .ms_hero {
+    top: 30%;
+  }
+
+  main #boolbnb-desc .desc-card .entry {
+    flex-basis: calc(100% / 3);
+    padding: 20px;
+  }
+
+  main #boolbnb-desc .desc-card .entry:first-child {
+    padding-left: 0;
+  }
+
+  main #boolbnb-desc .desc-card .entry:last-child {
+    padding-right: 0;
   }
 
   .about-container .app-description .functionalities div {

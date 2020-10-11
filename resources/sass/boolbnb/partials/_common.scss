@@ -4,6 +4,10 @@
   box-sizing: border-box;
   outline: none;
 }
+*:focus,
+*:hover { 
+  outline:none;
+}
 
 body {
   background-color: white;

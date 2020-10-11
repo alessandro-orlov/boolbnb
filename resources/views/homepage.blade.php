@@ -12,7 +12,7 @@
       margin:10,
       nav:true,
       autoplay:true,
-      autoplayTimeout:5000,
+      autoplayTimeout:3000,
       autoplayHoverPause:true,
       responsive:{
         0:{
@@ -34,7 +34,7 @@
   {{-- begin jumbotron --}}
   <div class="jumbotron">
     <div class="filter">
-      <div class="container">
+      <div class="container ms_hero">
         <h1>Riscopri l'Italia</h1>
         <h2>Cambia quadro. Scopri alloggi nelle vicinanze tutti da vivere, per lavoro o svago.</h2>
         <div class="jumbo-search-bar">
@@ -88,46 +88,94 @@
   </div>
   {{-- end jumbotron --}}
 
-  {{-- carousel --}}
-  <div class="owl-carousel owl-theme mt-8">
-    @if (!$apartments->isEmpty())
-      @if (!empty($sponsored_apartments))
-        @foreach ($sponsored_apartments as $sponsored_apartment)
-          <div class="item">
-            <!-- Immagine -->
-            <div class="bool_card_img">
-              @if (!empty($sponsored_apartment->main_img))
-                  <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
-                    @if (strpos($sponsored_apartment->main_img,'mpixel'))
-                      <img class="card-img-top" src="{{$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
-                    @else
-                      <img class="card-img-top" src="{{asset('storage').'/'.$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
-                    @endif
-                  </a>
-              @else
-                  <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
-                    <img class="card-img-top" src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
-                  </a>
-              @endif
-            </div>
+  {{-- begin carousel --}}
+  @if (!empty($sponsored_apartments))
+    <div class="ms_carousel-container">
+        <div class="owl-carousel owl-theme mt-8">
+            @foreach ($sponsored_apartments as $sponsored_apartment)
+              <div class="item">
 
-            <!-- Informazioni -->
-            <div class="card-body text-center">
-              <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
-                <h4>{{$sponsored_apartment->title}}</h4>
-                <i class="fas fa-map-marker-alt"></i>  <span>Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</span>
-              </a>
+                <!-- Immagine -->
+                <div class="bool_card_img">
+                  @if (!empty($sponsored_apartment->main_img))
+                      <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
+                        @if (strpos($sponsored_apartment->main_img,'mpixel'))
+                          <img class="card-img-top" src="{{$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
+                        @else
+                          <img class="card-img-top" src="{{asset('storage').'/'.$sponsored_apartment->main_img}}" alt="{{$sponsored_apartment->title}}">
+                        @endif
+                      </a>
+                  @else
+                      <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
+                        <img class="card-img-top" src="{{asset('img/no-image/no-image.png')}}" alt="immagine non disponibile">
+                      </a>
+                  @endif
+                </div>
+
+                <!-- Informazioni -->
+                <div class="card-body text-center">
+                    <div class="sponsored-apartment-title">
+                        <a href="{{route('guest.apartments.show', $sponsored_apartment)}}"><h4>{{$sponsored_apartment->title}}</h4></a>
+                    </div>
+                    <div class="sponsored-apartment-position">
+                        <i class="fas fa-map-marker-alt"></i>  <span>Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</span>
+                    </div>
+                </div>
+
+              </div>
+            @endforeach
+        </div>
+        <div class="ms_owl-heading">
+            <h3>Appartamenti in primo piano</h3>
+        </div>
+    </div>
+  @endif
+  {{-- end carousel --}}
+
+
+  <div class="owl-nav-space"></div>
+
+  <section id="boolbnb-desc">
+    <div class="container">
+      <h2>Scopri Boolbnb</h2>
+      <p class="ms_presentation">
+        Ti diamo il benvenuto nel sito di viaggi di Boolbnb. <br>Ovunque tu vada, Boolbnb ha l'alloggio per te.
+      </p>
+
+      <h3 class="ms_boolbnb-special">Cosa rende speciale Airbnb</h3>
+      <div class="desc-card">
+          <div class="entry">
+            <div class="icon">
+              <img src="{{asset('img/homepage/boolbnb-global.png')}}" alt="">
             </div>
+            <h3>Una community di viaggi globale</h3>
+            <p>
+              Airbnb è disponibile in oltre 191 Paesi, dove i nostri Standard
+              della community contribuiscono a promuovere la sicurezza e
+              l'appartenenza di tutti.
+            </p>
           </div>
-        @endforeach
-      @endif
-    @endif
-  </div>
-  {{-- fine carousel --}}
-
-
-    <hr>
-
+          <div class="entry">
+            <div class="icon">
+              <img src="{{asset('img/homepage/boolbnb-heart.png')}}" alt="">
+            </div>
+            <h3>Host premurosi</h3>
+            <p>
+              Che si tratti di alloggi o di hotel, qualunque sia la tua destinazione gli host fanno di tutto per metterti a tuo agio.
+            </p>
+          </div>
+          <div class="entry">
+            <div class="icon">
+              <img src="{{asset('img/homepage/boolbnb-monitor.png')}}" alt="">
+            </div>
+            <h3>Siamo qui per te, giorno e notte</h3>
+            <p>
+              Il nostro servizio di assistenza internazionale, attivo 24 ore su 24, è disponibile in 11 lingue ed è pronto ad aiutarti ovunque ti trovi.
+            </p>
+          </div>
+      </div>
+    </div>
+  </section>
 
   {{-- begin homepage --}}
   <div class="card-section">
