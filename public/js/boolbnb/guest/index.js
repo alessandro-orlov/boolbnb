@@ -16098,6 +16098,19 @@ $(document).ready(function () {
   if (controllo == 'call-ajax') {
     ajaxCallFilteredApartment();
   } // ========================================================= //
+  // ============ SHOW OR HIDE SPONSORED APT ================= //
+
+
+  var urlSearch = window.location.search;
+  var currentUrl = window.location.href;
+  var apartmentsPage = window.location.protocol + '//' + window.location.host + '/guest/apartments'; // console.log(apartmentsPage);
+
+  console.log(urlSearch);
+  console.log(currentUrl + ' == ' + apartmentsPage);
+
+  if (urlSearch.includes('page=1') || currentUrl == apartmentsPage) {
+    $('.all-db-sponsored-apartments').show();
+  } // ========================================================= //
   // ================= TOGGLE-FILTERS ======================== //
 
 
@@ -16157,8 +16170,10 @@ $(document).ready(function () {
     var reception;
     var sauna;
     var seaView; // Resset del HTML
+    // $('.all-db-sponsored-apartments').html('');
+    // $('.all-db-normal-apartments').html('');
 
-    $('.all-db-apartments').html('');
+    $('.ms_db-apartments').html('');
     $('#ms-sponsored-apartments ul').html('');
     $('#ms-normal-apartments ul').html(''); // Chiudo la finestra dei filtri se sono aperti
 
@@ -16321,7 +16336,7 @@ $(document).ready(function () {
 
       var apartments = []; // Ciclo su ogni appartamento che sia visibile quindi con una sola classe
 
-      $('.bool_ap').each(function () {
+      $('.all-db-normal-apartments .bool_ap, #ms-normal-apartments .bool_ap').each(function () {
         var apartment = {}; // Popolazione oggetto con lat e lng per ogni appartamento
 
         apartment.title = $(this).find('.bool_info_apt h4').text();

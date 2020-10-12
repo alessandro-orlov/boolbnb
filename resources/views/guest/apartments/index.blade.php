@@ -115,17 +115,24 @@
         {{-- BEGIN APARTMENTS LIST--}}
         <div class="all-apartments-container">
 
-          {{-- PRINT APARTMENTS WITH PHP --}}
-          <div class="all-db-apartments">
-              @include('layouts.partials.apartmentsphp')
-          </div>
+          <div class="ms_db-apartments">
+            {{-- PRINT SPONSORED APARTMENTS --}}
+            <div class="all-db-sponsored-apartments">
+                @include('layouts.partials.sponsored-apartments')
+            </div>
 
+            {{-- PRINT NORMAL APARTMENTS --}}
+            <div class="all-db-normal-apartments">
+                @include('layouts.partials.normal-apartments')
+            </div>
+
+            <div class="bool_pagination">
+                {{$apartments->links()}}
+            </div>
+          </div>
 
           {{-- PRINT APARTMENTS WITH HANDLEBARS --}}
           <div class="apartments-handlebars">
-            @php
-
-            @endphp
             <div id="ms-sponsored-apartments">
               <ul>
                 {{-- append qui sponsored apartments --}}

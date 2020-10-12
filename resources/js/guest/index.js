@@ -12,11 +12,24 @@ $(document).ready(function() {
   }
 
   // ========================================================= //
+  // ============ SHOW OR HIDE SPONSORED APT ================= //
+  var urlSearch = window.location.search;
+  var currentUrl = window.location.href;
+  var apartmentsPage = window.location.protocol + '//' + window.location.host + '/guest/apartments';
+
+  // console.log(apartmentsPage);
+  console.log(urlSearch);
+  console.log(currentUrl + ' == ' + apartmentsPage);
+
+  if (urlSearch.includes('page=1') || currentUrl == apartmentsPage) {
+    $('.all-db-sponsored-apartments').show();
+  }
+
+  // ========================================================= //
   // ================= TOGGLE-FILTERS ======================== //
   $('.all-search-filters .bool_filter').click(function() {
     $('.bool_dropdown').slideToggle();
   });
-
 
   // ========================================================= //
   // ==================== SLIDERS ============================ //
@@ -48,7 +61,6 @@ $(document).ready(function() {
   radiusOutput.innerHTML = this.value;
   };
 
-
   // quando clicco il bottone Invia parte la chiamata Ajax
   $('.btn-boolbnb').click(function() {
     event.preventDefault(); // Impedisce di fare il submit del form
@@ -56,7 +68,6 @@ $(document).ready(function() {
     ajaxCallFilteredApartment();
 
   });
-
 
   function ajaxCallFilteredApartment() {
 
@@ -75,7 +86,9 @@ $(document).ready(function() {
     var seaView;
 
     // Resset del HTML
-    $('.all-db-apartments').html('');
+    // $('.all-db-sponsored-apartments').html('');
+    // $('.all-db-normal-apartments').html('');
+    $('.ms_db-apartments').html('');
     $('#ms-sponsored-apartments ul').html('');
     $('#ms-normal-apartments ul').html('');
     // Chiudo la finestra dei filtri se sono aperti
@@ -258,7 +271,7 @@ $(document).ready(function() {
         var apartments = [];
 
         // Ciclo su ogni appartamento che sia visibile quindi con una sola classe
-        $('.bool_ap').each(function(){
+        $('.all-db-normal-apartments .bool_ap, #ms-normal-apartments .bool_ap').each(function(){
             var apartment = {}; // Popolazione oggetto con lat e lng per ogni appartamento
             apartment.title = $(this).find('.bool_info_apt h4').text();
             apartment.lat = $(this).find('.latitude').text();
@@ -266,7 +279,6 @@ $(document).ready(function() {
 
             apartments.push(apartment);
         });
-
 
         var map = L.map('map-example-container', {
           scrollWheelZoom: false,

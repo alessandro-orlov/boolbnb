@@ -53,78 +53,64 @@
       </div>
       <h2 class="creators-heading">Developed by</h2>
       <div class="creators">
-        {{-- <div class="creator"> --}}
+        
           <div class="box-about">
-            <div class="picture">
-              <a href="https://www.linkedin.com/in/alessandro-orlov/">
-                <img src="{{asset('img/alex.jpg')}}" alt="">
-              </a>
-            </div>
-            <div class="names">
-              <h3>Alessandro Orlov</h3>
-              <p>Full-Stack</p>
-              <p>
-                <a href="https://www.linkedin.com/in/alessandro-orlov/">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </p>
-            </div>
+            <a href="https://www.linkedin.com/in/alessandro-orlov/" target="_blank">
+              <div class="creator-box">
+                <div class="picture">
+                    <img src="{{asset('img/alex.jpg')}}" alt="">
+                </div>
+                <div class="names">
+                    <h3>Alessandro Orlov</h3>
+                    <p>Full-Stack</p>
+                    <p><i class="fab fa-linkedin"></i></p>
+                </div>
+              </div>
+            </a>
           </div>
-        {{-- </div> --}}
-        {{-- <div class="creator"> --}}
           <div class="box-about">
-            <div class="picture">
-              <a href="https://www.linkedin.com/in/laurastorella/">
-                <img src="{{asset('img/laura.jpg')}}" alt="">
-              </a>
-            </div>
-            <div class="names">
-              <h3>Laura Storella</h3>
-              <p>Back-End</p>
-              <p>
-                <a href="https://www.linkedin.com/in/laurastorella/">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </p>
-            </div>
+            <a href="https://www.linkedin.com/in/laurastorella/" target="_blank">
+              <div class="creator-box">
+                <div class="picture">
+                    <img src="{{asset('img/laura.jpg')}}" alt="">
+                </div>
+                <div class="names">
+                    <h3>Laura Storella</h3>
+                    <p>Back-End</p>
+                    <p><i class="fab fa-linkedin"></i></p>
+                </div>
+              </div>
+            </a>
           </div>
-        {{-- </div> --}}
-        {{-- <div class="creator"> --}}
           <div class="box-about">
-            <div class="picture">
-              <a href="https://www.linkedin.com/in/marcoprosperi/">
-                <img src="{{asset('img/marco.jpg')}}" alt="">
-              </a>
-            </div>
-            <div class="names">
-              <h3>Marco Prosperi</h3>
-              <p>Back-End</p>
-              <p>
-                <a href="https://www.linkedin.com/in/marcoprosperi/">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </p>
-            </div>
+            <a href="https://www.linkedin.com/in/marcoprosperi/" target="_blank">
+              <div class="creator-box">
+                <div class="picture">
+                    <img src="{{asset('img/marco.jpg')}}" alt="">
+                </div>
+                <div class="names">
+                    <h3>Marco Prosperi</h3>
+                    <p>Back-End</p>
+                    <p><i class="fab fa-linkedin"></i></p>
+                </div>
+              </div>
+            </a>
           </div>
-        {{-- </div> --}}
-        {{-- <div class="creator"> --}}
           <div class="box-about">
-            <div class="picture">
-              <a href="https://www.linkedin.com/in/sara-cremonesi-jr-dev/">
-                <img src="{{asset('img/sara.jpg')}}" alt="">
-              </a>
-            </div>
-            <div class="names">
-              <h3>Sara Cremonesi</h3>
-              <p>Front-End</p>
-              <p>
-                <a href="https://www.linkedin.com/in/sara-cremonesi-jr-dev/">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </p>
-            </div>
+            <a href="https://www.linkedin.com/in/sara-cremonesi-jr-dev/" target="_blank">
+              <div class="creator-box">
+                <div class="picture">
+                    <img src="{{asset('img/sara.jpg')}}" alt="">
+                </div>
+                <div class="names">
+                    <h3>Sara Cremonesi</h3>
+                    <p>Front-End</p>
+                    <p><i class="fab fa-linkedin"></i></p>
+                </div>
+              </div>
+            </a>
           </div>
-        {{-- </div> --}}
+
       </div>
     </div>
   </div>
