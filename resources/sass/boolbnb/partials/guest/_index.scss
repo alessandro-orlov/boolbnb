@@ -90,9 +90,16 @@
   .services-box {
     column-count: 2;
   }
-#sponsored-content {
-  display: none;
-}
+  #sponsored-content {
+    display: none;
+  }
+  .all-apartments-container {
+    .ms_db-apartments {
+      .all-db-sponsored-apartments {
+        display: none;
+      }
+    }
+  }
   // Apartments
   #ms-sponsored-apartments {
     ul {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use App\Apartment;
 use App\Service;
@@ -22,33 +23,38 @@ class ApartmentController extends Controller
     {
       $placeInfo = $request->all();
 
-      $apartments = Apartment::orderBy('created_at', 'desc')->paginate(5);
+      // $apartments = Apartment::all();
+      $queryApartment = Apartment::query();
+      $apartments = Apartment::orderBy('created_at', 'desc')->paginate(10);
       $services = Service::all();
 
       $now = Carbon::now('Europe/Rome');
 
-      $sponsored_apartments = [];
+      // $sponsored_apartments = [];
 
-      foreach ($apartments as $apartment) {
-        if (count($apartment->sponsorships) != 0) {
-            foreach ($apartment->sponsorships as $sponsorship) {
-                $end_date = $sponsorship->pivot->end_date;
-                if ($end_date > $now) {
-                    $sponsored_apartments[] = $apartment;
-                } elseif ($end_date < $now) {
-                    $apartment->sponsorships()->detach($sponsorship);
-                }
-            }
-        }
-      }
-
-      shuffle($sponsored_apartments);
+      // foreach ($apartments as $apartment) {
+      //   if (count($apartment->sponsorships) != 0) {
+      //       foreach ($apartment->sponsorships as $sponsorship) {
+      //           $end_date = $sponsorship->pivot->end_date;
+      //           if ($end_date > $now) {
+      //               $sponsored_apartments[] = $apartment;
+      //           } elseif ($end_date < $now) {
+      //               $apartment->sponsorships()->detach($sponsorship);
+      //           }
+      //       }
+      //   }
+      // }
+      //
+      // shuffle($sponsored_apartments);
+      // $queryApartment = Apartment::query();
+      $sponsoredApartments = $queryApartment->has('sponsorships')->with('sponsorships')->get();
+      // dd($sponsoredApartments);
 
       return view('guest.apartments.index', [
         'apartments' => $apartments,
         'services' => $services,
         'placesInfo' => $placeInfo,
-        'sponsored_apartments' => $sponsored_apartments,
+        'sponsored_apartments' => $sponsoredApartments,
       ]);
 
     }

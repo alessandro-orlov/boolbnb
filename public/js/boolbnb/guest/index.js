@@ -16098,6 +16098,16 @@ $(document).ready(function () {
   if (controllo == 'call-ajax') {
     ajaxCallFilteredApartment();
   } // ========================================================= //
+  // ============ SHOW OR HIDE SPONSORED APT ================= //
+
+
+  var urlSearch = window.location.search;
+  var currentUrl = window.location.href; // console.log(urlSearch);
+  // console.log(currentUrl);
+
+  if (urlSearch.includes('page=1') || currentUrl == 'http://127.0.0.1:8000/guest/apartments') {
+    $('.all-db-sponsored-apartments').show();
+  } // ========================================================= //
   // ================= TOGGLE-FILTERS ======================== //
 
 
@@ -16157,8 +16167,10 @@ $(document).ready(function () {
     var reception;
     var sauna;
     var seaView; // Resset del HTML
+    // $('.all-db-sponsored-apartments').html('');
+    // $('.all-db-normal-apartments').html('');
 
-    $('.all-db-apartments').html('');
+    $('.ms_db-apartments').html('');
     $('#ms-sponsored-apartments ul').html('');
     $('#ms-normal-apartments ul').html(''); // Chiudo la finestra dei filtri se sono aperti
 

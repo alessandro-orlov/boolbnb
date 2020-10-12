@@ -1171,6 +1171,10 @@ h1 {
   display: none;
 }
 
+.bool_ap_results .all-apartments-container .ms_db-apartments .all-db-sponsored-apartments {
+  display: none;
+}
+
 .bool_ap_results #ms-sponsored-apartments ul li {
   position: relative;
   background-color: #fff;

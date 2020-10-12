@@ -11,12 +11,24 @@ $(document).ready(function() {
     ajaxCallFilteredApartment();
   }
 
+
+  // ========================================================= //
+  // ============ SHOW OR HIDE SPONSORED APT ================= //
+  var urlSearch = window.location.search;
+  var currentUrl = window.location.href;
+  // console.log(urlSearch);
+  // console.log(currentUrl);
+
+  if (urlSearch.includes('page=1') || currentUrl == 'http://127.0.0.1:8000/guest/apartments') {
+    $('.all-db-sponsored-apartments').show();
+  }
+
+
   // ========================================================= //
   // ================= TOGGLE-FILTERS ======================== //
   $('.all-search-filters .bool_filter').click(function() {
     $('.bool_dropdown').slideToggle();
   });
-
 
   // ========================================================= //
   // ==================== SLIDERS ============================ //
@@ -75,7 +87,9 @@ $(document).ready(function() {
     var seaView;
 
     // Resset del HTML
-    $('.all-db-apartments').html('');
+    // $('.all-db-sponsored-apartments').html('');
+    // $('.all-db-normal-apartments').html('');
+    $('.ms_db-apartments').html('');
     $('#ms-sponsored-apartments ul').html('');
     $('#ms-normal-apartments ul').html('');
     // Chiudo la finestra dei filtri se sono aperti
