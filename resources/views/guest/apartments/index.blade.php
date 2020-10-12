@@ -45,14 +45,14 @@
                   {{-- Stanze --}}
                   <div class="range-slider">
                     <label for="rooms">Stanze:</label>
-                    <input type="range" class="bool_slider" id="rooms-number" min="1" max="10" step="1" value="2">
+                    <input type="range" class="bool_slider" id="rooms-number" min="1" max="10" step="1" value="1">
                     <span id="rooms-value"></span>
                   </div>
 
                   {{-- Ospiti --}}
                   <div class="range-slider">
                     <label for="guests">Letti:</label>
-                    <input type="range" class="bool_slider" id="guests-number" min="1" max="10" step="1" value="2">
+                    <input type="range" class="bool_slider" id="guests-number" min="1" max="10" step="1" value="1">
                     <span id="guests-value"></span>
                   </div>
 

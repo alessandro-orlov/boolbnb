@@ -210,7 +210,7 @@ class ApartmentController extends Controller
         'city' => 'required',
         'region' => 'required',
         'description' => 'required',
-        'price' => 'required|integer',
+        'price' => 'required|between:0,99.99',
       ];
     }
 

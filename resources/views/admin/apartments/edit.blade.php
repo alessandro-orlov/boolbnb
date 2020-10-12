@@ -163,7 +163,7 @@
                             </div>
                                 <input type="text" name="price" value="{{ old('price') ? old('price') : $apartment->price }}" class="form-control" aria-label="Amount (to the nearest dollar)" >
                         </div>
-                          <div class="edit-price-error">Puoi inserire solo numeri interi!</div>
+                          {{-- <div class="edit-price-error">Puoi inserire solo numeri interi!</div> --}}
                     </div>
                 </div>
 
