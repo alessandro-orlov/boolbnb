@@ -52,56 +52,56 @@
       .box-about {
         flex-basis: 100%;
         margin: auto;
-        transition: all .4s ease;
+
         margin-bottom: 50px;
-
-        &:hover {
-        transform: scale(1.1);
-        color: $primary-red;
-
-          &:hover i {
+        a {
+          color: grey;
+          &:hover .creator-box {
+            transform: scale(1.07);
             color: $primary-red;
-          }
-          .picture {
-            img {
-              filter: none;
+            .picture {
+              img {
+                filter: none;
+              }
             }
-          }
-        }
-
-        .picture {
-          height: 150px;
-          width: 150px;
-          border-radius: 50%;
-          margin: auto;
-
-          img {
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
-            margin: auto;
-            box-shadow: $shadow;
-            object-fit: contain;
-            // filter: grayscale(100%);
-          }
-        }
-
-        .names {
-          width: 100%;
-          text-align: center;
-          margin-top: 8%;
-
-          p:first-of-type {
-            margin-bottom: 0;
-          }
-
-          a {
-            color: grey;
-
             i {
-              font-size: 1.35em;
-              margin-top: 3%;
+              color: $primary-red;
             }
+          }
+          .creator-box {
+            transition: all .4s ease;
+            .picture {
+              height: 150px;
+              width: 150px;
+              border-radius: 50%;
+              margin: auto;
+
+              img {
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                margin: auto;
+                box-shadow: $shadow;
+                object-fit: contain;
+                // filter: grayscale(100%);
+              }
+            }
+            .names {
+              width: 100%;
+              text-align: center;
+              margin-top: 8%;
+              h3 {
+                letter-spacing: 1px;
+              }
+              p:first-of-type {
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          i {
+            font-size: 1.35em;
+            margin-top: 3%;
           }
         }
       }

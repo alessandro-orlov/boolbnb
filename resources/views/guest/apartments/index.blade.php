@@ -115,7 +115,6 @@
         {{-- BEGIN APARTMENTS LIST--}}
         <div class="all-apartments-container">
 
-
           <div class="ms_db-apartments">
             {{-- PRINT SPONSORED APARTMENTS --}}
             <div class="all-db-sponsored-apartments">

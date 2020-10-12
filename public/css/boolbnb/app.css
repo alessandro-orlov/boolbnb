@@ -507,31 +507,38 @@ footer .bottom-footer .copyright {
 .about-container .creators .box-about {
   flex-basis: 100%;
   margin: auto;
-  transition: all 0.4s ease;
   margin-bottom: 50px;
 }
 
-.about-container .creators .box-about:hover {
-  transform: scale(1.1);
+.about-container .creators .box-about a {
+  color: grey;
+}
+
+.about-container .creators .box-about a:hover .creator-box {
+  transform: scale(1.07);
   color: #f10031;
 }
 
-.about-container .creators .box-about:hover:hover i {
-  color: #f10031;
-}
-
-.about-container .creators .box-about:hover .picture img {
+.about-container .creators .box-about a:hover .creator-box .picture img {
   filter: none;
 }
 
-.about-container .creators .box-about .picture {
+.about-container .creators .box-about a:hover .creator-box i {
+  color: #f10031;
+}
+
+.about-container .creators .box-about a .creator-box {
+  transition: all 0.4s ease;
+}
+
+.about-container .creators .box-about a .creator-box .picture {
   height: 150px;
   width: 150px;
   border-radius: 50%;
   margin: auto;
 }
 
-.about-container .creators .box-about .picture img {
+.about-container .creators .box-about a .creator-box .picture img {
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -541,21 +548,21 @@ footer .bottom-footer .copyright {
      object-fit: contain;
 }
 
-.about-container .creators .box-about .names {
+.about-container .creators .box-about a .creator-box .names {
   width: 100%;
   text-align: center;
   margin-top: 8%;
 }
 
-.about-container .creators .box-about .names p:first-of-type {
+.about-container .creators .box-about a .creator-box .names h3 {
+  letter-spacing: 1px;
+}
+
+.about-container .creators .box-about a .creator-box .names p:first-of-type {
   margin-bottom: 0;
 }
 
-.about-container .creators .box-about .names a {
-  color: grey;
-}
-
-.about-container .creators .box-about .names a i {
+.about-container .creators .box-about a i {
   font-size: 1.35em;
   margin-top: 3%;
 }

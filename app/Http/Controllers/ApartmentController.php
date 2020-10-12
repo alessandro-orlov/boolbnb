@@ -23,7 +23,7 @@ class ApartmentController extends Controller
     {
       $placeInfo = $request->all();
 
-      $apartments = Apartment::orderBy('created_at', 'desc')->paginate(10);
+      $apartments = Apartment::orderBy('created_at', 'desc')->paginate(5);
       $services = Service::all();
       $now = Carbon::now('Europe/Rome');
 
