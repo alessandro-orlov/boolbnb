@@ -90,15 +90,15 @@
   .services-box {
     column-count: 2;
   }
-  #sponsored-content {
-    display: none;
-  }
   .all-apartments-container {
     .ms_db-apartments {
       .all-db-sponsored-apartments {
         display: none;
       }
     }
+  }
+  #sponsored-content {
+    display: none;
   }
   // Apartments
   #ms-sponsored-apartments {
@@ -112,12 +112,15 @@
           border-top: 1px solid $primary-red;
         }
         #sponsored-content {
-          display: block;
+          display: inline-block;
+          padding: 2px 5px 2px 7px;
+          background-color: #f1003180;
+          border-radius: 10px;
           position: absolute;
-          right: 20px;
-          bottom: 10px;
+          right: 5px;
+          top: 5px;
           font-size: .7em;
-          color: $primary-red;
+          color: #fff;
           text-transform: uppercase;
           letter-spacing: 2px;
         }
@@ -133,6 +136,7 @@
       display: flex;
       flex-wrap: wrap;
       .bool_img_apt {
+        position: relative;
         width: 45%;
         padding-bottom: 20px;
         @media all and (max-width: 768px) {

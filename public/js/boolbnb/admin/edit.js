@@ -10979,16 +10979,14 @@ return jQuery;
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-$(document).ready(function () {
-  $('input[name="price"]').keyup(function () {
-    var priceInputValue = $('input[name="price"]').val();
-
-    if (priceInputValue.includes('.')) {
-      $('.edit-price-error').addClass('visible');
-    } else {
-      $('.edit-price-error').removeClass('visible');
-    }
-  });
+$(document).ready(function () {// $('input[name="price"]').keyup( function() {
+  //   let priceInputValue = $('input[name="price"]').val()
+  //     if (priceInputValue.includes('.')) {
+  //       $('.edit-price-error').addClass('visible');
+  //     } else {
+  //       $('.edit-price-error').removeClass('visible');
+  //     }
+  // });
 }); // End document ready
 
 /***/ }),

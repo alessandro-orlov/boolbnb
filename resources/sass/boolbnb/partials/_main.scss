@@ -167,9 +167,13 @@ main {
 
     .owl-nav {
       position: absolute;
-      bottom: -40px;
+      bottom: -50px;
       left: 50%;
       transform: translate(-50%, -50%);
+      span {
+        margin: 0 20px;
+        font-size: 1.2em;
+      }
     }
   }
   .owl-theme .owl-nav [class*=owl-]:hover {
@@ -177,6 +181,12 @@ main {
    color:$primary-dark;
    text-decoration:none;
    border: none;
+  }
+  .owl-theme .owl-dots {
+    display: none;
+  }
+  .owl-theme .owl-nav {
+    display: none;
   }
   .owl-theme .owl-dots .owl-dot.active span,
   .owl-theme .owl-dots .owl-dot:hover span {
@@ -201,7 +211,7 @@ main {
   // fine carousel
 
   .owl-nav-space {
-    min-height: 90px;
+    min-height: 40px;
     border-bottom: 1px solid #dddde4;
   }
 

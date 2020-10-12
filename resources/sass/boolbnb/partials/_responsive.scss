@@ -30,6 +30,14 @@
         }
       }
     }
+    .owl-theme .owl-nav {
+      display: block;
+    }
+    .owl-nav-space {
+      min-height: 70px;
+      border-bottom: 1px solid #dddde4;
+    }
+
     #boolbnb-desc {
       .desc-card {
         .entry {

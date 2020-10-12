@@ -1,6 +1,7 @@
 <li class="bool_ap">
     {{-- Immagine --}}
     <div class="bool_img_apt">
+      <span id="sponsored-content">sponsorizzato <i class="fas fa-medal"></i></span>
       <a href="/guest/apartments/@{{id}}">
         <img src="@{{main_img}}" alt="@{{title}}">
       </a>
@@ -18,6 +19,5 @@
           <span class="longitude">@{{longitude}}</span>
         </p>
     </div>
-    <span id="sponsored-content">sponsorizzato</span>
 </li>
 {{-- fine lista appartamenti --}}

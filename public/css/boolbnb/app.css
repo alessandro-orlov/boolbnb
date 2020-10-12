@@ -251,9 +251,14 @@ main .owl-carousel .car-img-top {
 
 main .owl-carousel .owl-nav {
   position: absolute;
-  bottom: -40px;
+  bottom: -50px;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+main .owl-carousel .owl-nav span {
+  margin: 0 20px;
+  font-size: 1.2em;
 }
 
 main .owl-theme .owl-nav [class*=owl-]:hover {
@@ -261,6 +266,14 @@ main .owl-theme .owl-nav [class*=owl-]:hover {
   color: #333;
   text-decoration: none;
   border: none;
+}
+
+main .owl-theme .owl-dots {
+  display: none;
+}
+
+main .owl-theme .owl-nav {
+  display: none;
 }
 
 main .owl-theme .owl-dots .owl-dot.active span,
@@ -286,7 +299,7 @@ main .card-body a span {
 }
 
 main .owl-nav-space {
-  min-height: 90px;
+  min-height: 40px;
   border-bottom: 1px solid #dddde4;
 }
 
@@ -600,6 +613,15 @@ footer .bottom-footer .copyright {
 
   main .jumbotron .filter .ms_hero {
     top: 30%;
+  }
+
+  main .owl-theme .owl-nav {
+    display: block;
+  }
+
+  main .owl-nav-space {
+    min-height: 70px;
+    border-bottom: 1px solid #dddde4;
   }
 
   main #boolbnb-desc .desc-card .entry {
@@ -1174,11 +1196,11 @@ h1 {
        column-count: 2;
 }
 
-.bool_ap_results #sponsored-content {
+.bool_ap_results .all-apartments-container .ms_db-apartments .all-db-sponsored-apartments {
   display: none;
 }
 
-.bool_ap_results .all-apartments-container .ms_db-apartments .all-db-sponsored-apartments {
+.bool_ap_results #sponsored-content {
   display: none;
 }
 
@@ -1194,12 +1216,15 @@ h1 {
 }
 
 .bool_ap_results #ms-sponsored-apartments ul li #sponsored-content {
-  display: block;
+  display: inline-block;
+  padding: 2px 5px 2px 7px;
+  background-color: #f1003180;
+  border-radius: 10px;
   position: absolute;
-  right: 20px;
-  bottom: 10px;
+  right: 5px;
+  top: 5px;
   font-size: 0.7em;
-  color: #f10031;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -1217,6 +1242,7 @@ h1 {
 }
 
 .bool_ap_results ul .bool_ap .bool_img_apt {
+  position: relative;
   width: 45%;
   padding-bottom: 20px;
 }
