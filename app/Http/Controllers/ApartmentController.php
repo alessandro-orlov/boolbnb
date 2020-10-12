@@ -23,11 +23,8 @@ class ApartmentController extends Controller
     {
       $placeInfo = $request->all();
 
-      // $apartments = Apartment::all();
-      $queryApartment = Apartment::query();
       $apartments = Apartment::orderBy('created_at', 'desc')->paginate(10);
       $services = Service::all();
-
       $now = Carbon::now('Europe/Rome');
 
       // $sponsored_apartments = [];
@@ -47,8 +44,9 @@ class ApartmentController extends Controller
       //
       // shuffle($sponsored_apartments);
       // $queryApartment = Apartment::query();
+      $queryApartment = Apartment::query();
       $sponsoredApartments = $queryApartment->has('sponsorships')->with('sponsorships')->get();
-      // dd($sponsoredApartments);
+
 
       return view('guest.apartments.index', [
         'apartments' => $apartments,

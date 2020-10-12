@@ -22,13 +22,12 @@ var sixDaysAgo = document.getElementById('six-days-ago').innerHTML;
 // console.log('sixDaysAgo: ' + sixDaysAgo);
 
 var dayToday = moment().format('dddd');
-var dayYesterday = moment().day(-1).format('dddd');
-var dayTwoDaysAgo = moment().day(-2).format('dddd');
-var dayThreeDaysAgo = moment().day(-3).format('dddd');
-var dayFoueDaysAgo = moment().day(-4).format('dddd');
-var dayFiveDaysAgo = moment().day(-5).format('dddd');
-var daySixDaysAgo = moment().day(-6).format('dddd');
-
+var dayYesterday = moment().hour(-24).format('dddd');
+var dayTwoDaysAgo = moment().hour(-48).format('dddd');
+var dayThreeDaysAgo = moment().hour(-72).format('dddd');
+var dayFoueDaysAgo = moment().hour(-96).format('dddd');
+var dayFiveDaysAgo = moment().hour(-120).format('dddd');
+var daySixDaysAgo = moment().hour(-144).format('dddd');
 
   var ctx = document.getElementById('myChartWeekly').getContext('2d');
   var myChart = new Chart(ctx, {
