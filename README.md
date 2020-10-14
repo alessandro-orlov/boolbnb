@@ -1,7 +1,7 @@
 <h1 align="center">BoolBnb</h1>
 <p>Laravel application to find and manage apartment rentals, complete with back-end and front-end, with all CRUD, geolocation, payment and statistics features.</p>
 
-<h3 align="center">Homepage</h3>
+### Homepage <h3 align="center">
 ![boolbnb homepage](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/homepage.png)
 ![Boolflix by Alexander Orlov](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolflix-git-preview-by-Alexander-Orlov.png)
 
