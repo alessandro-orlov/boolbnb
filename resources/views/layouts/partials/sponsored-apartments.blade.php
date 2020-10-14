@@ -29,7 +29,7 @@
               <div class="bool_info_apt">
                   <p class="bool_info_text">Intero appartamento a {{$sponsored_apartment->city}}, {{$sponsored_apartment->region}}</p>
                   <a href="{{route('guest.apartments.show', $sponsored_apartment)}}">
-                    <h4>SPONSORED {{$sponsored_apartment->title}}</h4>
+                    <h4>{{$sponsored_apartment->title}}</h4>
                   </a>
                   <hr>
                   <p class="bool_info_text">letti: {{$sponsored_apartment->num_beds}} - camere da letto: {{$sponsored_apartment->num_rooms}} - bagni: {{$sponsored_apartment->num_baths}}</p>
