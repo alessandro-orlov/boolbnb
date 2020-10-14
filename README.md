@@ -6,7 +6,7 @@ A main page where you can search for apartments, see sponsored apartments, read 
 ![boolbnb homepage](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/01.homepage.jpg)
     
 ### Search page <h3> 
-Search page where you can find apartments in the specific city, all apartments are displayed as markers on the map 
+Search page where you can find apartments in the specific city, all apartments are displayed as markers on the map <br>
 *** of course the map is displayed once - it's sticky to its container :)
 ![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/02.search.jpg)  
  
