@@ -2,7 +2,7 @@
 <p>Laravel application to find and manage apartment rentals, complete with back-end and front-end, with all CRUD, geolocation, payment and statistics features.</p>
 
 
-### Homepage <h3>
+<h2 align="center"> Homepage <h2>
 A main page where you can search for apartments, see sponsored apartments, read a short presentation and find cards to a blog articles
 ![boolbnb homepage](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/01.homepage.jpg)
 
