@@ -1,6 +1,7 @@
 <h1 align="center">BoolBnb</h1>
 <p>Laravel application to find and manage apartment rentals, complete with back-end and front-end, with all CRUD, geolocation, payment and statistics features.</p>
-<br><br>
+
+
 ### Homepage <h3>
 A main page where you can search for apartments, see sponsored apartments, read a short presentation and find cards to a blog articles
 ![boolbnb homepage](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/01.homepage.jpg)
@@ -20,7 +21,7 @@ The page where you can see all details of one specific apartment and contact the
 
 ### Register an account <h3>
 Register an account in case you whant to add an apartment to the website
-![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/10.register.jpg) 
+![boolbnb register](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/10.register.jpg) 
 
 
 ### Admin area <h3>
@@ -31,18 +32,18 @@ You can add a new apartment, edit an existing apartment, delete them, buy a spon
 
 ### Add apartments to site <h3>
 Here you can add an apartment to the site - only for registered users
-![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/05.create.jpg) 
+![boolbnb create](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/05.create.jpg) 
 
 
 ### Edit apartment <h3>
 Edit an existing apartment
-![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/06.edit.jpg) 
+![boolbnb edit](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/06.edit.jpg) 
 
 
 ### Buy a sponsorship <h3>
 You can buy a sponsorship to put your apartment to the top of others apartments for a specific number of days<br> 
 Also it will be displayed in the homepage
-![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/07.sponsorship.jpg) 
+![boolbnb sponsorshp](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/07.sponsorship.jpg) 
 
 
 ### Each apartment statistics <h3>
@@ -51,9 +52,11 @@ Here you can see the views that your single apartment received in:
 - today
 - in the last 7 days
 - this year (month by month)
-![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/08.stats.jpg) 
+![boolbnb stats](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/08.stats.jpg) 
 
-
- 
+### Received messages <h3>
+Messages for each apartments
+![boolbnb messages](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/09.messages.jpg) 
+ <br><br>
 <p align="center">Made with love and Laravel :)</p>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
