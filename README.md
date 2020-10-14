@@ -2,51 +2,51 @@
 <p>Laravel application to find and manage apartment rentals, complete with back-end and front-end, with all CRUD, geolocation, payment and statistics features.</p>
 
 
-<h2 align="center"> Homepage <h2>
+## Homepage <h2>
 A main page where you can search for apartments, see sponsored apartments, read a short presentation and find cards to a blog articles
 ![boolbnb homepage](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/01.homepage.jpg)
 
 
-### Search page <h3> 
+## Search page <h2> 
 Search page where you can find apartments in the specific city, all apartments are displayed as markers on the map <br>
 In the first place are shown sponsored apartments and then the others<br>
 *** of course the map is displayed once - it's sticky to its container :)
 ![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/02.search.jpg)  
 
 
-### Apartment detailed page <h3>
+## Apartment detailed page <h2>
 The page where you can see all details of one specific apartment and contact the owner
 ![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/03.show.jpg) 
 
 
-### Register an account <h3>
+## Register an account <h2>
 Register an account in case you whant to add an apartment to the website
 ![boolbnb register](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/10.register.jpg) 
 
 
-### Admin area <h3>
+## Admin area <h2>
 A page where the you can manage your apartment/s.<br>
 You can add a new apartment, edit an existing apartment, delete them, buy a sponsorship, see a number of visits for each apartment and received messages
 ![boolbnb admin](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/04.admin-area.jpg) 
 
 
-### Add apartments to site <h3>
+## Add apartments to site <h2>
 Here you can add an apartment to the site - only for registered users
 ![boolbnb create](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/05.create.jpg) 
 
 
-### Edit apartment <h3>
+## Edit apartment <h2>
 Edit an existing apartment
 ![boolbnb edit](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/06.edit.jpg) 
 
 
-### Buy a sponsorship <h3>
+## Buy a sponsorship <h2>
 You can buy a sponsorship to put your apartment to the top of others apartments for a specific number of days<br> 
 Also it will be displayed in the homepage
 ![boolbnb sponsorshp](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/07.sponsorship.jpg) 
 
 
-### Each apartment statistics <h3>
+## Each apartment statistics <h2>
 Here you can see the views that your single apartment received in:
 - total
 - today
@@ -54,7 +54,7 @@ Here you can see the views that your single apartment received in:
 - this year (month by month)
 ![boolbnb stats](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/08.stats.jpg) 
 
-### Received messages <h3>
+## Received messages <h2>
 Messages for each apartments
 ![boolbnb messages](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/09.messages.jpg) 
  <br><br>
