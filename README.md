@@ -1,61 +1,69 @@
+<h1 align="center">BoolBnb</h1>
+<p>Laravel application to find and manage apartment rentals, complete with back-end and front-end, with all CRUD, geolocation, payment and statistics features.</p>
+
+## <h2>
+### Homepage <h3>
+A main page where you can search for apartments, see sponsored apartments, read a short presentation and find cards to a blog articles
+![boolbnb homepage](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/01.homepage.jpg)
+
+## <h2>
+### Search page <h3> 
+Search page where you can find apartments in the specific city, all apartments are displayed as markers on the map <br>
+In the first place are shown sponsored apartments and then the others<br>
+*** of course the map is displayed once - it's sticky to its container :)
+![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/02.search.jpg)  
+
+## <h2>
+### Apartment detailed page <h3>
+The page where you can see all details of one specific apartment and contact the owner
+![boolbnb search](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/03.show.jpg) 
+
+## <h2>
+### Register an account <h3>
+Register an account in case you whant to add an apartment to the website
+![boolbnb register](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/10.register.jpg) 
+
+
+## <h2>
+### Admin area <h3>
+A page where the you can manage your apartment/s.<br>
+You can add a new apartment, edit an existing apartment, delete them, buy a sponsorship, see a number of visits for each apartment and received messages
+![boolbnb admin](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/04.admin-area.jpg) 
+
+
+## <h2>
+### Add apartments to site <h3>
+Here you can add an apartment to the site - only for registered users
+![boolbnb create](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/05.create.jpg) 
+
+
+## <h2>
+### Edit apartment <h3>
+Edit an existing apartment
+![boolbnb edit](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/06.edit.jpg) 
+
+
+## <h2>
+### Buy a sponsorship <h3>
+You can buy a sponsorship to put your apartment to the top of others apartments for a specific number of days<br> 
+Also it will be displayed in the homepage
+![boolbnb sponsorshp](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/07.sponsorship.jpg) 
+
+
+## <h2>
+### Each apartment statistics <h3>
+Here you can see the views that your single apartment received in:
+- total
+- today
+- in the last 7 days
+- this year (month by month)
+![boolbnb stats](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/08.stats.jpg) 
+
+
+## <h2>
+### Received messages <h3>
+Messages for each apartments
+![boolbnb messages](https://github.com/alessandro-orlov/projects-preview-images/blob/main/boolbnb/09.messages.jpg) 
+ <br><br>
+<p align="center">Made with love and Laravel :)</p>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
