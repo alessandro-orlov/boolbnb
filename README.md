@@ -1,6 +1,8 @@
 <h1 align="center">BoolBnb</h1>
 <p>Laravel application to find and manage apartment rentals, complete with back-end and front-end, with all CRUD, geolocation, payment and statistics features.</p>
 
+[try it live](http://159.89.29.222/)
+
 ## <h2>
 ### Homepage <h3>
 A main page where you can search for apartments, see sponsored apartments, read a short presentation and find cards to a blog articles
